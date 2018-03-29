@@ -1,0 +1,418 @@
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-fg320-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -u -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -ifn "C:/Users/hato/BH_com/BH_com.xst" -ofn "C:/Users/hato/BH_com/BH_com.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -intstyle ise -f BH_com.ut BH_com.ncd 

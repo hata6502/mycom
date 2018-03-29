@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\hato\BH_com\BH_com.ncd
+OUTFILE=C:\Users\hato\BH_com\BH_com.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4vq100
+WORKINGDIR=C:\Users\hato\BH_com
+LICENSE=WebPack
+USER_INFO=211300270_0_0_714

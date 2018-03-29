@@ -1,0 +1,33 @@
+	picload "misaki_gothic.png"
+
+	vhdl = ""
+	sx = ginfo(10)/8
+	sy = ginfo(11)/8
+	n = sx*sy
+	vhdl += "("
+	for i, 0, n, 1
+		ox = (i\sx)*8
+		oy = (i/sx)*8
+
+		vhdl += "("
+		vhdl += "\n"
+		for y, 0, 8, 1
+			vhdl += "\""
+			for x, 0, 8, 1
+				pget ox + x, oy + y
+				if ginfo_r < 128{
+					vhdl += "1"
+				}else{
+					vhdl += "0"
+				}
+			next
+			vhdl += "\""
+			if y<7: vhdl += ", "
+			vhdl += "\n"
+		next
+		vhdl += ")"
+		if i<n-1: vhdl += ", "
+	next
+	vhdl += ");"
+	cls
+	mesbox vhdl

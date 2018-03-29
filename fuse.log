@@ -1,0 +1,23 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/hato/BH_com/test_isim_beh.exe -prj C:/Users/hato/BH_com/test_beh.prj work.test 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/hato/BH_com/BH_com.vhd" into library work
+Parsing VHDL file "C:/Users/hato/BH_com/test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 132760 KB
+Fuse CPU Usage: 436 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity BH_com [bh_com_default]
+Compiling architecture behavior of entity test
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 7 VHDL Units
+Built simulation executable C:/Users/hato/BH_com/test_isim_beh.exe
+Fuse Memory Usage: 147640 KB
+Fuse CPU Usage: 577 ms

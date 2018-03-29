@@ -1,0 +1,677 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: BH_com.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "BH_com.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "BH_com"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-vq100
+
+---- Source Options
+Top Module Name                    : BH_com
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/hato/BH_com/ipcore_dir/vram.vhd" in Library work.
+Architecture vram_a of Entity vram is up to date.
+Compiling vhdl file "C:/Users/hato/BH_com/crom.vhd" in Library work.
+Architecture behavioral of Entity crom is up to date.
+Compiling vhdl file "C:/Users/hato/BH_com/BH_com.vhd" in Library work.
+Entity <bh_com> compiled.
+Entity <bh_com> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <BH_com> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <crom> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <BH_com> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2211 - "C:/Users/hato/BH_com/BH_com.vhd" line 215: Instantiating black box module <vram>.
+Entity <BH_com> analyzed. Unit <BH_com> generated.
+
+Analyzing Entity <crom> in library <work> (Architecture <behavioral>).
+Entity <crom> analyzed. Unit <crom> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <crom>.
+    Related source file is "C:/Users/hato/BH_com/crom.vhd".
+    Found 128x56-bit ROM for signal <chr$rom0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <dot>.
+    Found 8-bit 8-to-1 multiplexer for signal <$mux0008> created at line 1206.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   9 Multiplexer(s).
+Unit <crom> synthesized.
+
+
+Synthesizing Unit <BH_com>.
+    Related source file is "C:/Users/hato/BH_com/BH_com.vhd".
+WARNING:Xst:646 - Signal <vram_1_doutb> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <vram_1_douta<7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <vram_1_dina> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:646 - Signal <cpu_wdata<31:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 128x32-bit ROM for signal <cpu_inst_addr$rom0000> created at line 161.
+    Found 128x32-bit ROM for signal <cpu_wdata$rom0000> created at line 161.
+    Found finite state machine <FSM_0> for signal <cpu_stat>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clkcnt<20>                (rising_edge)        |
+    | Power Up State     | 00000000000000000000000000000000               |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit comparator greatequal for signal <A_0$cmp_ge0000> created at line 208.
+    Found 32-bit up counter for signal <clkcnt>.
+    Found 32-bit register for signal <cpu_inst_addr>.
+    Found 32-bit register for signal <cpu_pc>.
+    Found 32-bit adder for signal <cpu_pc$addsub0000>.
+    Found 32-bit register for signal <cpu_wdata>.
+    Found 32-bit adder for signal <crom_1_col$add0000>.
+    Found 32-bit adder for signal <crom_1_col$addsub0000>.
+    Found 32-bit up counter for signal <ppu_clkcnt>.
+    Found 32-bit up counter for signal <ppu_linecnt>.
+    Found 32-bit comparator less for signal <stat_hsync$cmp_lt0000> created at line 204.
+    Found 32-bit comparator less for signal <stat_vsync$cmp_lt0000> created at line 203.
+    Found 10-bit adder for signal <vram_1_addra>.
+    Found 32-bit adder for signal <vram_1_addra$add0000>.
+    Found 32-bit adder for signal <vram_1_addra$add0001> created at line 230.
+    Found 32-bit adder for signal <vram_1_addra$add0002>.
+    Found 32-bit adder for signal <vram_1_addra$add0003>.
+    Found 32-bit adder for signal <vram_1_addra$addsub0000>.
+    Found 32-bit adder for signal <vram_1_addra$addsub0001>.
+    Found 32-bit adder for signal <vram_1_addra$addsub0002>.
+    Found 10-bit register for signal <vram_1_addrb>.
+    Found 32-bit adder for signal <vram_1_addrb$add0000>.
+    Found 10-bit adder for signal <vram_1_addrb$add0001> created at line 173.
+    Found 32-bit adder for signal <vram_1_addrb$addsub0000>.
+    Found 32-bit subtractor for signal <vram_1_addrb$sub0000> created at line 173.
+    Found 8-bit register for signal <vram_1_dinb>.
+    Found 32-bit comparator greater for signal <vram_1_dinb$cmp_gt0000> created at line 172.
+    Found 32-bit comparator less for signal <vram_1_dinb$cmp_lt0000> created at line 172.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 ROM(s).
+	inferred   3 Counter(s).
+	inferred 114 D-type flip-flop(s).
+	inferred  15 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+Unit <BH_com> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 128x32-bit ROM                                        : 2
+ 128x56-bit ROM                                        : 1
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 2
+ 32-bit adder                                          : 12
+ 32-bit subtractor                                     : 1
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 5
+ 10-bit register                                       : 1
+ 32-bit register                                       : 3
+ 8-bit register                                        : 1
+# Comparators                                          : 5
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 3
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <cpu_stat/FSM> on signal <cpu_stat[1:4]> with one-hot encoding.
+----------------------------------------------
+ State                            | Encoding
+----------------------------------------------
+ 00000000000000000000000000000000 | 0001
+ 00000000000000000000000000000001 | 0010
+ 00000000000000000000000000000010 | 0100
+ 00000000000000000000000000000011 | 1000
+----------------------------------------------
+Reading core <ipcore_dir/vram.ngc>.
+Loading core <vram> for timing and area information for instance <vram_1>.
+WARNING:Xst:2677 - Node <cpu_wdata_8> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_9> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_10> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_11> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_12> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_13> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_14> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_15> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_16> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_17> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_18> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_19> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_20> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_21> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_22> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_23> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_24> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_25> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_26> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_27> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_28> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_29> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_30> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_wdata_31> of sequential type is unconnected in block <BH_com>.
+
+Synthesizing (advanced) Unit <BH_com>.
+INFO:Xst:3044 - The ROM <Mrom_cpu_inst_addr_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <cpu_inst_addr>.
+INFO:Xst:3044 - The ROM <Mrom_cpu_wdata_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <cpu_wdata>.
+INFO:Xst:3225 - The RAM <Mrom_cpu_inst_addr_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clkcnt<20>>    | rise     |
+    |     enA            | connected to signal <cpu_stat_cmp_eq0000> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <cpu_pc>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <cpu_inst_addr> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <Mrom_cpu_wdata_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clkcnt<20>>    | rise     |
+    |     enA            | connected to signal <cpu_stat_cmp_eq0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <cpu_pc>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <cpu_wdata>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <BH_com> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 2
+ 128x32-bit single-port block RAM                      : 2
+# ROMs                                                 : 1
+ 128x56-bit ROM                                        : 1
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 3
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 4
+ 32-bit subtractor                                     : 1
+ 5-bit adder                                           : 4
+ 8-bit adder                                           : 2
+# Counters                                             : 3
+ 32-bit up counter                                     : 3
+# Registers                                            : 50
+ Flip-Flops                                            : 50
+# Comparators                                          : 5
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 3
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2697 - Unit <BH_com> : the RAMs <Mrom_cpu_wdata_rom0000>, <Mrom_cpu_inst_addr_rom0000> are packed into the single block RAM <Mrom_cpu_wdata_rom00001>
+WARNING:Xst:2677 - Node <cpu_pc_7> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_8> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_9> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_10> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_11> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_12> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_13> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_14> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_15> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_16> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_17> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_18> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_19> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_20> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_21> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_22> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_23> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_24> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_25> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_26> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_27> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_28> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_29> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_30> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <cpu_pc_31> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_21> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_22> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_23> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_24> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_25> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_26> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_27> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_28> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_29> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_30> of sequential type is unconnected in block <BH_com>.
+WARNING:Xst:2677 - Node <clkcnt_31> of sequential type is unconnected in block <BH_com>.
+
+Optimizing unit <BH_com> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block BH_com, actual ratio is 10.
+
+Final Macro Processing ...
+
+Processing Unit <BH_com> :
+	Found 2-bit shift register for signal <cpu_stat_FSM_FFd2>.
+Unit <BH_com> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 112
+ Flip-Flops                                            : 112
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : BH_com.ngr
+Top Level Output File Name         : BH_com
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 49
+
+Cell Usage :
+# BELS                             : 1272
+#      GND                         : 2
+#      INV                         : 102
+#      LUT1                        : 126
+#      LUT2                        : 28
+#      LUT2_L                      : 1
+#      LUT3                        : 130
+#      LUT3_L                      : 3
+#      LUT4                        : 346
+#      LUT4_L                      : 2
+#      MUXCY                       : 261
+#      MUXF5                       : 92
+#      MUXF6                       : 8
+#      VCC                         : 2
+#      XORCY                       : 169
+# FlipFlops/Latches                : 113
+#      FD                          : 31
+#      FDE                         : 18
+#      FDR                         : 32
+#      FDRE                        : 32
+# RAMS                             : 2
+#      RAMB16_S18_S18              : 1
+#      RAMB16_S36_S36              : 1
+# Shift Registers                  : 1
+#      SRL16                       : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 48
+#      OBUF                        : 48
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500evq100-4 
+
+ Number of Slices:                      401  out of   4656     8%  
+ Number of Slice Flip Flops:            113  out of   9312     1%  
+ Number of 4 input LUTs:                739  out of   9312     7%  
+    Number used as logic:               738
+    Number used as Shift registers:       1
+ Number of IOs:                          49
+ Number of bonded IOBs:                  49  out of     66    74%  
+ Number of BRAMs:                         2  out of     20    10%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 86    |
+clkcnt_201                         | BUFG                   | 30    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 12.682ns (Maximum Frequency: 78.852MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 19.215ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 12.682ns (frequency: 78.852MHz)
+  Total number of paths / destination ports: 37458 / 191
+-------------------------------------------------------------------------
+Delay:               12.682ns (Levels of Logic = 41)
+  Source:            ppu_clkcnt_1 (FF)
+  Destination:       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ppu_clkcnt_1 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              7   0.591   0.883  ppu_clkcnt_1 (ppu_clkcnt_1)
+     LUT1:I0->O            1   0.704   0.000  Madd_vram_1_addra_add0001_cy<1>_rt (Madd_vram_1_addra_add0001_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_add0001_cy<1> (Madd_vram_1_addra_add0001_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0001_cy<2> (Madd_vram_1_addra_add0001_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0001_cy<3> (Madd_vram_1_addra_add0001_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0001_cy<4> (Madd_vram_1_addra_add0001_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0001_cy<5> (Madd_vram_1_addra_add0001_cy<5>)
+     XORCY:CI->O           3   0.804   0.531  Madd_vram_1_addra_add0001_xor<6> (vram_1_addra_add0001<6>)
+     INV:I->O              1   0.704   0.000  Madd_vram_1_addra_not0001<6>1_INV_0 (Madd_vram_1_addra_not0001<6>)
+     MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_add0002_cy<6> (Madd_vram_1_addra_add0002_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<7> (Madd_vram_1_addra_add0002_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<8> (Madd_vram_1_addra_add0002_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<9> (Madd_vram_1_addra_add0002_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<10> (Madd_vram_1_addra_add0002_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<11> (Madd_vram_1_addra_add0002_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<12> (Madd_vram_1_addra_add0002_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<13> (Madd_vram_1_addra_add0002_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<14> (Madd_vram_1_addra_add0002_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<15> (Madd_vram_1_addra_add0002_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<16> (Madd_vram_1_addra_add0002_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<17> (Madd_vram_1_addra_add0002_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<18> (Madd_vram_1_addra_add0002_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<19> (Madd_vram_1_addra_add0002_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<20> (Madd_vram_1_addra_add0002_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<21> (Madd_vram_1_addra_add0002_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<22> (Madd_vram_1_addra_add0002_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<23> (Madd_vram_1_addra_add0002_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<24> (Madd_vram_1_addra_add0002_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<25> (Madd_vram_1_addra_add0002_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<26> (Madd_vram_1_addra_add0002_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<27> (Madd_vram_1_addra_add0002_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<28> (Madd_vram_1_addra_add0002_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_add0002_cy<29> (Madd_vram_1_addra_add0002_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_vram_1_addra_add0002_cy<30> (Madd_vram_1_addra_add0002_cy<30>)
+     XORCY:CI->O           1   0.804   0.420  Madd_vram_1_addra_add0002_xor<31> (vram_1_addra_add0002<31>)
+     INV:I->O              1   0.704   0.000  vram_1_addra_not0004<29>1_INV_0 (vram_1_addra_not0004<29>)
+     MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_addsub0001_cy<29> (Madd_vram_1_addra_addsub0001_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  Madd_vram_1_addra_addsub0001_cy<30> (Madd_vram_1_addra_addsub0001_cy<30>)
+     XORCY:CI->O           5   0.804   0.808  Madd_vram_1_addra_addsub0001_xor<31> (vram_1_addra_addsub0001<31>)
+     LUT4:I0->O            1   0.704   0.000  vram_1_addra_mux0002<4>112011 (vram_1_addra_mux0002<4>11201)
+     MUXF5:I1->O           1   0.321   0.420  vram_1_addra_mux0002<4>11201_f5 (vram_1_addra_mux0002<4>)
+     begin scope: 'vram_1'
+     RAMB16_S18_S18:ADDRA4        0.377          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+    ----------------------------------------
+    Total                     12.682ns (9.620ns logic, 3.062ns route)
+                                       (75.9% logic, 24.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clkcnt_201'
+  Clock period: 8.394ns (frequency: 119.133MHz)
+  Total number of paths / destination ports: 1117 / 63
+-------------------------------------------------------------------------
+Delay:               8.394ns (Levels of Logic = 24)
+  Source:            Mrom_cpu_wdata_rom00001 (RAM)
+  Destination:       vram_1_addrb_5 (FF)
+  Source Clock:      clkcnt_201 rising
+  Destination Clock: clkcnt_201 rising
+
+  Data Path: Mrom_cpu_wdata_rom00001 to vram_1_addrb_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S36_S36:CLKB->DOB10    2   2.800   0.622  Mrom_cpu_wdata_rom00001 (cpu_inst_addr<10>)
+     LUT1:I0->O            1   0.704   0.000  Msub_vram_1_addrb_sub0000_cy<10>_rt (Msub_vram_1_addrb_sub0000_cy<10>_rt)
+     MUXCY:S->O            1   0.464   0.000  Msub_vram_1_addrb_sub0000_cy<10> (Msub_vram_1_addrb_sub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<11> (Msub_vram_1_addrb_sub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<12> (Msub_vram_1_addrb_sub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<13> (Msub_vram_1_addrb_sub0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<14> (Msub_vram_1_addrb_sub0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<15> (Msub_vram_1_addrb_sub0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<16> (Msub_vram_1_addrb_sub0000_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<17> (Msub_vram_1_addrb_sub0000_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<18> (Msub_vram_1_addrb_sub0000_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<19> (Msub_vram_1_addrb_sub0000_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<20> (Msub_vram_1_addrb_sub0000_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<21> (Msub_vram_1_addrb_sub0000_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<22> (Msub_vram_1_addrb_sub0000_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<23> (Msub_vram_1_addrb_sub0000_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<24> (Msub_vram_1_addrb_sub0000_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<25> (Msub_vram_1_addrb_sub0000_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<26> (Msub_vram_1_addrb_sub0000_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<27> (Msub_vram_1_addrb_sub0000_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<28> (Msub_vram_1_addrb_sub0000_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<29> (Msub_vram_1_addrb_sub0000_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  Msub_vram_1_addrb_sub0000_cy<30> (Msub_vram_1_addrb_sub0000_cy<30>)
+     XORCY:CI->O           5   0.804   0.808  Msub_vram_1_addrb_sub0000_xor<31> (vram_1_addrb_sub0000<31>)
+     LUT3:I0->O            1   0.704   0.000  vram_1_addrb_mux0000<0>1 (vram_1_addrb_mux0000<0>)
+     FDE:D                     0.308          vram_1_addrb_5
+    ----------------------------------------
+    Total                      8.394ns (6.964ns logic, 1.430ns route)
+                                       (83.0% logic, 17.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1613 / 2
+-------------------------------------------------------------------------
+Offset:              19.215ns (Levels of Logic = 14)
+  Source:            vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
+  Destination:       A<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram to A<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S18_S18:CLKA->DOA1  208   2.800   1.493  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (douta<1>)
+     end scope: 'vram_1'
+     LUT3:I0->O            1   0.704   0.424  vram_1_douta<5>1214_SW0 (N200)
+     LUT4:I3->O            1   0.704   0.595  vram_1_douta<5>1214 (vram_1_douta<5>1214)
+     LUT4:I0->O            1   0.704   0.455  vram_1_douta<5>12511 (vram_1_douta<5>1251)
+     LUT3:I2->O            1   0.704   0.499  vram_1_douta<5>12107 (vram_1_douta<5>13)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_171 (crom_1/Mmux_dot_171)
+     MUXF5:I0->O           1   0.321   0.424  crom_1/Mmux_dot_15_f5 (crom_1/Mmux_dot_15_f5)
+     LUT4:I3->O            1   0.704   0.455  ppu_linecnt<1>196 (ppu_linecnt<1>2)
+     LUT3:I2->O            1   0.704   0.000  crom_1/Mmux_dot_8 (crom_1/Mmux_dot_8)
+     MUXF5:I0->O           1   0.321   0.000  crom_1/Mmux_dot_6_f5 (crom_1/Mmux_dot_6_f5)
+     MUXF6:I1->O           1   0.521   0.455  crom_1/Mmux_dot_5_f6 (crom_1/Mmux_dot_5_f6)
+     LUT4:I2->O            1   0.704   0.424  A_1_mux0000245_SW0 (N278)
+     LUT4:I3->O            1   0.704   0.420  A_1_mux0000245 (A_1_OBUF)
+     OBUF:I->O                 3.272          A_1_OBUF (A<1>)
+    ----------------------------------------
+    Total                     19.215ns (13.571ns logic, 5.644ns route)
+                                       (70.6% logic, 29.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 20.88 secs
+ 
+--> 
+
+Total memory usage is 244680 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   65 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

@@ -1,0 +1,3 @@
+vhdl work "ipcore_dir/vram.vhd"
+vhdl work "crom.vhd"
+vhdl work "BH_com.vhd"
