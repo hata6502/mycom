@@ -37,1069 +37,836 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 37458 paths analyzed, 312 endpoints analyzed, 0 failing endpoints
+ 77993 paths analyzed, 3833 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  14.235ns.
+ Minimum period is  15.434ns.
 --------------------------------------------------------------------------------
 
-Paths for end point vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAMB16_X0Y5.ADDRA6), 6321 paths
+Paths for end point Mram_cpu_greg253.WE (SLICE_X2Y84.SR), 60 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     17.015ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+Slack (setup path):     15.816ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_4 (FF)
+  Destination:          Mram_cpu_greg253.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      14.235ns (Levels of Logic = 20)
+  Data Path Delay:      15.434ns (Levels of Logic = 4)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+  Maximum Data Path: cpu_waddr_4 to Mram_cpu_greg253.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
-                                                       Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X30Y52.F4      net (fanout=5)        1.336   vram_1_addra_addsub0001<31>
-    SLICE_X30Y52.X       Tif5x                 1.152   vram_1_addra_mux0002<2>
-                                                       vram_1_addra_mux0002<2>18411
-                                                       vram_1_addra_mux0002<2>1841_f5
-    RAMB16_X0Y5.ADDRA6   net (fanout=1)        2.378   vram_1_addra_mux0002<2>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    SLICE_X26Y39.YQ      Tcko                  0.652   cpu_waddr<5>
+                                                       cpu_waddr_4
+    SLICE_X19Y35.F3      net (fanout=12)       1.820   cpu_waddr<4>
+    SLICE_X19Y35.X       Tilo                  0.704   vram_1_addrb<6>
+                                                       and0001_cmp_eq0000111
+    SLICE_X31Y34.G3      net (fanout=1)        0.695   N2091
+    SLICE_X31Y34.COUT    Topcyg                1.001   N110
+                                                       and0001_cmp_eq00001_wg_lut<5>
+                                                       and0001_cmp_eq00001_wg_cy<5>
+    SLICE_X26Y33.G3      net (fanout=21)       0.872   N110
+    SLICE_X26Y33.Y       Tilo                  0.759   write_ctrl
+                                                       _and000011
+    SLICE_X18Y37.G2      net (fanout=8)        0.974   _and0000_0
+    SLICE_X18Y37.Y       Tilo                  0.759   vram_1_addrb<5>
+                                                       write_ctrl4
+    SLICE_X2Y84.SR       net (fanout=32)       6.806   write_ctrl4
+    SLICE_X2Y84.CLK      Tws                   0.392   N603
+                                                       Mram_cpu_greg253.WE
     -------------------------------------------------  ---------------------------
-    Total                                     14.235ns (9.282ns logic, 4.953ns route)
-                                                       (65.2% logic, 34.8% route)
+    Total                                     15.434ns (4.267ns logic, 11.167ns route)
+                                                       (27.6% logic, 72.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     17.027ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+Slack (setup path):     16.152ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_5 (FF)
+  Destination:          Mram_cpu_greg253.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      14.223ns (Levels of Logic = 20)
+  Data Path Delay:      15.098ns (Levels of Logic = 4)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+  Maximum Data Path: cpu_waddr_5 to Mram_cpu_greg253.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
-                                                       Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.Y       Tciny                 0.883   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_xor<25>
-    SLICE_X39Y61.G1      net (fanout=1)        0.519   vram_1_addra_add0002<25>
-    SLICE_X39Y61.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<23>
-                                                       vram_1_addra_not0004<23>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       Madd_vram_1_addra_addsub0001_cy<24>
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X30Y52.F4      net (fanout=5)        1.336   vram_1_addra_addsub0001<31>
-    SLICE_X30Y52.X       Tif5x                 1.152   vram_1_addra_mux0002<2>
-                                                       vram_1_addra_mux0002<2>18411
-                                                       vram_1_addra_mux0002<2>1841_f5
-    RAMB16_X0Y5.ADDRA6   net (fanout=1)        2.378   vram_1_addra_mux0002<2>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    SLICE_X26Y39.XQ      Tcko                  0.592   cpu_waddr<5>
+                                                       cpu_waddr_5
+    SLICE_X19Y35.F2      net (fanout=12)       1.544   cpu_waddr<5>
+    SLICE_X19Y35.X       Tilo                  0.704   vram_1_addrb<6>
+                                                       and0001_cmp_eq0000111
+    SLICE_X31Y34.G3      net (fanout=1)        0.695   N2091
+    SLICE_X31Y34.COUT    Topcyg                1.001   N110
+                                                       and0001_cmp_eq00001_wg_lut<5>
+                                                       and0001_cmp_eq00001_wg_cy<5>
+    SLICE_X26Y33.G3      net (fanout=21)       0.872   N110
+    SLICE_X26Y33.Y       Tilo                  0.759   write_ctrl
+                                                       _and000011
+    SLICE_X18Y37.G2      net (fanout=8)        0.974   _and0000_0
+    SLICE_X18Y37.Y       Tilo                  0.759   vram_1_addrb<5>
+                                                       write_ctrl4
+    SLICE_X2Y84.SR       net (fanout=32)       6.806   write_ctrl4
+    SLICE_X2Y84.CLK      Tws                   0.392   N603
+                                                       Mram_cpu_greg253.WE
     -------------------------------------------------  ---------------------------
-    Total                                     14.223ns (9.270ns logic, 4.953ns route)
-                                                       (65.2% logic, 34.8% route)
+    Total                                     15.098ns (4.207ns logic, 10.891ns route)
+                                                       (27.9% logic, 72.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     17.030ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+Slack (setup path):     16.440ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_6 (FF)
+  Destination:          Mram_cpu_greg253.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      14.220ns (Levels of Logic = 20)
+  Data Path Delay:      14.810ns (Levels of Logic = 4)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+  Maximum Data Path: cpu_waddr_6 to Mram_cpu_greg253.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.Y       Tciny                 0.869   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_xor<3>
-    SLICE_X40Y50.G2      net (fanout=1)        0.110   vram_1_addra_add0001<3>
-    SLICE_X40Y50.COUT    Topcyg                1.131   vram_1_addra_add0002<2>
-                                                       Madd_vram_1_addra_not0001<3>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.COUT    Tbyp                  0.130   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_add0002_cy<4>
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X30Y52.F4      net (fanout=5)        1.336   vram_1_addra_addsub0001<31>
-    SLICE_X30Y52.X       Tif5x                 1.152   vram_1_addra_mux0002<2>
-                                                       vram_1_addra_mux0002<2>18411
-                                                       vram_1_addra_mux0002<2>1841_f5
-    RAMB16_X0Y5.ADDRA6   net (fanout=1)        2.378   vram_1_addra_mux0002<2>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    SLICE_X26Y34.YQ      Tcko                  0.652   cpu_waddr<7>
+                                                       cpu_waddr_6
+    SLICE_X19Y35.F4      net (fanout=12)       1.196   cpu_waddr<6>
+    SLICE_X19Y35.X       Tilo                  0.704   vram_1_addrb<6>
+                                                       and0001_cmp_eq0000111
+    SLICE_X31Y34.G3      net (fanout=1)        0.695   N2091
+    SLICE_X31Y34.COUT    Topcyg                1.001   N110
+                                                       and0001_cmp_eq00001_wg_lut<5>
+                                                       and0001_cmp_eq00001_wg_cy<5>
+    SLICE_X26Y33.G3      net (fanout=21)       0.872   N110
+    SLICE_X26Y33.Y       Tilo                  0.759   write_ctrl
+                                                       _and000011
+    SLICE_X18Y37.G2      net (fanout=8)        0.974   _and0000_0
+    SLICE_X18Y37.Y       Tilo                  0.759   vram_1_addrb<5>
+                                                       write_ctrl4
+    SLICE_X2Y84.SR       net (fanout=32)       6.806   write_ctrl4
+    SLICE_X2Y84.CLK      Tws                   0.392   N603
+                                                       Mram_cpu_greg253.WE
     -------------------------------------------------  ---------------------------
-    Total                                     14.220ns (9.294ns logic, 4.926ns route)
-                                                       (65.4% logic, 34.6% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAMB16_X0Y5.ADDRA8), 6700 paths
---------------------------------------------------------------------------------
-Slack (setup path):     18.000ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      13.250ns (Levels of Logic = 20)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
-                                                       Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X36Y53.F1      net (fanout=5)        1.123   vram_1_addra_addsub0001<31>
-    SLICE_X36Y53.X       Tif5x                 1.152   vram_1_addra_mux0002<4>
-                                                       vram_1_addra_mux0002<4>112011
-                                                       vram_1_addra_mux0002<4>11201_f5
-    RAMB16_X0Y5.ADDRA8   net (fanout=1)        1.606   vram_1_addra_mux0002<4>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    -------------------------------------------------  ---------------------------
-    Total                                     13.250ns (9.282ns logic, 3.968ns route)
-                                                       (70.1% logic, 29.9% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     18.012ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      13.238ns (Levels of Logic = 20)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
-                                                       Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.Y       Tciny                 0.883   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_xor<25>
-    SLICE_X39Y61.G1      net (fanout=1)        0.519   vram_1_addra_add0002<25>
-    SLICE_X39Y61.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<23>
-                                                       vram_1_addra_not0004<23>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       Madd_vram_1_addra_addsub0001_cy<24>
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X36Y53.F1      net (fanout=5)        1.123   vram_1_addra_addsub0001<31>
-    SLICE_X36Y53.X       Tif5x                 1.152   vram_1_addra_mux0002<4>
-                                                       vram_1_addra_mux0002<4>112011
-                                                       vram_1_addra_mux0002<4>11201_f5
-    RAMB16_X0Y5.ADDRA8   net (fanout=1)        1.606   vram_1_addra_mux0002<4>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    -------------------------------------------------  ---------------------------
-    Total                                     13.238ns (9.270ns logic, 3.968ns route)
-                                                       (70.0% logic, 30.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     18.015ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      13.235ns (Levels of Logic = 20)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.Y       Tciny                 0.869   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_xor<3>
-    SLICE_X40Y50.G2      net (fanout=1)        0.110   vram_1_addra_add0001<3>
-    SLICE_X40Y50.COUT    Topcyg                1.131   vram_1_addra_add0002<2>
-                                                       Madd_vram_1_addra_not0001<3>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.COUT    Tbyp                  0.130   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_add0002_cy<4>
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X36Y53.F1      net (fanout=5)        1.123   vram_1_addra_addsub0001<31>
-    SLICE_X36Y53.X       Tif5x                 1.152   vram_1_addra_mux0002<4>
-                                                       vram_1_addra_mux0002<4>112011
-                                                       vram_1_addra_mux0002<4>11201_f5
-    RAMB16_X0Y5.ADDRA8   net (fanout=1)        1.606   vram_1_addra_mux0002<4>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    -------------------------------------------------  ---------------------------
-    Total                                     13.235ns (9.294ns logic, 3.941ns route)
-                                                       (70.2% logic, 29.8% route)
+    Total                                     14.810ns (4.267ns logic, 10.543ns route)
+                                                       (28.8% logic, 71.2% route)
 
 --------------------------------------------------------------------------------
 
 Paths for end point vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAMB16_X0Y5.ADDRA5), 6323 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     18.137ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
+Slack (setup path):     16.039ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
   Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      13.113ns (Levels of Logic = 20)
+  Data Path Delay:      15.211ns (Levels of Logic = 19)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
                                                        Madd_vram_1_addra_add0001_cy<2>
                                                        Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
                                                        Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
                                                        Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
                                                        Madd_vram_1_addra_add0002_cy<8>
                                                        Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
                                                        Madd_vram_1_addra_add0002_cy<10>
                                                        Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
                                                        Madd_vram_1_addra_add0002_cy<12>
                                                        Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
                                                        Madd_vram_1_addra_add0002_cy<14>
                                                        Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.COUT      Tbyp                  0.130   vram_1_addra_add0002<16>
                                                        Madd_vram_1_addra_add0002_cy<16>
                                                        Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
+    SLICE_X0Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.COUT      Tbyp                  0.130   vram_1_addra_add0002<18>
                                                        Madd_vram_1_addra_add0002_cy<18>
                                                        Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
+    SLICE_X0Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.COUT     Tbyp                  0.130   vram_1_addra_add0002<20>
                                                        Madd_vram_1_addra_add0002_cy<20>
                                                        Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
+    SLICE_X0Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
+    SLICE_X0Y11.COUT     Tbyp                  0.130   vram_1_addra_add0002<22>
                                                        Madd_vram_1_addra_add0002_cy<22>
                                                        Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
-                                                       Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
-                                                       Madd_vram_1_addra_addsub0001_cy<26>
-                                                       Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
-                                                       Madd_vram_1_addra_addsub0001_cy<28>
-                                                       Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
-                                                       Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X34Y52.F1      net (fanout=5)        1.134   vram_1_addra_addsub0001<31>
-    SLICE_X34Y52.X       Tilo                  0.759   vram_1_addra_mux0002<1>
-                                                       vram_1_addra_mux0002<1>1
-    RAMB16_X0Y5.ADDRA5   net (fanout=1)        1.851   vram_1_addra_mux0002<1>
-    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
-                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    -------------------------------------------------  ---------------------------
-    Total                                     13.113ns (8.889ns logic, 4.224ns route)
-                                                       (67.8% logic, 32.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     18.149ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
-  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      13.101ns (Levels of Logic = 20)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.COUT    Tbyp                  0.118   vram_1_addra_add0001<2>
-                                                       Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
-    SLICE_X41Y51.Y       Tciny                 0.869   vram_1_addra_add0001<4>
-                                                       Madd_vram_1_addra_add0001_cy<4>
-                                                       Madd_vram_1_addra_add0001_xor<5>
-    SLICE_X40Y51.G1      net (fanout=3)        0.137   vram_1_addra_add0001<5>
-    SLICE_X40Y51.COUT    Topcyg                1.131   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_not0001<5>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
-                                                       Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
-                                                       Madd_vram_1_addra_add0002_cy<8>
-                                                       Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
-                                                       Madd_vram_1_addra_add0002_cy<10>
-                                                       Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
-                                                       Madd_vram_1_addra_add0002_cy<12>
-                                                       Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
-                                                       Madd_vram_1_addra_add0002_cy<14>
-                                                       Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
-                                                       Madd_vram_1_addra_add0002_cy<16>
-                                                       Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
-                                                       Madd_vram_1_addra_add0002_cy<18>
-                                                       Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
-                                                       Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.Y       Tciny                 0.883   vram_1_addra_add0002<24>
+    SLICE_X0Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
+    SLICE_X0Y12.Y        Tciny                 0.883   vram_1_addra_add0002<24>
                                                        Madd_vram_1_addra_add0002_cy<24>
                                                        Madd_vram_1_addra_add0002_xor<25>
-    SLICE_X39Y61.G1      net (fanout=1)        0.519   vram_1_addra_add0002<25>
-    SLICE_X39Y61.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y11.G1       net (fanout=1)        0.483   vram_1_addra_add0002<25>
+    SLICE_X1Y11.COUT     Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<23>
                                                        vram_1_addra_not0004<23>1_INV_0
                                                        Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
-    SLICE_X39Y62.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
                                                        Madd_vram_1_addra_addsub0001_cy<24>
                                                        Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
                                                        Madd_vram_1_addra_addsub0001_cy<26>
                                                        Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
                                                        Madd_vram_1_addra_addsub0001_cy<28>
                                                        Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
                                                        Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X34Y52.F1      net (fanout=5)        1.134   vram_1_addra_addsub0001<31>
-    SLICE_X34Y52.X       Tilo                  0.759   vram_1_addra_mux0002<1>
+    SLICE_X5Y3.F2        net (fanout=5)        1.803   vram_1_addra_addsub0001<31>
+    SLICE_X5Y3.X         Tilo                  0.704   vram_1_addra_mux0002<1>
                                                        vram_1_addra_mux0002<1>1
-    RAMB16_X0Y5.ADDRA5   net (fanout=1)        1.851   vram_1_addra_mux0002<1>
+    RAMB16_X0Y5.ADDRA5   net (fanout=1)        2.211   vram_1_addra_mux0002<1>
     RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
                                                        vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
     -------------------------------------------------  ---------------------------
-    Total                                     13.101ns (8.877ns logic, 4.224ns route)
-                                                       (67.8% logic, 32.2% route)
+    Total                                     15.211ns (8.692ns logic, 6.519ns route)
+                                                       (57.1% logic, 42.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     18.152ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ppu_clkcnt_0 (FF)
+Slack (setup path):     16.063ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
   Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      13.098ns (Levels of Logic = 20)
+  Data Path Delay:      15.187ns (Levels of Logic = 19)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: ppu_clkcnt_0 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y49.XQ      Tcko                  0.591   ppu_clkcnt<0>
-                                                       ppu_clkcnt_0
-    SLICE_X41Y49.F2      net (fanout=6)        0.583   ppu_clkcnt<0>
-    SLICE_X41Y49.COUT    Topcyf                1.162   vram_1_addra_add0001<0>
-                                                       Madd_vram_1_addra_add0001_lut<0>_INV_0
-                                                       Madd_vram_1_addra_add0001_cy<0>
-                                                       Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<1>
-    SLICE_X41Y50.Y       Tciny                 0.869   vram_1_addra_add0001<2>
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
                                                        Madd_vram_1_addra_add0001_cy<2>
-                                                       Madd_vram_1_addra_add0001_xor<3>
-    SLICE_X40Y50.G2      net (fanout=1)        0.110   vram_1_addra_add0001<3>
-    SLICE_X40Y50.COUT    Topcyg                1.131   vram_1_addra_add0002<2>
-                                                       Madd_vram_1_addra_not0001<3>1_INV_0
-                                                       Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<3>
-    SLICE_X40Y51.COUT    Tbyp                  0.130   vram_1_addra_add0002<4>
-                                                       Madd_vram_1_addra_add0002_cy<4>
-                                                       Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<5>
-    SLICE_X40Y52.COUT    Tbyp                  0.130   vram_1_addra_add0002<6>
-                                                       Madd_vram_1_addra_add0002_cy<6>
+                                                       Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
+                                                       Madd_vram_1_addra_add0001_cy<4>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
                                                        Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
-    SLICE_X40Y53.COUT    Tbyp                  0.130   vram_1_addra_add0002<8>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
                                                        Madd_vram_1_addra_add0002_cy<8>
                                                        Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
-    SLICE_X40Y54.COUT    Tbyp                  0.130   vram_1_addra_add0002<10>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
                                                        Madd_vram_1_addra_add0002_cy<10>
                                                        Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
-    SLICE_X40Y55.COUT    Tbyp                  0.130   vram_1_addra_add0002<12>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
                                                        Madd_vram_1_addra_add0002_cy<12>
                                                        Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
-    SLICE_X40Y56.COUT    Tbyp                  0.130   vram_1_addra_add0002<14>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
                                                        Madd_vram_1_addra_add0002_cy<14>
                                                        Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
-    SLICE_X40Y57.COUT    Tbyp                  0.130   vram_1_addra_add0002<16>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.COUT      Tbyp                  0.130   vram_1_addra_add0002<16>
                                                        Madd_vram_1_addra_add0002_cy<16>
                                                        Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
-    SLICE_X40Y58.COUT    Tbyp                  0.130   vram_1_addra_add0002<18>
+    SLICE_X0Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.COUT      Tbyp                  0.130   vram_1_addra_add0002<18>
                                                        Madd_vram_1_addra_add0002_cy<18>
                                                        Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
-    SLICE_X40Y59.COUT    Tbyp                  0.130   vram_1_addra_add0002<20>
+    SLICE_X0Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.Y        Tciny                 0.883   vram_1_addra_add0002<20>
                                                        Madd_vram_1_addra_add0002_cy<20>
-                                                       Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
-    SLICE_X40Y60.COUT    Tbyp                  0.130   vram_1_addra_add0002<22>
-                                                       Madd_vram_1_addra_add0002_cy<22>
-                                                       Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
-    SLICE_X40Y61.COUT    Tbyp                  0.130   vram_1_addra_add0002<24>
-                                                       Madd_vram_1_addra_add0002_cy<24>
-                                                       Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<25>
-    SLICE_X40Y62.Y       Tciny                 0.883   vram_1_addra_add0002<26>
-                                                       Madd_vram_1_addra_add0002_cy<26>
-                                                       Madd_vram_1_addra_add0002_xor<27>
-    SLICE_X39Y62.G1      net (fanout=1)        0.519   vram_1_addra_add0002<27>
-    SLICE_X39Y62.COUT    Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<25>
-                                                       vram_1_addra_not0004<25>1_INV_0
+                                                       Madd_vram_1_addra_add0002_xor<21>
+    SLICE_X1Y9.G1        net (fanout=1)        0.483   vram_1_addra_add0002<21>
+    SLICE_X1Y9.COUT      Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<19>
+                                                       vram_1_addra_not0004<19>1_INV_0
+                                                       Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<21>
+                                                       Madd_vram_1_addra_addsub0001_cy<20>
+                                                       Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<23>
+                                                       Madd_vram_1_addra_addsub0001_cy<22>
+                                                       Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+                                                       Madd_vram_1_addra_addsub0001_cy<24>
                                                        Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
-    SLICE_X39Y63.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
                                                        Madd_vram_1_addra_addsub0001_cy<26>
                                                        Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
-    SLICE_X39Y64.COUT    Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
                                                        Madd_vram_1_addra_addsub0001_cy<28>
                                                        Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.CIN     net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
-    SLICE_X39Y65.X       Tcinx                 0.462   vram_1_addra_addsub0001<31>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
                                                        Madd_vram_1_addra_addsub0001_xor<31>
-    SLICE_X34Y52.F1      net (fanout=5)        1.134   vram_1_addra_addsub0001<31>
-    SLICE_X34Y52.X       Tilo                  0.759   vram_1_addra_mux0002<1>
+    SLICE_X5Y3.F2        net (fanout=5)        1.803   vram_1_addra_addsub0001<31>
+    SLICE_X5Y3.X         Tilo                  0.704   vram_1_addra_mux0002<1>
                                                        vram_1_addra_mux0002<1>1
-    RAMB16_X0Y5.ADDRA5   net (fanout=1)        1.851   vram_1_addra_mux0002<1>
+    RAMB16_X0Y5.ADDRA5   net (fanout=1)        2.211   vram_1_addra_mux0002<1>
     RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
                                                        vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
     -------------------------------------------------  ---------------------------
-    Total                                     13.098ns (8.901ns logic, 4.197ns route)
-                                                       (68.0% logic, 32.0% route)
+    Total                                     15.187ns (8.668ns logic, 6.519ns route)
+                                                       (57.1% logic, 42.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.087ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
+  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      15.163ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
+                                                       Madd_vram_1_addra_add0001_cy<2>
+                                                       Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
+                                                       Madd_vram_1_addra_add0001_cy<4>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
+                                                       Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
+                                                       Madd_vram_1_addra_add0002_cy<8>
+                                                       Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
+                                                       Madd_vram_1_addra_add0002_cy<10>
+                                                       Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
+                                                       Madd_vram_1_addra_add0002_cy<12>
+                                                       Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
+                                                       Madd_vram_1_addra_add0002_cy<14>
+                                                       Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.Y         Tciny                 0.883   vram_1_addra_add0002<16>
+                                                       Madd_vram_1_addra_add0002_cy<16>
+                                                       Madd_vram_1_addra_add0002_xor<17>
+    SLICE_X1Y7.G1        net (fanout=1)        0.483   vram_1_addra_add0002<17>
+    SLICE_X1Y7.COUT      Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<15>
+                                                       vram_1_addra_not0004<15>1_INV_0
+                                                       Madd_vram_1_addra_addsub0001_cy<15>
+    SLICE_X1Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<15>
+    SLICE_X1Y8.COUT      Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<17>
+                                                       Madd_vram_1_addra_addsub0001_cy<16>
+                                                       Madd_vram_1_addra_addsub0001_cy<17>
+    SLICE_X1Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<17>
+    SLICE_X1Y9.COUT      Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<19>
+                                                       Madd_vram_1_addra_addsub0001_cy<18>
+                                                       Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<21>
+                                                       Madd_vram_1_addra_addsub0001_cy<20>
+                                                       Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<23>
+                                                       Madd_vram_1_addra_addsub0001_cy<22>
+                                                       Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+                                                       Madd_vram_1_addra_addsub0001_cy<24>
+                                                       Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+                                                       Madd_vram_1_addra_addsub0001_cy<26>
+                                                       Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+                                                       Madd_vram_1_addra_addsub0001_cy<28>
+                                                       Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
+                                                       Madd_vram_1_addra_addsub0001_xor<31>
+    SLICE_X5Y3.F2        net (fanout=5)        1.803   vram_1_addra_addsub0001<31>
+    SLICE_X5Y3.X         Tilo                  0.704   vram_1_addra_mux0002<1>
+                                                       vram_1_addra_mux0002<1>1
+    RAMB16_X0Y5.ADDRA5   net (fanout=1)        2.211   vram_1_addra_mux0002<1>
+    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    -------------------------------------------------  ---------------------------
+    Total                                     15.163ns (8.644ns logic, 6.519ns route)
+                                                       (57.0% logic, 43.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAMB16_X0Y5.ADDRA8), 6700 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.084ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
+  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      15.166ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
+                                                       Madd_vram_1_addra_add0001_cy<2>
+                                                       Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
+                                                       Madd_vram_1_addra_add0001_cy<4>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
+                                                       Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
+                                                       Madd_vram_1_addra_add0002_cy<8>
+                                                       Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
+                                                       Madd_vram_1_addra_add0002_cy<10>
+                                                       Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
+                                                       Madd_vram_1_addra_add0002_cy<12>
+                                                       Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
+                                                       Madd_vram_1_addra_add0002_cy<14>
+                                                       Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.COUT      Tbyp                  0.130   vram_1_addra_add0002<16>
+                                                       Madd_vram_1_addra_add0002_cy<16>
+                                                       Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.COUT      Tbyp                  0.130   vram_1_addra_add0002<18>
+                                                       Madd_vram_1_addra_add0002_cy<18>
+                                                       Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.COUT     Tbyp                  0.130   vram_1_addra_add0002<20>
+                                                       Madd_vram_1_addra_add0002_cy<20>
+                                                       Madd_vram_1_addra_add0002_cy<21>
+    SLICE_X0Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<21>
+    SLICE_X0Y11.COUT     Tbyp                  0.130   vram_1_addra_add0002<22>
+                                                       Madd_vram_1_addra_add0002_cy<22>
+                                                       Madd_vram_1_addra_add0002_cy<23>
+    SLICE_X0Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<23>
+    SLICE_X0Y12.Y        Tciny                 0.883   vram_1_addra_add0002<24>
+                                                       Madd_vram_1_addra_add0002_cy<24>
+                                                       Madd_vram_1_addra_add0002_xor<25>
+    SLICE_X1Y11.G1       net (fanout=1)        0.483   vram_1_addra_add0002<25>
+    SLICE_X1Y11.COUT     Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<23>
+                                                       vram_1_addra_not0004<23>1_INV_0
+                                                       Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+                                                       Madd_vram_1_addra_addsub0001_cy<24>
+                                                       Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+                                                       Madd_vram_1_addra_addsub0001_cy<26>
+                                                       Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+                                                       Madd_vram_1_addra_addsub0001_cy<28>
+                                                       Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
+                                                       Madd_vram_1_addra_addsub0001_xor<31>
+    SLICE_X2Y7.F1        net (fanout=5)        0.957   vram_1_addra_addsub0001<31>
+    SLICE_X2Y7.X         Tif5x                 1.152   vram_1_addra_mux0002<4>
+                                                       vram_1_addra_mux0002<4>112011
+                                                       vram_1_addra_mux0002<4>11201_f5
+    RAMB16_X0Y5.ADDRA8   net (fanout=1)        2.564   vram_1_addra_mux0002<4>
+    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    -------------------------------------------------  ---------------------------
+    Total                                     15.166ns (9.140ns logic, 6.026ns route)
+                                                       (60.3% logic, 39.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.108ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
+  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      15.142ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
+                                                       Madd_vram_1_addra_add0001_cy<2>
+                                                       Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
+                                                       Madd_vram_1_addra_add0001_cy<4>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
+                                                       Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
+                                                       Madd_vram_1_addra_add0002_cy<8>
+                                                       Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
+                                                       Madd_vram_1_addra_add0002_cy<10>
+                                                       Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
+                                                       Madd_vram_1_addra_add0002_cy<12>
+                                                       Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
+                                                       Madd_vram_1_addra_add0002_cy<14>
+                                                       Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.COUT      Tbyp                  0.130   vram_1_addra_add0002<16>
+                                                       Madd_vram_1_addra_add0002_cy<16>
+                                                       Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<17>
+    SLICE_X0Y9.COUT      Tbyp                  0.130   vram_1_addra_add0002<18>
+                                                       Madd_vram_1_addra_add0002_cy<18>
+                                                       Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<19>
+    SLICE_X0Y10.Y        Tciny                 0.883   vram_1_addra_add0002<20>
+                                                       Madd_vram_1_addra_add0002_cy<20>
+                                                       Madd_vram_1_addra_add0002_xor<21>
+    SLICE_X1Y9.G1        net (fanout=1)        0.483   vram_1_addra_add0002<21>
+    SLICE_X1Y9.COUT      Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<19>
+                                                       vram_1_addra_not0004<19>1_INV_0
+                                                       Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<21>
+                                                       Madd_vram_1_addra_addsub0001_cy<20>
+                                                       Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<23>
+                                                       Madd_vram_1_addra_addsub0001_cy<22>
+                                                       Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+                                                       Madd_vram_1_addra_addsub0001_cy<24>
+                                                       Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+                                                       Madd_vram_1_addra_addsub0001_cy<26>
+                                                       Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+                                                       Madd_vram_1_addra_addsub0001_cy<28>
+                                                       Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
+                                                       Madd_vram_1_addra_addsub0001_xor<31>
+    SLICE_X2Y7.F1        net (fanout=5)        0.957   vram_1_addra_addsub0001<31>
+    SLICE_X2Y7.X         Tif5x                 1.152   vram_1_addra_mux0002<4>
+                                                       vram_1_addra_mux0002<4>112011
+                                                       vram_1_addra_mux0002<4>11201_f5
+    RAMB16_X0Y5.ADDRA8   net (fanout=1)        2.564   vram_1_addra_mux0002<4>
+    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    -------------------------------------------------  ---------------------------
+    Total                                     15.142ns (9.116ns logic, 6.026ns route)
+                                                       (60.2% logic, 39.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.132ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ppu_clkcnt_2 (FF)
+  Destination:          vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      15.118ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: ppu_clkcnt_2 to vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y1.XQ       Tcko                  0.591   ppu_clkcnt<2>
+                                                       ppu_clkcnt_2
+    SLICE_X3Y4.F2        net (fanout=7)        1.310   ppu_clkcnt<2>
+    SLICE_X3Y4.COUT      Topcyf                1.162   vram_1_addra_add0001<2>
+                                                       ppu_clkcnt<2>_rt
+                                                       Madd_vram_1_addra_add0001_cy<2>
+                                                       Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<3>
+    SLICE_X3Y5.COUT      Tbyp                  0.118   vram_1_addra_add0001<4>
+                                                       Madd_vram_1_addra_add0001_cy<4>
+                                                       Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0001_cy<5>
+    SLICE_X3Y6.Y         Tciny                 0.869   vram_1_addra_add0001<6>
+                                                       Madd_vram_1_addra_add0001_cy<6>
+                                                       Madd_vram_1_addra_add0001_xor<7>
+    SLICE_X0Y3.G1        net (fanout=2)        0.712   vram_1_addra_add0001<7>
+    SLICE_X0Y3.COUT      Topcyg                1.131   vram_1_addra_add0002<6>
+                                                       Madd_vram_1_addra_not0001<7>1_INV_0
+                                                       Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<7>
+    SLICE_X0Y4.COUT      Tbyp                  0.130   vram_1_addra_add0002<8>
+                                                       Madd_vram_1_addra_add0002_cy<8>
+                                                       Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<9>
+    SLICE_X0Y5.COUT      Tbyp                  0.130   vram_1_addra_add0002<10>
+                                                       Madd_vram_1_addra_add0002_cy<10>
+                                                       Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<11>
+    SLICE_X0Y6.COUT      Tbyp                  0.130   vram_1_addra_add0002<12>
+                                                       Madd_vram_1_addra_add0002_cy<12>
+                                                       Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<13>
+    SLICE_X0Y7.COUT      Tbyp                  0.130   vram_1_addra_add0002<14>
+                                                       Madd_vram_1_addra_add0002_cy<14>
+                                                       Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_add0002_cy<15>
+    SLICE_X0Y8.Y         Tciny                 0.883   vram_1_addra_add0002<16>
+                                                       Madd_vram_1_addra_add0002_cy<16>
+                                                       Madd_vram_1_addra_add0002_xor<17>
+    SLICE_X1Y7.G1        net (fanout=1)        0.483   vram_1_addra_add0002<17>
+    SLICE_X1Y7.COUT      Topcyg                1.001   Madd_vram_1_addra_addsub0001_cy<15>
+                                                       vram_1_addra_not0004<15>1_INV_0
+                                                       Madd_vram_1_addra_addsub0001_cy<15>
+    SLICE_X1Y8.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<15>
+    SLICE_X1Y8.COUT      Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<17>
+                                                       Madd_vram_1_addra_addsub0001_cy<16>
+                                                       Madd_vram_1_addra_addsub0001_cy<17>
+    SLICE_X1Y9.CIN       net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<17>
+    SLICE_X1Y9.COUT      Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<19>
+                                                       Madd_vram_1_addra_addsub0001_cy<18>
+                                                       Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<19>
+    SLICE_X1Y10.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<21>
+                                                       Madd_vram_1_addra_addsub0001_cy<20>
+                                                       Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<21>
+    SLICE_X1Y11.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<23>
+                                                       Madd_vram_1_addra_addsub0001_cy<22>
+                                                       Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<23>
+    SLICE_X1Y12.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<25>
+                                                       Madd_vram_1_addra_addsub0001_cy<24>
+                                                       Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<25>
+    SLICE_X1Y13.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<27>
+                                                       Madd_vram_1_addra_addsub0001_cy<26>
+                                                       Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<27>
+    SLICE_X1Y14.COUT     Tbyp                  0.118   Madd_vram_1_addra_addsub0001_cy<29>
+                                                       Madd_vram_1_addra_addsub0001_cy<28>
+                                                       Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.CIN      net (fanout=1)        0.000   Madd_vram_1_addra_addsub0001_cy<29>
+    SLICE_X1Y15.X        Tcinx                 0.462   vram_1_addra_addsub0001<31>
+                                                       Madd_vram_1_addra_addsub0001_xor<31>
+    SLICE_X2Y7.F1        net (fanout=5)        0.957   vram_1_addra_addsub0001<31>
+    SLICE_X2Y7.X         Tif5x                 1.152   vram_1_addra_mux0002<4>
+                                                       vram_1_addra_mux0002<4>112011
+                                                       vram_1_addra_mux0002<4>11201_f5
+    RAMB16_X0Y5.ADDRA8   net (fanout=1)        2.564   vram_1_addra_mux0002<4>
+    RAMB16_X0Y5.CLKA     Tback                 0.377   vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                                       vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A
+    -------------------------------------------------  ---------------------------
+    Total                                     15.118ns (9.092ns logic, 6.026ns route)
+                                                       (60.1% logic, 39.9% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point clkcnt_10 (SLICE_X43Y85.F4), 1 path
+Paths for end point Mram_cpu_greg1.SLICEM_G (SLICE_X30Y45.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      1.565ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               clkcnt_10 (FF)
-  Destination:          clkcnt_10 (FF)
+Slack (hold path):      0.906ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_0 (FF)
+  Destination:          Mram_cpu_greg1.SLICEM_G (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      1.565ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.907ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.019 - 0.018)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: clkcnt_10 to clkcnt_10
+  Minimum Data Path: cpu_wdata_0 to Mram_cpu_greg1.SLICEM_G
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y85.XQ      Tcko                  0.473   clkcnt<10>
-                                                       clkcnt_10
-    SLICE_X43Y85.F4      net (fanout=1)        0.291   clkcnt<10>
-    SLICE_X43Y85.CLK     Tckf        (-Th)    -0.801   clkcnt<10>
-                                                       clkcnt<10>_rt
-                                                       Mcount_clkcnt_xor<10>
-                                                       clkcnt_10
+    SLICE_X30Y43.YQ      Tcko                  0.522   cpu_wdata<0>
+                                                       cpu_wdata_0
+    SLICE_X30Y45.BY      net (fanout=14)       0.512   cpu_wdata<0>
+    SLICE_X30Y45.CLK     Tdh         (-Th)     0.127   N99
+                                                       Mram_cpu_greg1.SLICEM_G
     -------------------------------------------------  ---------------------------
-    Total                                      1.565ns (1.274ns logic, 0.291ns route)
-                                                       (81.4% logic, 18.6% route)
+    Total                                      0.907ns (0.395ns logic, 0.512ns route)
+                                                       (43.6% logic, 56.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point clkcnt_14 (SLICE_X43Y87.F4), 1 path
+Paths for end point Mram_cpu_greg5.SLICEM_G (SLICE_X30Y41.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      1.565ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               clkcnt_14 (FF)
-  Destination:          clkcnt_14 (FF)
+Slack (hold path):      0.910ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_0 (FF)
+  Destination:          Mram_cpu_greg5.SLICEM_G (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      1.565ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.908ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.002ns (0.016 - 0.018)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: clkcnt_14 to clkcnt_14
+  Minimum Data Path: cpu_wdata_0 to Mram_cpu_greg5.SLICEM_G
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y87.XQ      Tcko                  0.473   clkcnt<14>
-                                                       clkcnt_14
-    SLICE_X43Y87.F4      net (fanout=1)        0.291   clkcnt<14>
-    SLICE_X43Y87.CLK     Tckf        (-Th)    -0.801   clkcnt<14>
-                                                       clkcnt<14>_rt
-                                                       Mcount_clkcnt_xor<14>
-                                                       clkcnt_14
+    SLICE_X30Y43.YQ      Tcko                  0.522   cpu_wdata<0>
+                                                       cpu_wdata_0
+    SLICE_X30Y41.BY      net (fanout=14)       0.513   cpu_wdata<0>
+    SLICE_X30Y41.CLK     Tdh         (-Th)     0.127   N107
+                                                       Mram_cpu_greg5.SLICEM_G
     -------------------------------------------------  ---------------------------
-    Total                                      1.565ns (1.274ns logic, 0.291ns route)
-                                                       (81.4% logic, 18.6% route)
+    Total                                      0.908ns (0.395ns logic, 0.513ns route)
+                                                       (43.5% logic, 56.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point clkcnt_2 (SLICE_X43Y81.F3), 1 path
+Paths for end point Mram_cpu_greg1.SLICEM_F (SLICE_X30Y45.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      1.580ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               clkcnt_2 (FF)
-  Destination:          clkcnt_2 (FF)
+Slack (hold path):      0.921ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_0 (FF)
+  Destination:          Mram_cpu_greg1.SLICEM_F (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      1.580ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.922ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.019 - 0.018)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: clkcnt_2 to clkcnt_2
+  Minimum Data Path: cpu_wdata_0 to Mram_cpu_greg1.SLICEM_F
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X43Y81.XQ      Tcko                  0.473   clkcnt<2>
-                                                       clkcnt_2
-    SLICE_X43Y81.F3      net (fanout=1)        0.306   clkcnt<2>
-    SLICE_X43Y81.CLK     Tckf        (-Th)    -0.801   clkcnt<2>
-                                                       clkcnt<2>_rt
-                                                       Mcount_clkcnt_xor<2>
-                                                       clkcnt_2
+    SLICE_X30Y43.YQ      Tcko                  0.522   cpu_wdata<0>
+                                                       cpu_wdata_0
+    SLICE_X30Y45.BY      net (fanout=14)       0.512   cpu_wdata<0>
+    SLICE_X30Y45.CLK     Tdh         (-Th)     0.112   N99
+                                                       Mram_cpu_greg1.SLICEM_F
     -------------------------------------------------  ---------------------------
-    Total                                      1.580ns (1.274ns logic, 0.306ns route)
-                                                       (80.6% logic, 19.4% route)
+    Total                                      0.922ns (0.410ns logic, 0.512ns route)
+                                                       (44.5% logic, 55.5% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 28.074ns (period - (min low pulse limit / (low pulse / period)))
+Slack: 27.083ns (period - min period limit)
   Period: 31.250ns
-  Low pulse: 15.625ns
-  Low pulse limit: 1.588ns (Tbpwl)
-  Physical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
-  Logical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
-  Location pin: RAMB16_X0Y5.CLKA
+  Min period limit: 4.167ns (239.981MHz) (Tmsper_B)
+  Physical resource: Mmult_cpu_wdata_mult0000_submult_0/CLK
+  Logical resource: Mmult_cpu_wdata_mult0000_submult_0/CLK
+  Location pin: MULT18X18_X0Y5.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 28.074ns (period - (min high pulse limit / (high pulse / period)))
+Slack: 27.083ns (period - min period limit)
   Period: 31.250ns
-  High pulse: 15.625ns
-  High pulse limit: 1.588ns (Tbpwh)
-  Physical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
-  Logical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
-  Location pin: RAMB16_X0Y5.CLKA
+  Min period limit: 4.167ns (239.981MHz) (Tmsper_B)
+  Physical resource: Mmult_cpu_wdata_mult0000_submult_1/CLK
+  Logical resource: Mmult_cpu_wdata_mult0000_submult_1/CLK
+  Location pin: MULT18X18_X0Y4.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 28.074ns (period - min period limit)
+Slack: 27.083ns (period - min period limit)
   Period: 31.250ns
-  Min period limit: 3.176ns (314.861MHz) (Tbp)
-  Physical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
-  Logical resource: vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
-  Location pin: RAMB16_X0Y5.CLKA
+  Min period limit: 4.167ns (239.981MHz) (Tmsper_A)
+  Physical resource: Mmult_cpu_wdata_mult0000_submult_01/CLK
+  Logical resource: Mmult_cpu_wdata_mult0000_submult_01/CLK
+  Location pin: MULT18X18_X0Y6.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1116,7 +883,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   14.235|         |         |         |
+clk            |   15.434|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1125,23 +892,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 37458 paths, 0 nets, and 524 connections
+Constraints cover 77993 paths, 0 nets, and 4835 connections
 
 Design statistics:
-   Minimum period:  14.235ns{1}   (Maximum frequency:  70.249MHz)
+   Minimum period:  15.434ns{1}   (Maximum frequency:  64.792MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed THU 29 MAR 15:48:28 2018 
+Analysis completed SAT 31 MAR 4:1:24 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 134 MB
+Peak Memory Usage: 144 MB
 
 
 

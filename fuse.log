@@ -3,21 +3,31 @@ ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/hato/BH_com/ipcore_dir/vram.vhd" into library work
+Parsing VHDL file "C:/Users/hato/BH_com/crom.vhd" into library work
 Parsing VHDL file "C:/Users/hato/BH_com/BH_com.vhd" into library work
 Parsing VHDL file "C:/Users/hato/BH_com/test.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 132760 KB
-Fuse CPU Usage: 436 ms
+Fuse Memory Usage: 134744 KB
+Fuse CPU Usage: 484 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
+Compiling architecture softecc_output_reg_stage_behavioral of entity BLK_MEM_GEN_V7_3_softecc_output_reg_stage [\BLK_MEM_GEN_V7_3_softecc_output...]
+Compiling architecture mem_module_behavioral of entity BLK_MEM_GEN_V7_3_mem_module [\BLK_MEM_GEN_V7_3_mem_module("bl...]
+Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3("blk_mem_gen_v...]
+Compiling architecture vram_a of entity vram [vram_default]
+Compiling architecture behavioral of entity crom [crom_default]
 Compiling architecture behavioral of entity BH_com [bh_com_default]
 Compiling architecture behavior of entity test
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
+Waiting for 10 sub-compilation(s) to finish...
+Compiled 21 VHDL Units
 Built simulation executable C:/Users/hato/BH_com/test_isim_beh.exe
-Fuse Memory Usage: 147640 KB
-Fuse CPU Usage: 577 ms
+Fuse Memory Usage: 153976 KB
+Fuse CPU Usage: 827 ms

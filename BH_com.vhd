@@ -11,89 +11,240 @@ entity BH_com is
 end BH_com;
 
 architecture Behavioral of BH_com is
+	function bool_to_integer(L: BOOLEAN) return integer is 
+		begin 
+         if L then 
+             return(1); 
+         else 
+             return(0); 
+         end if; 
+	end function; 
+	
+	function is_word(inst: integer) return integer is 
+		begin 
+		return (inst*16777216);
+	end function;
+	function is_word(inst: integer; operand: integer) return integer is 
+		begin 
+		return (inst*16777216 + operand);
+	end function; 
 
 	signal clkcnt: std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 	
 	-- CPU
-	signal cpu_pc: integer := 0;
-	signal cpu_stat: integer := 0; 
+	signal cpu_pc: integer := 256;
+	signal cpu_stat: integer := 0;
+	signal cpu_inst: integer;
 
-	signal cpu_inst_addr: integer;
+	signal cpu_addr: integer;
+	signal cpu_raddr: integer;
+	signal cpu_waddr: integer;
+	
+	signal cpu_rdata: integer;
 	signal cpu_wdata: integer;
+	signal cpu_opdata: integer;
 
-	type prom is array (0 to 127) of integer;
+	signal cpu_work: integer;
+	type greg is array (0 to 127) of integer;
+	signal cpu_greg: greg;
+	
+	-- Memory map
+	constant ADDR_BOOT: integer := 256;
+	constant SIZE_BOOT: integer := 256;
+
+	-- Instruction
+	constant IS_ADD: integer := 0;
+	constant IS_SUB: integer := 1;
+	constant IS_MUL: integer := 2;
+	constant IS_DIV: integer := 3;
+	constant IS_AND: integer := 4;
+	constant IS_OR: integer := 5;
+	constant IS_XOR: integer := 6;
+
+	constant IS_READ: integer := 7;
+	constant IS_WRITE: integer := 8;
+
+	constant IS_BRANCH: integer := 9;
+	constant IS_EQ: integer := 10;	-- ==
+	constant IS_NEQ: integer := 11;	-- !=
+	constant IS_LT: integer := 12;	-- <
+	constant IS_LTE: integer := 13;	-- <=
+	constant IS_GT: integer := 14;	-- >
+	constant IS_GTE: integer := 15;	--	>=
+
+	-- Virtual instruction
+	constant IS_NOP: integer := IS_ADD;
+
+	-- BOOT
+	constant ORG_BOOT: integer := ADDR_BOOT+16;
+	type prom is array (0 to 255) of integer;
 	constant boot: prom := (
-		1550, 90, -- Z
-		1551, 105, -- i
-		1552, 115, -- s
-		1553, 97, -- a
-		1554, 107, -- k
-		1555, 117, -- u
-		1556, 32, -- 
-		1557, 32, -- 
+		is_word(IS_NOP), -- Wait for the power steady
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+	
+		-- Program
+			is_word(IS_READ, ORG_BOOT+26),	-- 0
+			is_word(IS_WRITE, 128),	-- 1
+			is_word(IS_READ, ORG_BOOT+24), 	-- 2
+			is_word(IS_WRITE, 129), 	-- 3
+			is_word(IS_READ, ORG_BOOT+25),	-- 4
+			is_word(IS_WRITE, 131),	-- 5
 
-		1558 + 24, 67, -- C
-		1559 + 24, 80, -- P
-		1560 + 24, 85, -- U
-		1561 + 24, 38, -- &
-		1562 + 24, 80, -- P
-		1563 + 24, 80, --P
-		1564 + 24, 85, -- U
-		1565 + 24, 32, 
+		-- *label_0
+				is_word(IS_NOP),	-- 6
+				is_word(IS_NOP),	-- 7
+				is_word(IS_NOP),	-- 8
+				is_word(IS_READ, ORG_BOOT+33),	-- 9
+				is_word(IS_WRITE, 130),	-- 10
+				is_word(IS_READ, ORG_BOOT+28),	-- 11
+				is_word(IS_WRITE, 0),	-- 12
+			-- *label_1
+				is_word(IS_READ, 132),	-- 13
+				is_word(IS_ADD, ORG_BOOT+29),	-- 14
+				is_word(IS_WRITE, 132),	-- 15
+				is_word(IS_READ, 129),	-- 16
+				is_word(IS_ADD, ORG_BOOT+30),	-- 17
+				is_word(IS_WRITE, 129),	-- 18
+			is_word(IS_AND, 16777216),	-- 19
+			is_word(IS_NEQ, ORG_BOOT+31),	-- 20
+			is_word(IS_BRANCH, ORG_BOOT+6),	-- 21
+			
+		-- *label_2
+			is_word(IS_READ, ORG_BOOT+32),	-- 22
+			is_word(IS_WRITE, 0),	-- 23
+			
+		-- Data
+			is_word(IS_WRITE, 1024),	-- 24
+			is_word(IS_WRITE, 0), -- 25
+			is_word(IS_READ, 132),	-- 26
+			is_word(IS_READ, 0),	--27
+			128,	-- 28
+			1,	-- 29
+			1,	-- 30
+			2048,	-- 31
+			ORG_BOOT + 22, -- 32
+			is_word(IS_READ, ORG_BOOT+34), -- 33	
+			ORG_BOOT+13,	-- 34
 
-		1566 + 48, 111, -- o
-		1567 + 48, 110, -- n
-		1568 + 48, 32,  --
-		1569 + 48, 70, -- F
-		1570 + 48, 80, -- P
-		1571 + 48, 71, -- G
-		1572 + 48, 65, -- A
-		1573 + 48, 32, 
-
-		1574 + 72, 105, -- i
-		1575 + 72, 110, -- n
-		1576 + 72, 32, --
-		1577 + 72, 86, -- V
-		1578 + 72, 72, -- H
-		1579 + 72, 68, -- D
-		1580 + 72, 76, -- L
-		1581 + 72, 32, 
-
-		1582 + 96, 32, 
-		1583 + 96, 32, 
-		1584 + 96, 32, 
-		1585 + 96, 32, 
-		1586 + 96, 32, 
-		1587 + 96, 32, 
-		1588 + 96, 32, 
-		1589 + 96, 32, 
-
-		1590 + 120, 84, -- T
-		1591 + 120, 119, -- w
-		1592 + 120, 105, -- i
-		1593 + 120, 116, -- t
-		1594 + 120, 116, -- t
-		1595 + 120, 101, -- e
-		1596 + 120, 114, -- r
-		1597 + 120, 64, -- @
-
-		1598 + 144, 98, -- b
-		1599 + 144, 108, -- l
-		1600 + 144, 117, -- u
-		1601 + 144, 101, -- e
-		1602 + 144, 104, -- h
-		1603 + 144, 111, -- o
-		1604 + 144, 111, -- o
-		1605 + 144, 100, -- d
-
-		1606 + 168, 95, -- _
-		1607 + 168, 97, -- a
-		1608 + 168, 100, -- d
-		1609 + 168, 109, -- m
-		1610 + 168, 105, -- i
-		1611 + 168, 110, -- n
-		1612 + 168, 32, --
-		1613 + 168, 32 --
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		is_word(IS_NOP),
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		IS_NOP, 0, 
+		256,
+		35
 	);
 	
 	-- VRAM
@@ -154,31 +305,122 @@ begin
 	end process;
 
 	-- CPU
-	process(clkcnt(20)) begin
-		if (rising_edge(clkcnt(20))) then
+	process(clk)
+	variable inst: integer;
+	variable operand: integer;
+	begin
+		if (rising_edge(clk)) then
 			case cpu_stat is
 				when 0 =>	-- Read instruction
-					cpu_inst_addr <= boot(cpu_pc mod 128);
+					inst := cpu_rdata/16777216;
+					operand := cpu_rdata mod 16777216;
+					
+					cpu_inst <= inst;
 					cpu_pc <= cpu_pc + 1;
+					
+					case inst is
+						when IS_READ|IS_ADD|IS_SUB|IS_MUL|IS_DIV|IS_AND|IS_OR|IS_XOR|IS_EQ|IS_NEQ|IS_LT|IS_LTE|IS_GT|IS_GTE =>
+							cpu_raddr <= operand;
+						when IS_WRITE|IS_BRANCH =>
+							cpu_raddr <= cpu_pc;
+						when others =>
+					end case;
+
 					cpu_stat <= 1;
 				when 1 =>	-- Read Memory
+					cpu_opdata <= cpu_rdata;
 					cpu_stat <= 2;
 				when 2 =>	-- Operation
-					cpu_wdata <= boot(cpu_pc mod 128);
-					cpu_pc <= cpu_pc + 1;
+					operand := cpu_opdata mod 16777216;
+
+					case cpu_inst is
+						when IS_READ =>
+							cpu_wdata <= cpu_opdata;
+							cpu_waddr <= 1;
+						when IS_WRITE =>
+							cpu_wdata <= cpu_work;
+							cpu_waddr <= operand;
+							
+						when IS_ADD =>
+							cpu_wdata <= cpu_work + cpu_opdata;
+							cpu_waddr <= 1;
+						when IS_SUB =>
+							cpu_wdata <= cpu_work - cpu_opdata;
+							cpu_waddr <= 1;
+						when IS_MUL =>
+							cpu_wdata <= cpu_work * cpu_opdata;
+							cpu_waddr <= 1;
+						when IS_DIV =>
+							--cpu_wdata <= cpu_work / cpu_opdata;
+							cpu_waddr <= 1;
+						when IS_AND =>
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) and conv_std_logic_vector(cpu_opdata, 32));
+							cpu_waddr <= 1;
+						when IS_OR =>
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) or conv_std_logic_vector(cpu_opdata, 32));
+							cpu_waddr <= 1;
+						when IS_XOR =>
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) xor conv_std_logic_vector(cpu_opdata, 32));
+							cpu_waddr <= 1;
+
+						when IS_BRANCH =>
+							if (cpu_work=1) then
+								cpu_wdata <= operand;
+							else
+								cpu_wdata <= cpu_pc;
+							end if;
+							cpu_waddr <= 0;
+						when IS_EQ =>
+							cpu_wdata <= bool_to_integer(cpu_work = cpu_opdata);
+							cpu_waddr <= 1;
+						when IS_NEQ =>
+							cpu_wdata <= bool_to_integer(cpu_work /= cpu_opdata);
+							cpu_waddr <= 1;
+						when IS_LT =>
+							cpu_wdata <= bool_to_integer(cpu_work < cpu_opdata);
+							cpu_waddr <= 1;
+						when IS_LTE =>
+							cpu_wdata <= bool_to_integer(cpu_work <= cpu_opdata);
+							cpu_waddr <= 1;
+						when IS_GT =>
+							cpu_wdata <= bool_to_integer(cpu_work > cpu_opdata);
+							cpu_waddr <= 1;
+						when IS_GTE =>
+							cpu_wdata <= bool_to_integer(cpu_work >= cpu_opdata);
+							cpu_waddr <= 1;
+						when others =>
+					end case;
 
 					cpu_stat <= 3;
 				when 3 =>	-- Write memory
-					if (cpu_inst_addr>=1024 and cpu_inst_addr<=2047) then
-						vram_1_addrb <= CONV_std_logic_vector(((cpu_inst_addr-1024)/32 mod 32)*32 + ((cpu_inst_addr-1024)mod 32), 10);
-						vram_1_dinb <= CONV_std_logic_vector(cpu_wdata, 8);
-						--vram_1((cpu_inst_addr-1024)/32 mod 32)((cpu_inst_addr-1024)mod 32) <= CONV_std_logic_vector(cpu_wdata, 8);
-					end if;
+					--case cpu_inst is
+						--when IS_READ|IS_WRITE|IS_ADD|IS_SUB|IS_MUL|IS_DIV|IS_AND|IS_OR|IS_XOR| =>
+							if (cpu_waddr=0) then
+								cpu_pc <= cpu_wdata;
+							elsif (cpu_waddr=1) then
+								cpu_work <= cpu_wdata;
+							elsif (cpu_waddr>=128 and cpu_waddr<=255) then
+								cpu_greg((cpu_waddr - 128)mod 128) <= cpu_wdata;
+							elsif (cpu_waddr>=1024 and cpu_waddr<=2047) then
+								vram_1_addrb <= CONV_std_logic_vector(((cpu_waddr-1024)/32 mod 32)*32 + ((cpu_waddr-1024)mod 32), 10);
+								vram_1_dinb <= CONV_std_logic_vector(cpu_wdata, 8);
+							end if;
+						--when others =>
+					--end case;
+					
 					cpu_stat <= 0;
 				when others =>
 			end case;
 		end if;
 	end process;
+	
+	cpu_addr <= cpu_pc when cpu_stat=0
+		else cpu_raddr when cpu_stat=1;
+
+	cpu_rdata <= cpu_pc when cpu_addr=0
+		else cpu_work when cpu_addr=1
+		else cpu_greg((cpu_addr - 128) mod 128) when cpu_addr>=128 and cpu_addr<=255
+		else boot((cpu_addr - ADDR_BOOT) mod SIZE_BOOT) when cpu_addr>=ADDR_BOOT and cpu_addr<(ADDR_BOOT + SIZE_BOOT);
 	
 	-- PPU
 	process(clk) begin

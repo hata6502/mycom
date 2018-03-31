@@ -9,37 +9,41 @@ Target Device  : xc3s500e
 Target Package : vq100
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : THU 29 MAR 15:47:57 2018
+Mapped Date    : SAT 31 MAR 4:0:39 2018
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    3
 Logic Utilization:
-  Number of Slice Flip Flops:           113 out of   9,312    1%
-  Number of 4 input LUTs:               618 out of   9,312    6%
+  Total Number Slice Registers:         343 out of   9,312    3%
+    Number used as Flip Flops:          279
+    Number used as Latches:              64
+  Number of 4 input LUTs:             2,210 out of   9,312   23%
 Logic Distribution:
-  Number of occupied Slices:            472 out of   4,656   10%
-    Number of Slices containing only related logic:     472 out of     472 100%
-    Number of Slices containing unrelated logic:          0 out of     472   0%
+  Number of occupied Slices:          1,326 out of   4,656   28%
+    Number of Slices containing only related logic:   1,326 out of   1,326 100%
+    Number of Slices containing unrelated logic:          0 out of   1,326   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         752 out of   9,312    8%
-    Number used as logic:               617
-    Number used as a route-thru:        134
-    Number used as Shift registers:       1
+  Total Number of 4 input LUTs:       2,369 out of   9,312   25%
+    Number used as logic:             1,698
+    Number used as a route-thru:        159
+    Number used for Dual Port RAMs:     512
+      (Two LUTs used per Dual Port RAM)
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 49 out of      66   74%
-  Number of RAMB16s:                      2 out of      20   10%
-  Number of BUFGMUXs:                     2 out of      24    8%
+  Number of RAMB16s:                      1 out of      20    5%
+  Number of BUFGMUXs:                     3 out of      24   12%
+  Number of MULT18X18SIOs:                3 out of      20   15%
 
-Average Fanout of Non-Clock Nets:                3.29
+Average Fanout of Non-Clock Nets:                4.28
 
-Peak Memory Usage:  229 MB
-Total REAL time to MAP completion:  4 secs 
-Total CPU time to MAP completion:   3 secs 
+Peak Memory Usage:  234 MB
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion:   5 secs 
 
 NOTES:
 
@@ -80,6 +84,9 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Pack:266 - The function generator Mrom_cpu_rdata_rom000041_3 failed to
+   merge with F5 multiplexer Mrom_cpu_rdata_rom0000261_2_f5.  There is a
+   conflict for the FXMUX.  The design will exhibit suboptimal timing.
 WARNING:Pack:266 - The function generator crom_1/Mmux_dot_246 failed to merge
    with F5 multiplexer crom_1/Mmux_dot_21_f5_3.  There is a conflict for the
    FXMUX.  The design will exhibit suboptimal timing.
@@ -89,14 +96,14 @@ WARNING:Pack:266 - The function generator crom_1/Mmux_dot_257 failed to merge
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network vram_1/douta<7> has no load.
-INFO:LIT:395 - The above info message is repeated 8 more times for the following
-   (max. 5 shown):
-   vram_1/doutb<7>,
-   vram_1/doutb<6>,
-   vram_1/doutb<5>,
-   vram_1/doutb<4>,
-   vram_1/doutb<3>
+INFO:LIT:243 - Logical network Mram_cpu_greg1/SPO has no load.
+INFO:LIT:395 - The above info message is repeated 264 more times for the
+   following (max. 5 shown):
+   Mram_cpu_greg2/SPO,
+   Mram_cpu_greg3/SPO,
+   Mram_cpu_greg4/SPO,
+   Mram_cpu_greg7/SPO,
+   Mram_cpu_greg5/SPO
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:564 - The following environment variables are currently set:
 INFO:MapLib:591 - XIL_MAP_LOCWARN 	Value: 1
@@ -108,7 +115,7 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   5 block(s) optimized away
+   4 block(s) optimized away
    9 signal(s) removed
 
 Section 5 - Removed Logic

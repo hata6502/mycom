@@ -1,0 +1,42 @@
+-- Program
+	isword(IS_IS_READ, ORG_BOOT+24), 	-- 0
+	isword(IS_WRITE, 129), 	-- 1
+	isword(IS_IS_READ, ORG_BOOT+25),	-- 2
+	isword(IS_WRITE, 131),	-- 3
+	isword(IS_READ, ORG_BOOT+26),	-- 4
+	isword(IS_WRITE, 132),	-- 5
+
+-- *label_0
+		isword(IS_READ, 132),	-- 6
+		isword(IS_ADD, ORG_BOOT+27),	-- 7
+		isword(IS_WRITE, 128),	-- 8
+		isword(IS_READ, ORG_BOOT+33),	-- 9
+		isword(IS_WRITE, 130),	-- 10
+		isword(IS_READ, ORG_BOOT+28),	-- 11
+		isword(IS_WRITE, 0),	-- 12
+	-- *label_1
+		isword(IS_READ, 132),	-- 13
+		isword(IS_ADD, ORG_BOOT+29),	-- 14
+		isword(IS_WRITE, 132),	-- 15
+		isword(IS_READ, 129),	-- 16
+		isword(IS_ADD, ORG_BOOT+30),	-- 17
+		isword(IS_WRITE, 129),	-- 18
+	isword(IS_AND, 0x00ffffff),	-- 19
+	isword(IS_NEQ, ORG_BOOT+31),	-- 20
+	isword(IS_BRANCH, ORG_BOOT+6),	-- 21
+	
+-- *label_2
+	isword(IS_READ, ORG_BOOT+32),	-- 22
+	isword(IS_WRITE, 0),	-- 23
+	
+-- Data
+	isword(IS_WRITE, 1024),	-- 24
+	isword(IS_WRITE, 0), -- 25
+	0,	-- 26
+	isword(IS_READ, 0),	--27
+	128,	-- 28
+	1,	-- 29
+	1,	-- 30
+	2048,	-- 31
+	ORG_BOOT + 22, -- 32
+	ORG_BOOT + 13, -- 33
