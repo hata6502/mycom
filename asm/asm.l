@@ -1,33 +1,36 @@
 %{
-#include "mini-lang.tab.h"
+#include "asm.tab.h"
 #include <string.h>
 %}
 
 white       [ \t]
-floating    [0-9]+\.[0-9]+
-integer     [0-9]+
-symbol      [=+\-\^*/();\n]
-letter      [a-zA-Z]
+identifier      [a-zA-Z][0-9a-zA-Z]*
+integer	[0-9]+
 other       .
 
 %%
-{white}+
-{symbol}                { return(yytext[0]); }
-{integer}               { sscanf(yytext, "%d", &yylval.ival);
-                          return(INTNUM); }
-{floating}              { sscanf(yytext, "%lf", &yylval.dval);
-                          return(DOUBLENUM); }
-{letter}                { yylval.cval = yytext[0];
-                          return(IDENTIFIER); }
-for                     { return(FOR); }
-in                      { return(IN); }
-to                      { return(TO); }
-step                    { return(STEP); }
-if                      { return(IF); }
-then                    { return(THEN); }
-else                    { return(ELSE); }
-end                     { return(END); }
-exit                    { return(EXIT); }                     
-{other}                 { fprintf(stderr, "Illegal charcter %c, ignored\n", yytext[0]); }
+{white}	{}
 
+nop	{return(is_nop); }
+read	{return(is_read); }
+write	{return(is_write); }
+add	{return(is_add); }
+sub	{return(is_sub); }
+mul	{return(is_mul); }
+div	{return(is_div); }
+branch	{return(is_branch); }
+eq	{return(is_eq); }
+neq	{return(is_neq); }
+lt	{return(is_lt); }
+lte	{return(is_lte); }
+gt	{return(is_gt); }
+gte	{return(is_gte); }
+
+{integer}	{yylval.ival = atoi(yytext); return(integer); }
+{identifier}	{strcpy(yylval.sval, yytext); return(identifier); }
+#	{return(sharp); }
+\*	{return(ast); }
+\n	{return(nl); }
+
+{other}                 { fprintf(stderr, "Illegal charcter %c, ignored\n", yytext[0]); }
 %%
