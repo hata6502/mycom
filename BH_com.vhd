@@ -11,7 +11,7 @@ entity BH_com is
 end BH_com;
 
 architecture Behavioral of BH_com is
-	function bool_to_integer(L: BOOLEAN) return integer is 
+	function conv_integer(L: BOOLEAN) return integer is 
 		begin 
          if L then 
              return(1); 
@@ -53,16 +53,16 @@ architecture Behavioral of BH_com is
 	constant SIZE_BOOT: integer := 256;
 
 	-- Instruction
-	constant IS_ADD: integer := 0;
-	constant IS_SUB: integer := 1;
-	constant IS_MUL: integer := 2;
-	constant IS_DIV: integer := 3;
-	constant IS_AND: integer := 4;
-	constant IS_OR: integer := 5;
-	constant IS_XOR: integer := 6;
+	constant IS_WRITE: integer := 0;
+	constant IS_READ: integer := 1;
 
-	constant IS_READ: integer := 7;
-	constant IS_WRITE: integer := 8;
+	constant IS_ADD: integer := 2;
+	constant IS_SUB: integer := 3;
+	constant IS_MUL: integer := 4;
+	constant IS_DIV: integer := 5;
+	constant IS_AND: integer := 6;
+	constant IS_OR: integer := 7;
+	constant IS_XOR: integer := 8;
 
 	constant IS_BRANCH: integer := 9;
 	constant IS_EQ: integer := 10;	-- ==
@@ -73,178 +73,44 @@ architecture Behavioral of BH_com is
 	constant IS_GTE: integer := 15;	--	>=
 
 	-- Virtual instruction
-	constant IS_NOP: integer := IS_ADD;
+	--constant IS_NOP: integer := IS_ADD;
 
 	-- BOOT
 	constant ORG_BOOT: integer := ADDR_BOOT+16;
 	type prom is array (0 to 255) of integer;
-	constant boot: prom := (
-		is_word(IS_NOP), -- Wait for the power steady
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-	
-		-- Program
-			is_word(IS_READ, ORG_BOOT+26),	-- 0
-			is_word(IS_WRITE, 128),	-- 1
-			is_word(IS_READ, ORG_BOOT+24), 	-- 2
-			is_word(IS_WRITE, 129), 	-- 3
-			is_word(IS_READ, ORG_BOOT+25),	-- 4
-			is_word(IS_WRITE, 131),	-- 5
-
-		-- *label_0
-				is_word(IS_NOP),	-- 6
-				is_word(IS_NOP),	-- 7
-				is_word(IS_NOP),	-- 8
-				is_word(IS_READ, ORG_BOOT+33),	-- 9
-				is_word(IS_WRITE, 130),	-- 10
-				is_word(IS_READ, ORG_BOOT+28),	-- 11
-				is_word(IS_WRITE, 0),	-- 12
-			-- *label_1
-				is_word(IS_READ, 132),	-- 13
-				is_word(IS_ADD, ORG_BOOT+29),	-- 14
-				is_word(IS_WRITE, 132),	-- 15
-				is_word(IS_READ, 129),	-- 16
-				is_word(IS_ADD, ORG_BOOT+30),	-- 17
-				is_word(IS_WRITE, 129),	-- 18
-			is_word(IS_AND, 16777216),	-- 19
-			is_word(IS_NEQ, ORG_BOOT+31),	-- 20
-			is_word(IS_BRANCH, ORG_BOOT+6),	-- 21
-			
-		-- *label_2
-			is_word(IS_READ, ORG_BOOT+32),	-- 22
-			is_word(IS_WRITE, 0),	-- 23
-			
-		-- Data
-			is_word(IS_WRITE, 1024),	-- 24
-			is_word(IS_WRITE, 0), -- 25
-			is_word(IS_READ, 132),	-- 26
-			is_word(IS_READ, 0),	--27
-			128,	-- 28
-			1,	-- 29
-			1,	-- 30
-			2048,	-- 31
-			ORG_BOOT + 22, -- 32
-			is_word(IS_READ, ORG_BOOT+34), -- 33	
-			ORG_BOOT+13,	-- 34
-
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		is_word(IS_NOP),
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		IS_NOP, 0, 
-		256,
-		35
+	signal boot: prom := (
+is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), 
+is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), 
+is_word(IS_READ, 511), is_word(IS_WRITE, 128), is_word(IS_READ, 128), is_word(IS_WRITE, 1024), is_word(IS_READ, 128), is_word(IS_ADD, 510), is_word(IS_WRITE, 128), is_word(IS_READ, 275), 
+is_word(IS_ADD, 509), is_word(IS_WRITE, 275), is_word(IS_READ, 275), is_word(IS_NEQ, 508), is_word(IS_WRITE, 1024), is_word(IS_BRANCH, 507), is_word(IS_READ, 506), is_word(IS_WRITE, 0), 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 274, 1536, 1, 1, 0
 	);
 	
 	-- VRAM
@@ -364,29 +230,29 @@ begin
 							cpu_waddr <= 1;
 
 						when IS_BRANCH =>
-							if (cpu_work=1) then
+							if (cpu_work/=0) then
 								cpu_wdata <= operand;
 							else
 								cpu_wdata <= cpu_pc;
 							end if;
 							cpu_waddr <= 0;
 						when IS_EQ =>
-							cpu_wdata <= bool_to_integer(cpu_work = cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work = cpu_opdata);
 							cpu_waddr <= 1;
 						when IS_NEQ =>
-							cpu_wdata <= bool_to_integer(cpu_work /= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work /= cpu_opdata);
 							cpu_waddr <= 1;
 						when IS_LT =>
-							cpu_wdata <= bool_to_integer(cpu_work < cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work < cpu_opdata);
 							cpu_waddr <= 1;
 						when IS_LTE =>
-							cpu_wdata <= bool_to_integer(cpu_work <= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work <= cpu_opdata);
 							cpu_waddr <= 1;
 						when IS_GT =>
-							cpu_wdata <= bool_to_integer(cpu_work > cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work > cpu_opdata);
 							cpu_waddr <= 1;
 						when IS_GTE =>
-							cpu_wdata <= bool_to_integer(cpu_work >= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_work >= cpu_opdata);
 							cpu_waddr <= 1;
 						when others =>
 					end case;
@@ -401,6 +267,8 @@ begin
 								cpu_work <= cpu_wdata;
 							elsif (cpu_waddr>=128 and cpu_waddr<=255) then
 								cpu_greg((cpu_waddr - 128)mod 128) <= cpu_wdata;
+							elsif (cpu_waddr>=256 and cpu_waddr<=511) then
+								boot((cpu_waddr - 256)mod 256) <= cpu_wdata;
 							elsif (cpu_waddr>=1024 and cpu_waddr<=2047) then
 								vram_1_addrb <= CONV_std_logic_vector(((cpu_waddr-1024)/32 mod 32)*32 + ((cpu_waddr-1024)mod 32), 10);
 								vram_1_dinb <= CONV_std_logic_vector(cpu_wdata, 8);
@@ -448,7 +316,7 @@ begin
 	lum <= crom_1_dot;
 
 	A(0) <= '0' when (stat_vsync='0' and stat_hsync='1') or (stat_vsync='1' and ppu_clkcnt>=150) else '1';
-	A(1) <= lum when stat_vsync='0' and stat_hsync='0' else '0';
+	A(1) <= lum when stat_vsync='0' and stat_hsync='0' and ppu_clkcnt>511 and ppu_clkcnt<1536 else '0';
 	A(15 downto 2) <= "00000000000000";
 	B <= "0000000000000000";
 	C <= "0000000000000000";
@@ -469,7 +337,7 @@ begin
 	  );
 	  vram_1_clka <= clk;
 	  vram_1_wea <= "0";
-	  vram_1_addra <= CONV_std_logic_vector((ppu_linecnt/8 mod 32)*32 + ((ppu_clkcnt + 1)/4/8 mod 32), 10);
+	  vram_1_addra <= CONV_std_logic_vector((ppu_linecnt/8 mod 32)*32 + ((ppu_clkcnt -512 + 1)/4/8 mod 32), 10);
 	  vram_1_clkb <= clk;
 	  vram_1_web <= "1";
 	  

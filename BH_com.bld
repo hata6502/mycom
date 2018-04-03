@@ -1,11 +1,11 @@
-Release 14.7 ngdbuild P.20131013 (nt)
+Release 14.7 ngdbuild P.20131013 (lin)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc
 BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd
 
-Reading NGO file "C:/Users/hato/BH_com/BH_com.ngc" ...
+Reading NGO file "/home/hato/mycom/BH_com.ngc" ...
 Loading design module "ipcore_dir/vram.ngc"...
 Gathering constraint information from source properties...
 Done.
@@ -33,7 +33,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 147536 kilobytes
+Total memory usage is 113260 kilobytes
 
 Writing NGD file "BH_com.ngd" ...
 Total REAL time to NGDBUILD completion:  5 sec

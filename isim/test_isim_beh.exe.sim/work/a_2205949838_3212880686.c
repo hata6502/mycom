@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x8ef4fb42 */
+/* This file is designed for use with ISim build 0xfbc00daa */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/hato/BH_com/crom.vhd";
+static const char *ng0 = "/home/hato/mycom/crom.vhd";
 extern char *IEEE_P_3620187407;
 
 int ieee_p_3620187407_sub_514432868_3965413181(char *, char *, char *);
@@ -66,7 +66,7 @@ LAB3:    t1 = (t0 + 1040U);
     t2 = *((char **)t1);
     t1 = (t0 + 776U);
     t3 = *((char **)t1);
-    t1 = (t0 + 3324U);
+    t1 = (t0 + 3256U);
     t4 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t3, t1);
     t5 = (t4 - 0);
     t6 = (t5 * 1);
@@ -74,7 +74,7 @@ LAB3:    t1 = (t0 + 1040U);
     t7 = (1U * t6);
     t8 = (t0 + 684U);
     t9 = *((char **)t8);
-    t8 = (t0 + 3308U);
+    t8 = (t0 + 3240U);
     t10 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t9, t8);
     t11 = (t10 - 0);
     t12 = (t11 * 1);
@@ -82,7 +82,7 @@ LAB3:    t1 = (t0 + 1040U);
     t13 = (8U * t12);
     t14 = (t0 + 592U);
     t15 = *((char **)t14);
-    t14 = (t0 + 3292U);
+    t14 = (t0 + 3224U);
     t16 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t15, t14);
     t17 = (t16 - 0);
     t18 = (t17 * 1);
@@ -93,15 +93,15 @@ LAB3:    t1 = (t0 + 1040U);
     t22 = (t21 + t7);
     t23 = (t2 + t22);
     t24 = *((unsigned char *)t23);
-    t25 = (t0 + 1836);
+    t25 = (t0 + 1808);
     t26 = (t25 + 32U);
     t27 = *((char **)t26);
-    t28 = (t27 + 40U);
+    t28 = (t27 + 32U);
     t29 = *((char **)t28);
     *((unsigned char *)t29) = t24;
     xsi_driver_first_trans_fast_port(t25);
 
-LAB2:    t30 = (t0 + 1792);
+LAB2:    t30 = (t0 + 1764);
     *((int *)t30) = 1;
 
 LAB1:    return;

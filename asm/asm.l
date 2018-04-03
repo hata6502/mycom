@@ -4,12 +4,14 @@
 %}
 
 white       [ \t]
-identifier      [a-zA-Z][0-9a-zA-Z]*
+comment	--.*\n
+identifier      [a-zA-Z_][0-9a-zA-Z_]*
 integer	[0-9]+
 other       .
 
 %%
 {white}	{}
+{comment}	{}
 
 nop	{return(is_nop); }
 read	{return(is_read); }
@@ -18,6 +20,9 @@ add	{return(is_add); }
 sub	{return(is_sub); }
 mul	{return(is_mul); }
 div	{return(is_div); }
+and	{return(is_and); }
+or	{return(is_or); }
+xor	{return(is_xor); }
 branch	{return(is_branch); }
 eq	{return(is_eq); }
 neq	{return(is_neq); }

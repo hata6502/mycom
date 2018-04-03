@@ -1,16 +1,16 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/hato/BH_com/test_isim_beh.exe -prj C:/Users/hato/BH_com/test_beh.prj work.test 
-ISim P.20131013 (signature 0x8ef4fb42)
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -intstyle ise -incremental -o /home/hato/mycom/test_isim_beh.exe -prj /home/hato/mycom/test_beh.prj work.test 
+ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/hato/BH_com/ipcore_dir/vram.vhd" into library work
-Parsing VHDL file "C:/Users/hato/BH_com/crom.vhd" into library work
-Parsing VHDL file "C:/Users/hato/BH_com/BH_com.vhd" into library work
-Parsing VHDL file "C:/Users/hato/BH_com/test.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/ipcore_dir/vram.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/crom.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/BH_com.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/test.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 134744 KB
-Fuse CPU Usage: 484 ms
+Fuse Memory Usage: 39596 KB
+Fuse CPU Usage: 1630 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -26,8 +26,9 @@ Compiling architecture behavioral of entity crom [crom_default]
 Compiling architecture behavioral of entity BH_com [bh_com_default]
 Compiling architecture behavior of entity test
 Time Resolution for simulation is 1ps.
-Waiting for 10 sub-compilation(s) to finish...
+Waiting for 9 sub-compilation(s) to finish...
 Compiled 21 VHDL Units
-Built simulation executable C:/Users/hato/BH_com/test_isim_beh.exe
-Fuse Memory Usage: 153976 KB
-Fuse CPU Usage: 827 ms
+Built simulation executable /home/hato/mycom/test_isim_beh.exe
+Fuse Memory Usage: 93200 KB
+Fuse CPU Usage: 1860 ms
+GCC CPU Usage: 4010 ms

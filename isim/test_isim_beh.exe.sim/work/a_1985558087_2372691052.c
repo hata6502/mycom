@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x8ef4fb42 */
+/* This file is designed for use with ISim build 0xfbc00daa */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/hato/BH_com/test.vhd";
+static const char *ng0 = "/home/hato/mycom/test.vhd";
 
 
 
@@ -36,7 +36,7 @@ static void work_a_1985558087_2372691052_p_0(char *t0)
     int64 t7;
     int64 t8;
 
-LAB0:    t1 = (t0 + 1596U);
+LAB0:    t1 = (t0 + 1584U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -44,10 +44,10 @@ LAB0:    t1 = (t0 + 1596U);
 LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(76, ng0);
-    t2 = (t0 + 1972);
+    t2 = (t0 + 1936);
     t3 = (t2 + 32U);
     t4 = *((char **)t3);
-    t5 = (t4 + 40U);
+    t5 = (t4 + 32U);
     t6 = *((char **)t5);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
@@ -56,17 +56,17 @@ LAB2:    xsi_set_current_line(76, ng0);
     t3 = *((char **)t2);
     t7 = *((int64 *)t3);
     t8 = (t7 / 2);
-    t2 = (t0 + 1496);
+    t2 = (t0 + 1484);
     xsi_process_wait(t2, t8);
 
 LAB6:    *((char **)t1) = &&LAB7;
 
 LAB1:    return;
 LAB4:    xsi_set_current_line(78, ng0);
-    t2 = (t0 + 1972);
+    t2 = (t0 + 1936);
     t3 = (t2 + 32U);
     t4 = *((char **)t3);
-    t5 = (t4 + 40U);
+    t5 = (t4 + 32U);
     t6 = *((char **)t5);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
@@ -75,7 +75,7 @@ LAB4:    xsi_set_current_line(78, ng0);
     t3 = *((char **)t2);
     t7 = *((int64 *)t3);
     t8 = (t7 / 2);
-    t2 = (t0 + 1496);
+    t2 = (t0 + 1484);
     xsi_process_wait(t2, t8);
 
 LAB10:    *((char **)t1) = &&LAB11;
@@ -101,7 +101,7 @@ static void work_a_1985558087_2372691052_p_1(char *t0)
     char *t4;
     int64 t5;
 
-LAB0:    t1 = (t0 + 1740U);
+LAB0:    t1 = (t0 + 1720U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -110,7 +110,7 @@ LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(87, ng0);
     t3 = (100 * 1000LL);
-    t2 = (t0 + 1640);
+    t2 = (t0 + 1620);
     xsi_process_wait(t2, t3);
 
 LAB6:    *((char **)t1) = &&LAB7;
@@ -121,7 +121,7 @@ LAB4:    xsi_set_current_line(89, ng0);
     t4 = *((char **)t2);
     t3 = *((int64 *)t4);
     t5 = (t3 * 10);
-    t2 = (t0 + 1640);
+    t2 = (t0 + 1620);
     xsi_process_wait(t2, t5);
 
 LAB10:    *((char **)t1) = &&LAB11;

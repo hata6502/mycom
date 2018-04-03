@@ -62,8 +62,11 @@ extern int yydebug;
     is_gte = 272,
     sharp = 273,
     ast = 274,
-    identifier = 275,
-    integer = 276
+    is_and = 275,
+    is_or = 276,
+    is_xor = 277,
+    identifier = 278,
+    integer = 279
   };
 #endif
 
@@ -72,14 +75,14 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 22 "asm.y" /* yacc.c:1909  */
+#line 29 "asm.y" /* yacc.c:1909  */
 
 	int ival;
 	double fval;
 	char cval;
 	char sval[32];
 
-#line 83 "asm.tab.h" /* yacc.c:1909  */
+#line 86 "asm.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
