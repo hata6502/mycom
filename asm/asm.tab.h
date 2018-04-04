@@ -66,7 +66,8 @@ extern int yydebug;
     is_or = 276,
     is_xor = 277,
     identifier = 278,
-    integer = 279
+    string = 279,
+    integer = 280
   };
 #endif
 
@@ -80,9 +81,9 @@ union YYSTYPE
 	int ival;
 	double fval;
 	char cval;
-	char sval[32];
+	char sval[256];
 
-#line 86 "asm.tab.h" /* yacc.c:1909  */
+#line 87 "asm.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

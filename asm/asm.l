@@ -7,6 +7,7 @@ white       [ \t]
 comment	--.*\n
 identifier      [a-zA-Z_][0-9a-zA-Z_]*
 integer	[0-9]+
+string \".*\"
 other       .
 
 %%
@@ -33,6 +34,7 @@ gte	{return(is_gte); }
 
 {integer}	{yylval.ival = atoi(yytext); return(integer); }
 {identifier}	{strcpy(yylval.sval, yytext); return(identifier); }
+{string}	{strcpy(yylval.sval, yytext); return(string); }
 #	{return(sharp); }
 \*	{return(ast); }
 \n	{return(nl); }

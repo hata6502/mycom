@@ -5,13 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">Mram_cpu_greg1/SPO</arg> has no load.
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">Mram_cpu_greg3/SPO</arg> has no load.
 </msg>
 
 <msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">776</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">Mram_cpu_greg4/SPO,
+<arg fmt="%s" index="3">Mram_cpu_greg1/SPO,
 Mram_cpu_greg2/SPO,
-Mram_cpu_greg3/SPO,
+Mram_cpu_greg4/SPO,
 Mram_cpu_greg5/SPO,
 Mram_cpu_greg6/SPO</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.

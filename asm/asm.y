@@ -30,11 +30,11 @@ int is_ref = 0;
 	int ival;
 	double fval;
 	char cval;
-	char sval[32];
+	char sval[256];
 }
 
 %token nl is_nop is_read is_write is_add is_sub is_mul is_div is_branch is_eq is_neq is_lt is_lte is_gt is_gte sharp ast is_and is_or is_xor
-%token <sval> identifier
+%token <sval> identifier string
 %token <ival> integer
 
 %type <ival> instruction operand val inst_sentence
@@ -52,7 +52,17 @@ line_sentence	: inst_sentence nl
 	| nl
 	;
 
-inst_sentence	: instruction	{*(addr++) = $$; }
+inst_sentence	: instruction	{*(addr++) = $1; }
+	| val	{*(addr++) = $1; }
+	| string	{
+		char *str = $1;
+		while(*str){
+			*(addr++) = *str;
+			str++;
+		}
+		*(addr++) = '\0';
+	}
+	;
 
 instruction	: is_nop	{$$ = (2<<24) + 0; }
 	| is_write operand	{$$ = (0<<24) + $2; }
@@ -98,7 +108,8 @@ int main(void)
 			printf("%d", *code);
 		}
 		if (code != &prg[PRG_SIZE - 1]) printf(", ");
-		if ((code - prg)%8 == 7) printf("\n");
+		//if ((code - prg)%8 == 7) printf("\n");
+		printf("\t-- %d\n", code - prg + PRG_ORG);
 	}
 
 	/*printf("ラベル\n");

@@ -9,25 +9,25 @@ Target Device  : xc3s500e
 Target Package : vq100
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Apr  4 01:04:38 2018
+Mapped Date    : Wed Apr  4 23:19:31 2018
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    2
 Logic Utilization:
-  Total Number Slice Registers:         343 out of   9,312    3%
-    Number used as Flip Flops:          279
+  Total Number Slice Registers:         335 out of   9,312    3%
+    Number used as Flip Flops:          271
     Number used as Latches:              64
-  Number of 4 input LUTs:             3,488 out of   9,312   37%
+  Number of 4 input LUTs:             3,455 out of   9,312   37%
 Logic Distribution:
-  Number of occupied Slices:          1,975 out of   4,656   42%
-    Number of Slices containing only related logic:   1,975 out of   1,975 100%
-    Number of Slices containing unrelated logic:          0 out of   1,975   0%
+  Number of occupied Slices:          1,971 out of   4,656   42%
+    Number of Slices containing only related logic:   1,971 out of   1,971 100%
+    Number of Slices containing unrelated logic:          0 out of   1,971   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       3,670 out of   9,312   39%
-    Number used as logic:             1,952
-    Number used as a route-thru:        182
+  Total Number of 4 input LUTs:       3,639 out of   9,312   39%
+    Number used as logic:             1,919
+    Number used as a route-thru:        184
     Number used for Dual Port RAMs:   1,536
       (Two LUTs used per Dual Port RAM)
 
@@ -39,10 +39,10 @@ Logic Distribution:
   Number of BUFGMUXs:                     3 out of      24   12%
   Number of MULT18X18SIOs:                3 out of      20   15%
 
-Average Fanout of Non-Clock Nets:                5.18
+Average Fanout of Non-Clock Nets:                5.17
 
 Peak Memory Usage:  192 MB
-Total REAL time to MAP completion:  7 secs 
+Total REAL time to MAP completion:  8 secs 
 Total CPU time to MAP completion:   7 secs 
 
 NOTES:
@@ -93,12 +93,12 @@ WARNING:Pack:266 - The function generator crom_1/Mmux_dot_257 failed to merge
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network Mram_cpu_greg1/SPO has no load.
+INFO:LIT:243 - Logical network Mram_cpu_greg3/SPO has no load.
 INFO:LIT:395 - The above info message is repeated 776 more times for the
    following (max. 5 shown):
-   Mram_cpu_greg4/SPO,
+   Mram_cpu_greg1/SPO,
    Mram_cpu_greg2/SPO,
-   Mram_cpu_greg3/SPO,
+   Mram_cpu_greg4/SPO,
    Mram_cpu_greg5/SPO,
    Mram_cpu_greg6/SPO
    To see the details of these info messages, please use the -detail switch.

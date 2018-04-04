@@ -79,38 +79,262 @@ architecture Behavioral of BH_com is
 	constant ORG_BOOT: integer := ADDR_BOOT+16;
 	type prom is array (0 to 255) of integer;
 	signal boot: prom := (
-is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), 
-is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), is_word(IS_ADD, 0), 
-is_word(IS_READ, 511), is_word(IS_WRITE, 128), is_word(IS_READ, 128), is_word(IS_WRITE, 1024), is_word(IS_READ, 128), is_word(IS_ADD, 510), is_word(IS_WRITE, 128), is_word(IS_READ, 275), 
-is_word(IS_ADD, 509), is_word(IS_WRITE, 275), is_word(IS_READ, 275), is_word(IS_NEQ, 508), is_word(IS_WRITE, 1024), is_word(IS_BRANCH, 507), is_word(IS_READ, 506), is_word(IS_WRITE, 0), 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 0, 0, 0, 0, 0, 
-0, 0, 0, 274, 1536, 1, 1, 0
+is_word(IS_READ, 511), 	-- 256
+is_word(IS_WRITE, 510), 	-- 257
+is_word(IS_READ, 509), 	-- 258
+is_word(IS_WRITE, 508), 	-- 259
+is_word(IS_READ, 128), 	-- 260
+is_word(IS_ADD, 507), 	-- 261
+is_word(IS_WRITE, 506), 	-- 262
+is_word(IS_ADD, 0), 	-- 263
+is_word(IS_EQ, 505), 	-- 264
+is_word(IS_BRANCH, 504), 	-- 265
+is_word(IS_READ, 128), 	-- 266
+is_word(IS_ADD, 503), 	-- 267
+is_word(IS_WRITE, 502), 	-- 268
+is_word(IS_ADD, 0), 	-- 269
+is_word(IS_WRITE, 129), 	-- 270
+is_word(IS_READ, 128), 	-- 271
+is_word(IS_ADD, 501), 	-- 272
+is_word(IS_WRITE, 500), 	-- 273
+is_word(IS_READ, 129), 	-- 274
+is_word(IS_ADD, 499), 	-- 275
+is_word(IS_WRITE, 498), 	-- 276
+is_word(IS_READ, 497), 	-- 277
+is_word(IS_WRITE, 496), 	-- 278
+is_word(IS_READ, 495), 	-- 279
+is_word(IS_WRITE, 494), 	-- 280
+is_word(IS_WRITE, 34), 	-- 281
+is_word(IS_WRITE, 79), 	-- 282
+is_word(IS_WRITE, 114), 	-- 283
+is_word(IS_WRITE, 97), 	-- 284
+is_word(IS_WRITE, 110), 	-- 285
+is_word(IS_WRITE, 103), 	-- 286
+is_word(IS_WRITE, 101), 	-- 287
+is_word(IS_WRITE, 32), 	-- 288
+is_word(IS_WRITE, 67), 	-- 289
+is_word(IS_WRITE, 111), 	-- 290
+is_word(IS_WRITE, 109), 	-- 291
+is_word(IS_WRITE, 112), 	-- 292
+is_word(IS_WRITE, 117), 	-- 293
+is_word(IS_WRITE, 116), 	-- 294
+is_word(IS_WRITE, 101), 	-- 295
+is_word(IS_WRITE, 114), 	-- 296
+is_word(IS_WRITE, 32), 	-- 297
+is_word(IS_WRITE, 45), 	-- 298
+is_word(IS_WRITE, 45), 	-- 299
+is_word(IS_WRITE, 32), 	-- 300
+is_word(IS_WRITE, 83), 	-- 301
+is_word(IS_WRITE, 116), 	-- 302
+is_word(IS_WRITE, 114), 	-- 303
+is_word(IS_WRITE, 105), 	-- 304
+is_word(IS_WRITE, 110), 	-- 305
+is_word(IS_WRITE, 103), 	-- 306
+is_word(IS_WRITE, 32), 	-- 307
+is_word(IS_WRITE, 84), 	-- 308
+is_word(IS_WRITE, 101), 	-- 309
+is_word(IS_WRITE, 115), 	-- 310
+is_word(IS_WRITE, 116), 	-- 311
+is_word(IS_WRITE, 32), 	-- 312
+is_word(IS_WRITE, 45), 	-- 313
+is_word(IS_WRITE, 45), 	-- 314
+is_word(IS_WRITE, 32), 	-- 315
+is_word(IS_WRITE, 70), 	-- 316
+is_word(IS_WRITE, 80), 	-- 317
+is_word(IS_WRITE, 71), 	-- 318
+is_word(IS_WRITE, 65), 	-- 319
+is_word(IS_WRITE, 32), 	-- 320
+is_word(IS_WRITE, 100), 	-- 321
+is_word(IS_WRITE, 101), 	-- 322
+is_word(IS_WRITE, 32), 	-- 323
+is_word(IS_WRITE, 67), 	-- 324
+is_word(IS_WRITE, 80), 	-- 325
+is_word(IS_WRITE, 85), 	-- 326
+is_word(IS_WRITE, 32), 	-- 327
+is_word(IS_WRITE, 116), 	-- 328
+is_word(IS_WRITE, 117), 	-- 329
+is_word(IS_WRITE, 107), 	-- 330
+is_word(IS_WRITE, 117), 	-- 331
+is_word(IS_WRITE, 116), 	-- 332
+is_word(IS_WRITE, 116), 	-- 333
+is_word(IS_WRITE, 101), 	-- 334
+is_word(IS_WRITE, 44), 	-- 335
+is_word(IS_WRITE, 32), 	-- 336
+is_word(IS_WRITE, 121), 	-- 337
+is_word(IS_WRITE, 97), 	-- 338
+is_word(IS_WRITE, 99), 	-- 339
+is_word(IS_WRITE, 99), 	-- 340
+is_word(IS_WRITE, 32), 	-- 341
+is_word(IS_WRITE, 100), 	-- 342
+is_word(IS_WRITE, 101), 	-- 343
+is_word(IS_WRITE, 32), 	-- 344
+is_word(IS_WRITE, 65), 	-- 345
+is_word(IS_WRITE, 115), 	-- 346
+is_word(IS_WRITE, 115), 	-- 347
+is_word(IS_WRITE, 101), 	-- 348
+is_word(IS_WRITE, 109), 	-- 349
+is_word(IS_WRITE, 98), 	-- 350
+is_word(IS_WRITE, 108), 	-- 351
+is_word(IS_WRITE, 101), 	-- 352
+is_word(IS_WRITE, 114), 	-- 353
+is_word(IS_WRITE, 32), 	-- 354
+is_word(IS_WRITE, 119), 	-- 355
+is_word(IS_WRITE, 111), 	-- 356
+is_word(IS_WRITE, 32), 	-- 357
+is_word(IS_WRITE, 116), 	-- 358
+is_word(IS_WRITE, 117), 	-- 359
+is_word(IS_WRITE, 107), 	-- 360
+is_word(IS_WRITE, 117), 	-- 361
+is_word(IS_WRITE, 116), 	-- 362
+is_word(IS_WRITE, 116), 	-- 363
+is_word(IS_WRITE, 97), 	-- 364
+is_word(IS_WRITE, 46), 	-- 365
+is_word(IS_WRITE, 32), 	-- 366
+is_word(IS_WRITE, 83), 	-- 367
+is_word(IS_WRITE, 116), 	-- 368
+is_word(IS_WRITE, 114), 	-- 369
+is_word(IS_WRITE, 105), 	-- 370
+is_word(IS_WRITE, 110), 	-- 371
+is_word(IS_WRITE, 103), 	-- 372
+is_word(IS_WRITE, 32), 	-- 373
+is_word(IS_WRITE, 119), 	-- 374
+is_word(IS_WRITE, 111), 	-- 375
+is_word(IS_WRITE, 32), 	-- 376
+is_word(IS_WRITE, 68), 	-- 377
+is_word(IS_WRITE, 105), 	-- 378
+is_word(IS_WRITE, 115), 	-- 379
+is_word(IS_WRITE, 112), 	-- 380
+is_word(IS_WRITE, 108), 	-- 381
+is_word(IS_WRITE, 97), 	-- 382
+is_word(IS_WRITE, 121), 	-- 383
+is_word(IS_WRITE, 32), 	-- 384
+is_word(IS_WRITE, 115), 	-- 385
+is_word(IS_WRITE, 117), 	-- 386
+is_word(IS_WRITE, 114), 	-- 387
+is_word(IS_WRITE, 117), 	-- 388
+is_word(IS_WRITE, 110), 	-- 389
+is_word(IS_WRITE, 111), 	-- 390
+is_word(IS_WRITE, 109), 	-- 391
+is_word(IS_WRITE, 111), 	-- 392
+is_word(IS_WRITE, 32), 	-- 393
+is_word(IS_WRITE, 116), 	-- 394
+is_word(IS_WRITE, 97), 	-- 395
+is_word(IS_WRITE, 105), 	-- 396
+is_word(IS_WRITE, 104), 	-- 397
+is_word(IS_WRITE, 101), 	-- 398
+is_word(IS_WRITE, 110), 	-- 399
+is_word(IS_WRITE, 32), 	-- 400
+is_word(IS_WRITE, 100), 	-- 401
+is_word(IS_WRITE, 97), 	-- 402
+is_word(IS_WRITE, 116), 	-- 403
+is_word(IS_WRITE, 116), 	-- 404
+is_word(IS_WRITE, 97), 	-- 405
+is_word(IS_WRITE, 33), 	-- 406
+is_word(IS_WRITE, 32), 	-- 407
+is_word(IS_WRITE, 34), 	-- 408
+is_word(IS_WRITE, 0), 	-- 409
+0, 	-- 410
+0, 	-- 411
+0, 	-- 412
+0, 	-- 413
+0, 	-- 414
+0, 	-- 415
+0, 	-- 416
+0, 	-- 417
+0, 	-- 418
+0, 	-- 419
+0, 	-- 420
+0, 	-- 421
+0, 	-- 422
+0, 	-- 423
+0, 	-- 424
+0, 	-- 425
+0, 	-- 426
+0, 	-- 427
+0, 	-- 428
+0, 	-- 429
+0, 	-- 430
+0, 	-- 431
+0, 	-- 432
+0, 	-- 433
+0, 	-- 434
+0, 	-- 435
+0, 	-- 436
+0, 	-- 437
+0, 	-- 438
+0, 	-- 439
+0, 	-- 440
+0, 	-- 441
+0, 	-- 442
+0, 	-- 443
+0, 	-- 444
+0, 	-- 445
+0, 	-- 446
+0, 	-- 447
+0, 	-- 448
+0, 	-- 449
+0, 	-- 450
+0, 	-- 451
+0, 	-- 452
+0, 	-- 453
+0, 	-- 454
+0, 	-- 455
+0, 	-- 456
+0, 	-- 457
+0, 	-- 458
+0, 	-- 459
+0, 	-- 460
+0, 	-- 461
+0, 	-- 462
+0, 	-- 463
+0, 	-- 464
+0, 	-- 465
+0, 	-- 466
+0, 	-- 467
+0, 	-- 468
+0, 	-- 469
+0, 	-- 470
+0, 	-- 471
+0, 	-- 472
+0, 	-- 473
+0, 	-- 474
+0, 	-- 475
+0, 	-- 476
+0, 	-- 477
+0, 	-- 478
+0, 	-- 479
+0, 	-- 480
+0, 	-- 481
+0, 	-- 482
+0, 	-- 483
+0, 	-- 484
+0, 	-- 485
+0, 	-- 486
+0, 	-- 487
+0, 	-- 488
+0, 	-- 489
+0, 	-- 490
+0, 	-- 491
+0, 	-- 492
+0, 	-- 493
+0, 	-- 494
+279, 	-- 495
+0, 	-- 496
+260, 	-- 497
+129, 	-- 498
+1, 	-- 499
+128, 	-- 500
+1, 	-- 501
+269, 	-- 502
+16777216, 	-- 503
+279, 	-- 504
+0, 	-- 505
+263, 	-- 506
+16777216, 	-- 507
+129, 	-- 508
+1024, 	-- 509
+128, 	-- 510
+281	-- 511
 	);
 	
 	-- VRAM
@@ -184,13 +408,13 @@ begin
 					cpu_inst <= inst;
 					cpu_pc <= cpu_pc + 1;
 					
-					case inst is
-						when IS_READ|IS_ADD|IS_SUB|IS_MUL|IS_DIV|IS_AND|IS_OR|IS_XOR|IS_EQ|IS_NEQ|IS_LT|IS_LTE|IS_GT|IS_GTE =>
+					--case inst is
+						--when IS_READ|IS_ADD|IS_SUB|IS_MUL|IS_DIV|IS_AND|IS_OR|IS_XOR|IS_EQ|IS_NEQ|IS_LT|IS_LTE|IS_GT|IS_GTE|IS_BRANCH|IS_WRITE =>
 							cpu_raddr <= operand;
-						when IS_WRITE|IS_BRANCH =>
-							cpu_raddr <= cpu_pc;
-						when others =>
-					end case;
+						--when IS_WRITE =>
+						--	cpu_raddr <= cpu_pc;
+						--when others =>
+					--end case;
 
 					cpu_stat <= 1;
 				when 1 =>	-- Read Memory
@@ -316,7 +540,7 @@ begin
 	lum <= crom_1_dot;
 
 	A(0) <= '0' when (stat_vsync='0' and stat_hsync='1') or (stat_vsync='1' and ppu_clkcnt>=150) else '1';
-	A(1) <= lum when stat_vsync='0' and stat_hsync='0' and ppu_clkcnt>511 and ppu_clkcnt<1536 else '0';
+	A(1) <= lum when stat_vsync='0' and stat_hsync='0' and ppu_clkcnt>511 and ppu_clkcnt<1536 and ppu_linecnt>=32 else '0';
 	A(15 downto 2) <= "00000000000000";
 	B <= "0000000000000000";
 	C <= "0000000000000000";
@@ -337,7 +561,7 @@ begin
 	  );
 	  vram_1_clka <= clk;
 	  vram_1_wea <= "0";
-	  vram_1_addra <= CONV_std_logic_vector((ppu_linecnt/8 mod 32)*32 + ((ppu_clkcnt -512 + 1)/4/8 mod 32), 10);
+	  vram_1_addra <= CONV_std_logic_vector(((ppu_linecnt-32)/8 mod 32)*32 + ((ppu_clkcnt -512 + 1)/4/8 mod 32), 10);
 	  vram_1_clkb <= clk;
 	  vram_1_web <= "1";
 	  

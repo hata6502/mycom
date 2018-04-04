@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/hato/BH_com/test_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="/home/hato/mycom/test_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
@@ -14,38 +14,10 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/test/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/a" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">a[15:0]</obj_property>
-      <obj_property name="ObjectShortName">a[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/b" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">b[15:0]</obj_property>
-      <obj_property name="ObjectShortName">b[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/c" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">c[15:0]</obj_property>
-      <obj_property name="ObjectShortName">c[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/uut/clkcnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">clkcnt[31:0]</obj_property>
-      <obj_property name="ObjectShortName">clkcnt[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/uut/cpu_pc" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">cpu_pc</obj_property>
-      <obj_property name="ObjectShortName">cpu_pc</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/uut/cpu_stat" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">cpu_stat</obj_property>
-      <obj_property name="ObjectShortName">cpu_stat</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test/uut/clkcnt" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">clkcnt[31:0]</obj_property>
-      <obj_property name="ObjectShortName">clkcnt[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/test/uut/boot" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">boot[0:255]</obj_property>
@@ -55,8 +27,28 @@
       <obj_property name="ElementShortName">cpu_greg[0:127]</obj_property>
       <obj_property name="ObjectShortName">cpu_greg[0:127]</obj_property>
    </wvobject>
+   <wvobject fp_name="/test/uut/cpu_stat" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_stat</obj_property>
+      <obj_property name="ObjectShortName">cpu_stat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_work" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_work</obj_property>
+      <obj_property name="ObjectShortName">cpu_work</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_addr" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_addr</obj_property>
+      <obj_property name="ObjectShortName">cpu_addr</obj_property>
+   </wvobject>
    <wvobject fp_name="/test/uut/cpu_pc" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">cpu_pc</obj_property>
       <obj_property name="ObjectShortName">cpu_pc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_rdata" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_rdata</obj_property>
+      <obj_property name="ObjectShortName">cpu_rdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_wdata" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_wdata</obj_property>
+      <obj_property name="ObjectShortName">cpu_wdata</obj_property>
    </wvobject>
 </wave_config>

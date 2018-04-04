@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-04-03T21:57:32</DateModified>
+  <DateModified>2018-04-04T22:29:18</DateModified>
   <ModuleName>BH_com</ModuleName>
-  <SummaryTimeStamp>2018-03-31T03:49:25</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-04-04T22:15:53</SummaryTimeStamp>
   <SavedFilePath>/home/hato/mycom/iseconfig/BH_com.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/hato/mycom/</ImplementationReportsDirectory>
   <DateInitialized>2018-03-27T11:24:01</DateInitialized>
