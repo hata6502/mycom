@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Apr  4 23:20:51 2018
+Thu Apr  5 23:36:06 2018
 
 drc -z BH_com.ncd BH_com.pcf
 

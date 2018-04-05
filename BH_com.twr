@@ -37,440 +37,467 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 211282 paths analyzed, 9400 endpoints analyzed, 0 failing endpoints
+ 367412 paths analyzed, 20750 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  18.300ns.
+ Minimum period is  20.629ns.
 --------------------------------------------------------------------------------
 
-Paths for end point Mram_boot479.WE (SLICE_X18Y85.SR), 92 paths
+Paths for end point Mram_stack869.WE (SLICE_X16Y78.SR), 136 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     12.950ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_6 (FF)
-  Destination:          Mram_boot479.WE (RAM)
+Slack (setup path):     10.621ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_19 (FF)
+  Destination:          Mram_stack869.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      18.297ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.003ns (0.103 - 0.106)
+  Data Path Delay:      20.610ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.096 - 0.115)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_6 to Mram_boot479.WE
+  Maximum Data Path: cpu_waddr_19 to Mram_stack869.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X28Y33.YQ      Tcko                  0.652   cpu_waddr<7>
-                                                       cpu_waddr_6
-    SLICE_X22Y37.G2      net (fanout=11)       1.440   cpu_waddr<6>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y85.SR      net (fanout=32)       7.330   write_ctrl22
-    SLICE_X18Y85.CLK     Tws                   0.392   N1551
-                                                       Mram_boot479.WE
+    SLICE_X27Y41.XQ      Tcko                  0.591   cpu_waddr<19>
+                                                       cpu_waddr_19
+    SLICE_X27Y19.F4      net (fanout=10)       3.596   cpu_waddr<19>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X38Y44.G1      net (fanout=32)       1.914   _cmp_ge0000_0
+    SLICE_X38Y44.Y       Tilo                  0.759   write_ctrl28
+                                                       write_ctrl12
+    SLICE_X16Y78.SR      net (fanout=32)       7.442   write_ctrl12
+    SLICE_X16Y78.CLK     Tws                   0.392   N2347
+                                                       Mram_stack869.WE
     -------------------------------------------------  ---------------------------
-    Total                                     18.297ns (4.267ns logic, 14.030ns route)
-                                                       (23.3% logic, 76.7% route)
+    Total                                     20.610ns (5.126ns logic, 15.484ns route)
+                                                       (24.9% logic, 75.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.227ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_1 (FF)
-  Destination:          Mram_boot479.WE (RAM)
+Slack (setup path):     11.021ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_18 (FF)
+  Destination:          Mram_stack869.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      18.023ns (Levels of Logic = 4)
+  Data Path Delay:      20.210ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.096 - 0.115)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: cpu_waddr_18 to Mram_stack869.WE
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y41.YQ      Tcko                  0.587   cpu_waddr<19>
+                                                       cpu_waddr_18
+    SLICE_X27Y19.F2      net (fanout=10)       3.200   cpu_waddr<18>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X38Y44.G1      net (fanout=32)       1.914   _cmp_ge0000_0
+    SLICE_X38Y44.Y       Tilo                  0.759   write_ctrl28
+                                                       write_ctrl12
+    SLICE_X16Y78.SR      net (fanout=32)       7.442   write_ctrl12
+    SLICE_X16Y78.CLK     Tws                   0.392   N2347
+                                                       Mram_stack869.WE
+    -------------------------------------------------  ---------------------------
+    Total                                     20.210ns (5.122ns logic, 15.088ns route)
+                                                       (25.3% logic, 74.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.114ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_20 (FF)
+  Destination:          Mram_stack869.WE (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      20.108ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.028ns (0.096 - 0.124)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: cpu_waddr_20 to Mram_stack869.WE
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y43.YQ      Tcko                  0.652   cpu_waddr<21>
+                                                       cpu_waddr_20
+    SLICE_X27Y19.G1      net (fanout=10)       3.194   cpu_waddr<20>
+    SLICE_X27Y19.COUT    Topcyg                1.001   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<3>1
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X38Y44.G1      net (fanout=32)       1.914   _cmp_ge0000_0
+    SLICE_X38Y44.Y       Tilo                  0.759   write_ctrl28
+                                                       write_ctrl12
+    SLICE_X16Y78.SR      net (fanout=32)       7.442   write_ctrl12
+    SLICE_X16Y78.CLK     Tws                   0.392   N2347
+                                                       Mram_stack869.WE
+    -------------------------------------------------  ---------------------------
+    Total                                     20.108ns (5.026ns logic, 15.082ns route)
+                                                       (25.0% logic, 75.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Mram_stack515.WE (SLICE_X58Y90.SR), 136 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.780ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_19 (FF)
+  Destination:          Mram_stack515.WE (RAM)
+  Requirement:          31.250ns
+  Data Path Delay:      20.470ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_1 to Mram_boot479.WE
+  Maximum Data Path: cpu_waddr_19 to Mram_stack515.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y30.YQ      Tcko                  0.587   cpu_waddr<1>
-                                                       cpu_waddr_1
-    SLICE_X33Y33.F3      net (fanout=772)      2.715   cpu_waddr<1>
-    SLICE_X33Y33.COUT    Topcyf                1.162   and0003_cmp_eq00001_wg_cy<3>
-                                                       and0003_cmp_eq00001_wg_lut<2>
-                                                       and0003_cmp_eq00001_wg_cy<2>
-                                                       and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.CIN     net (fanout=1)        0.000   and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.COUT    Tbyp                  0.118   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_cy<4>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y85.SR      net (fanout=32)       7.330   write_ctrl22
-    SLICE_X18Y85.CLK     Tws                   0.392   N1551
-                                                       Mram_boot479.WE
+    SLICE_X27Y41.XQ      Tcko                  0.591   cpu_waddr<19>
+                                                       cpu_waddr_19
+    SLICE_X27Y19.F4      net (fanout=10)       3.596   cpu_waddr<19>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X39Y47.G3      net (fanout=32)       2.413   _cmp_ge0000_0
+    SLICE_X39Y47.Y       Tilo                  0.704   write_ctrl34
+                                                       write_ctrl10
+    SLICE_X58Y90.SR      net (fanout=32)       6.858   write_ctrl10
+    SLICE_X58Y90.CLK     Tws                   0.392   N1639
+                                                       Mram_stack515.WE
     -------------------------------------------------  ---------------------------
-    Total                                     18.023ns (3.722ns logic, 14.301ns route)
-                                                       (20.7% logic, 79.3% route)
+    Total                                     20.470ns (5.071ns logic, 15.399ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.627ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_5 (FF)
-  Destination:          Mram_boot479.WE (RAM)
+Slack (setup path):     11.180ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_18 (FF)
+  Destination:          Mram_stack515.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      17.623ns (Levels of Logic = 4)
+  Data Path Delay:      20.070ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_5 to Mram_boot479.WE
+  Maximum Data Path: cpu_waddr_18 to Mram_stack515.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y32.XQ      Tcko                  0.592   cpu_waddr<5>
-                                                       cpu_waddr_5
-    SLICE_X22Y37.G4      net (fanout=11)       0.826   cpu_waddr<5>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y85.SR      net (fanout=32)       7.330   write_ctrl22
-    SLICE_X18Y85.CLK     Tws                   0.392   N1551
-                                                       Mram_boot479.WE
+    SLICE_X27Y41.YQ      Tcko                  0.587   cpu_waddr<19>
+                                                       cpu_waddr_18
+    SLICE_X27Y19.F2      net (fanout=10)       3.200   cpu_waddr<18>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X39Y47.G3      net (fanout=32)       2.413   _cmp_ge0000_0
+    SLICE_X39Y47.Y       Tilo                  0.704   write_ctrl34
+                                                       write_ctrl10
+    SLICE_X58Y90.SR      net (fanout=32)       6.858   write_ctrl10
+    SLICE_X58Y90.CLK     Tws                   0.392   N1639
+                                                       Mram_stack515.WE
     -------------------------------------------------  ---------------------------
-    Total                                     17.623ns (4.207ns logic, 13.416ns route)
-                                                       (23.9% logic, 76.1% route)
+    Total                                     20.070ns (5.067ns logic, 15.003ns route)
+                                                       (25.2% logic, 74.8% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point Mram_boot431.WE (SLICE_X12Y85.SR), 92 paths
---------------------------------------------------------------------------------
-Slack (setup path):     13.238ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_6 (FF)
-  Destination:          Mram_boot431.WE (RAM)
+Slack (setup path):     11.282ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_20 (FF)
+  Destination:          Mram_stack515.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      18.012ns (Levels of Logic = 4)
+  Data Path Delay:      19.968ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_6 to Mram_boot431.WE
+  Maximum Data Path: cpu_waddr_20 to Mram_stack515.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X28Y33.YQ      Tcko                  0.652   cpu_waddr<7>
-                                                       cpu_waddr_6
-    SLICE_X22Y37.G2      net (fanout=11)       1.440   cpu_waddr<6>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X12Y85.SR      net (fanout=32)       7.045   write_ctrl22
-    SLICE_X12Y85.CLK     Tws                   0.392   N1455
-                                                       Mram_boot431.WE
+    SLICE_X32Y43.YQ      Tcko                  0.652   cpu_waddr<21>
+                                                       cpu_waddr_20
+    SLICE_X27Y19.G1      net (fanout=10)       3.194   cpu_waddr<20>
+    SLICE_X27Y19.COUT    Topcyg                1.001   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<3>1
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X39Y47.G3      net (fanout=32)       2.413   _cmp_ge0000_0
+    SLICE_X39Y47.Y       Tilo                  0.704   write_ctrl34
+                                                       write_ctrl10
+    SLICE_X58Y90.SR      net (fanout=32)       6.858   write_ctrl10
+    SLICE_X58Y90.CLK     Tws                   0.392   N1639
+                                                       Mram_stack515.WE
     -------------------------------------------------  ---------------------------
-    Total                                     18.012ns (4.267ns logic, 13.745ns route)
-                                                       (23.7% logic, 76.3% route)
+    Total                                     19.968ns (4.971ns logic, 14.997ns route)
+                                                       (24.9% logic, 75.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.512ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_1 (FF)
-  Destination:          Mram_boot431.WE (RAM)
+
+Paths for end point Mram_stack994.WE (SLICE_X2Y71.SR), 136 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.809ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_19 (FF)
+  Destination:          Mram_stack994.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      17.738ns (Levels of Logic = 4)
+  Data Path Delay:      20.441ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_1 to Mram_boot431.WE
+  Maximum Data Path: cpu_waddr_19 to Mram_stack994.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y30.YQ      Tcko                  0.587   cpu_waddr<1>
-                                                       cpu_waddr_1
-    SLICE_X33Y33.F3      net (fanout=772)      2.715   cpu_waddr<1>
-    SLICE_X33Y33.COUT    Topcyf                1.162   and0003_cmp_eq00001_wg_cy<3>
-                                                       and0003_cmp_eq00001_wg_lut<2>
-                                                       and0003_cmp_eq00001_wg_cy<2>
-                                                       and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.CIN     net (fanout=1)        0.000   and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.COUT    Tbyp                  0.118   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_cy<4>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X12Y85.SR      net (fanout=32)       7.045   write_ctrl22
-    SLICE_X12Y85.CLK     Tws                   0.392   N1455
-                                                       Mram_boot431.WE
+    SLICE_X27Y41.XQ      Tcko                  0.591   cpu_waddr<19>
+                                                       cpu_waddr_19
+    SLICE_X27Y19.F4      net (fanout=10)       3.596   cpu_waddr<19>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X43Y48.G4      net (fanout=32)       2.433   _cmp_ge0000_0
+    SLICE_X43Y48.Y       Tilo                  0.704   write_ctrl33
+                                                       write_ctrl9
+    SLICE_X2Y71.SR       net (fanout=32)       6.809   write_ctrl9
+    SLICE_X2Y71.CLK      Tws                   0.392   N2597
+                                                       Mram_stack994.WE
     -------------------------------------------------  ---------------------------
-    Total                                     17.738ns (3.722ns logic, 14.016ns route)
-                                                       (21.0% logic, 79.0% route)
+    Total                                     20.441ns (5.071ns logic, 15.370ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.912ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_5 (FF)
-  Destination:          Mram_boot431.WE (RAM)
+Slack (setup path):     11.209ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_18 (FF)
+  Destination:          Mram_stack994.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      17.338ns (Levels of Logic = 4)
+  Data Path Delay:      20.041ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_5 to Mram_boot431.WE
+  Maximum Data Path: cpu_waddr_18 to Mram_stack994.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y32.XQ      Tcko                  0.592   cpu_waddr<5>
-                                                       cpu_waddr_5
-    SLICE_X22Y37.G4      net (fanout=11)       0.826   cpu_waddr<5>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X12Y85.SR      net (fanout=32)       7.045   write_ctrl22
-    SLICE_X12Y85.CLK     Tws                   0.392   N1455
-                                                       Mram_boot431.WE
+    SLICE_X27Y41.YQ      Tcko                  0.587   cpu_waddr<19>
+                                                       cpu_waddr_18
+    SLICE_X27Y19.F2      net (fanout=10)       3.200   cpu_waddr<18>
+    SLICE_X27Y19.COUT    Topcyf                1.162   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<2>1
+                                                       Mcompar_and0003_cmp_le0000_cy<2>_0
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X43Y48.G4      net (fanout=32)       2.433   _cmp_ge0000_0
+    SLICE_X43Y48.Y       Tilo                  0.704   write_ctrl33
+                                                       write_ctrl9
+    SLICE_X2Y71.SR       net (fanout=32)       6.809   write_ctrl9
+    SLICE_X2Y71.CLK      Tws                   0.392   N2597
+                                                       Mram_stack994.WE
     -------------------------------------------------  ---------------------------
-    Total                                     17.338ns (4.207ns logic, 13.131ns route)
-                                                       (24.3% logic, 75.7% route)
+    Total                                     20.041ns (5.067ns logic, 14.974ns route)
+                                                       (25.3% logic, 74.7% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point Mram_boot463.WE (SLICE_X18Y73.SR), 92 paths
---------------------------------------------------------------------------------
-Slack (setup path):     13.410ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_6 (FF)
-  Destination:          Mram_boot463.WE (RAM)
+Slack (setup path):     11.311ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               cpu_waddr_20 (FF)
+  Destination:          Mram_stack994.WE (RAM)
   Requirement:          31.250ns
-  Data Path Delay:      17.830ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.010ns (0.096 - 0.106)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: cpu_waddr_6 to Mram_boot463.WE
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X28Y33.YQ      Tcko                  0.652   cpu_waddr<7>
-                                                       cpu_waddr_6
-    SLICE_X22Y37.G2      net (fanout=11)       1.440   cpu_waddr<6>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y73.SR      net (fanout=32)       6.863   write_ctrl22
-    SLICE_X18Y73.CLK     Tws                   0.392   N1519
-                                                       Mram_boot463.WE
-    -------------------------------------------------  ---------------------------
-    Total                                     17.830ns (4.267ns logic, 13.563ns route)
-                                                       (23.9% logic, 76.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     13.694ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_1 (FF)
-  Destination:          Mram_boot463.WE (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      17.556ns (Levels of Logic = 4)
+  Data Path Delay:      19.939ns (Levels of Logic = 5)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: cpu_waddr_1 to Mram_boot463.WE
+  Maximum Data Path: cpu_waddr_20 to Mram_stack994.WE
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y30.YQ      Tcko                  0.587   cpu_waddr<1>
-                                                       cpu_waddr_1
-    SLICE_X33Y33.F3      net (fanout=772)      2.715   cpu_waddr<1>
-    SLICE_X33Y33.COUT    Topcyf                1.162   and0003_cmp_eq00001_wg_cy<3>
-                                                       and0003_cmp_eq00001_wg_lut<2>
-                                                       and0003_cmp_eq00001_wg_cy<2>
-                                                       and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.CIN     net (fanout=1)        0.000   and0003_cmp_eq00001_wg_cy<3>
-    SLICE_X33Y34.COUT    Tbyp                  0.118   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_cy<4>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y73.SR      net (fanout=32)       6.863   write_ctrl22
-    SLICE_X18Y73.CLK     Tws                   0.392   N1519
-                                                       Mram_boot463.WE
+    SLICE_X32Y43.YQ      Tcko                  0.652   cpu_waddr<21>
+                                                       cpu_waddr_20
+    SLICE_X27Y19.G1      net (fanout=10)       3.194   cpu_waddr<20>
+    SLICE_X27Y19.COUT    Topcyg                1.001   and0004_cmp_le0000
+                                                       Mcompar_and0003_cmp_le0000_lut<3>1
+                                                       Mcompar_and0003_cmp_le0000_cy<3>_0
+    SLICE_X24Y29.G4      net (fanout=9)        1.508   and0004_cmp_le0000
+    SLICE_X24Y29.Y       Tilo                  0.759   N22
+                                                       _and00002
+    SLICE_X24Y29.F3      net (fanout=2)        0.044   _and0000
+    SLICE_X24Y29.X       Tilo                  0.759   N22
+                                                       _cmp_ge0000_SW0
+    SLICE_X33Y31.F1      net (fanout=1)        0.980   N22
+    SLICE_X33Y31.X       Tilo                  0.704   _cmp_ge0000_0
+                                                       _cmp_ge0000
+    SLICE_X43Y48.G4      net (fanout=32)       2.433   _cmp_ge0000_0
+    SLICE_X43Y48.Y       Tilo                  0.704   write_ctrl33
+                                                       write_ctrl9
+    SLICE_X2Y71.SR       net (fanout=32)       6.809   write_ctrl9
+    SLICE_X2Y71.CLK      Tws                   0.392   N2597
+                                                       Mram_stack994.WE
     -------------------------------------------------  ---------------------------
-    Total                                     17.556ns (3.722ns logic, 13.834ns route)
-                                                       (21.2% logic, 78.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     14.094ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               cpu_waddr_5 (FF)
-  Destination:          Mram_boot463.WE (RAM)
-  Requirement:          31.250ns
-  Data Path Delay:      17.156ns (Levels of Logic = 4)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 31.250ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: cpu_waddr_5 to Mram_boot463.WE
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X20Y32.XQ      Tcko                  0.592   cpu_waddr<5>
-                                                       cpu_waddr_5
-    SLICE_X22Y37.G4      net (fanout=11)       0.826   cpu_waddr<5>
-    SLICE_X22Y37.Y       Tilo                  0.759   write_ctrl16
-                                                       and0003_cmp_eq0000111
-    SLICE_X33Y34.G2      net (fanout=4)        1.004   N1122
-    SLICE_X33Y34.COUT    Topcyg                1.001   and0003_cmp_eq00001_wg_cy<5>
-                                                       and0003_cmp_eq00001_wg_lut<5>
-                                                       and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.G3      net (fanout=29)       2.033   and0003_cmp_eq00001_wg_cy<5>
-    SLICE_X22Y29.Y       Tilo                  0.759   write_ctrl8
-                                                       _and00021
-    SLICE_X33Y39.G1      net (fanout=16)       2.223   _and0002_0
-    SLICE_X33Y39.Y       Tilo                  0.704   write_ctrl14
-                                                       write_ctrl22
-    SLICE_X18Y73.SR      net (fanout=32)       6.863   write_ctrl22
-    SLICE_X18Y73.CLK     Tws                   0.392   N1519
-                                                       Mram_boot463.WE
-    -------------------------------------------------  ---------------------------
-    Total                                     17.156ns (4.207ns logic, 12.949ns route)
-                                                       (24.5% logic, 75.5% route)
+    Total                                     19.939ns (4.971ns logic, 14.968ns route)
+                                                       (24.9% logic, 75.1% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point Mram_boot363.SLICEM_G (SLICE_X24Y47.BY), 1 path
+Paths for end point Mram_stack574.SLICEM_G (SLICE_X38Y40.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.876ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               cpu_wdata_22 (FF)
-  Destination:          Mram_boot363.SLICEM_G (RAM)
+Slack (hold path):      0.899ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_17 (FF)
+  Destination:          Mram_stack574.SLICEM_G (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.877ns (Levels of Logic = 1)
-  Clock Path Skew:      0.001ns (0.019 - 0.018)
+  Data Path Delay:      0.898ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.016 - 0.017)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: cpu_wdata_22 to Mram_boot363.SLICEM_G
+  Minimum Data Path: cpu_wdata_17 to Mram_stack574.SLICEM_G
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y48.XQ      Tcko                  0.473   cpu_wdata<22>
-                                                       cpu_wdata_22
-    SLICE_X24Y47.BY      net (fanout=29)       0.531   cpu_wdata<22>
-    SLICE_X24Y47.CLK     Tdh         (-Th)     0.127   N1319
-                                                       Mram_boot363.SLICEM_G
+    SLICE_X39Y42.YQ      Tcko                  0.470   cpu_wdata<17>
+                                                       cpu_wdata_17
+    SLICE_X38Y40.BY      net (fanout=62)       0.555   cpu_wdata<17>
+    SLICE_X38Y40.CLK     Tdh         (-Th)     0.127   N1757
+                                                       Mram_stack574.SLICEM_G
     -------------------------------------------------  ---------------------------
-    Total                                      0.877ns (0.346ns logic, 0.531ns route)
-                                                       (39.5% logic, 60.5% route)
+    Total                                      0.898ns (0.343ns logic, 0.555ns route)
+                                                       (38.2% logic, 61.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point Mram_boot365.SLICEM_G (SLICE_X24Y46.BY), 1 path
+Paths for end point Mram_boot476.SLICEM_G (SLICE_X26Y54.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.876ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               cpu_wdata_22 (FF)
-  Destination:          Mram_boot365.SLICEM_G (RAM)
+Slack (hold path):      0.900ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_29 (FF)
+  Destination:          Mram_boot476.SLICEM_G (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.877ns (Levels of Logic = 1)
-  Clock Path Skew:      0.001ns (0.019 - 0.018)
+  Data Path Delay:      0.904ns (Levels of Logic = 1)
+  Clock Path Skew:      0.004ns (0.012 - 0.008)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: cpu_wdata_22 to Mram_boot365.SLICEM_G
+  Minimum Data Path: cpu_wdata_29 to Mram_boot476.SLICEM_G
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y48.XQ      Tcko                  0.473   cpu_wdata<22>
-                                                       cpu_wdata_22
-    SLICE_X24Y46.BY      net (fanout=29)       0.531   cpu_wdata<22>
-    SLICE_X24Y46.CLK     Tdh         (-Th)     0.127   N1323
-                                                       Mram_boot365.SLICEM_G
+    SLICE_X27Y57.XQ      Tcko                  0.473   cpu_wdata<29>
+                                                       cpu_wdata_29
+    SLICE_X26Y54.BY      net (fanout=64)       0.558   cpu_wdata<29>
+    SLICE_X26Y54.CLK     Tdh         (-Th)     0.127   N3625
+                                                       Mram_boot476.SLICEM_G
     -------------------------------------------------  ---------------------------
-    Total                                      0.877ns (0.346ns logic, 0.531ns route)
-                                                       (39.5% logic, 60.5% route)
+    Total                                      0.904ns (0.346ns logic, 0.558ns route)
+                                                       (38.3% logic, 61.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point Mram_boot363.SLICEM_F (SLICE_X24Y47.BY), 1 path
+Paths for end point Mram_cpu_greg214.SLICEM_G (SLICE_X16Y59.BY), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.891ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               cpu_wdata_22 (FF)
-  Destination:          Mram_boot363.SLICEM_F (RAM)
+Slack (hold path):      0.910ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               cpu_wdata_26 (FF)
+  Destination:          Mram_cpu_greg214.SLICEM_G (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.892ns (Levels of Logic = 1)
-  Clock Path Skew:      0.001ns (0.019 - 0.018)
+  Data Path Delay:      0.908ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.002ns (0.057 - 0.059)
   Source Clock:         clk_BUFGP rising at 31.250ns
   Destination Clock:    clk_BUFGP rising at 31.250ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: cpu_wdata_22 to Mram_boot363.SLICEM_F
+  Minimum Data Path: cpu_wdata_26 to Mram_cpu_greg214.SLICEM_G
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y48.XQ      Tcko                  0.473   cpu_wdata<22>
-                                                       cpu_wdata_22
-    SLICE_X24Y47.BY      net (fanout=29)       0.531   cpu_wdata<22>
-    SLICE_X24Y47.CLK     Tdh         (-Th)     0.112   N1319
-                                                       Mram_boot363.SLICEM_F
+    SLICE_X19Y57.XQ      Tcko                  0.473   cpu_wdata<26>
+                                                       cpu_wdata_26
+    SLICE_X16Y59.BY      net (fanout=64)       0.562   cpu_wdata<26>
+    SLICE_X16Y59.CLK     Tdh         (-Th)     0.127   N493
+                                                       Mram_cpu_greg214.SLICEM_G
     -------------------------------------------------  ---------------------------
-    Total                                      0.892ns (0.361ns logic, 0.531ns route)
-                                                       (40.5% logic, 59.5% route)
+    Total                                      0.908ns (0.346ns logic, 0.562ns route)
+                                                       (38.1% logic, 61.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -514,7 +541,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.300|         |         |         |
+clk            |   20.629|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -523,23 +550,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 211282 paths, 0 nets, and 8495 connections
+Constraints cover 367412 paths, 0 nets, and 16216 connections
 
 Design statistics:
-   Minimum period:  18.300ns{1}   (Maximum frequency:  54.645MHz)
+   Minimum period:  20.629ns{1}   (Maximum frequency:  48.475MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Wed Apr  4 23:20:44 2018 
+Analysis completed Thu Apr  5 23:35:58 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 130 MB
+Peak Memory Usage: 152 MB
 
 
 

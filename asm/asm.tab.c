@@ -85,7 +85,7 @@ Label ref_list[256] = {};
 Label *ref = ref_list;
 
 const char *instruction[] = {
-	"IS_WRITE", "IS_READ", "IS_ADD", "IS_SUB", "IS_MUL", "IS_DIV", "IS_AND", "IS_OR", "IS_XOR", "IS_BRANCH", "IS_EQ", "IS_NEQ", "IS_LT", "IS_LTE", "IS_GT", "IS_GTE", 
+	"IS_READ", "IS_WRITE", "IS_ADD", "IS_SUB", "IS_MUL", "IS_DIV", "IS_AND", "IS_OR", "IS_XOR", "IS_BRANCH", "IS_EQ", "IS_NEQ", "IS_LT", "IS_LTE", "IS_GT", "IS_GTE", 
 };
 
 int is_ref = 0;
@@ -541,7 +541,7 @@ static const yytype_uint8 yydefact[] =
        0,     7,    11,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
       32,    10,    30,     0,     2,     4,     0,     8,     9,     0,
-      31,    13,    28,    12,    14,    15,    16,    17,    21,    22,
+      31,    12,    28,    13,    14,    15,    16,    17,    21,    22,
       23,    24,    25,    26,    27,     5,    18,    19,    20,     1,
        3,     6,    29
 };

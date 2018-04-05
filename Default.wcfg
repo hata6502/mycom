@@ -14,7 +14,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/test/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -43,12 +43,32 @@
       <obj_property name="ElementShortName">cpu_pc</obj_property>
       <obj_property name="ObjectShortName">cpu_pc</obj_property>
    </wvobject>
+   <wvobject fp_name="/test/uut/cpu_raddr" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_raddr</obj_property>
+      <obj_property name="ObjectShortName">cpu_raddr</obj_property>
+   </wvobject>
    <wvobject fp_name="/test/uut/cpu_rdata" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">cpu_rdata</obj_property>
       <obj_property name="ObjectShortName">cpu_rdata</obj_property>
    </wvobject>
+   <wvobject fp_name="/test/uut/cpu_waddr" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_waddr</obj_property>
+      <obj_property name="ObjectShortName">cpu_waddr</obj_property>
+   </wvobject>
    <wvobject fp_name="/test/uut/cpu_wdata" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">cpu_wdata</obj_property>
       <obj_property name="ObjectShortName">cpu_wdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_inst" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_inst</obj_property>
+      <obj_property name="ObjectShortName">cpu_inst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/cpu_sp" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cpu_sp</obj_property>
+      <obj_property name="ObjectShortName">cpu_sp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/stack" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">stack[0:511]</obj_property>
+      <obj_property name="ObjectShortName">stack[0:511]</obj_property>
    </wvobject>
 </wave_config>

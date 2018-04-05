@@ -20,7 +20,7 @@ Label ref_list[256] = {};
 Label *ref = ref_list;
 
 const char *instruction[] = {
-	"IS_WRITE", "IS_READ", "IS_ADD", "IS_SUB", "IS_MUL", "IS_DIV", "IS_AND", "IS_OR", "IS_XOR", "IS_BRANCH", "IS_EQ", "IS_NEQ", "IS_LT", "IS_LTE", "IS_GT", "IS_GTE", 
+	"IS_READ", "IS_WRITE", "IS_ADD", "IS_SUB", "IS_MUL", "IS_DIV", "IS_AND", "IS_OR", "IS_XOR", "IS_BRANCH", "IS_EQ", "IS_NEQ", "IS_LT", "IS_LTE", "IS_GT", "IS_GTE", 
 };
 
 int is_ref = 0;
@@ -65,8 +65,8 @@ inst_sentence	: instruction	{*(addr++) = $1; }
 	;
 
 instruction	: is_nop	{$$ = (2<<24) + 0; }
-	| is_write operand	{$$ = (0<<24) + $2; }
-	| is_read operand	{$$ = (1<<24) + $2; }
+	| is_read operand	{$$ = (0<<24) + $2; }
+	| is_write operand	{$$ = (1<<24) + $2; }
 
 	| is_add operand	{$$ = (2<<24) + $2; }
 	| is_sub operand	{$$ = (3<<24) + $2; }
