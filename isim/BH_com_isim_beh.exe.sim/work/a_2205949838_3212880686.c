@@ -27,7 +27,7 @@ extern char *IEEE_P_3620187407;
 int ieee_p_3620187407_sub_514432868_3965413181(char *, char *, char *);
 
 
-static void work_a_0551688457_3212880686_p_0(char *t0)
+static void work_a_2205949838_3212880686_p_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -112,10 +112,10 @@ LAB4:    goto LAB2;
 
 void ieee_p_2592010699_sub_3130575329_503743352();
 
-extern void work_a_0551688457_3212880686_init()
+extern void work_a_2205949838_3212880686_init()
 {
-	static char *pe[] = {(void *)work_a_0551688457_3212880686_p_0};
-	xsi_register_didat("work_a_0551688457_3212880686", "isim/crom_isim_beh.exe.sim/work/a_0551688457_3212880686.didat");
+	static char *pe[] = {(void *)work_a_2205949838_3212880686_p_0};
+	xsi_register_didat("work_a_2205949838_3212880686", "isim/BH_com_isim_beh.exe.sim/work/a_2205949838_3212880686.didat");
 	xsi_register_executes(pe);
 	xsi_register_resolution_function(1, 2, (void *)ieee_p_2592010699_sub_3130575329_503743352, 4);
 }
