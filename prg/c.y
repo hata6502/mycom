@@ -28,109 +28,164 @@ Var *search_var(const char *name){
 	char sval[1024];
 }
 
-%token void_t bopen bclose cbopen cbclose static_t int_t semi write_o while_s eq_o plus_o neq_o sbopen sbclose ast
+%token auto_s register_s static_s extern_s typedef_s
+%token void_t char_t short_t int_t long_t float_t double_t signed_t unsigned_t struct_t union_t
+%token const_q volatile_q
+%token if_s else_s switch_s while_s do_s for_s goto_s continue_s break_s return_s 
+%token cbopen cbclose comma colon sbopen sbclose bopen bclose etc semicolon 
+%token condition_o boolor_o booland_o or_o xor_o and_o eq_o neq_o lt_o gt_o lte_o gte_o lshift_o rshift_o 
+%token plus_o minus_o ast div_o mod_o inc_o dec_o sizeof_o ref_o rref_o 
+%token write_o mulw_o divw_o modw_o addw_o subw_o lshiftw_o rshiftw_o andw_o xorw_o orw_o compw_o invw_o
+
 %token <sval> identifier
 %token <ival> integer
 
-%type <sval> val sentence usentence msentence wsentence sentences esentence w_obj
-
 %%
+c	: 
+	| external-declarations;
 
-function	: void_t identifier bopen bclose msentence{
-			int i;
-			for(i = 0; i<16; i++) printf("nop\n");
-			printf($5);
-		}
+external-declarations	: external-declaration
+			| external-declaration external-declarations
+			;
+
+external-declaration	: function-definition;
+
+function-definition	: declarator compound-statement
+			| declaration-specifiers declarator compound-statement
+			| declarator declarations compound-statement
+			| declaration-specifiers declarator declarations compound-statement
+			;
+
+declaration-specifiers	: declaration-specifier
+			| declaration-specifier declaration-specifiers
+			;
+
+declaration-specifier	: storage-class-specifier
+			| type-specifier
+			| type-qualifier
+			;
+
+storage-class-specifier	: static_s
+			;
+
+type-specifier	: void_t
+		| int_t
 		;
 
-sentences	: sentence {strcpy($$, $1); }
-		| sentence sentences {sprintf($$, "%s%s", $1, $2); }
+type-qualifier	: const_q
+		| volatile_q
 		;
 
-// 文
-sentence	: usentence { strcpy($$, $1); }
-		| msentence { strcpy($$, $1); }
-		| wsentence { strcpy($$, $1); }
-		| esentence { strcpy($$, $1); }
+declarator	: direct-declarator
 		;
 
-// 空文
-esentence	: semi { sprintf($$, ""); }
+direct-declarator	: identifier
+			| bopen declarator bclose
+			| direct-declarator bopen bclose
 		;
 
-// 単文
-usentence	: val semi {strcpy($$, $1); }
+declarations	: declaration
+		| declaration declarations
 		;
 
-// 複文
-msentence	: cbopen vdecs sentences cbclose {strcpy($$, $3); }
-		| cbopen sentences cbclose {strcpy($$, $2); }
+declaration	: declaration-specifiers semicolon
+		| declaration-specifiers init-declarators semicolon
 		;
 
-// while 文
-wsentence	: while_s bopen val bclose sentence{
-			sprintf($$, "*while_%d\n%seq #0\nbranch #wbreak_%d\n%sread #while_%d\nwrite #0\n*wbreak_%d\n", label_i, $3, label_i, $5, label_i, label_i);
-			label_i++;
-		};
+init-declarators	: init-declarator
+			| init-declarator init-declarators
+			;
 
+init-declarator	: declarator;
 
-// 変数定義リスト
-vdecs	: vdec
-	| vdec vdecs;
+/*parameter-type-list	: parameter-list
+			| parameter-list comma etc
+			;*/
 
-// 変数定義
-vdec	: static_t int_t identifier semi {
-		strcpy(vars[vars_i].name, $3);
-		vars[vars_i].addr = vars_i + VAR_ORG;
-		vars_i++;
-	}
-	;
+/*parameter-list	: parameter-declaration
+		| parameter-list comma parameter-declaration
+		;*/
 
-// 値
-val	: identifier {
-		Var *var;
-		var = search_var($1);
+/*parameter-declaration	: declaration-specifiers declarator
+			| declaration-specifiers
+			;*/
 
-		sprintf($$, "read %d\n", var->addr);
-	}
-	| integer {
-		sprintf($$, "read #%d\n", $1);
-	}
-	| w_obj write_o val {
-		Var *var;
-		var = search_var($1);
+compound-statement	: cbopen declarations statements cbclose
+			| cbopen declarations cbclose
+			| cbopen statements cbclose
+			| cbopen cbclose
+			;
 
-		sprintf($$, "%s%s\n", $3, $1);
-	}
-	| w_obj eq_o val {
-		sprintf($$, "%swrite 2\nread 2\nadd #eq 0\nwrite #rr_%d\n%s*rr_%d nop\n", $3, label_i, $1, label_i);
-		label_i++;
-	}
-	| val neq_o val {
-		sprintf($$, "%swrite 2\nread 2\nadd #neq 0\nwrite #rr_%d\n%s*rr_%d nop\n", $3, label_i, $1, label_i);
-		label_i++;
-	}
-	| val plus_o val {
-		sprintf($$, "%swrite 2\nread 2\nadd #add 0\nwrite #rr_%d\n%s*rr_%d nop\n", $3, label_i, $1, label_i);
-		label_i++;
-	}
-	| val ast val {
-		sprintf($$, "%swrite 2\nread 2\nadd #mul 0\nwrite #rr_%d\n%s*rr_%d nop\n", $3, label_i, $1, label_i);
-		label_i++;
-	}
-	;
+statements	: statement
+		| statement statements
+		;
 
-// 代入可能オブジェクト
-w_obj	: identifier {
-		Var *var;
-		var = search_var($1);
-		sprintf($$, "write #%d\n", var->addr);
-	}
-	| val sbopen val sbclose {
-		sprintf($$, "write 2\n%swrite 2\nread 2\nadd #add 0\nwrite #rr_%d\n%s\n*rr_%d nop\nadd #write 0\nwrite #128\nread 2\nwrite #rw_%d\n*rw_%d nop\nwrite 128\n", $1, label_i, $3, label_i, label_i, label_i); 
-		label_i++;
-	}
-	;
+statement	: compound-statement
+		| expression-statement
+		;
+
+expression-statement	: expression semicolon
+			| semicolon
+			;
+
+expression	: assignment-expression;
+
+assignment-expression	: conditional-expression
+			| unary-expression assignment-operator assignment-expression
+			;
+
+conditional-expression	: logical-or-expression
+			;
+
+logical-or-expression	: logical-and-expression
+			;
+
+logical-and-expression	: inclusive-or-expression
+			;
+
+inclusive-or-expression	: exclusive-or-expression
+			;
+
+exclusive-or-expression	: and-expression
+			;
+
+and-expression	: equality-expression
+		;
+
+equality-expression	: relational-expression
+			;
+
+relational-expression	: shift-expression
+			;
+
+shift-expression	: additive-expression
+			;
+
+additive-expression	: multiplicative-expression
+			;
+
+multiplicative-expression	: cast-expression
+				;
+
+cast-expression	: unary-expression
+		;
+
+unary-expression	: postfix-expression
+			;
+
+postfix-expression	: primary-expression
+			;
+
+primary-expression	: identifier
+			| constant
+			;
+
+constant	: integer
+		;
+
+assignment-operator	: write_o
+			;
+
 
 %%
 
