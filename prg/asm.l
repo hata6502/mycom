@@ -3,16 +3,19 @@
 #include <string.h>
 %}
 
-white       [ \t]
-comment	--.*\n
+white       [ \t\n]
+comment	\/\/.*\n
+comment2	\/\*.\*\/
 identifier      [a-zA-Z_][0-9a-zA-Z_]*
 integer	[0-9]+
 string \".*\"
 other       .
 
+%option yylineno
 %%
 {white}	{}
 {comment}	{}
+{comment2}	{}
 
 nop	{return(is_nop); }
 read	{return(is_read); }
@@ -34,10 +37,12 @@ gte	{return(is_gte); }
 
 {integer}	{yylval.ival = atoi(yytext); return(integer); }
 {identifier}	{strcpy(yylval.sval, yytext); return(identifier); }
-{string}	{strcpy(yylval.sval, yytext); return(string); }
+{string}	{yytext[strlen(yytext) - 1] = '\0'; strcpy(yylval.sval, &yytext[1]); return(string); }
 #	{return(sharp); }
 \*	{return(ast); }
-\n	{return(nl); }
+;	{return(semicolon); }
+:	{return(colon); }
+&	{return(amp); }
 
 {other}                 { fprintf(stderr, "Illegal charcter %c, ignored\n", yytext[0]); }
 %%

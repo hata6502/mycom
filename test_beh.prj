@@ -1,4 +1,6 @@
 vhdl work "ipcore_dir/vram.vhd"
+vhdl work "24ea1ac481e3a2e80803/xsadd.vhd"
 vhdl work "crom.vhd"
+vhdl work "24ea1ac481e3a2e80803/xsadd_gen.vhd"
 vhdl work "BH_com.vhd"
 vhdl work "test.vhd"

@@ -9,41 +9,42 @@ Target Device  : xc3s500e
 Target Package : vq100
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon Apr  9 21:00:20 2018
+Mapped Date    : Sun Apr 15 00:29:40 2018
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    9
 Logic Utilization:
-  Total Number Slice Registers:         367 out of   9,312    3%
-    Number used as Flip Flops:          303
+  Total Number Slice Registers:         497 out of   9,312    5%
+    Number used as Flip Flops:          433
     Number used as Latches:              64
-  Number of 4 input LUTs:             6,332 out of   9,312   67%
+  Number of 4 input LUTs:             6,817 out of   9,312   73%
 Logic Distribution:
-  Number of occupied Slices:          3,425 out of   4,656   73%
-    Number of Slices containing only related logic:   3,425 out of   3,425 100%
-    Number of Slices containing unrelated logic:          0 out of   3,425   0%
+  Number of occupied Slices:          3,759 out of   4,656   80%
+    Number of Slices containing only related logic:   3,759 out of   3,759 100%
+    Number of Slices containing unrelated logic:          0 out of   3,759   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       6,486 out of   9,312   69%
-    Number used as logic:             2,748
-    Number used as a route-thru:        154
+  Total Number of 4 input LUTs:       6,973 out of   9,312   74%
+    Number used as logic:             3,201
+    Number used as a route-thru:        156
     Number used for Dual Port RAMs:   3,584
       (Two LUTs used per Dual Port RAM)
+    Number used as Shift registers:      32
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 49 out of      66   74%
   Number of RAMB16s:                      1 out of      20    5%
-  Number of BUFGMUXs:                     3 out of      24   12%
+  Number of BUFGMUXs:                     4 out of      24   16%
   Number of MULT18X18SIOs:                4 out of      20   20%
 
-Average Fanout of Non-Clock Nets:                5.89
+Average Fanout of Non-Clock Nets:                5.62
 
-Peak Memory Usage:  202 MB
-Total REAL time to MAP completion:  10 secs 
-Total CPU time to MAP completion:   10 secs 
+Peak Memory Usage:  205 MB
+Total REAL time to MAP completion:  11 secs 
+Total CPU time to MAP completion:   11 secs 
 
 NOTES:
 
@@ -84,23 +85,44 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:Pack:266 - The function generator crom_1/Mmux_dot_246 failed to merge
-   with F5 multiplexer crom_1/Mmux_dot_21_f5_3.  There is a conflict for the
+WARNING:Pack:266 - The function generator crom_1/Mmux_dot_256 failed to merge
+   with F5 multiplexer crom_1/Mmux_dot_21_f5_1.  There is a conflict for the
    FXMUX.  The design will exhibit suboptimal timing.
-WARNING:Pack:266 - The function generator crom_1/Mmux_dot_257 failed to merge
-   with F5 multiplexer crom_1/Mmux_dot_21_f5_7.  There is a conflict for the
-   FXMUX.  The design will exhibit suboptimal timing.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB4> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB5> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB6> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB7> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cs
+   tr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.B>:<RAMB16_RAMB16B>.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network Mram_cpu_greg1/SPO has no load.
-INFO:LIT:395 - The above info message is repeated 1800 more times for the
+INFO:LIT:243 - Logical network Mram_stack1/SPO has no load.
+INFO:LIT:395 - The above info message is repeated 1791 more times for the
    following (max. 5 shown):
-   Mram_cpu_greg2/SPO,
-   Mram_cpu_greg3/SPO,
-   Mram_cpu_greg4/SPO,
-   Mram_cpu_greg5/SPO,
-   Mram_cpu_greg6/SPO
+   Mram_stack2/SPO,
+   Mram_stack3/SPO,
+   Mram_stack4/SPO,
+   Mram_stack5/SPO,
+   Mram_stack6/SPO
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:MapLib:159 - Net Timing constraints on signal clk are pushed forward
@@ -111,31 +133,10 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   4 block(s) optimized away
-   9 signal(s) removed
+  36 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
-
-The trimmed logic report below shows the logic removed from your design due to
-sourceless or loadless signals, and VCC or ground connections.  If the removal
-of a signal or symbol results in the subsequent removal of an additional signal
-or symbol, the message explaining that second removal will be indented.  This
-indentation will be repeated as a chain of related logic is removed.
-
-To quickly locate the original cause for the removal of a chain of logic, look
-above the place where that logic is listed in the trimming report, then locate
-the lines that are least indented (begin at the leftmost edge).
-
-The signal "vram_1/douta<7>" is sourceless and has been removed.
-The signal "vram_1/doutb<7>" is sourceless and has been removed.
-The signal "vram_1/doutb<6>" is sourceless and has been removed.
-The signal "vram_1/doutb<5>" is sourceless and has been removed.
-The signal "vram_1/doutb<4>" is sourceless and has been removed.
-The signal "vram_1/doutb<3>" is sourceless and has been removed.
-The signal "vram_1/doutb<2>" is sourceless and has been removed.
-The signal "vram_1/doutb<1>" is sourceless and has been removed.
-The signal "vram_1/doutb<0>" is sourceless and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK

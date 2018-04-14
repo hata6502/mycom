@@ -45,7 +45,7 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    nl = 258,
+    semicolon = 258,
     is_nop = 259,
     is_read = 260,
     is_write = 261,
@@ -65,9 +65,11 @@ extern int yydebug;
     is_and = 275,
     is_or = 276,
     is_xor = 277,
-    identifier = 278,
-    string = 279,
-    integer = 280
+    colon = 278,
+    amp = 279,
+    identifier = 280,
+    string = 281,
+    integer = 282
   };
 #endif
 
@@ -76,14 +78,14 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 29 "asm.y" /* yacc.c:1909  */
+#line 31 "asm.y" /* yacc.c:1909  */
 
 	int ival;
 	double fval;
 	char cval;
-	char sval[256];
+	unsigned char sval[256];
 
-#line 87 "asm.tab.h" /* yacc.c:1909  */
+#line 89 "asm.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

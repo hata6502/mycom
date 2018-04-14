@@ -5,23 +5,25 @@
    <db_ref_list>
       <db_ref path="/home/hato/mycom/test_isim_beh.wdb" id="1" type="auto">
          <top_modules>
+            <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
             <top_module name="std_logic_textio" />
             <top_module name="std_logic_unsigned" />
             <top_module name="test" />
             <top_module name="textio" />
+            <top_module name="xsadd" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="/test/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
    <wvobject fp_name="/test/uut/boot" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">boot[0:255]</obj_property>
-      <obj_property name="ObjectShortName">boot[0:255]</obj_property>
+      <obj_property name="ElementShortName">boot[0:511]</obj_property>
+      <obj_property name="ObjectShortName">boot[0:511]</obj_property>
    </wvobject>
    <wvobject fp_name="/test/uut/cpu_greg" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">cpu_greg[0:127]</obj_property>
@@ -68,7 +70,11 @@
       <obj_property name="ObjectShortName">cpu_sp</obj_property>
    </wvobject>
    <wvobject fp_name="/test/uut/stack" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">stack[0:511]</obj_property>
-      <obj_property name="ObjectShortName">stack[0:511]</obj_property>
+      <obj_property name="ElementShortName">stack[0:255]</obj_property>
+      <obj_property name="ObjectShortName">stack[0:255]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/rand_rnd_num" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rand_rnd_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rand_rnd_num[31:0]</obj_property>
    </wvobject>
 </wave_config>

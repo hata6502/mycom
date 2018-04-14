@@ -5,16 +5,268 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">600</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">vram</arg>&gt;.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;1&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">vram_1_doutb</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">vram_1_douta&lt;7&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp0</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;1&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp4</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;2&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp5</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">34</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">34</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t2</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t3</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">56</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">64</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">88</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">64</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">120</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="2211" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">891</arg>: Instantiating black box module &lt;<arg fmt="%s" index="3">vram</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;1&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp0</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;1&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp4</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">320</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">generator0.status&lt;2&gt;</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">33</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">256</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">tmp5</arg>&gt; has a width of <arg fmt="%d" index="4">64</arg> bits but assigned expression is <arg fmt="%d" index="5">66</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">34</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t0</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">34</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">36</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t1</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t2</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t3</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">40</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t4</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">56</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">64</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t5</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">88</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">409</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">48</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">410</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">64</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="0" delta="new" >Size mismatch in logical xor : extending constant.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd</arg>&quot; line <arg fmt="%d" index="2">411</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">t6</arg>&gt; has a width of <arg fmt="%d" index="4">32</arg> bits but assigned expression is <arg fmt="%d" index="5">120</arg>-bit wide.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">vram_1_dina</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">rand_rnd_val</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rand_init_param.status</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000000000</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">32</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">cpu_rdata</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -23,13 +275,16 @@
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">32</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">cpu_addr</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">474</arg>: The result of a <arg fmt="%d" index="3">32</arg>x<arg fmt="%d" index="4">32</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">32</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">761</arg>: The result of a <arg fmt="%d" index="3">32</arg>x<arg fmt="%d" index="4">32</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">32</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
 </msg>
 
-<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">615</arg>: The result of a <arg fmt="%d" index="3">32</arg>x<arg fmt="%d" index="4">7</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">32</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+<msg type="warning" file="Xst" num="643" delta="old" >&quot;<arg fmt="%s" index="1">/home/hato/mycom/BH_com.vhd</arg>&quot; line <arg fmt="%d" index="2">906</arg>: The result of a <arg fmt="%d" index="3">32</arg>x<arg fmt="%d" index="4">7</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">32</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
 </msg>
 
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">status_valid</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">rand_1</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_cpu_greg</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -44,13 +299,116 @@
 <msg type="info" file="Xst" num="2385" delta="old" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_cpu_wdata_mult0000</arg> by adding <arg fmt="%d" index="2">3</arg> register level(s).
 </msg>
 
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">RND_VAL</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">XSADD_GEN</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">status_valid</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">XSADD_GEN</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">Mmult_vram_1_addra_mult00011</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">Mmult_cpu_wdata_mult0000_submult_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
 </msg>
 
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clkcnt_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
+</msg>
+
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">cpu_inst_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">BH_com</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">23 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;cpu_inst_9&gt; &lt;cpu_inst_10&gt; &lt;cpu_inst_11&gt; &lt;cpu_inst_12&gt; &lt;cpu_inst_13&gt; &lt;cpu_inst_14&gt; &lt;cpu_inst_15&gt; &lt;cpu_inst_16&gt; &lt;cpu_inst_17&gt; &lt;cpu_inst_18&gt; &lt;cpu_inst_19&gt; &lt;cpu_inst_20&gt; &lt;cpu_inst_21&gt; &lt;cpu_inst_22&gt; &lt;cpu_inst_23&gt; &lt;cpu_inst_24&gt; &lt;cpu_inst_25&gt; &lt;cpu_inst_26&gt; &lt;cpu_inst_27&gt; &lt;cpu_inst_28&gt; &lt;cpu_inst_29&gt; &lt;cpu_inst_30&gt; &lt;cpu_inst_31&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">rand_1/RND_VAL</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BH_com</arg>&gt;.
 </msg>
 
 </messages>

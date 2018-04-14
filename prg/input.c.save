@@ -1,0 +1,101 @@
+#define pc	0
+#define wreg 1
+#define sp 2
+#define greg_0 128
+#define greg_1 128
+
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
+	read #return
+	write 2
+	read #1024
+
+
+	write 2
+	read #str
+	write 2
+	read #print
+	write #pc
+*return
+	read #return_2
+	write 2
+	read #1280
+	write 2
+	read #str_2
+	write 2
+	--read #print
+	--write #pc
+	goto #print
+*return_2
+*wait
+	read #wait
+	write #pc
+
+*str	"TEST -- Subroutine with Hardware Stack --"
+*str_2	"String wo Display suru Subroutine wo tukutta. sorosoro C Compiler wo tukuritai. "
+
+*print
+	read 2
+	write #rr_0
+*rr_0	nop
+	write #greg_0
+	read 2
+	write #rr_1
+*rr_1	nop
+	write #greg_1
+
+*print_loop
+	read greg_0
+	write #rr_2
+*rr_2   nop
+        eq #0
+        branch #break
+                read greg_0
+                write #rr_3
+        *rr_3   nop
+                write greg_1
+                read greg_0
+                add #1
+                write #greg_0
+                read greg_1
+                add #1
+                write #greg_1
+        read #print_loop
+        write #pc
+
+*break
+	read 2
+	write #rr_4
+*rr_4	nop
+	write #pc

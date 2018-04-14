@@ -60,7 +60,7 @@ static void work_a_2205949838_3212880686_p_0(char *t0)
     char *t29;
     char *t30;
 
-LAB0:    xsi_set_current_line(1206, ng0);
+LAB0:    xsi_set_current_line(2365, ng0);
 
 LAB3:    t1 = (t0 + 1040U);
     t2 = *((char **)t1);
@@ -86,7 +86,7 @@ LAB3:    t1 = (t0 + 1040U);
     t16 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t15, t14);
     t17 = (t16 - 0);
     t18 = (t17 * 1);
-    xsi_vhdl_check_range_of_index(0, 127, 1, t16);
+    xsi_vhdl_check_range_of_index(0, 255, 1, t16);
     t19 = (64U * t18);
     t20 = (0 + t19);
     t21 = (t20 + t13);
