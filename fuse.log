@@ -4,6 +4,8 @@ Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/hato/mycom/ipcore_dir/vram.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/ipcore_dir/divider.vhd" into library work
+Parsing VHDL file "/home/hato/mycom/ipcore_dir/stack.vhd" into library work
 Parsing VHDL file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd" into library work
 Parsing VHDL file "/home/hato/mycom/crom.vhd" into library work
 Parsing VHDL file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd" into library work
@@ -13,15 +15,19 @@ Starting static elaboration
 WARNING:HDLCompiler:746 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
 WARNING:HDLCompiler:220 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
 Completed static elaboration
-Fuse Memory Usage: 40996 KB
-Fuse CPU Usage: 2310 ms
+Fuse Memory Usage: 57228 KB
+Fuse CPU Usage: 2700 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
 Compiling package numeric_std
 Compiling package xsadd
+Compiling package vcomponents
 Compiling package textio
+Compiling package vital_timing
+Compiling package vital_primitives
+Compiling package vpkg
 Compiling package std_logic_textio
 Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
 Compiling architecture softecc_output_reg_stage_behavioral of entity BLK_MEM_GEN_V7_3_softecc_output_reg_stage [\BLK_MEM_GEN_V7_3_softecc_output...]
@@ -29,13 +35,31 @@ Compiling architecture mem_module_behavioral of entity BLK_MEM_GEN_V7_3_mem_modu
 Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3("blk_mem_gen_v...]
 Compiling architecture vram_a of entity vram [vram_default]
 Compiling architecture behavioral of entity crom [crom_default]
+Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
+Compiling architecture softecc_output_reg_stage_behavioral of entity BLK_MEM_GEN_V7_3_softecc_output_reg_stage [\BLK_MEM_GEN_V7_3_softecc_output...]
+Compiling architecture mem_module_behavioral of entity BLK_MEM_GEN_V7_3_mem_module [\BLK_MEM_GEN_V7_3_mem_module("bl...]
+Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3("blk_mem_gen_v...]
+Compiling architecture stack_a of entity stack [stack_default]
 Compiling architecture rtl of entity XSADD_GEN [xsadd_gen_default]
+Compiling architecture vcc_v of entity VCC [vcc_default]
+Compiling architecture gnd_v of entity GND [gnd_default]
+Compiling architecture fd_v of entity FD [\FD('1')\]
+Compiling architecture srl16_v of entity SRL16 [\SRL16("0000000000000001")(0,15)...]
+Compiling architecture inv_v of entity INV [inv_default]
+Compiling architecture lut3_v of entity LUT3 [\LUT3("10010110")(0,7)\]
+Compiling architecture lut4_v of entity LUT4 [\LUT4("0110100110010110")(0,15)\]
+Compiling architecture lut2_v of entity LUT2 [\LUT2("0110")(0,3)\]
+Compiling architecture lut1_v of entity LUT1 [\LUT1("0001")(0,3)\]
+Compiling architecture muxcy_v of entity MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity XORCY [xorcy_default]
+Compiling architecture mult_and_v of entity MULT_AND [mult_and_default]
+Compiling architecture structure of entity divider [divider_default]
 Compiling architecture behavioral of entity BH_com [bh_com_default]
 Compiling architecture behavior of entity test
 Time Resolution for simulation is 1ps.
-Waiting for 6 sub-compilation(s) to finish...
-Compiled 25 VHDL Units
+Waiting for 20 sub-compilation(s) to finish...
+Compiled 75 VHDL Units
 Built simulation executable /home/hato/mycom/test_isim_beh.exe
-Fuse Memory Usage: 100312 KB
-Fuse CPU Usage: 2650 ms
-GCC CPU Usage: 1660 ms
+Fuse Memory Usage: 127568 KB
+Fuse CPU Usage: 3480 ms
+GCC CPU Usage: 3840 ms

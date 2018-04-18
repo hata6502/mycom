@@ -8,5 +8,8 @@
 <msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD=31.25ns;&gt; [BPC3003-Papilio_One-general.ucf(33)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
 </msg>
 
+<msg type="warning" file="NgdBuild" num="483" delta="old" >Attribute &quot;<arg fmt="%s" index="1">INIT</arg>&quot; on &quot;<arg fmt="%s" index="2">div_1/blk00000003/sig0000010e</arg>&quot; is on the wrong type of object.  Please see the Constraints Guide for more information on this attribute.
+</msg>
+
 </messages>
 

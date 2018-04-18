@@ -1,12 +1,14 @@
 Release 14.7 ngdbuild P.20131013 (lin)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc
-BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/ngdbuild -filter
+iseconfig/filter.filter -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp
+-uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd
 
 Reading NGO file "/home/hato/mycom/BH_com.ngc" ...
 Loading design module "ipcore_dir/vram.ngc"...
+Loading design module "ipcore_dir/stack.ngc"...
+Loading design module "ipcore_dir/divider.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -21,6 +23,9 @@ INFO:ConstraintSystem - The Period constraint <PERIOD=31.25ns;>
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:483 - Attribute "INIT" on "div_1/blk00000003/sig0000010e" is on
+   the wrong type of object.  Please see the Constraints Guide for more
+   information on this attribute.
 
 Partition Implementation Status
 -------------------------------
@@ -31,9 +36,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   1
 
-Total memory usage is 121880 kilobytes
+Total memory usage is 124008 kilobytes
 
 Writing NGD file "BH_com.ngd" ...
 Total REAL time to NGDBUILD completion:  7 sec

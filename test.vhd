@@ -41,9 +41,9 @@ ARCHITECTURE behavior OF test IS
  
     COMPONENT BH_com
     PORT(
-         A : OUT  std_logic_vector(15 downto 0);
-         B : OUT  std_logic_vector(15 downto 0);
-         C : OUT  std_logic_vector(15 downto 0);
+         A : INOUT  std_logic_vector(15 downto 0);
+         B : INOUT  std_logic_vector(15 downto 0);
+         C : INOUT  std_logic_vector(15 downto 0);
          clk : IN  std_logic
         );
     END COMPONENT;

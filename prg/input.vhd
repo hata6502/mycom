@@ -72,272 +72,272 @@ is_word(IS_READ, 222), 	-- 322
 is_word(IS_READ, 215), 	-- 323
 is_word(IS_READ, 209), 	-- 324
 is_word(IS_READ, 0), 	-- 325
-is_word(IS_READ, 219), 	-- 326
-is_word(IS_READ, 0), 	-- 327
-is_word(IS_READ, 765), 	-- 328
-is_word(IS_WRITE, 2), 	-- 329
-is_word(IS_READ, 764), 	-- 330
-is_word(IS_WRITE, 2), 	-- 331
-is_word(IS_READ, 763), 	-- 332
-is_word(IS_WRITE, 762), 	-- 333
-is_word(IS_READ, 761), 	-- 334
-is_word(IS_WRITE, 2), 	-- 335
-is_word(IS_READ, 760), 	-- 336
-is_word(IS_WRITE, 2), 	-- 337
-is_word(IS_READ, 759), 	-- 338
-is_word(IS_WRITE, 2), 	-- 339
-is_word(IS_READ, 758), 	-- 340
-is_word(IS_WRITE, 757), 	-- 341
-is_word(IS_READ, 756), 	-- 342
-is_word(IS_WRITE, 755), 	-- 343
-is_word(IS_READ, 196), 	-- 344
-is_word(IS_GTE, 754), 	-- 345
-is_word(IS_BRANCH, 753), 	-- 346
-is_word(IS_READ, 752), 	-- 347
-is_word(IS_WRITE, 751), 	-- 348
-is_word(IS_READ, 197), 	-- 349
-is_word(IS_GTE, 750), 	-- 350
-is_word(IS_BRANCH, 749), 	-- 351
-is_word(IS_READ, 196), 	-- 352
-is_word(IS_EQ, 748), 	-- 353
-is_word(IS_BRANCH, 747), 	-- 354
-is_word(IS_READ, 196), 	-- 355
-is_word(IS_EQ, 746), 	-- 356
-is_word(IS_BRANCH, 745), 	-- 357
-is_word(IS_READ, 197), 	-- 358
-is_word(IS_EQ, 744), 	-- 359
-is_word(IS_BRANCH, 743), 	-- 360
-is_word(IS_READ, 197), 	-- 361
-is_word(IS_EQ, 742), 	-- 362
-is_word(IS_BRANCH, 741), 	-- 363
-is_word(IS_READ, 196), 	-- 364
-is_word(IS_OR, 197), 	-- 365
-is_word(IS_AND, 740), 	-- 366
-is_word(IS_EQ, 739), 	-- 367
-is_word(IS_BRANCH, 738), 	-- 368
-is_word(IS_READ, 737), 	-- 369
-is_word(IS_WRITE, 736), 	-- 370
+is_word(IS_READ, 206), 	-- 326
+is_word(IS_READ, 222), 	-- 327
+is_word(IS_READ, 192), 	-- 328
+is_word(IS_READ, 221), 	-- 329
+is_word(IS_READ, 166), 	-- 330
+is_word(IS_READ, 32), 	-- 331
+is_word(IS_READ, 181), 	-- 332
+is_word(IS_READ, 190), 	-- 333
+is_word(IS_READ, 33), 	-- 334
+is_word(IS_READ, 32), 	-- 335
+is_word(IS_READ, 0), 	-- 336
+is_word(IS_READ, 219), 	-- 337
+is_word(IS_READ, 0), 	-- 338
+is_word(IS_READ, 765), 	-- 339
+is_word(IS_WRITE, 2), 	-- 340
+is_word(IS_READ, 764), 	-- 341
+is_word(IS_WRITE, 2), 	-- 342
+is_word(IS_READ, 763), 	-- 343
+is_word(IS_WRITE, 2), 	-- 344
+is_word(IS_READ, 762), 	-- 345
+is_word(IS_WRITE, 761), 	-- 346
+is_word(IS_READ, 760), 	-- 347
+is_word(IS_WRITE, 2), 	-- 348
+is_word(IS_READ, 759), 	-- 349
+is_word(IS_WRITE, 2), 	-- 350
+is_word(IS_READ, 758), 	-- 351
+is_word(IS_WRITE, 2), 	-- 352
+is_word(IS_READ, 757), 	-- 353
+is_word(IS_WRITE, 756), 	-- 354
+is_word(IS_READ, 7), 	-- 355
+is_word(IS_EQ, 755), 	-- 356
+is_word(IS_BRANCH, 754), 	-- 357
+is_word(IS_READ, 753), 	-- 358
+is_word(IS_WRITE, 752), 	-- 359
+is_word(IS_READ, 196), 	-- 360
+is_word(IS_GTE, 751), 	-- 361
+is_word(IS_BRANCH, 750), 	-- 362
+is_word(IS_READ, 749), 	-- 363
+is_word(IS_WRITE, 748), 	-- 364
+is_word(IS_READ, 197), 	-- 365
+is_word(IS_GTE, 747), 	-- 366
+is_word(IS_BRANCH, 746), 	-- 367
+is_word(IS_READ, 196), 	-- 368
+is_word(IS_EQ, 745), 	-- 369
+is_word(IS_BRANCH, 744), 	-- 370
 is_word(IS_READ, 196), 	-- 371
-is_word(IS_MUL, 735), 	-- 372
-is_word(IS_ADD, 197), 	-- 373
-is_word(IS_ADD, 734), 	-- 374
-is_word(IS_WRITE, 733), 	-- 375
-is_word(IS_READ, 732), 	-- 376
-is_word(IS_WRITE, 2), 	-- 377
-is_word(IS_READ, 192), 	-- 378
-is_word(IS_WRITE, 2), 	-- 379
-is_word(IS_READ, 731), 	-- 380
-is_word(IS_WRITE, 2), 	-- 381
-is_word(IS_READ, 730), 	-- 382
-is_word(IS_WRITE, 729), 	-- 383
-is_word(IS_READ, 197), 	-- 384
-is_word(IS_ADD, 728), 	-- 385
-is_word(IS_WRITE, 727), 	-- 386
-is_word(IS_READ, 726), 	-- 387
-is_word(IS_WRITE, 725), 	-- 388
-is_word(IS_READ, 196), 	-- 389
-is_word(IS_ADD, 724), 	-- 390
-is_word(IS_WRITE, 723), 	-- 391
-is_word(IS_READ, 722), 	-- 392
-is_word(IS_WRITE, 721), 	-- 393
-is_word(IS_READ, 720), 	-- 394
-is_word(IS_WRITE, 719), 	-- 395
-is_word(IS_READ, 196), 	-- 396
-is_word(IS_GTE, 718), 	-- 397
-is_word(IS_BRANCH, 717), 	-- 398
-is_word(IS_READ, 3), 	-- 399
-is_word(IS_AND, 716), 	-- 400
-is_word(IS_WRITE, 715), 	-- 401
-is_word(IS_READ, 714), 	-- 402
-is_word(IS_WRITE, 2), 	-- 403
-is_word(IS_READ, 197), 	-- 404
-is_word(IS_WRITE, 2), 	-- 405
-is_word(IS_READ, 713), 	-- 406
-is_word(IS_WRITE, 2), 	-- 407
-is_word(IS_READ, 196), 	-- 408
-is_word(IS_WRITE, 2), 	-- 409
-is_word(IS_READ, 712), 	-- 410
-is_word(IS_WRITE, 711), 	-- 411
-is_word(IS_READ, 248), 	-- 412
-is_word(IS_BRANCH, 710), 	-- 413
-is_word(IS_READ, 196), 	-- 414
-is_word(IS_ADD, 709), 	-- 415
-is_word(IS_WRITE, 708), 	-- 416
-is_word(IS_READ, 707), 	-- 417
-is_word(IS_WRITE, 706), 	-- 418
-is_word(IS_READ, 705), 	-- 419
-is_word(IS_WRITE, 704), 	-- 420
-is_word(IS_READ, 196), 	-- 421
-is_word(IS_GTE, 703), 	-- 422
-is_word(IS_BRANCH, 702), 	-- 423
-is_word(IS_READ, 701), 	-- 424
-is_word(IS_WRITE, 700), 	-- 425
-is_word(IS_READ, 197), 	-- 426
-is_word(IS_GTE, 699), 	-- 427
-is_word(IS_BRANCH, 698), 	-- 428
-is_word(IS_READ, 3), 	-- 429
-is_word(IS_AND, 697), 	-- 430
-is_word(IS_WRITE, 696), 	-- 431
-is_word(IS_EQ, 695), 	-- 432
-is_word(IS_BRANCH, 694), 	-- 433
-is_word(IS_READ, 693), 	-- 434
-is_word(IS_WRITE, 2), 	-- 435
-is_word(IS_READ, 192), 	-- 436
-is_word(IS_WRITE, 2), 	-- 437
-is_word(IS_READ, 196), 	-- 438
-is_word(IS_WRITE, 2), 	-- 439
-is_word(IS_READ, 197), 	-- 440
-is_word(IS_WRITE, 2), 	-- 441
-is_word(IS_READ, 692), 	-- 442
-is_word(IS_WRITE, 691), 	-- 443
-is_word(IS_READ, 248), 	-- 444
-is_word(IS_BRANCH, 690), 	-- 445
-is_word(IS_READ, 197), 	-- 446
-is_word(IS_ADD, 689), 	-- 447
-is_word(IS_WRITE, 688), 	-- 448
-is_word(IS_READ, 687), 	-- 449
-is_word(IS_WRITE, 686), 	-- 450
-is_word(IS_READ, 196), 	-- 451
-is_word(IS_ADD, 685), 	-- 452
-is_word(IS_WRITE, 684), 	-- 453
-is_word(IS_READ, 683), 	-- 454
-is_word(IS_WRITE, 682), 	-- 455
-is_word(IS_READ, 681), 	-- 456
-is_word(IS_WRITE, 680), 	-- 457
-is_word(IS_READ, 2), 	-- 458
-is_word(IS_WRITE, 679), 	-- 459
-is_word(IS_ADD, 3), 	-- 460
-is_word(IS_WRITE, 678), 	-- 461
-is_word(IS_READ, 2), 	-- 462
-is_word(IS_WRITE, 677), 	-- 463
-is_word(IS_ADD, 3), 	-- 464
-is_word(IS_WRITE, 676), 	-- 465
-is_word(IS_READ, 2), 	-- 466
-is_word(IS_WRITE, 675), 	-- 467
-is_word(IS_ADD, 3), 	-- 468
-is_word(IS_WRITE, 674), 	-- 469
-is_word(IS_READ, 251), 	-- 470
-is_word(IS_MUL, 673), 	-- 471
-is_word(IS_ADD, 250), 	-- 472
-is_word(IS_ADD, 672), 	-- 473
-is_word(IS_WRITE, 671), 	-- 474
-is_word(IS_READ, 252), 	-- 475
-is_word(IS_NEQ, 670), 	-- 476
-is_word(IS_BRANCH, 669), 	-- 477
-is_word(IS_READ, 249), 	-- 478
-is_word(IS_SUB, 668), 	-- 479
-is_word(IS_WRITE, 667), 	-- 480
-is_word(IS_READ, 666), 	-- 481
-is_word(IS_WRITE, 665), 	-- 482
-is_word(IS_READ, 252), 	-- 483
-is_word(IS_NEQ, 664), 	-- 484
-is_word(IS_BRANCH, 663), 	-- 485
-is_word(IS_READ, 249), 	-- 486
-is_word(IS_ADD, 662), 	-- 487
-is_word(IS_WRITE, 661), 	-- 488
-is_word(IS_READ, 660), 	-- 489
-is_word(IS_WRITE, 659), 	-- 490
-is_word(IS_READ, 252), 	-- 491
-is_word(IS_NEQ, 658), 	-- 492
-is_word(IS_BRANCH, 657), 	-- 493
-is_word(IS_READ, 249), 	-- 494
-is_word(IS_SUB, 656), 	-- 495
-is_word(IS_WRITE, 655), 	-- 496
-is_word(IS_READ, 654), 	-- 497
-is_word(IS_WRITE, 653), 	-- 498
+is_word(IS_EQ, 743), 	-- 372
+is_word(IS_BRANCH, 742), 	-- 373
+is_word(IS_READ, 197), 	-- 374
+is_word(IS_EQ, 741), 	-- 375
+is_word(IS_BRANCH, 740), 	-- 376
+is_word(IS_READ, 197), 	-- 377
+is_word(IS_EQ, 739), 	-- 378
+is_word(IS_BRANCH, 738), 	-- 379
+is_word(IS_READ, 196), 	-- 380
+is_word(IS_OR, 197), 	-- 381
+is_word(IS_AND, 737), 	-- 382
+is_word(IS_EQ, 736), 	-- 383
+is_word(IS_BRANCH, 735), 	-- 384
+is_word(IS_READ, 734), 	-- 385
+is_word(IS_WRITE, 733), 	-- 386
+is_word(IS_READ, 196), 	-- 387
+is_word(IS_MUL, 732), 	-- 388
+is_word(IS_ADD, 197), 	-- 389
+is_word(IS_ADD, 731), 	-- 390
+is_word(IS_WRITE, 730), 	-- 391
+is_word(IS_READ, 729), 	-- 392
+is_word(IS_WRITE, 2), 	-- 393
+is_word(IS_READ, 192), 	-- 394
+is_word(IS_WRITE, 2), 	-- 395
+is_word(IS_READ, 728), 	-- 396
+is_word(IS_WRITE, 2), 	-- 397
+is_word(IS_READ, 727), 	-- 398
+is_word(IS_WRITE, 726), 	-- 399
+is_word(IS_READ, 197), 	-- 400
+is_word(IS_ADD, 725), 	-- 401
+is_word(IS_WRITE, 724), 	-- 402
+is_word(IS_READ, 723), 	-- 403
+is_word(IS_WRITE, 722), 	-- 404
+is_word(IS_READ, 196), 	-- 405
+is_word(IS_ADD, 721), 	-- 406
+is_word(IS_WRITE, 720), 	-- 407
+is_word(IS_READ, 719), 	-- 408
+is_word(IS_WRITE, 718), 	-- 409
+is_word(IS_READ, 717), 	-- 410
+is_word(IS_WRITE, 716), 	-- 411
+is_word(IS_READ, 196), 	-- 412
+is_word(IS_GTE, 715), 	-- 413
+is_word(IS_BRANCH, 714), 	-- 414
+is_word(IS_READ, 3), 	-- 415
+is_word(IS_AND, 713), 	-- 416
+is_word(IS_WRITE, 712), 	-- 417
+is_word(IS_READ, 711), 	-- 418
+is_word(IS_WRITE, 2), 	-- 419
+is_word(IS_READ, 197), 	-- 420
+is_word(IS_WRITE, 2), 	-- 421
+is_word(IS_READ, 710), 	-- 422
+is_word(IS_WRITE, 2), 	-- 423
+is_word(IS_READ, 196), 	-- 424
+is_word(IS_WRITE, 2), 	-- 425
+is_word(IS_READ, 709), 	-- 426
+is_word(IS_WRITE, 708), 	-- 427
+is_word(IS_READ, 248), 	-- 428
+is_word(IS_BRANCH, 707), 	-- 429
+is_word(IS_READ, 196), 	-- 430
+is_word(IS_ADD, 706), 	-- 431
+is_word(IS_WRITE, 705), 	-- 432
+is_word(IS_READ, 704), 	-- 433
+is_word(IS_WRITE, 703), 	-- 434
+is_word(IS_READ, 702), 	-- 435
+is_word(IS_WRITE, 701), 	-- 436
+is_word(IS_READ, 196), 	-- 437
+is_word(IS_GTE, 700), 	-- 438
+is_word(IS_BRANCH, 699), 	-- 439
+is_word(IS_READ, 698), 	-- 440
+is_word(IS_WRITE, 697), 	-- 441
+is_word(IS_READ, 197), 	-- 442
+is_word(IS_GTE, 696), 	-- 443
+is_word(IS_BRANCH, 695), 	-- 444
+is_word(IS_READ, 3), 	-- 445
+is_word(IS_AND, 694), 	-- 446
+is_word(IS_WRITE, 693), 	-- 447
+is_word(IS_EQ, 692), 	-- 448
+is_word(IS_BRANCH, 691), 	-- 449
+is_word(IS_READ, 690), 	-- 450
+is_word(IS_WRITE, 2), 	-- 451
+is_word(IS_READ, 192), 	-- 452
+is_word(IS_WRITE, 2), 	-- 453
+is_word(IS_READ, 196), 	-- 454
+is_word(IS_WRITE, 2), 	-- 455
+is_word(IS_READ, 197), 	-- 456
+is_word(IS_WRITE, 2), 	-- 457
+is_word(IS_READ, 689), 	-- 458
+is_word(IS_WRITE, 688), 	-- 459
+is_word(IS_READ, 248), 	-- 460
+is_word(IS_BRANCH, 687), 	-- 461
+is_word(IS_READ, 197), 	-- 462
+is_word(IS_ADD, 686), 	-- 463
+is_word(IS_WRITE, 685), 	-- 464
+is_word(IS_READ, 684), 	-- 465
+is_word(IS_WRITE, 683), 	-- 466
+is_word(IS_READ, 196), 	-- 467
+is_word(IS_ADD, 682), 	-- 468
+is_word(IS_WRITE, 681), 	-- 469
+is_word(IS_READ, 680), 	-- 470
+is_word(IS_WRITE, 679), 	-- 471
+is_word(IS_READ, 7), 	-- 472
+is_word(IS_DIV, 678), 	-- 473
+is_word(IS_ADD, 677), 	-- 474
+is_word(IS_WRITE, 676), 	-- 475
+is_word(IS_READ, 7), 	-- 476
+is_word(IS_AND, 675), 	-- 477
+is_word(IS_ADD, 674), 	-- 478
+is_word(IS_WRITE, 673), 	-- 479
+is_word(IS_READ, 672), 	-- 480
+is_word(IS_WRITE, 671), 	-- 481
+is_word(IS_READ, 2), 	-- 482
+is_word(IS_WRITE, 670), 	-- 483
+is_word(IS_ADD, 3), 	-- 484
+is_word(IS_WRITE, 669), 	-- 485
+is_word(IS_READ, 2), 	-- 486
+is_word(IS_WRITE, 668), 	-- 487
+is_word(IS_ADD, 3), 	-- 488
+is_word(IS_WRITE, 667), 	-- 489
+is_word(IS_READ, 2), 	-- 490
+is_word(IS_WRITE, 666), 	-- 491
+is_word(IS_ADD, 3), 	-- 492
+is_word(IS_WRITE, 665), 	-- 493
+is_word(IS_READ, 251), 	-- 494
+is_word(IS_MUL, 664), 	-- 495
+is_word(IS_ADD, 250), 	-- 496
+is_word(IS_ADD, 663), 	-- 497
+is_word(IS_WRITE, 662), 	-- 498
 is_word(IS_READ, 252), 	-- 499
-is_word(IS_NEQ, 652), 	-- 500
-is_word(IS_BRANCH, 651), 	-- 501
+is_word(IS_NEQ, 661), 	-- 500
+is_word(IS_BRANCH, 660), 	-- 501
 is_word(IS_READ, 249), 	-- 502
-is_word(IS_ADD, 650), 	-- 503
-is_word(IS_WRITE, 649), 	-- 504
-is_word(IS_READ, 648), 	-- 505
-is_word(IS_WRITE, 647), 	-- 506
-is_word(IS_READ, 249), 	-- 507
-is_word(IS_WRITE, 646), 	-- 508
-is_word(IS_ADD, 3), 	-- 509
-is_word(IS_WRITE, 645), 	-- 510
-is_word(IS_READ, 644), 	-- 511
-is_word(IS_WRITE, 2), 	-- 512
-is_word(IS_READ, 249), 	-- 513
-is_word(IS_WRITE, 2), 	-- 514
-is_word(IS_READ, 643), 	-- 515
-is_word(IS_WRITE, 2), 	-- 516
-is_word(IS_READ, 642), 	-- 517
-is_word(IS_WRITE, 641), 	-- 518
-is_word(IS_READ, 2), 	-- 519
-is_word(IS_WRITE, 640), 	-- 520
-is_word(IS_ADD, 3), 	-- 521
-is_word(IS_WRITE, 639), 	-- 522
-is_word(IS_READ, 2), 	-- 523
-is_word(IS_WRITE, 638), 	-- 524
-is_word(IS_ADD, 3), 	-- 525
-is_word(IS_WRITE, 637), 	-- 526
-is_word(IS_READ, 253), 	-- 527
-is_word(IS_EQ, 636), 	-- 528
-is_word(IS_BRANCH, 635), 	-- 529
-is_word(IS_READ, 253), 	-- 530
-is_word(IS_SUB, 634), 	-- 531
-is_word(IS_WRITE, 633), 	-- 532
-is_word(IS_READ, 632), 	-- 533
-is_word(IS_WRITE, 631), 	-- 534
-is_word(IS_READ, 2), 	-- 535
-is_word(IS_WRITE, 630), 	-- 536
-is_word(IS_ADD, 3), 	-- 537
-is_word(IS_WRITE, 629), 	-- 538
-is_word(IS_READ, 2), 	-- 539
-is_word(IS_WRITE, 628), 	-- 540
-is_word(IS_ADD, 3), 	-- 541
-is_word(IS_WRITE, 627), 	-- 542
+is_word(IS_SUB, 659), 	-- 503
+is_word(IS_WRITE, 658), 	-- 504
+is_word(IS_READ, 657), 	-- 505
+is_word(IS_WRITE, 656), 	-- 506
+is_word(IS_READ, 252), 	-- 507
+is_word(IS_NEQ, 655), 	-- 508
+is_word(IS_BRANCH, 654), 	-- 509
+is_word(IS_READ, 249), 	-- 510
+is_word(IS_ADD, 653), 	-- 511
+is_word(IS_WRITE, 652), 	-- 512
+is_word(IS_READ, 651), 	-- 513
+is_word(IS_WRITE, 650), 	-- 514
+is_word(IS_READ, 252), 	-- 515
+is_word(IS_NEQ, 649), 	-- 516
+is_word(IS_BRANCH, 648), 	-- 517
+is_word(IS_READ, 249), 	-- 518
+is_word(IS_SUB, 647), 	-- 519
+is_word(IS_WRITE, 646), 	-- 520
+is_word(IS_READ, 645), 	-- 521
+is_word(IS_WRITE, 644), 	-- 522
+is_word(IS_READ, 252), 	-- 523
+is_word(IS_NEQ, 643), 	-- 524
+is_word(IS_BRANCH, 642), 	-- 525
+is_word(IS_READ, 249), 	-- 526
+is_word(IS_ADD, 641), 	-- 527
+is_word(IS_WRITE, 640), 	-- 528
+is_word(IS_READ, 639), 	-- 529
+is_word(IS_WRITE, 638), 	-- 530
+is_word(IS_READ, 249), 	-- 531
+is_word(IS_WRITE, 637), 	-- 532
+is_word(IS_ADD, 3), 	-- 533
+is_word(IS_WRITE, 636), 	-- 534
+is_word(IS_READ, 635), 	-- 535
+is_word(IS_WRITE, 2), 	-- 536
+is_word(IS_READ, 249), 	-- 537
+is_word(IS_WRITE, 2), 	-- 538
+is_word(IS_READ, 634), 	-- 539
+is_word(IS_WRITE, 2), 	-- 540
+is_word(IS_READ, 633), 	-- 541
+is_word(IS_WRITE, 632), 	-- 542
 is_word(IS_READ, 2), 	-- 543
-is_word(IS_WRITE, 626), 	-- 544
+is_word(IS_WRITE, 631), 	-- 544
 is_word(IS_ADD, 3), 	-- 545
-is_word(IS_WRITE, 625), 	-- 546
-is_word(IS_READ, 254), 	-- 547
-is_word(IS_WRITE, 624), 	-- 548
+is_word(IS_WRITE, 630), 	-- 546
+is_word(IS_READ, 2), 	-- 547
+is_word(IS_WRITE, 629), 	-- 548
 is_word(IS_ADD, 3), 	-- 549
-is_word(IS_EQ, 623), 	-- 550
-is_word(IS_BRANCH, 622), 	-- 551
-is_word(IS_READ, 254), 	-- 552
-is_word(IS_WRITE, 621), 	-- 553
-is_word(IS_ADD, 3), 	-- 554
-is_word(IS_WRITE, 255), 	-- 555
-is_word(IS_READ, 254), 	-- 556
-is_word(IS_ADD, 620), 	-- 557
-is_word(IS_WRITE, 619), 	-- 558
-is_word(IS_READ, 255), 	-- 559
-is_word(IS_ADD, 618), 	-- 560
-is_word(IS_WRITE, 617), 	-- 561
-is_word(IS_READ, 616), 	-- 562
-is_word(IS_WRITE, 2), 	-- 563
-is_word(IS_READ, 615), 	-- 564
-is_word(IS_WRITE, 2), 	-- 565
-is_word(IS_READ, 614), 	-- 566
-is_word(IS_WRITE, 613), 	-- 567
-is_word(IS_READ, 612), 	-- 568
-is_word(IS_WRITE, 611), 	-- 569
-is_word(IS_READ, 2), 	-- 570
-is_word(IS_WRITE, 610), 	-- 571
-is_word(IS_ADD, 3), 	-- 572
-is_word(IS_WRITE, 609), 	-- 573
-0, 	-- 574
-0, 	-- 575
-0, 	-- 576
-0, 	-- 577
-0, 	-- 578
-0, 	-- 579
-0, 	-- 580
-0, 	-- 581
-0, 	-- 582
-0, 	-- 583
-0, 	-- 584
-0, 	-- 585
-0, 	-- 586
-0, 	-- 587
-0, 	-- 588
-0, 	-- 589
-0, 	-- 590
-0, 	-- 591
+is_word(IS_WRITE, 628), 	-- 550
+is_word(IS_READ, 253), 	-- 551
+is_word(IS_EQ, 627), 	-- 552
+is_word(IS_BRANCH, 626), 	-- 553
+is_word(IS_READ, 253), 	-- 554
+is_word(IS_SUB, 625), 	-- 555
+is_word(IS_WRITE, 624), 	-- 556
+is_word(IS_READ, 623), 	-- 557
+is_word(IS_WRITE, 622), 	-- 558
+is_word(IS_READ, 2), 	-- 559
+is_word(IS_WRITE, 621), 	-- 560
+is_word(IS_ADD, 3), 	-- 561
+is_word(IS_WRITE, 620), 	-- 562
+is_word(IS_READ, 2), 	-- 563
+is_word(IS_WRITE, 619), 	-- 564
+is_word(IS_ADD, 3), 	-- 565
+is_word(IS_WRITE, 618), 	-- 566
+is_word(IS_READ, 2), 	-- 567
+is_word(IS_WRITE, 617), 	-- 568
+is_word(IS_ADD, 3), 	-- 569
+is_word(IS_WRITE, 616), 	-- 570
+is_word(IS_READ, 254), 	-- 571
+is_word(IS_WRITE, 615), 	-- 572
+is_word(IS_ADD, 3), 	-- 573
+is_word(IS_EQ, 614), 	-- 574
+is_word(IS_BRANCH, 613), 	-- 575
+is_word(IS_READ, 254), 	-- 576
+is_word(IS_WRITE, 612), 	-- 577
+is_word(IS_ADD, 3), 	-- 578
+is_word(IS_WRITE, 255), 	-- 579
+is_word(IS_READ, 254), 	-- 580
+is_word(IS_ADD, 611), 	-- 581
+is_word(IS_WRITE, 610), 	-- 582
+is_word(IS_READ, 255), 	-- 583
+is_word(IS_ADD, 609), 	-- 584
+is_word(IS_WRITE, 608), 	-- 585
+is_word(IS_READ, 607), 	-- 586
+is_word(IS_WRITE, 606), 	-- 587
+is_word(IS_READ, 2), 	-- 588
+is_word(IS_WRITE, 605), 	-- 589
+is_word(IS_ADD, 3), 	-- 590
+is_word(IS_WRITE, 604), 	-- 591
 0, 	-- 592
 0, 	-- 593
 0, 	-- 594
@@ -351,166 +351,166 @@ is_word(IS_WRITE, 609), 	-- 573
 0, 	-- 602
 0, 	-- 603
 0, 	-- 604
-0, 	-- 605
+590, 	-- 605
 0, 	-- 606
-0, 	-- 607
-0, 	-- 608
-0, 	-- 609
-572, 	-- 610
-0, 	-- 611
-547, 	-- 612
-0, 	-- 613
-523, 	-- 614
-4096, 	-- 615
-568, 	-- 616
-255, 	-- 617
-1, 	-- 618
-254, 	-- 619
-1, 	-- 620
-554, 	-- 621
-570, 	-- 622
-0, 	-- 623
-549, 	-- 624
-255, 	-- 625
-545, 	-- 626
-254, 	-- 627
-541, 	-- 628
-0, 	-- 629
-537, 	-- 630
-0, 	-- 631
-527, 	-- 632
-253, 	-- 633
-1, 	-- 634
-535, 	-- 635
-0, 	-- 636
-253, 	-- 637
-525, 	-- 638
-0, 	-- 639
-521, 	-- 640
-0, 	-- 641
-539, 	-- 642
-326, 	-- 643
-519, 	-- 644
-248, 	-- 645
-509, 	-- 646
-0, 	-- 647
-507, 	-- 648
-249, 	-- 649
-1, 	-- 650
-507, 	-- 651
-3, 	-- 652
-0, 	-- 653
-507, 	-- 654
-249, 	-- 655
-1, 	-- 656
-499, 	-- 657
-2, 	-- 658
-0, 	-- 659
+571, 	-- 607
+255, 	-- 608
+1, 	-- 609
+254, 	-- 610
+1, 	-- 611
+578, 	-- 612
+588, 	-- 613
+0, 	-- 614
+573, 	-- 615
+255, 	-- 616
+569, 	-- 617
+254, 	-- 618
+565, 	-- 619
+0, 	-- 620
+561, 	-- 621
+0, 	-- 622
+551, 	-- 623
+253, 	-- 624
+1, 	-- 625
+559, 	-- 626
+0, 	-- 627
+253, 	-- 628
+549, 	-- 629
+0, 	-- 630
+545, 	-- 631
+0, 	-- 632
+563, 	-- 633
+337, 	-- 634
+543, 	-- 635
+248, 	-- 636
+533, 	-- 637
+0, 	-- 638
+531, 	-- 639
+249, 	-- 640
+1, 	-- 641
+531, 	-- 642
+3, 	-- 643
+0, 	-- 644
+531, 	-- 645
+249, 	-- 646
+1, 	-- 647
+523, 	-- 648
+2, 	-- 649
+0, 	-- 650
+531, 	-- 651
+249, 	-- 652
+40, 	-- 653
+515, 	-- 654
+1, 	-- 655
+0, 	-- 656
+531, 	-- 657
+249, 	-- 658
+40, 	-- 659
 507, 	-- 660
-249, 	-- 661
-40, 	-- 662
-491, 	-- 663
-1, 	-- 664
-0, 	-- 665
-507, 	-- 666
-249, 	-- 667
-40, 	-- 668
-483, 	-- 669
-0, 	-- 670
-249, 	-- 671
-1104, 	-- 672
-40, 	-- 673
-252, 	-- 674
-468, 	-- 675
-251, 	-- 676
-464, 	-- 677
-250, 	-- 678
-460, 	-- 679
-0, 	-- 680
-456, 	-- 681
-0, 	-- 682
-421, 	-- 683
-196, 	-- 684
-2, 	-- 685
-0, 	-- 686
-426, 	-- 687
-197, 	-- 688
-2, 	-- 689
-429, 	-- 690
-0, 	-- 691
-458, 	-- 692
-444, 	-- 693
-429, 	-- 694
-0, 	-- 695
-192, 	-- 696
-3, 	-- 697
-451, 	-- 698
-37, 	-- 699
-197, 	-- 700
-2, 	-- 701
-456, 	-- 702
-21, 	-- 703
-196, 	-- 704
-4, 	-- 705
-0, 	-- 706
-396, 	-- 707
-196, 	-- 708
-2, 	-- 709
-399, 	-- 710
-0, 	-- 711
-458, 	-- 712
-2, 	-- 713
-412, 	-- 714
-197, 	-- 715
-3, 	-- 716
-419, 	-- 717
-37, 	-- 718
-196, 	-- 719
-2, 	-- 720
-0, 	-- 721
-344, 	-- 722
-196, 	-- 723
-1, 	-- 724
-0, 	-- 725
-349, 	-- 726
-197, 	-- 727
-1, 	-- 728
-0, 	-- 729
-539, 	-- 730
-326, 	-- 731
-384, 	-- 732
-192, 	-- 733
-1104, 	-- 734
-40, 	-- 735
+0, 	-- 661
+249, 	-- 662
+1104, 	-- 663
+40, 	-- 664
+252, 	-- 665
+492, 	-- 666
+251, 	-- 667
+488, 	-- 668
+250, 	-- 669
+484, 	-- 670
+0, 	-- 671
+472, 	-- 672
+1025, 	-- 673
+48, 	-- 674
+15, 	-- 675
+1024, 	-- 676
+48, 	-- 677
+16, 	-- 678
+0, 	-- 679
+437, 	-- 680
+196, 	-- 681
+2, 	-- 682
+0, 	-- 683
+442, 	-- 684
+197, 	-- 685
+2, 	-- 686
+445, 	-- 687
+0, 	-- 688
+482, 	-- 689
+460, 	-- 690
+445, 	-- 691
+0, 	-- 692
+192, 	-- 693
+3, 	-- 694
+467, 	-- 695
+37, 	-- 696
+197, 	-- 697
+2, 	-- 698
+472, 	-- 699
+21, 	-- 700
+196, 	-- 701
+4, 	-- 702
+0, 	-- 703
+412, 	-- 704
+196, 	-- 705
+2, 	-- 706
+415, 	-- 707
+0, 	-- 708
+482, 	-- 709
+2, 	-- 710
+428, 	-- 711
+197, 	-- 712
+3, 	-- 713
+435, 	-- 714
+37, 	-- 715
+196, 	-- 716
+2, 	-- 717
+0, 	-- 718
+360, 	-- 719
+196, 	-- 720
+1, 	-- 721
+0, 	-- 722
+365, 	-- 723
+197, 	-- 724
+1, 	-- 725
+0, 	-- 726
+563, 	-- 727
+337, 	-- 728
+400, 	-- 729
+192, 	-- 730
+1104, 	-- 731
+40, 	-- 732
+0, 	-- 733
+400, 	-- 734
+387, 	-- 735
 0, 	-- 736
-384, 	-- 737
-371, 	-- 738
-0, 	-- 739
-1, 	-- 740
-371, 	-- 741
-38, 	-- 742
-371, 	-- 743
-0, 	-- 744
-371, 	-- 745
-22, 	-- 746
-371, 	-- 747
-0, 	-- 748
-389, 	-- 749
-39, 	-- 750
-197, 	-- 751
-0, 	-- 752
-394, 	-- 753
-23, 	-- 754
-196, 	-- 755
+1, 	-- 737
+387, 	-- 738
+38, 	-- 739
+387, 	-- 740
+0, 	-- 741
+387, 	-- 742
+22, 	-- 743
+387, 	-- 744
+0, 	-- 745
+405, 	-- 746
+39, 	-- 747
+197, 	-- 748
+0, 	-- 749
+410, 	-- 750
+23, 	-- 751
+196, 	-- 752
+0, 	-- 753
+355, 	-- 754
+0, 	-- 755
 0, 	-- 756
-0, 	-- 757
-539, 	-- 758
-290, 	-- 759
-1024, 	-- 760
-342, 	-- 761
-0, 	-- 762
-523, 	-- 763
-65536, 	-- 764
-334, 	-- 765
+563, 	-- 757
+326, 	-- 758
+1104, 	-- 759
+355, 	-- 760
+0, 	-- 761
+563, 	-- 762
+290, 	-- 763
+1024, 	-- 764
+347, 	-- 765
 0, 	-- 766
-328	-- 767
+339	-- 767

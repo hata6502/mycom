@@ -53,13 +53,13 @@ vcom  -work work ../../../stack.vhd \
 
 echo "Compiling Test Bench Files"
 
-vcom -work work    ../stack_tb_pkg.vhd
-vcom -work work    ../stack_tb_rng.vhd
-vcom -work work    ../stack_tb_dgen.vhd
-vcom -work work    ../stack_tb_agen.vhd
-vcom -work work    ../stack_tb_checker.vhd
-vcom -work work    ../stack_tb_stim_gen.vhd
-vcom -work work    ../stack_tb_synth.vhd 
+vcom -work work    ../bmg_tb_pkg.vhd
+vcom -work work    ../random.vhd
+vcom -work work    ../data_gen.vhd
+vcom -work work    ../addr_gen.vhd
+vcom -work work    ../checker.vhd
+vcom -work work    ../bmg_stim_gen.vhd
+vcom -work work    ../stack_synth.vhd 
 vcom -work work    ../stack_tb.vhd
 
 vsim -novopt -t ps -L XilinxCoreLib -L unisim work.stack_tb
