@@ -1,21 +1,18 @@
-Release 14.7 - xst P.20131013 (lin)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> 
-Parameter TMPDIR set to xst/projnav.tmp
+--> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.18 secs
  
---> 
-Parameter xsthdpdir set to xst
+--> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.18 secs
  
---> 
-Reading design: BH_com.prj
+--> Reading design: BH_com.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -110,18 +107,23 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-WARNING:HDLParsers:3498 - No primary, secondary unit in the file "/home/hato/mycom/ipcore_dir/divider.vhd. Ignore this file from project file "/home/hato/mycom/BH_com_vhdl.prj".
-Compiling vhdl file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd" in Library work.
+WARNING:HDLParsers:3498 - No primary, secondary unit in the file "C:/Users/hato/mycom/ipcore_dir/divider.vhd. Ignore this file from project file "C:/Users/hato/mycom/BH_com_vhdl.prj".
+Compiling vhdl file "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd" in Library work.
 Architecture xsadd of Entity xsadd is up to date.
-Compiling vhdl file "/home/hato/mycom/ipcore_dir/vram.vhd" in Library work.
+Compiling vhdl file "C:/Users/hato/mycom/ipcore_dir/vram.vhd" in Library work.
 Architecture vram_a of Entity vram is up to date.
-Compiling vhdl file "/home/hato/mycom/crom.vhd" in Library work.
+Compiling vhdl file "C:/Users/hato/mycom/crom.vhd" in Library work.
 Architecture behavioral of Entity crom is up to date.
-Compiling vhdl file "/home/hato/mycom/ipcore_dir/stack.vhd" in Library work.
+Compiling vhdl file "C:/Users/hato/mycom/ipcore_dir/stack.vhd" in Library work.
 Architecture stack_a of Entity stack is up to date.
-Compiling vhdl file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd" in Library work.
+Compiling vhdl file "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd" in Library work.
 Architecture rtl of Entity xsadd_gen is up to date.
-Compiling vhdl file "/home/hato/mycom/BH_com.vhd" in Library work.
+Compiling vhdl file "C:/Users/hato/mycom/i2c_master.vhd" in Library work.
+WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 86. Choice .TO. is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 89. Choice .TO. is not a locally static expression.
+WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 92. Choice .TO. is not a locally static expression.
+Architecture logic of Entity i2c_master is up to date.
+Compiling vhdl file "C:/Users/hato/mycom/BH_com.vhd" in Library work.
 Entity <bh_com> compiled.
 Entity <bh_com> (Architecture <behavioral>) compiled.
 
@@ -133,31 +135,17 @@ Analyzing hierarchy for entity <BH_com> in library <work> (architecture <behavio
 Analyzing hierarchy for entity <crom> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <XSADD_GEN> in library <work> (architecture <rtl>).
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
-WARNING:Xst - Size mismatch in logical xor : extending constant.
+
+Analyzing hierarchy for entity <i2c_master> in library <work> (architecture <logic>) with generics.
+	bus_clk = 400000
+	input_clk = 32000000
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <BH_com> in library <work> (Architecture <behavioral>).
+INFO:Xst:1739 - HDL ADVISOR - "C:/Users/hato/mycom/BH_com.vhd" line 49: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 Entity <BH_com> analyzed. Unit <BH_com> generated.
 
 Analyzing Entity <crom> in library <work> (Architecture <behavioral>).
@@ -185,6 +173,11 @@ WARNING:Xst - Size mismatch in logical xor : extending constant.
 WARNING:Xst - Size mismatch in logical xor : extending constant.
 Entity <XSADD_GEN> analyzed. Unit <XSADD_GEN> generated.
 
+Analyzing generic Entity <i2c_master> in library <work> (Architecture <logic>).
+	bus_clk = 400000
+	input_clk = 32000000
+Entity <i2c_master> analyzed. Unit <i2c_master> generated.
+
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -194,7 +187,7 @@ Performing bidirectional port resolution...
 INFO:Xst:2561 - Always blocking tristate driving signal <C> in unit <BH_com> is removed.
 
 Synthesizing Unit <crom>.
-    Related source file is "/home/hato/mycom/crom.vhd".
+    Related source file is "C:/Users/hato/mycom/crom.vhd".
     Found 256x56-bit ROM for signal <chr$rom0000>.
     Found 1-bit 8-to-1 multiplexer for signal <dot>.
     Found 8-bit 8-to-1 multiplexer for signal <$mux0008> created at line 2365.
@@ -205,7 +198,7 @@ Unit <crom> synthesized.
 
 
 Synthesizing Unit <XSADD_GEN>.
-    Related source file is "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd".
+    Related source file is "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd".
     Found 1-bit register for signal <RND_VAL>.
     Found 32-bit register for signal <RND_NUM>.
     Found 128-bit register for signal <curr_status.status>.
@@ -220,8 +213,52 @@ Synthesizing Unit <XSADD_GEN>.
 Unit <XSADD_GEN> synthesized.
 
 
+Synthesizing Unit <i2c_master>.
+    Related source file is "C:/Users/hato/mycom/i2c_master.vhd".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 18                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state$and0000             (positive)           |
+    | Power Up State     | ready                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 64x2-bit ROM for signal <$rom0000>.
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <ack_error>.
+    Found 8-bit register for signal <data_rd>.
+    Found 1-bit tristate buffer for signal <sda>.
+    Found 1-bit tristate buffer for signal <scl>.
+    Found 8-bit register for signal <addr_rw>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 3-bit subtractor for signal <bit_cnt$addsub0000>.
+    Found 7-bit register for signal <count>.
+    Found 7-bit adder for signal <count$addsub0000> created at line 83.
+    Found 1-bit register for signal <data_clk>.
+    Found 1-bit register for signal <data_clk_prev>.
+    Found 8-bit register for signal <data_rx>.
+    Found 8-bit register for signal <data_tx>.
+    Found 1-bit register for signal <scl_clk>.
+    Found 1-bit register for signal <scl_ena>.
+    Found 1-bit register for signal <sda_int>.
+    Found 8-bit comparator equal for signal <state$cmp_eq0001> created at line 184.
+    Found 1-bit register for signal <stretch>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred   2 Tristate(s).
+Unit <i2c_master> synthesized.
+
+
 Synthesizing Unit <BH_com>.
-    Related source file is "/home/hato/mycom/BH_com.vhd".
+    Related source file is "C:/Users/hato/mycom/BH_com.vhd".
 WARNING:Xst:653 - Signal <vram_1_dina> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
 WARNING:Xst:646 - Signal <rand_rnd_val> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <rand_init_param.status> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
@@ -230,7 +267,7 @@ WARNING:Xst:646 - Signal <div1_fractional> is assigned but never used. This unco
     Found 128x32-bit dual-port RAM <Mram_cpu_greg> for signal <cpu_greg>.
     Found 512x32-bit dual-port RAM <Mram_boot> for signal <boot>.
 INFO:Xst:1608 - Relative priorities of control signals on register <cpu_rdata> differ from those commonly found in the selected device family. This will result in additional logic around the register.
-    Found finite state machine <FSM_0> for signal <cpu_stat>.
+    Found finite state machine <FSM_1> for signal <cpu_stat>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 4                                              |
@@ -243,100 +280,103 @@ INFO:Xst:1608 - Relative priorities of control signals on register <cpu_rdata> d
     -----------------------------------------------------------------------
 WARNING:Xst:737 - Found 32-bit latch for signal <cpu_rdata>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <cpu_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:643 - "/home/hato/mycom/BH_com.vhd" line 793: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "/home/hato/mycom/BH_com.vhd" line 939: The result of a 32x7-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 32-bit subtractor for signal <$sub0000> created at line 872.
-    Found 32-bit subtractor for signal <$sub0001> created at line 872.
-    Found 32-bit subtractor for signal <$sub0002> created at line 848.
-    Found 32-bit subtractor for signal <$sub0003> created at line 850.
-    Found 32-bit comparator greatequal for signal <A_0$cmp_ge0000> created at line 998.
-    Found 32-bit comparator greatequal for signal <A_1$cmp_ge0000> created at line 999.
-    Found 32-bit comparator greater for signal <A_1$cmp_gt0000> created at line 999.
-    Found 32-bit comparator less for signal <A_1$cmp_lt0000> created at line 999.
-    Found 32-bit comparator less for signal <A_1$cmp_lt0001> created at line 999.
-    Found 32-bit comparator greatequal for signal <and0002$cmp_ge0000> created at line 848.
-    Found 32-bit comparator less for signal <and0002$cmp_lt0000> created at line 848.
-    Found 32-bit comparator greatequal for signal <and0003$cmp_ge0000> created at line 846.
-    Found 32-bit comparator lessequal for signal <and0003$cmp_le0000> created at line 846.
+WARNING:Xst:643 - "C:/Users/hato/mycom/BH_com.vhd" line 827: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "C:/Users/hato/mycom/BH_com.vhd" line 977: The result of a 32x7-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 32-bit subtractor for signal <$sub0000> created at line 916.
+    Found 32-bit subtractor for signal <$sub0001> created at line 916.
+    Found 32-bit subtractor for signal <$sub0002> created at line 892.
+    Found 32-bit subtractor for signal <$sub0003> created at line 894.
+    Found 32-bit comparator greatequal for signal <A_0$cmp_ge0000> created at line 1057.
+    Found 32-bit comparator greatequal for signal <A_1$cmp_ge0000> created at line 1058.
+    Found 32-bit comparator greater for signal <A_1$cmp_gt0000> created at line 1058.
+    Found 32-bit comparator less for signal <A_1$cmp_lt0000> created at line 1058.
+    Found 32-bit comparator less for signal <A_1$cmp_lt0001> created at line 1058.
+    Found 32-bit comparator greatequal for signal <and0002$cmp_ge0000> created at line 892.
+    Found 32-bit comparator less for signal <and0002$cmp_lt0000> created at line 892.
+    Found 32-bit comparator greatequal for signal <and0003$cmp_ge0000> created at line 889.
+    Found 32-bit comparator lessequal for signal <and0003$cmp_le0000> created at line 889.
     Found 32-bit up counter for signal <clkcnt>.
     Found 8-bit register for signal <cnt_1>.
     Found 32-bit register for signal <cpu_inst>.
     Found 32-bit register for signal <cpu_opdata>.
     Found 32-bit register for signal <cpu_pc>.
-    Found 32-bit adder for signal <cpu_pc$addsub0000> created at line 741.
+    Found 32-bit adder for signal <cpu_pc$addsub0000> created at line 775.
     Found 24-bit register for signal <cpu_raddr>.
-    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0000> created at line 872.
-    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0001> created at line 872.
-    Found 32-bit comparator lessequal for signal <cpu_rdata$cmp_le0000> created at line 872.
-    Found 32-bit comparator less for signal <cpu_rdata$cmp_lt0000> created at line 872.
+    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0000> created at line 916.
+    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0001> created at line 916.
+    Found 32-bit comparator lessequal for signal <cpu_rdata$cmp_le0000> created at line 916.
+    Found 32-bit comparator less for signal <cpu_rdata$cmp_lt0000> created at line 916.
     Found 32-bit register for signal <cpu_sp>.
-    Found 32-bit addsub for signal <cpu_sp$share0000> created at line 735.
+    Found 32-bit addsub for signal <cpu_sp$share0000> created at line 769.
     Found 32-bit register for signal <cpu_waddr>.
     Found 32-bit register for signal <cpu_wdata>.
     Found 32-bit addsub for signal <cpu_wdata$addsub0000>.
-    Found 32-bit comparator equal for signal <cpu_wdata$cmp_eq0011> created at line 817.
-    Found 32-bit comparator greatequal for signal <cpu_wdata$cmp_ge0000> created at line 832.
-    Found 32-bit comparator greater for signal <cpu_wdata$cmp_gt0000> created at line 829.
-    Found 32-bit comparator lessequal for signal <cpu_wdata$cmp_le0000> created at line 826.
-    Found 32-bit comparator less for signal <cpu_wdata$cmp_lt0000> created at line 823.
-    Found 32-bit comparator not equal for signal <cpu_wdata$cmp_ne0001> created at line 820.
-    Found 32x32-bit multiplier for signal <cpu_wdata$mult0000> created at line 793.
-    Found 32-bit xor2 for signal <cpu_wdata$xor0001> created at line 806.
+    Found 32-bit comparator equal for signal <cpu_wdata$cmp_eq0011> created at line 851.
+    Found 32-bit comparator greatequal for signal <cpu_wdata$cmp_ge0000> created at line 866.
+    Found 32-bit comparator greater for signal <cpu_wdata$cmp_gt0000> created at line 863.
+    Found 32-bit comparator lessequal for signal <cpu_wdata$cmp_le0000> created at line 860.
+    Found 32-bit comparator less for signal <cpu_wdata$cmp_lt0000> created at line 857.
+    Found 32-bit comparator not equal for signal <cpu_wdata$cmp_ne0001> created at line 854.
+    Found 32x32-bit multiplier for signal <cpu_wdata$mult0000> created at line 827.
+    Found 32-bit xor2 for signal <cpu_wdata$xor0001> created at line 840.
     Found 32-bit register for signal <cpu_work>.
     Found 32-bit adder for signal <crom_1_col$add0000>.
     Found 32-bit adder for signal <crom_1_col$addsub0000>.
     Found 16-bit register for signal <div1_dividend>.
     Found 16-bit register for signal <div1_divisor>.
+    Found 7-bit register for signal <i2c_1_addr>.
+    Found 8-bit register for signal <i2c_1_data_wr>.
+    Found 2-bit register for signal <i2c_1_stat<1:0>>.
     Found 32-bit adder for signal <inst$add0000>.
     Found 32-bit adder for signal <inst$addsub0000>.
-    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0000> created at line 872.
-    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0001> created at line 872.
-    Found 32-bit comparator lessequal for signal <mux0000$cmp_le0000> created at line 872.
-    Found 32-bit comparator less for signal <mux0000$cmp_lt0000> created at line 872.
+    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0000> created at line 916.
+    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0001> created at line 916.
+    Found 32-bit comparator lessequal for signal <mux0000$cmp_le0000> created at line 916.
+    Found 32-bit comparator less for signal <mux0000$cmp_lt0000> created at line 916.
     Found 32-bit up counter for signal <ppu_clkcnt>.
     Found 32-bit up counter for signal <ppu_linecnt>.
     Found 10-bit register for signal <stack1_addra>.
-    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0000> created at line 744.
-    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0001> created at line 746.
-    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0002> created at line 850.
-    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0003> created at line 854.
-    Found 24-bit comparator lessequal for signal <stack1_addra$cmp_le0000> created at line 744.
-    Found 32-bit comparator lessequal for signal <stack1_addra$cmp_le0001> created at line 850.
-    Found 32-bit comparator less for signal <stack1_addra$cmp_lt0000> created at line 854.
+    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0000> created at line 778.
+    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0001> created at line 780.
+    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0002> created at line 894.
+    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0003> created at line 898.
+    Found 24-bit comparator lessequal for signal <stack1_addra$cmp_le0000> created at line 778.
+    Found 32-bit comparator lessequal for signal <stack1_addra$cmp_le0001> created at line 894.
+    Found 32-bit comparator less for signal <stack1_addra$cmp_lt0000> created at line 898.
     Found 32-bit register for signal <stack1_dina>.
-    Found 32-bit comparator greatequal for signal <stack1_dina$cmp_ge0000> created at line 854.
-    Found 32-bit comparator less for signal <stack1_dina$cmp_lt0000> created at line 854.
+    Found 32-bit comparator greatequal for signal <stack1_dina$cmp_ge0000> created at line 898.
+    Found 32-bit comparator less for signal <stack1_dina$cmp_lt0000> created at line 898.
     Found 1-bit register for signal <stack1_wea<0>>.
-    Found 32-bit comparator less for signal <stat_hsync$cmp_lt0000> created at line 907.
-    Found 32-bit comparator less for signal <stat_vsync$cmp_lt0000> created at line 906.
+    Found 32-bit comparator less for signal <stat_hsync$cmp_lt0000> created at line 957.
+    Found 32-bit comparator less for signal <stat_vsync$cmp_lt0000> created at line 956.
     Found 10-bit adder for signal <vram_1_addra>.
     Found 32-bit adder for signal <vram_1_addra$add0000>.
-    Found 33-bit adder for signal <vram_1_addra$add0001> created at line 939.
+    Found 33-bit adder for signal <vram_1_addra$add0001> created at line 977.
     Found 33-bit adder for signal <vram_1_addra$add0002>.
     Found 33-bit adder for signal <vram_1_addra$add0003>.
     Found 33-bit adder for signal <vram_1_addra$addsub0000>.
     Found 33-bit adder for signal <vram_1_addra$addsub0001>.
     Found 32-bit adder for signal <vram_1_addra$addsub0002>.
-    Found 32x7-bit multiplier for signal <vram_1_addra$mult0001> created at line 939.
-    Found 32-bit subtractor for signal <vram_1_addra$sub0000> created at line 939.
-    Found 32-bit subtractor for signal <vram_1_addra$sub0001> created at line 939.
+    Found 32x7-bit multiplier for signal <vram_1_addra$mult0001> created at line 977.
+    Found 32-bit subtractor for signal <vram_1_addra$sub0000> created at line 977.
+    Found 32-bit subtractor for signal <vram_1_addra$sub0001> created at line 977.
     Found 10-bit register for signal <vram_1_addrb>.
     Found 25-bit adder for signal <vram_1_addrb$add0000>.
     Found 32-bit adder for signal <vram_1_addrb$add0001>.
     Found 32-bit adder for signal <vram_1_addrb$addsub0000>.
     Found 25-bit adder for signal <vram_1_addrb$addsub0001>.
-    Found 10-bit adder for signal <vram_1_addrb$share0000> created at line 735.
-    Found 25-bit subtractor for signal <vram_1_addrb$sub0000> created at line 745.
-    Found 32-bit subtractor for signal <vram_1_addrb$sub0001> created at line 852.
+    Found 10-bit adder for signal <vram_1_addrb$share0000> created at line 769.
+    Found 25-bit subtractor for signal <vram_1_addrb$sub0000> created at line 779.
+    Found 32-bit subtractor for signal <vram_1_addrb$sub0001> created at line 896.
     Found 8-bit register for signal <vram_1_dinb>.
-    Found 32-bit comparator greater for signal <vram_1_dinb$cmp_gt0000> created at line 850.
-    Found 32-bit comparator less for signal <vram_1_dinb$cmp_lt0000> created at line 850.
+    Found 32-bit comparator greater for signal <vram_1_dinb$cmp_gt0000> created at line 894.
+    Found 32-bit comparator less for signal <vram_1_dinb$cmp_lt0000> created at line 894.
     Found 1-bit register for signal <vram_1_web<0>>.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   2 RAM(s).
 	inferred   3 Counter(s).
-	inferred 350 D-type flip-flop(s).
+	inferred 367 D-type flip-flop(s).
 	inferred  28 Adder/Subtractor(s).
 	inferred   2 Multiplier(s).
 	inferred  36 Comparator(s).
@@ -351,31 +391,36 @@ Macro Statistics
 # RAMs                                                 : 2
  128x32-bit dual-port RAM                              : 1
  512x32-bit dual-port RAM                              : 1
-# ROMs                                                 : 1
+# ROMs                                                 : 2
  256x56-bit ROM                                        : 1
+ 64x2-bit ROM                                          : 1
 # Multipliers                                          : 2
  32x32-bit multiplier                                  : 1
  32x7-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 29
+# Adders/Subtractors                                   : 31
  10-bit adder                                          : 2
  25-bit adder                                          : 2
  25-bit subtractor                                     : 1
+ 3-bit subtractor                                      : 1
  32-bit adder                                          : 10
  32-bit addsub                                         : 2
  32-bit subtractor                                     : 7
  33-bit adder                                          : 5
+ 7-bit adder                                           : 1
 # Counters                                             : 3
  32-bit up counter                                     : 3
-# Registers                                            : 31
- 1-bit register                                        : 12
+# Registers                                            : 56
+ 1-bit register                                        : 30
  10-bit register                                       : 2
  16-bit register                                       : 2
  24-bit register                                       : 1
+ 3-bit register                                        : 1
  32-bit register                                       : 13
- 8-bit register                                        : 1
+ 7-bit register                                        : 2
+ 8-bit register                                        : 5
 # Latches                                              : 2
  32-bit latch                                          : 2
-# Comparators                                          : 36
+# Comparators                                          : 37
  24-bit comparator greatequal                          : 2
  24-bit comparator lessequal                           : 1
  32-bit comparator equal                               : 1
@@ -384,9 +429,12 @@ Macro Statistics
  32-bit comparator less                                : 11
  32-bit comparator lessequal                           : 5
  32-bit comparator not equal                           : 1
+ 8-bit comparator equal                                : 1
 # Multiplexers                                         : 2
  1-bit 8-to-1 multiplexer                              : 1
  8-bit 8-to-1 multiplexer                              : 1
+# Tristates                                            : 2
+ 1-bit tristate buffer                                 : 2
 # Xors                                                 : 3
  32-bit xor2                                           : 2
  32-bit xor3                                           : 1
@@ -397,7 +445,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Analyzing FSM <FSM_0> for best encoding.
+Analyzing FSM <FSM_1> for best encoding.
 Optimizing FSM <cpu_stat/FSM> on signal <cpu_stat[1:4]> with one-hot encoding.
 ----------------------------------------------
  State                            | Encoding
@@ -407,6 +455,21 @@ Optimizing FSM <cpu_stat/FSM> on signal <cpu_stat[1:4]> with one-hot encoding.
  00000000000000000000000000000010 | 0100
  00000000000000000000000000000011 | 1000
 ----------------------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <i2c_1/state/FSM> on signal <state[1:9]> with one-hot encoding.
+-----------------------
+ State    | Encoding
+-----------------------
+ ready    | 000000001
+ start    | 000000010
+ command  | 000000100
+ slv_ack1 | 000001000
+ wr       | 000010000
+ rd       | 000100000
+ slv_ack2 | 001000000
+ mstr_ack | 010000000
+ stop     | 100000000
+-----------------------
 Reading core <ipcore_dir/vram.ngc>.
 Reading core <ipcore_dir/stack.ngc>.
 Reading core <ipcore_dir/divider.ngc>.
@@ -469,34 +532,37 @@ Unit <BH_com> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 # RAMs                                                 : 2
  128x32-bit dual-port distributed RAM                  : 1
  512x32-bit dual-port distributed RAM                  : 1
-# ROMs                                                 : 1
+# ROMs                                                 : 2
  256x56-bit ROM                                        : 1
+ 64x2-bit ROM                                          : 1
 # Multipliers                                          : 2
  32x32-bit registered multiplier                       : 1
  32x7-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 29
+# Adders/Subtractors                                   : 31
  10-bit adder                                          : 5
  13-bit adder                                          : 1
  25-bit subtractor                                     : 1
  3-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
  32-bit adder                                          : 6
  32-bit addsub                                         : 2
  32-bit subtractor                                     : 3
  33-bit adder                                          : 3
  5-bit adder                                           : 3
+ 7-bit adder                                           : 1
  7-bit subtractor                                      : 2
  9-bit subtractor                                      : 2
 # Counters                                             : 3
  32-bit up counter                                     : 3
-# Registers                                            : 512
- Flip-Flops                                            : 512
+# Registers                                            : 579
+ Flip-Flops                                            : 579
 # Latches                                              : 2
  32-bit latch                                          : 2
-# Comparators                                          : 36
+# Comparators                                          : 37
  24-bit comparator greatequal                          : 2
  24-bit comparator lessequal                           : 1
  32-bit comparator equal                               : 1
@@ -505,6 +571,7 @@ Macro Statistics
  32-bit comparator less                                : 11
  32-bit comparator lessequal                           : 5
  32-bit comparator not equal                           : 1
+ 8-bit comparator equal                                : 1
 # Multiplexers                                         : 2
  1-bit 8-to-1 multiplexer                              : 1
  8-bit 8-to-1 multiplexer                              : 1
@@ -552,7 +619,7 @@ Optimizing unit <XSADD_GEN> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block BH_com, actual ratio is 50.
+Found area constraint ratio of 100 (+ 5) on block BH_com, actual ratio is 52.
 INFO:Xst:2260 - The FF/Latch <blk0000004a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000781> 
 INFO:Xst:2260 - The FF/Latch <blk0000004a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000781> 
 
@@ -597,8 +664,8 @@ Unit <BH_com> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 473
- Flip-Flops                                            : 473
+# Registers                                            : 549
+ Flip-Flops                                            : 549
 # Shift Registers                                      : 32
  2-bit shift register                                  : 32
 
@@ -629,33 +696,32 @@ Design Statistics
 # IOs                              : 49
 
 Cell Usage :
-# BELS                             : 6269
+# BELS                             : 6477
 #      GND                         : 4
-#      INV                         : 303
+#      INV                         : 306
 #      LUT1                        : 154
-#      LUT2                        : 390
-#      LUT2_D                      : 2
+#      LUT2                        : 449
 #      LUT2_L                      : 1
-#      LUT3                        : 1275
+#      LUT3                        : 1317
 #      LUT3_D                      : 1
-#      LUT4                        : 1413
-#      LUT4_D                      : 3
-#      LUT4_L                      : 1
+#      LUT4                        : 1461
+#      LUT4_D                      : 5
+#      LUT4_L                      : 2
 #      MULT_AND                    : 17
-#      MUXCY                       : 1133
-#      MUXF5                       : 516
+#      MUXCY                       : 1134
+#      MUXF5                       : 570
 #      MUXF6                       : 173
 #      MUXF7                       : 65
 #      MUXF8                       : 32
 #      VCC                         : 4
 #      XORCY                       : 782
-# FlipFlops/Latches                : 1446
-#      FD                          : 992
-#      FDE                         : 241
+# FlipFlops/Latches                : 1522
+#      FD                          : 996
+#      FDE                         : 307
 #      FDE_1                       : 8
-#      FDR                         : 32
+#      FDR                         : 35
 #      FDRE                        : 32
-#      FDS                         : 77
+#      FDS                         : 80
 #      LDCP                        : 32
 #      LDCPE                       : 32
 # RAMS                             : 1283
@@ -668,7 +734,8 @@ Cell Usage :
 #      BUFGP                       : 1
 # IO Buffers                       : 48
 #      IBUF                        : 1
-#      OBUF                        : 47
+#      IOBUF                       : 2
+#      OBUF                        : 45
 # MULTs                            : 4
 #      MULT18X18SIO                : 4
 =========================================================================
@@ -678,10 +745,10 @@ Device utilization summary:
 
 Selected Device : 3s500evq100-4 
 
- Number of Slices:                     2214  out of   4656    47%  
- Number of Slice Flip Flops:           1446  out of   9312    15%  
- Number of 4 input LUTs:               6169  out of   9312    66%  
-    Number used as logic:              3543
+ Number of Slices:                     2294  out of   4656    49%  
+ Number of Slice Flip Flops:           1522  out of   9312    16%  
+ Number of 4 input LUTs:               6322  out of   9312    67%  
+    Number used as logic:              3696
     Number used as Shift registers:      66
     Number used as RAMs:               2560
  Number of IOs:                          49
@@ -711,10 +778,10 @@ Clock Information:
 -----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                               | Clock buffer(FF name)                                                                                                           | Load  |
 -----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
-clk                                                        | BUFGP                                                                                                                           | 1144  |
+clk                                                        | BUFGP                                                                                                                           | 1203  |
 stack_1/N1                                                 | NONE(stack_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram)| 2     |
 clkcnt_2                                                   | NONE(cnt_1_5)                                                                                                                   | 8     |
-clkcnt_31                                                  | BUFG                                                                                                                            | 1582  |
+clkcnt_31                                                  | BUFG                                                                                                                            | 1599  |
 cpu_stat_FSM_FFd31                                         | BUFG                                                                                                                            | 32    |
 cpu_rdata_cmp_ge00001(Mcompar_cpu_rdata_cmp_ge0000_cy<6>:O)| BUFG(*)(cpu_rdata_0)                                                                                                            | 32    |
 -----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
@@ -863,8 +930,8 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 17.691ns (Maximum Frequency: 56.526MHz)
-   Minimum input arrival time before clock: 4.213ns
-   Maximum output required time after clock: 20.848ns
+   Minimum input arrival time before clock: 6.773ns
+   Maximum output required time after clock: 21.447ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -874,7 +941,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 17.691ns (frequency: 56.526MHz)
-  Total number of paths / destination ports: 2992085 / 1213
+  Total number of paths / destination ports: 2993007 / 1316
 -------------------------------------------------------------------------
 Delay:               17.691ns (Levels of Logic = 46)
   Source:            ppu_clkcnt_9 (FF)
@@ -920,7 +987,7 @@ Delay:               17.691ns (Levels of Logic = 46)
      MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_addsub0001_cy<30> (Madd_vram_1_addra_addsub0001_cy<30>)
      MUXCY:CI->O           0   0.059   0.000  Madd_vram_1_addra_addsub0001_cy<31> (Madd_vram_1_addra_addsub0001_cy<31>)
      XORCY:CI->O          20   0.804   1.106  Madd_vram_1_addra_addsub0001_xor<32> (vram_1_addra_addsub0001<32>)
-     LUT4:I3->O            1   0.704   0.455  vram_1_addra_mux0002<0>1_SW0 (N240)
+     LUT4:I3->O            1   0.704   0.455  vram_1_addra_mux0002<0>1_SW1 (N2514)
      LUT4:I2->O            1   0.704   0.000  Madd_vram_1_addra_lut<0> (Madd_vram_1_addra_lut<0>)
      MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_cy<0> (Madd_vram_1_addra_cy<0>)
      MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_cy<1> (Madd_vram_1_addra_cy<1>)
@@ -940,44 +1007,33 @@ Delay:               17.691ns (Levels of Logic = 46)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkcnt_31'
-  Clock period: 12.400ns (frequency: 80.645MHz)
-  Total number of paths / destination ports: 154316 / 8257
+  Clock period: 13.593ns (frequency: 73.567MHz)
+  Total number of paths / destination ports: 155319 / 8293
 -------------------------------------------------------------------------
-Delay:               12.400ns (Levels of Logic = 20)
-  Source:            Mmult_cpu_wdata_mult0000_submult_0 (MULT)
-  Destination:       cpu_wdata_31 (FF)
+Delay:               13.593ns (Levels of Logic = 9)
+  Source:            cpu_waddr_8 (FF)
+  Destination:       vram_1_addrb_8 (FF)
   Source Clock:      clkcnt_31 rising
   Destination Clock: clkcnt_31 rising
 
-  Data Path: Mmult_cpu_wdata_mult0000_submult_0 to cpu_wdata_31
+  Data Path: cpu_waddr_8 to vram_1_addrb_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     MULT18X18SIO:CLK->P17    1   4.962   0.499  Mmult_cpu_wdata_mult0000_submult_0 (Mmult_cpu_wdata_mult0000_submult_0_P_to_Adder_A_17)
-     LUT2:I1->O            1   0.704   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_lut<17> (Mmult_cpu_wdata_mult0000_submult_00_Madd_lut<17>)
-     MUXCY:S->O            1   0.464   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<17> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<17>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<18> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<18>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<19> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<19>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<20> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<20>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<21> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<21>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<22> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<22>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<23> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<23>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<24> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<24>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<25> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<25>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<26> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<26>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<27> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<27>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<28> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<28>)
-     MUXCY:CI->O           1   0.059   0.000  Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<29> (Mmult_cpu_wdata_mult0000_submult_00_Madd_cy<29>)
-     XORCY:CI->O           1   0.804   0.499  Mmult_cpu_wdata_mult0000_submult_00_Madd_xor<30> (Mmult_cpu_wdata_mult0000_submult_0_30)
-     LUT2:I1->O            1   0.704   0.000  Mmult_cpu_wdata_mult00000_Madd_lut<30> (Mmult_cpu_wdata_mult00000_Madd_lut<30>)
-     MUXCY:S->O            0   0.464   0.000  Mmult_cpu_wdata_mult00000_Madd_cy<30> (Mmult_cpu_wdata_mult00000_Madd_cy<30>)
-     XORCY:CI->O           1   0.804   0.455  Mmult_cpu_wdata_mult00000_Madd_xor<31> (cpu_wdata_mult0000<31>)
-     LUT4:I2->O            1   0.704   0.000  cpu_wdata_mux0006<31>961 (cpu_wdata_mux0006<31>96)
-     MUXF5:I1->O           1   0.321   0.000  cpu_wdata_mux0006<31>96_f5 (cpu_wdata_mux0006<31>)
-     FDE:D                     0.308          cpu_wdata_31
+     FDE:C->Q             41   0.591   1.440  cpu_waddr_8 (cpu_waddr_8)
+     LUT2:I0->O            1   0.704   0.455  and0003_cmp_eq0000111 (N254)
+     LUT4:I2->O            1   0.704   0.000  and0003_cmp_eq00001_wg_lut<4> (and0003_cmp_eq00001_wg_lut<4>)
+     MUXCY:S->O            7   0.864   0.883  and0003_cmp_eq00001_wg_cy<4> (and0003_cmp_eq00001_wg_cy<4>)
+     LUT4:I0->O            1   0.704   0.424  stack1_addra_mux0000<0>1122 (stack1_addra_mux0000<0>1122)
+     LUT4:I3->O            1   0.704   0.000  stack1_addra_mux0000<0>11581 (stack1_addra_mux0000<0>1158)
+     MUXF5:I1->O          11   0.321   0.937  stack1_addra_mux0000<0>1158_f5 (N812)
+     LUT4:I3->O            1   0.704   0.424  vram_1_addrb_mux0002<0>1_SW1 (N609)
+     LUT4_D:I3->O          9   0.704   0.995  vram_1_addrb_mux0002<0>1 (N2)
+     LUT2:I0->O            1   0.704   0.420  vram_1_addrb_mux0002<8>0 (vram_1_addrb_mux0002<8>0)
+     FDS:S                     0.911          vram_1_addrb_8
     ----------------------------------------
-    Total                     12.400ns (10.947ns logic, 1.453ns route)
-                                       (88.3% logic, 11.7% route)
+    Total                     13.593ns (7.615ns logic, 5.978ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkcnt_2'
@@ -1000,30 +1056,53 @@ Offset:              2.346ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'cpu_rdata_cmp_ge00001'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              4.213ns (Levels of Logic = 3)
-  Source:            C<2> (PAD)
-  Destination:       cpu_rdata_2 (LATCH)
+Offset:              6.773ns (Levels of Logic = 5)
+  Source:            C<15> (PAD)
+  Destination:       cpu_rdata_15 (LATCH)
   Destination Clock: cpu_rdata_cmp_ge00001 falling
 
-  Data Path: C<2> to cpu_rdata_2
+  Data Path: C<15> to cpu_rdata_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             9   1.218   0.824  C_2_IBUF (C_2_IBUF)
-     LUT4:I3->O            1   0.704   0.455  cpu_rdata_mux0000<2>125_SW0 (N4051)
-     LUT4:I2->O            3   0.704   0.000  cpu_rdata_mux0000<2>125 (cpu_rdata_mux0000<2>)
-     LDCPE:D                   0.308          cpu_rdata_2
+     IOBUF:IO->O          10   1.218   0.886  C_15_IOBUF (N278)
+     LUT4:I3->O            1   0.704   0.595  cpu_rdata_mux0000<15>62_SW0 (N5471)
+     LUT4:I0->O            1   0.704   0.424  cpu_rdata_mux0000<15>62 (cpu_rdata_mux0000<15>62)
+     LUT4:I3->O            2   0.704   0.526  cpu_rdata_mux0000<15>85 (cpu_rdata_mux0000<15>85)
+     LUT2:I1->O            2   0.704   0.000  cpu_rdata_mux0000<15>96 (cpu_rdata_mux0000<15>)
+     LDCPE:D                   0.308          cpu_rdata_15
     ----------------------------------------
-    Total                      4.213ns (2.934ns logic, 1.279ns route)
-                                       (69.6% logic, 30.4% route)
+    Total                      6.773ns (4.342ns logic, 2.431ns route)
+                                       (64.1% logic, 35.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              3.608ns (Levels of Logic = 3)
+  Source:            C<15> (PAD)
+  Destination:       i2c_1/ack_error (FF)
+  Destination Clock: clk rising
+
+  Data Path: C<15> to i2c_1/ack_error
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O          10   1.218   1.057  C_15_IOBUF (N278)
+     LUT3:I0->O            1   0.704   0.000  i2c_1/ack_error_mux0000_F (N6991)
+     MUXF5:I0->O           1   0.321   0.000  i2c_1/ack_error_mux0000 (i2c_1/ack_error_mux0000)
+     FDE:D                     0.308          i2c_1/ack_error
+    ----------------------------------------
+    Total                      3.608ns (2.551ns logic, 1.057ns route)
+                                       (70.7% logic, 29.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 2801 / 4
+  Total number of paths / destination ports: 2803 / 6
 -------------------------------------------------------------------------
-Offset:              20.848ns (Levels of Logic = 16)
+Offset:              21.447ns (Levels of Logic = 16)
   Source:            vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
   Destination:       A<1> (PAD)
   Source Clock:      clk rising
@@ -1032,39 +1111,38 @@ Offset:              20.848ns (Levels of Logic = 16)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB16_S18_S18:CLKA->DOA0  353   2.800   1.539  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (douta<0>)
+     RAMB16_S18_S18:CLKA->DOA1  333   2.800   1.532  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (douta<1>)
      end scope: 'vram_1'
-     LUT3:I0->O            1   0.704   0.424  vram_1_douta<5>2311 (N56)
-     LUT4:I3->O            1   0.704   0.000  vram_1_douta<6>2045_F (N7691)
-     MUXF5:I0->O           1   0.321   0.424  vram_1_douta<6>2045 (vram_1_douta<6>2045)
-     LUT4:I3->O            1   0.704   0.499  vram_1_douta<6>2056 (vram_1_douta<6>2056)
-     LUT4:I1->O            1   0.704   0.499  vram_1_douta<6>20108 (vram_1_douta<6>21)
-     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_175 (crom_1/Mmux_dot_175)
-     MUXF5:I1->O           1   0.321   0.000  crom_1/Mmux_dot_16_f5_2 (crom_1/Mmux_dot_16_f53)
-     MUXF6:I0->O           1   0.521   0.499  crom_1/Mmux_dot_14_f6 (crom_1/Mmux_dot_14_f6)
-     LUT2:I1->O            1   0.704   0.499  crom_1_col<0>1122 (crom_1_col<0>1122)
-     LUT4:I1->O            1   0.704   0.499  crom_1_col<0>1156 (crom_1_col<0>2)
-     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_4 (crom_1/Mmux_dot_4)
-     MUXF5:I0->O           1   0.321   0.424  crom_1/Mmux_dot_2_f5 (crom_1_dot1)
-     LUT4:I3->O            1   0.704   0.499  A_1_mux0000_SW1 (N6171)
+     LUT2:I0->O            8   0.704   0.792  vram_1_douta<5>3611 (N15)
+     LUT4:I2->O            3   0.704   0.706  vram_1_douta<5>2831 (N200)
+     LUT4:I0->O            1   0.704   0.455  vram_1_douta<6>710_SW0 (N591)
+     LUT4:I2->O            1   0.704   0.499  vram_1_douta<6>710 (vram_1_douta<6>710)
+     LUT4:I1->O            1   0.704   0.499  vram_1_douta<6>740 (vram_1_douta<6>8)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_132 (crom_1/Mmux_dot_132)
+     MUXF5:I1->O           1   0.321   0.000  crom_1/Mmux_dot_12_f5_0 (crom_1/Mmux_dot_12_f51)
+     MUXF6:I1->O           1   0.521   0.499  crom_1/Mmux_dot_11_f6 (crom_1/Mmux_dot_11_f6)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_8 (crom_1/Mmux_dot_8)
+     MUXF5:I0->O           1   0.321   0.499  crom_1/Mmux_dot_6_f5 (crom_1/Mmux_dot_6_f5)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_3 (crom_1/Mmux_dot_3)
+     MUXF5:I1->O           1   0.321   0.424  crom_1/Mmux_dot_2_f5 (crom_1_dot1)
+     LUT4:I3->O            1   0.704   0.499  A_1_mux0000_SW1 (N5691)
      LUT4:I1->O            2   0.704   0.447  A_1_mux0000 (A_1_OBUF)
      OBUF:I->O                 3.272          A_1_OBUF (A<1>)
     ----------------------------------------
-    Total                     20.848ns (14.596ns logic, 6.252ns route)
-                                       (70.0% logic, 30.0% route)
+    Total                     21.447ns (14.596ns logic, 6.851ns route)
+                                       (68.1% logic, 31.9% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 88.00 secs
-Total CPU time to Xst completion: 87.90 secs
+Total REAL time to Xst completion: 81.00 secs
+Total CPU time to Xst completion: 80.87 secs
  
 --> 
 
-
-Total memory usage is 253912 kilobytes
+Total memory usage is 302604 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  145 (  78 filtered)
-Number of infos    :   26 (   0 filtered)
+Number of warnings :  106 (  55 filtered)
+Number of infos    :   27 (   0 filtered)
 

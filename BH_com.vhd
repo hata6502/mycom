@@ -49,6 +49,11 @@ architecture Behavioral of BH_com is
 	constant ADDR_C: integer := 6;
 
 	constant ADDR_CNT_1: integer := 7;
+	
+	constant ADDR_I2C_ADDR: integer := 8;
+	constant ADDR_I2C_RDATA: integer := 9;
+	constant ADDR_I2C_WDATA: integer := 10;
+	constant ADDR_I2C_STAT: integer := 11;
 
 	-- CPU
 	signal cpu_pc: integer := ADDR_BOOT;
@@ -718,6 +723,35 @@ is_word(IS_WRITE, 604), 	-- 591
 	-- Controller
 	signal cnt_1: std_logic_vector(7 downto 0);
 
+	-- I2C
+	component i2c_master
+	  PORT(
+		 clk       : IN     STD_LOGIC;                    --system clock
+		 reset_n   : IN     STD_LOGIC;                    --active low reset
+		 ena       : IN     STD_LOGIC;                    --latch in command
+		 addr      : IN     STD_LOGIC_VECTOR(6 DOWNTO 0); --address of target slave
+		 rw        : IN     STD_LOGIC;                    --'0' is write, '1' is read
+		 data_wr   : IN     STD_LOGIC_VECTOR(7 DOWNTO 0); --data to write to slave
+		 busy      : OUT    STD_LOGIC;                    --indicates transaction in progress
+		 data_rd   : OUT    STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
+		 ack_error : BUFFER STD_LOGIC;                    --flag if improper acknowledge from slave
+		 sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
+		 scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
+	end component;
+	
+	signal i2c_1_clk       : STD_LOGIC;                    --system clock
+	signal i2c_1_reset_n   : STD_LOGIC;                    --active low reset
+	signal i2c_1_ena       : STD_LOGIC;                    --latch in command
+	signal i2c_1_addr      : STD_LOGIC_VECTOR(6 DOWNTO 0); --address of target slave
+	signal i2c_1_rw        : STD_LOGIC;                    --'0' is write, '1' is read
+	signal i2c_1_data_wr   : STD_LOGIC_VECTOR(7 DOWNTO 0); --data to write to slave
+	signal i2c_1_busy      : STD_LOGIC;                    --indicates transaction in progress
+	signal i2c_1_data_rd   : STD_LOGIC_VECTOR(7 DOWNTO 0); --data read from slave
+	signal i2c_1_ack_error : STD_LOGIC;                    --flag if improper acknowledge from slave
+	signal i2c_1_sda       : STD_LOGIC;                    --serial data output of i2c bus
+	signal i2c_1_scl       : STD_LOGIC;                   --serial clock output of i2c bus
+	signal i2c_1_stat      : std_logic_vector(3 downto 0);
+	
 begin 
 
 	process(clk) begin
@@ -844,6 +878,16 @@ begin
 								cpu_work <= cpu_wdata;
 							elsif (cpu_waddr=2) then
 								cpu_sp <= cpu_wdata;
+
+							elsif (cpu_waddr=ADDR_I2C_ADDR) then
+								i2c_1_addr <= conv_std_logic_vector(cpu_wdata, 7);
+							elsif (cpu_waddr=ADDR_I2C_WDATA) then
+								i2c_1_data_wr <= conv_std_logic_vector(cpu_wdata, 8);
+							--elsif (cpu_waddr=ADDR_I2C_RDATA) then
+							--	i2c_1_data_rd <= conv_std_logic_vector(cpu_wdata, 8);
+							elsif (cpu_waddr=ADDR_I2C_STAT) then
+								i2c_1_stat(1 downto 0) <= conv_std_logic_vector(cpu_wdata, 2);
+
 							elsif (cpu_waddr>=128 and cpu_waddr<=255) then
 								cpu_greg((cpu_waddr - 128)mod 128) <= cpu_wdata;
 							elsif (cpu_waddr>=ADDR_BOOT and cpu_waddr<ADDR_BOOT + SIZE_BOOT) then
@@ -877,6 +921,12 @@ begin
 		else conv_integer(C_IN) when cpu_addr=ADDR_C
 		else conv_integer(CNT_1) when cpu_addr=ADDR_CNT_1
 		else to_integer(rand_rnd_num) when cpu_addr=ADDR_RAND
+
+		else conv_integer(i2c_1_addr) when cpu_addr=ADDR_I2C_ADDR
+		else conv_integer(i2c_1_data_wr) when cpu_addr=ADDR_I2C_WDATA
+		else conv_integer(i2c_1_data_rd) when cpu_addr=ADDR_I2C_RDATA
+		else conv_integer(i2c_1_stat) when cpu_addr=ADDR_I2C_STAT
+		
 		else cpu_greg((cpu_addr - 128) mod 128) when cpu_addr>=128 and cpu_addr<=255
 		else boot((cpu_addr - ADDR_BOOT) mod SIZE_BOOT) when cpu_addr>=ADDR_BOOT and cpu_addr<(ADDR_BOOT + SIZE_BOOT)
 		else conv_integer(stack1_douta) when cpu_addr>=ADDR_STACK and cpu_addr<(ADDR_STACK + SIZE_STACK)
@@ -907,18 +957,6 @@ begin
 	stat_hsync <= '1' when ppu_clkcnt<150 else '0';
 	
 	lum <= crom_1_dot;
-
-	-- Stack
-	--stack_1 : stack
-	--  PORT MAP (
-	--	 a => stack_a,
-	--	 d => stack_d,
-	--	 clk => stack_clk,
-	--	 we => stack_we,
-	--	 spo => stack_spo
-	--  );
-	--stack_clk <= clk;
-	--stack_a <= conv_std_logic_vector(cpu_addr, 9);
 	
 	-- VRAM
 	vram_1 : vram
@@ -939,7 +977,7 @@ begin
 	  vram_1_addra <= CONV_std_logic_vector(((ppu_linecnt-32)/8)*40 + ((ppu_clkcnt -512 + 1)/4/8), 10);
 	  vram_1_clkb <= clk;
 	  
-	  -- CROM
+	-- CROM
 	crom_1: crom port map (
 		chr => crom_1_chr,
 		row => crom_1_row,
@@ -993,7 +1031,28 @@ begin
 			cnt_1(conv_integer(clkcnt(5 downto 3))) <= C(2);
 		end if;
 	end process;
-
+	
+	-- I2C
+	i2c_1: i2c_master
+	  PORT MAP(
+		 clk       => i2c_1_clk,                    --system clock
+		 reset_n   => i2c_1_reset_n,                    --active low reset
+		 ena       => i2c_1_ena,                    --latch in command
+		 addr      => i2c_1_addr, --address of target slave
+		 rw        => i2c_1_rw,                    --'0' is write, '1' is read
+		 data_wr   => i2c_1_data_wr, --data to write to slave
+		 busy      => i2c_1_busy,                    --indicates transaction in progress
+		 data_rd   => i2c_1_data_rd, --data read from slave
+		 ack_error => i2c_1_ack_error,                    --flag if improper acknowledge from slave
+		 sda       => i2c_1_sda,                    --serial data output of i2c bus
+		 scl       => i2c_1_scl);                   --serial clock output of i2c bus
+	i2c_1_clk <= clk;
+	i2c_1_reset_n <= '1';
+	i2c_1_ena <= i2c_1_stat(0);
+	i2c_1_rw <= i2c_1_stat(1);
+	i2c_1_stat(2) <= i2c_1_busy;
+	i2c_1_stat(3) <= i2c_1_ack_error;
+	
 	-- Pin Outputs
 	A(0) <= '0' when (stat_vsync='0' and stat_hsync='1') or (stat_vsync='1' and ppu_clkcnt>=150) else '1';
 	A(1) <= lum when stat_vsync='0' and stat_hsync='0' and ppu_clkcnt>511 and ppu_clkcnt<(1536 + 8*8*4) and ppu_linecnt>=32 and ppu_linecnt<232 else '0';
@@ -1002,7 +1061,9 @@ begin
 	C(0) <= clkcnt(2);
 	C(1) <= '1' when clkcnt(5 downto 3)="000" else '0';
 	C(2) <= 'Z'; -- input
-	C(15 downto 3) <= "0000000000000";
+	c(14) <= i2c_1_scl;
+	c(15) <= i2c_1_sda;
+	C(13 downto 3) <= "00000000000";
 	
 	-- Pin Inputs
 	A_IN <= A;

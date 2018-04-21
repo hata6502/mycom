@@ -1,34 +1,34 @@
-Release 14.7 Map P.20131013 (lin)
+Release 14.7 Map P.20131013 (nt)
 Xilinx Mapping Report File for Design 'BH_com'
 
 Design Information
 ------------------
-Command Line   : map -filter /home/hato/mycom/iseconfig/filter.filter -intstyle
-ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd
-BH_com.ngd BH_com.pcf 
+Command Line   : map -filter C:/Users/hato/mycom/iseconfig/filter.filter
+-intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o
+BH_com_map.ncd BH_com.ngd BH_com.pcf 
 Target Device  : xc3s500e
 Target Package : vq100
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Apr 18 01:10:38 2018
+Mapped Date    : SAT 21 APR 19:2:52 2018
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:   12
 Logic Utilization:
-  Total Number Slice Registers:       1,364 out of   9,312   14%
-    Number used as Flip Flops:        1,300
+  Total Number Slice Registers:       1,440 out of   9,312   15%
+    Number used as Flip Flops:        1,376
     Number used as Latches:              64
-  Number of 4 input LUTs:             5,960 out of   9,312   64%
+  Number of 4 input LUTs:             6,109 out of   9,312   65%
 Logic Distribution:
-  Number of occupied Slices:          3,702 out of   4,656   79%
-    Number of Slices containing only related logic:   3,702 out of   3,702 100%
-    Number of Slices containing unrelated logic:          0 out of   3,702   0%
+  Number of occupied Slices:          3,823 out of   4,656   82%
+    Number of Slices containing only related logic:   3,823 out of   3,823 100%
+    Number of Slices containing unrelated logic:          0 out of   3,823   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       6,141 out of   9,312   65%
-    Number used as logic:             3,334
-    Number used as a route-thru:        181
+  Total Number of 4 input LUTs:       6,293 out of   9,312   67%
+    Number used as logic:             3,483
+    Number used as a route-thru:        184
     Number used for Dual Port RAMs:   2,560
       (Two LUTs used per Dual Port RAM)
     Number used as Shift registers:      66
@@ -41,11 +41,11 @@ Logic Distribution:
   Number of BUFGMUXs:                     4 out of      24   16%
   Number of MULT18X18SIOs:                4 out of      20   20%
 
-Average Fanout of Non-Clock Nets:                4.55
+Average Fanout of Non-Clock Nets:                4.52
 
-Peak Memory Usage:  206 MB
-Total REAL time to MAP completion:  11 secs 
-Total CPU time to MAP completion:   11 secs 
+Peak Memory Usage:  260 MB
+Total REAL time to MAP completion:  19 secs 
+Total CPU time to MAP completion:   10 secs 
 
 NOTES:
 
@@ -125,16 +125,17 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network Mram_boot2/SPO has no load.
+INFO:LIT:243 - Logical network Mram_cpu_greg1/SPO has no load.
 INFO:LIT:395 - The above info message is repeated 1313 more times for the
    following (max. 5 shown):
-   Mram_boot1/SPO,
-   Mram_boot5/SPO,
-   Mram_boot3/SPO,
-   Mram_boot4/SPO,
-   Mram_boot8/SPO
+   Mram_cpu_greg4/SPO,
+   Mram_cpu_greg2/SPO,
+   Mram_cpu_greg3/SPO,
+   Mram_cpu_greg7/SPO,
+   Mram_cpu_greg5/SPO
    To see the details of these info messages, please use the -detail switch.
-INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:564 - The following environment variables are currently set:
+INFO:MapLib:591 - XIL_MAP_LOCWARN 	Value: 1
 INFO:MapLib:159 - Net Timing constraints on signal clk are pushed forward
    through input buffer.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -688,8 +689,8 @@ Section 6 - IOB Properties
 | C<11>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
 | C<12>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
 | C<13>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
-| C<14>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
-| C<15>                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
+| C<14>                              | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
+| C<15>                              | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          | 0 / 0    |
 | clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
