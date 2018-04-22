@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt)
+Release 14.7 - xst P.20131013 (lin)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.07 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.07 secs
  
---> Reading design: BH_com.prj
+--> 
+Reading design: BH_com.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -107,25 +110,24 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-WARNING:HDLParsers:3498 - No primary, secondary unit in the file "C:/Users/hato/mycom/ipcore_dir/divider.vhd. Ignore this file from project file "C:/Users/hato/mycom/BH_com_vhdl.prj".
-Compiling vhdl file "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd" in Library work.
+WARNING:HDLParsers:3498 - No primary, secondary unit in the file "/home/hato/mycom/ipcore_dir/divider.vhd. Ignore this file from project file "/home/hato/mycom/BH_com_vhdl.prj".
+Compiling vhdl file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd.vhd" in Library work.
 Architecture xsadd of Entity xsadd is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/ipcore_dir/vram.vhd" in Library work.
+Compiling vhdl file "/home/hato/mycom/ipcore_dir/vram.vhd" in Library work.
 Architecture vram_a of Entity vram is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/crom.vhd" in Library work.
+Compiling vhdl file "/home/hato/mycom/crom.vhd" in Library work.
 Architecture behavioral of Entity crom is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/ipcore_dir/stack.vhd" in Library work.
+Compiling vhdl file "/home/hato/mycom/ipcore_dir/stack.vhd" in Library work.
 Architecture stack_a of Entity stack is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd" in Library work.
+Compiling vhdl file "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd" in Library work.
 Architecture rtl of Entity xsadd_gen is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/i2c_master.vhd" in Library work.
-WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 86. Choice .TO. is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 89. Choice .TO. is not a locally static expression.
-WARNING:HDLParsers:817 - "C:/Users/hato/mycom/i2c_master.vhd" Line 92. Choice .TO. is not a locally static expression.
+Compiling vhdl file "/home/hato/mycom/i2c_master.vhd" in Library work.
+WARNING:HDLParsers:817 - "/home/hato/mycom/i2c_master.vhd" Line 86. Choice .TO. is not a locally static expression.
+WARNING:HDLParsers:817 - "/home/hato/mycom/i2c_master.vhd" Line 89. Choice .TO. is not a locally static expression.
+WARNING:HDLParsers:817 - "/home/hato/mycom/i2c_master.vhd" Line 92. Choice .TO. is not a locally static expression.
 Architecture logic of Entity i2c_master is up to date.
-Compiling vhdl file "C:/Users/hato/mycom/BH_com.vhd" in Library work.
-Entity <bh_com> compiled.
-Entity <bh_com> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/hato/mycom/BH_com.vhd" in Library work.
+Architecture behavioral of Entity bh_com is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -137,7 +139,7 @@ Analyzing hierarchy for entity <crom> in library <work> (architecture <behaviora
 Analyzing hierarchy for entity <XSADD_GEN> in library <work> (architecture <rtl>).
 
 Analyzing hierarchy for entity <i2c_master> in library <work> (architecture <logic>) with generics.
-	bus_clk = 400000
+	bus_clk = 100000
 	input_clk = 32000000
 
 
@@ -145,7 +147,7 @@ Analyzing hierarchy for entity <i2c_master> in library <work> (architecture <log
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <BH_com> in library <work> (Architecture <behavioral>).
-INFO:Xst:1739 - HDL ADVISOR - "C:/Users/hato/mycom/BH_com.vhd" line 49: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "/home/hato/mycom/BH_com.vhd" line 49: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 Entity <BH_com> analyzed. Unit <BH_com> generated.
 
 Analyzing Entity <crom> in library <work> (Architecture <behavioral>).
@@ -174,7 +176,7 @@ WARNING:Xst - Size mismatch in logical xor : extending constant.
 Entity <XSADD_GEN> analyzed. Unit <XSADD_GEN> generated.
 
 Analyzing generic Entity <i2c_master> in library <work> (Architecture <logic>).
-	bus_clk = 400000
+	bus_clk = 100000
 	input_clk = 32000000
 Entity <i2c_master> analyzed. Unit <i2c_master> generated.
 
@@ -187,7 +189,7 @@ Performing bidirectional port resolution...
 INFO:Xst:2561 - Always blocking tristate driving signal <C> in unit <BH_com> is removed.
 
 Synthesizing Unit <crom>.
-    Related source file is "C:/Users/hato/mycom/crom.vhd".
+    Related source file is "/home/hato/mycom/crom.vhd".
     Found 256x56-bit ROM for signal <chr$rom0000>.
     Found 1-bit 8-to-1 multiplexer for signal <dot>.
     Found 8-bit 8-to-1 multiplexer for signal <$mux0008> created at line 2365.
@@ -198,7 +200,7 @@ Unit <crom> synthesized.
 
 
 Synthesizing Unit <XSADD_GEN>.
-    Related source file is "C:/Users/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd".
+    Related source file is "/home/hato/mycom/24ea1ac481e3a2e80803/xsadd_gen.vhd".
     Found 1-bit register for signal <RND_VAL>.
     Found 32-bit register for signal <RND_NUM>.
     Found 128-bit register for signal <curr_status.status>.
@@ -214,7 +216,7 @@ Unit <XSADD_GEN> synthesized.
 
 
 Synthesizing Unit <i2c_master>.
-    Related source file is "C:/Users/hato/mycom/i2c_master.vhd".
+    Related source file is "/home/hato/mycom/i2c_master.vhd".
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
@@ -227,7 +229,6 @@ Synthesizing Unit <i2c_master>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 64x2-bit ROM for signal <$rom0000>.
     Found 1-bit register for signal <busy>.
     Found 1-bit register for signal <ack_error>.
     Found 8-bit register for signal <data_rd>.
@@ -236,150 +237,166 @@ Synthesizing Unit <i2c_master>.
     Found 8-bit register for signal <addr_rw>.
     Found 3-bit register for signal <bit_cnt>.
     Found 3-bit subtractor for signal <bit_cnt$addsub0000>.
-    Found 7-bit register for signal <count>.
-    Found 7-bit adder for signal <count$addsub0000> created at line 83.
+    Found 9-bit register for signal <count>.
+    Found 9-bit adder for signal <count$addsub0000> created at line 83.
     Found 1-bit register for signal <data_clk>.
+    Found 9-bit comparator greatequal for signal <data_clk$cmp_ge0000>.
+    Found 9-bit comparator lessequal for signal <data_clk$cmp_le0000>.
     Found 1-bit register for signal <data_clk_prev>.
     Found 8-bit register for signal <data_rx>.
     Found 8-bit register for signal <data_tx>.
     Found 1-bit register for signal <scl_clk>.
+    Found 9-bit comparator lessequal for signal <scl_clk$cmp_le0000>.
     Found 1-bit register for signal <scl_ena>.
     Found 1-bit register for signal <sda_int>.
     Found 8-bit comparator equal for signal <state$cmp_eq0001> created at line 184.
     Found 1-bit register for signal <stretch>.
+    Found 9-bit comparator greatequal for signal <stretch$cmp_ge0000>.
+    Found 9-bit comparator lessequal for signal <stretch$cmp_le0000>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred   1 ROM(s).
-	inferred  50 D-type flip-flop(s).
+	inferred  52 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred   1 Comparator(s).
+	inferred   6 Comparator(s).
 	inferred   2 Tristate(s).
 Unit <i2c_master> synthesized.
 
 
 Synthesizing Unit <BH_com>.
-    Related source file is "C:/Users/hato/mycom/BH_com.vhd".
+    Related source file is "/home/hato/mycom/BH_com.vhd".
 WARNING:Xst:653 - Signal <vram_1_dina> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
+WARNING:Xst:646 - Signal <stack1_douta<31:20>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <rand_rnd_val> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rand_rnd_num<31:20>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <rand_init_param.status> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:646 - Signal <div1_rfd> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <div1_fractional> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 128x32-bit dual-port RAM <Mram_cpu_greg> for signal <cpu_greg>.
-    Found 512x32-bit dual-port RAM <Mram_boot> for signal <boot>.
-INFO:Xst:1608 - Relative priorities of control signals on register <cpu_rdata> differ from those commonly found in the selected device family. This will result in additional logic around the register.
+    Found 128x20-bit dual-port RAM <Mram_cpu_greg> for signal <cpu_greg>.
+    Found 512x20-bit dual-port RAM <Mram_boot> for signal <boot>.
     Found finite state machine <FSM_1> for signal <cpu_stat>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 4                                              |
     | Inputs             | 0                                              |
     | Outputs            | 5                                              |
-    | Clock              | clkcnt<3>                 (rising_edge)        |
-    | Power Up State     | 00000000000000000000000000000000               |
+    | Clock              | clk                       (falling_edge)       |
+    | Power Up State     | 00000000000000000000                           |
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-WARNING:Xst:737 - Found 32-bit latch for signal <cpu_rdata>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 32-bit latch for signal <cpu_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:643 - "C:/Users/hato/mycom/BH_com.vhd" line 827: The result of a 32x32-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "C:/Users/hato/mycom/BH_com.vhd" line 977: The result of a 32x7-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 32-bit subtractor for signal <$sub0000> created at line 916.
-    Found 32-bit subtractor for signal <$sub0001> created at line 916.
-    Found 32-bit subtractor for signal <$sub0002> created at line 892.
-    Found 32-bit subtractor for signal <$sub0003> created at line 894.
-    Found 32-bit comparator greatequal for signal <A_0$cmp_ge0000> created at line 1057.
-    Found 32-bit comparator greatequal for signal <A_1$cmp_ge0000> created at line 1058.
-    Found 32-bit comparator greater for signal <A_1$cmp_gt0000> created at line 1058.
-    Found 32-bit comparator less for signal <A_1$cmp_lt0000> created at line 1058.
-    Found 32-bit comparator less for signal <A_1$cmp_lt0001> created at line 1058.
-    Found 32-bit comparator greatequal for signal <and0002$cmp_ge0000> created at line 892.
-    Found 32-bit comparator less for signal <and0002$cmp_lt0000> created at line 892.
-    Found 32-bit comparator greatequal for signal <and0003$cmp_ge0000> created at line 889.
-    Found 32-bit comparator lessequal for signal <and0003$cmp_le0000> created at line 889.
+WARNING:Xst:643 - "/home/hato/mycom/BH_com.vhd" line 830: The result of a 20x20-bit multiplication is partially used. Only the 20 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/hato/mycom/BH_com.vhd" line 980: The result of a 32x7-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:737 - Found 20-bit latch for signal <cpu_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 20-bit latch for signal <cpu_rdata>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 21-bit subtractor for signal <$sub0000> created at line 919.
+    Found 21-bit subtractor for signal <$sub0001> created at line 919.
+    Found 21-bit subtractor for signal <$sub0002> created at line 897.
+    Found 21-bit subtractor for signal <$sub0003> created at line 895.
+    Found 32-bit comparator greatequal for signal <A_0$cmp_ge0000> created at line 1060.
+    Found 32-bit comparator greatequal for signal <A_1$cmp_ge0000> created at line 1061.
+    Found 32-bit comparator greater for signal <A_1$cmp_gt0000> created at line 1061.
+    Found 32-bit comparator less for signal <A_1$cmp_lt0000> created at line 1061.
+    Found 32-bit comparator less for signal <A_1$cmp_lt0001> created at line 1061.
+    Found 20-bit comparator greatequal for signal <and0002$cmp_ge0000> created at line 895.
+    Found 20-bit comparator less for signal <and0002$cmp_lt0000> created at line 895.
+    Found 20-bit comparator greatequal for signal <and0003$cmp_ge0000> created at line 892.
+    Found 20-bit comparator lessequal for signal <and0003$cmp_le0000> created at line 892.
     Found 32-bit up counter for signal <clkcnt>.
     Found 8-bit register for signal <cnt_1>.
-    Found 32-bit register for signal <cpu_inst>.
-    Found 32-bit register for signal <cpu_opdata>.
-    Found 32-bit register for signal <cpu_pc>.
-    Found 32-bit adder for signal <cpu_pc$addsub0000> created at line 775.
-    Found 24-bit register for signal <cpu_raddr>.
-    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0000> created at line 916.
-    Found 32-bit comparator greatequal for signal <cpu_rdata$cmp_ge0001> created at line 916.
-    Found 32-bit comparator lessequal for signal <cpu_rdata$cmp_le0000> created at line 916.
-    Found 32-bit comparator less for signal <cpu_rdata$cmp_lt0000> created at line 916.
-    Found 32-bit register for signal <cpu_sp>.
-    Found 32-bit addsub for signal <cpu_sp$share0000> created at line 769.
-    Found 32-bit register for signal <cpu_waddr>.
-    Found 32-bit register for signal <cpu_wdata>.
-    Found 32-bit addsub for signal <cpu_wdata$addsub0000>.
-    Found 32-bit comparator equal for signal <cpu_wdata$cmp_eq0011> created at line 851.
-    Found 32-bit comparator greatequal for signal <cpu_wdata$cmp_ge0000> created at line 866.
-    Found 32-bit comparator greater for signal <cpu_wdata$cmp_gt0000> created at line 863.
-    Found 32-bit comparator lessequal for signal <cpu_wdata$cmp_le0000> created at line 860.
-    Found 32-bit comparator less for signal <cpu_wdata$cmp_lt0000> created at line 857.
-    Found 32-bit comparator not equal for signal <cpu_wdata$cmp_ne0001> created at line 854.
-    Found 32x32-bit multiplier for signal <cpu_wdata$mult0000> created at line 827.
-    Found 32-bit xor2 for signal <cpu_wdata$xor0001> created at line 840.
-    Found 32-bit register for signal <cpu_work>.
+    Found 4-bit register for signal <cpu_inst>.
+    Found 20-bit register for signal <cpu_opdata>.
+    Found 20-bit register for signal <cpu_pc>.
+    Found 20-bit adder for signal <cpu_pc$addsub0000> created at line 778.
+    Found 16-bit register for signal <cpu_raddr>.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0000> created at line 919.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0001> created at line 919.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0002> created at line 919.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0003> created at line 919.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0004> created at line 919.
+    Found 20-bit comparator greatequal for signal <cpu_rdata$cmp_ge0005> created at line 919.
+    Found 20-bit comparator greater for signal <cpu_rdata$cmp_gt0000> created at line 919.
+    Found 20-bit comparator greater for signal <cpu_rdata$cmp_gt0001> created at line 919.
+    Found 20-bit comparator lessequal for signal <cpu_rdata$cmp_le0000> created at line 919.
+    Found 20-bit comparator lessequal for signal <cpu_rdata$cmp_le0001> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0000> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0001> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0002> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0003> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0004> created at line 919.
+    Found 20-bit comparator less for signal <cpu_rdata$cmp_lt0005> created at line 919.
+    Found 20-bit register for signal <cpu_sp>.
+    Found 20-bit addsub for signal <cpu_sp$share0000> created at line 772.
+    Found 20-bit register for signal <cpu_waddr>.
+    Found 20-bit 16-to-1 multiplexer for signal <cpu_waddr$mux0000> created at line 815.
+    Found 20-bit register for signal <cpu_wdata>.
+    Found 20-bit addsub for signal <cpu_wdata$addsub0000>.
+    Found 20-bit comparator equal for signal <cpu_wdata$cmp_eq0001> created at line 854.
+    Found 20-bit comparator greatequal for signal <cpu_wdata$cmp_ge0000> created at line 869.
+    Found 20-bit comparator greater for signal <cpu_wdata$cmp_gt0000> created at line 866.
+    Found 20-bit comparator lessequal for signal <cpu_wdata$cmp_le0000> created at line 863.
+    Found 20-bit comparator less for signal <cpu_wdata$cmp_lt0000> created at line 860.
+    Found 20-bit comparator not equal for signal <cpu_wdata$cmp_ne0000> created at line 857.
+    Found 20x20-bit multiplier for signal <cpu_wdata$mult0000> created at line 830.
+    Found 20-bit 16-to-1 multiplexer for signal <cpu_wdata$mux0006> created at line 815.
+    Found 20-bit xor2 for signal <cpu_wdata$xor0001> created at line 843.
+    Found 20-bit register for signal <cpu_work>.
     Found 32-bit adder for signal <crom_1_col$add0000>.
     Found 32-bit adder for signal <crom_1_col$addsub0000>.
-    Found 16-bit register for signal <div1_dividend>.
-    Found 16-bit register for signal <div1_divisor>.
+    Found 20-bit register for signal <div1_dividend>.
+    Found 20-bit register for signal <div1_divisor>.
     Found 7-bit register for signal <i2c_1_addr>.
     Found 8-bit register for signal <i2c_1_data_wr>.
     Found 2-bit register for signal <i2c_1_stat<1:0>>.
-    Found 32-bit adder for signal <inst$add0000>.
-    Found 32-bit adder for signal <inst$addsub0000>.
-    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0000> created at line 916.
-    Found 32-bit comparator greatequal for signal <mux0000$cmp_ge0001> created at line 916.
-    Found 32-bit comparator lessequal for signal <mux0000$cmp_le0000> created at line 916.
-    Found 32-bit comparator less for signal <mux0000$cmp_lt0000> created at line 916.
     Found 32-bit up counter for signal <ppu_clkcnt>.
     Found 32-bit up counter for signal <ppu_linecnt>.
     Found 10-bit register for signal <stack1_addra>.
-    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0000> created at line 778.
-    Found 24-bit comparator greatequal for signal <stack1_addra$cmp_ge0001> created at line 780.
-    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0002> created at line 894.
-    Found 32-bit comparator greatequal for signal <stack1_addra$cmp_ge0003> created at line 898.
-    Found 24-bit comparator lessequal for signal <stack1_addra$cmp_le0000> created at line 778.
-    Found 32-bit comparator lessequal for signal <stack1_addra$cmp_le0001> created at line 894.
-    Found 32-bit comparator less for signal <stack1_addra$cmp_lt0000> created at line 898.
+    Found 16-bit comparator greatequal for signal <stack1_addra$cmp_ge0000> created at line 781.
+    Found 16-bit comparator greatequal for signal <stack1_addra$cmp_ge0001> created at line 783.
+    Found 20-bit comparator greatequal for signal <stack1_addra$cmp_ge0002> created at line 897.
+    Found 20-bit comparator greatequal for signal <stack1_addra$cmp_ge0003> created at line 901.
+    Found 16-bit comparator lessequal for signal <stack1_addra$cmp_le0000> created at line 781.
+    Found 20-bit comparator lessequal for signal <stack1_addra$cmp_le0001> created at line 897.
+    Found 20-bit comparator less for signal <stack1_addra$cmp_lt0000> created at line 901.
     Found 32-bit register for signal <stack1_dina>.
-    Found 32-bit comparator greatequal for signal <stack1_dina$cmp_ge0000> created at line 898.
-    Found 32-bit comparator less for signal <stack1_dina$cmp_lt0000> created at line 898.
+    Found 20-bit comparator greatequal for signal <stack1_dina$cmp_ge0000> created at line 901.
+    Found 20-bit comparator less for signal <stack1_dina$cmp_lt0000> created at line 901.
     Found 1-bit register for signal <stack1_wea<0>>.
-    Found 32-bit comparator less for signal <stat_hsync$cmp_lt0000> created at line 957.
-    Found 32-bit comparator less for signal <stat_vsync$cmp_lt0000> created at line 956.
+    Found 32-bit comparator less for signal <stat_hsync$cmp_lt0000> created at line 960.
+    Found 32-bit comparator less for signal <stat_vsync$cmp_lt0000> created at line 959.
     Found 10-bit adder for signal <vram_1_addra>.
     Found 32-bit adder for signal <vram_1_addra$add0000>.
-    Found 33-bit adder for signal <vram_1_addra$add0001> created at line 977.
+    Found 33-bit adder for signal <vram_1_addra$add0001> created at line 980.
     Found 33-bit adder for signal <vram_1_addra$add0002>.
     Found 33-bit adder for signal <vram_1_addra$add0003>.
     Found 33-bit adder for signal <vram_1_addra$addsub0000>.
     Found 33-bit adder for signal <vram_1_addra$addsub0001>.
     Found 32-bit adder for signal <vram_1_addra$addsub0002>.
-    Found 32x7-bit multiplier for signal <vram_1_addra$mult0001> created at line 977.
-    Found 32-bit subtractor for signal <vram_1_addra$sub0000> created at line 977.
-    Found 32-bit subtractor for signal <vram_1_addra$sub0001> created at line 977.
+    Found 32x7-bit multiplier for signal <vram_1_addra$mult0001> created at line 980.
+    Found 32-bit subtractor for signal <vram_1_addra$sub0000> created at line 980.
+    Found 32-bit subtractor for signal <vram_1_addra$sub0001> created at line 980.
     Found 10-bit register for signal <vram_1_addrb>.
-    Found 25-bit adder for signal <vram_1_addrb$add0000>.
-    Found 32-bit adder for signal <vram_1_addrb$add0001>.
-    Found 32-bit adder for signal <vram_1_addrb$addsub0000>.
-    Found 25-bit adder for signal <vram_1_addrb$addsub0001>.
-    Found 10-bit adder for signal <vram_1_addrb$share0000> created at line 769.
-    Found 25-bit subtractor for signal <vram_1_addrb$sub0000> created at line 779.
-    Found 32-bit subtractor for signal <vram_1_addrb$sub0001> created at line 896.
+    Found 17-bit adder for signal <vram_1_addrb$add0000>.
+    Found 21-bit adder for signal <vram_1_addrb$add0001>.
+    Found 21-bit adder for signal <vram_1_addrb$addsub0000>.
+    Found 17-bit adder for signal <vram_1_addrb$addsub0001>.
+    Found 10-bit adder for signal <vram_1_addrb$share0000> created at line 772.
+    Found 17-bit subtractor for signal <vram_1_addrb$sub0000> created at line 782.
+    Found 21-bit subtractor for signal <vram_1_addrb$sub0001> created at line 899.
     Found 8-bit register for signal <vram_1_dinb>.
-    Found 32-bit comparator greater for signal <vram_1_dinb$cmp_gt0000> created at line 894.
-    Found 32-bit comparator less for signal <vram_1_dinb$cmp_lt0000> created at line 894.
+    Found 20-bit comparator greater for signal <vram_1_dinb$cmp_gt0000> created at line 897.
+    Found 20-bit comparator less for signal <vram_1_dinb$cmp_lt0000> created at line 897.
     Found 1-bit register for signal <vram_1_web<0>>.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   2 RAM(s).
 	inferred   3 Counter(s).
-	inferred 367 D-type flip-flop(s).
-	inferred  28 Adder/Subtractor(s).
+	inferred 267 D-type flip-flop(s).
+	inferred  26 Adder/Subtractor(s).
 	inferred   2 Multiplier(s).
-	inferred  36 Comparator(s).
+	inferred  44 Comparator(s).
+	inferred  40 Multiplexer(s).
 Unit <BH_com> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -389,54 +406,65 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
- 128x32-bit dual-port RAM                              : 1
- 512x32-bit dual-port RAM                              : 1
-# ROMs                                                 : 2
+ 128x20-bit dual-port RAM                              : 1
+ 512x20-bit dual-port RAM                              : 1
+# ROMs                                                 : 1
  256x56-bit ROM                                        : 1
- 64x2-bit ROM                                          : 1
 # Multipliers                                          : 2
- 32x32-bit multiplier                                  : 1
+ 20x20-bit multiplier                                  : 1
  32x7-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 31
+# Adders/Subtractors                                   : 29
  10-bit adder                                          : 2
- 25-bit adder                                          : 2
- 25-bit subtractor                                     : 1
+ 17-bit adder                                          : 2
+ 17-bit subtractor                                     : 1
+ 20-bit adder                                          : 1
+ 20-bit addsub                                         : 2
+ 21-bit adder                                          : 2
+ 21-bit subtractor                                     : 5
  3-bit subtractor                                      : 1
- 32-bit adder                                          : 10
- 32-bit addsub                                         : 2
- 32-bit subtractor                                     : 7
+ 32-bit adder                                          : 5
+ 32-bit subtractor                                     : 2
  33-bit adder                                          : 5
- 7-bit adder                                           : 1
+ 9-bit adder                                           : 1
 # Counters                                             : 3
  32-bit up counter                                     : 3
 # Registers                                            : 56
  1-bit register                                        : 30
  10-bit register                                       : 2
- 16-bit register                                       : 2
- 24-bit register                                       : 1
+ 16-bit register                                       : 1
+ 20-bit register                                       : 8
  3-bit register                                        : 1
- 32-bit register                                       : 13
- 7-bit register                                        : 2
+ 32-bit register                                       : 6
+ 4-bit register                                        : 1
+ 7-bit register                                        : 1
  8-bit register                                        : 5
+ 9-bit register                                        : 1
 # Latches                                              : 2
- 32-bit latch                                          : 2
-# Comparators                                          : 37
- 24-bit comparator greatequal                          : 2
- 24-bit comparator lessequal                           : 1
- 32-bit comparator equal                               : 1
- 32-bit comparator greatequal                          : 12
- 32-bit comparator greater                             : 3
- 32-bit comparator less                                : 11
- 32-bit comparator lessequal                           : 5
- 32-bit comparator not equal                           : 1
+ 20-bit latch                                          : 2
+# Comparators                                          : 50
+ 16-bit comparator greatequal                          : 2
+ 16-bit comparator lessequal                           : 1
+ 20-bit comparator equal                               : 1
+ 20-bit comparator greatequal                          : 12
+ 20-bit comparator greater                             : 4
+ 20-bit comparator less                                : 11
+ 20-bit comparator lessequal                           : 5
+ 20-bit comparator not equal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 4
  8-bit comparator equal                                : 1
-# Multiplexers                                         : 2
+ 9-bit comparator greatequal                           : 2
+ 9-bit comparator lessequal                            : 3
+# Multiplexers                                         : 4
  1-bit 8-to-1 multiplexer                              : 1
+ 20-bit 16-to-1 multiplexer                            : 2
  8-bit 8-to-1 multiplexer                              : 1
 # Tristates                                            : 2
  1-bit tristate buffer                                 : 2
 # Xors                                                 : 3
- 32-bit xor2                                           : 2
+ 20-bit xor2                                           : 1
+ 32-bit xor2                                           : 1
  32-bit xor3                                           : 1
 
 =========================================================================
@@ -447,14 +475,14 @@ Macro Statistics
 
 Analyzing FSM <FSM_1> for best encoding.
 Optimizing FSM <cpu_stat/FSM> on signal <cpu_stat[1:4]> with one-hot encoding.
-----------------------------------------------
- State                            | Encoding
-----------------------------------------------
- 00000000000000000000000000000000 | 0001
- 00000000000000000000000000000001 | 0010
- 00000000000000000000000000000010 | 0100
- 00000000000000000000000000000011 | 1000
-----------------------------------------------
+----------------------------------
+ State                | Encoding
+----------------------------------
+ 00000000000000000000 | 0001
+ 00000000000000000001 | 0010
+ 00000000000000000010 | 0100
+ 00000000000000000011 | 1000
+----------------------------------
 Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <i2c_1/state/FSM> on signal <state[1:9]> with one-hot encoding.
 -----------------------
@@ -477,14 +505,29 @@ Loading core <vram> for timing and area information for instance <vram_1>.
 Loading core <stack> for timing and area information for instance <stack_1>.
 Loading core <divider> for timing and area information for instance <div_1>.
 WARNING:Xst:1710 - FF/Latch <status_valid> (without init value) has a constant value of 1 in block <rand_1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_24> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_25> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_26> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_27> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_28> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_29> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_30> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_31> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_31> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_30> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_29> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_28> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_27> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_26> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_25> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_24> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_23> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_22> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_21> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <stack1_dina_20> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_dividend_19> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_dividend_18> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_dividend_17> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_dividend_16> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_divisor_19> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_divisor_18> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_divisor_17> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <div1_divisor_16> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <stack1_dina<31:20>> (without init value) have a constant value of 0 in block <BH_com>.
+WARNING:Xst:2404 -  FFs/Latches <div1_divisor<19:16>> (without init value) have a constant value of 0 in block <BH_com>.
+WARNING:Xst:2404 -  FFs/Latches <div1_dividend<19:16>> (without init value) have a constant value of 0 in block <BH_com>.
 
 Synthesizing (advanced) Unit <BH_com>.
 	Found pipelined multiplier on signal <cpu_wdata_mult0000>:
@@ -498,14 +541,14 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_cpu_greg> will be implemented on LUT
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 128-word x 32-bit                   |          |
-    |     clkA           | connected to signal <clkcnt<3>>     | rise     |
+    |     aspect ratio   | 128-word x 20-bit                   |          |
+    |     clkA           | connected to signal <clk>           | fall     |
     |     weA            | connected to signal <_and0000_0>    | high     |
     |     addrA          | connected to internal node          |          |
     |     diA            | connected to signal <cpu_wdata>     |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     aspect ratio   | 128-word x 20-bit                   |          |
     |     addrB          | connected to internal node          |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -514,14 +557,14 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_boot> will be implemented on LUTs ei
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 512-word x 32-bit                   |          |
-    |     clkA           | connected to signal <clkcnt<3>>     | rise     |
+    |     aspect ratio   | 512-word x 20-bit                   |          |
+    |     clkA           | connected to signal <clk>           | fall     |
     |     weA            | connected to signal <_and0002_0>    | high     |
     |     addrA          | connected to internal node          |          |
     |     diA            | connected to signal <cpu_wdata>     |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 512-word x 32-bit                   |          |
+    |     aspect ratio   | 512-word x 20-bit                   |          |
     |     addrB          | connected to internal node          |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -534,49 +577,57 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # FSMs                                                 : 2
 # RAMs                                                 : 2
- 128x32-bit dual-port distributed RAM                  : 1
- 512x32-bit dual-port distributed RAM                  : 1
-# ROMs                                                 : 2
+ 128x20-bit dual-port distributed RAM                  : 1
+ 512x20-bit dual-port distributed RAM                  : 1
+# ROMs                                                 : 1
  256x56-bit ROM                                        : 1
- 64x2-bit ROM                                          : 1
 # Multipliers                                          : 2
- 32x32-bit registered multiplier                       : 1
+ 20x20-bit registered multiplier                       : 1
  32x7-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 31
+# Adders/Subtractors                                   : 29
  10-bit adder                                          : 5
  13-bit adder                                          : 1
- 25-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 1
+ 20-bit adder                                          : 1
+ 20-bit addsub                                         : 2
+ 21-bit subtractor                                     : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
- 32-bit adder                                          : 6
- 32-bit addsub                                         : 2
- 32-bit subtractor                                     : 3
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 2
  33-bit adder                                          : 3
  5-bit adder                                           : 3
- 7-bit adder                                           : 1
  7-bit subtractor                                      : 2
+ 9-bit adder                                           : 1
  9-bit subtractor                                      : 2
 # Counters                                             : 3
  32-bit up counter                                     : 3
-# Registers                                            : 579
- Flip-Flops                                            : 579
+# Registers                                            : 461
+ Flip-Flops                                            : 461
 # Latches                                              : 2
- 32-bit latch                                          : 2
-# Comparators                                          : 37
- 24-bit comparator greatequal                          : 2
- 24-bit comparator lessequal                           : 1
- 32-bit comparator equal                               : 1
- 32-bit comparator greatequal                          : 12
- 32-bit comparator greater                             : 3
- 32-bit comparator less                                : 11
- 32-bit comparator lessequal                           : 5
- 32-bit comparator not equal                           : 1
+ 20-bit latch                                          : 2
+# Comparators                                          : 50
+ 16-bit comparator greatequal                          : 2
+ 16-bit comparator lessequal                           : 1
+ 20-bit comparator equal                               : 1
+ 20-bit comparator greatequal                          : 12
+ 20-bit comparator greater                             : 4
+ 20-bit comparator less                                : 11
+ 20-bit comparator lessequal                           : 5
+ 20-bit comparator not equal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator greater                             : 1
+ 32-bit comparator less                                : 4
  8-bit comparator equal                                : 1
-# Multiplexers                                         : 2
+ 9-bit comparator greatequal                           : 2
+ 9-bit comparator lessequal                            : 3
+# Multiplexers                                         : 4
  1-bit 8-to-1 multiplexer                              : 1
+ 20-bit 16-to-1 multiplexer                            : 2
  8-bit 8-to-1 multiplexer                              : 1
 # Xors                                                 : 3
- 32-bit xor2                                           : 2
+ 20-bit xor2                                           : 1
+ 32-bit xor2                                           : 1
  32-bit xor3                                           : 1
 
 =========================================================================
@@ -587,31 +638,22 @@ Macro Statistics
 WARNING:Xst:1426 - The value init of the FF/Latch RND_VAL hinder the constant cleaning in the block XSADD_GEN.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <status_valid> (without init value) has a constant value of 1 in block <XSADD_GEN>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_24> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_25> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_26> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_27> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_28> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_29> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_30> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <cpu_waddr_31> (without init value) has a constant value of 0 in block <BH_com>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <div1_divisor_10> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_10> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_11> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_11> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_12> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_12> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_13> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_13> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_14> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_14> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_15> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_15> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_0> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_0> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_1> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_1> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_2> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_2> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_3> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_3> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_4> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_4> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_5> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_5> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_6> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_6> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_7> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_7> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_8> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_8> 
-INFO:Xst:2261 - The FF/Latch <div1_divisor_9> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <cpu_opdata_9> 
-INFO:Xst:2261 - The FF/Latch <cpu_inst_8> in Unit <BH_com> is equivalent to the following 23 FFs/Latches, which will be removed : <cpu_inst_9> <cpu_inst_10> <cpu_inst_11> <cpu_inst_12> <cpu_inst_13> <cpu_inst_14> <cpu_inst_15> <cpu_inst_16> <cpu_inst_17> <cpu_inst_18> <cpu_inst_19> <cpu_inst_20> <cpu_inst_21> <cpu_inst_22> <cpu_inst_23> <cpu_inst_24> <cpu_inst_25> <cpu_inst_26> <cpu_inst_27> <cpu_inst_28> <cpu_inst_29> <cpu_inst_30> <cpu_inst_31> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_4> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_4> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_5> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_5> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_6> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_6> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_7> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_7> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_8> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_8> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_9> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_9> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_10> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_10> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_11> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_11> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_12> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_12> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_13> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_13> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_14> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_14> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_15> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_15> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_0> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_0> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_1> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_1> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_2> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_2> 
+INFO:Xst:2261 - The FF/Latch <cpu_opdata_3> in Unit <BH_com> is equivalent to the following FF/Latch, which will be removed : <div1_divisor_3> 
 
 Optimizing unit <BH_com> ...
 
@@ -619,25 +661,37 @@ Optimizing unit <XSADD_GEN> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block BH_com, actual ratio is 52.
-INFO:Xst:2260 - The FF/Latch <blk0000004a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000781> 
-INFO:Xst:2260 - The FF/Latch <blk0000004a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000781> 
+Found area constraint ratio of 100 (+ 5) on block BH_com, actual ratio is 41.
+INFO:Xst:2260 - The FF/Latch <blk0000017a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000529> 
+INFO:Xst:2260 - The FF/Latch <blk00000191> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000526> 
+INFO:Xst:2260 - The FF/Latch <blk000001a8> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000527> 
+INFO:Xst:2260 - The FF/Latch <blk00000081> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000524> 
+INFO:Xst:2260 - The FF/Latch <blk000001bf> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000528> 
+INFO:Xst:2260 - The FF/Latch <blk000001d6> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000525> 
+INFO:Xst:2260 - The FF/Latch <blk000000c4> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk000002f2> 
+INFO:Xst:2260 - The FF/Latch <blk000001bf> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000528> 
+INFO:Xst:2260 - The FF/Latch <blk000001d6> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000525> 
+INFO:Xst:2260 - The FF/Latch <blk000000c4> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk000002f2> 
+INFO:Xst:2260 - The FF/Latch <blk0000017a> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000529> 
+INFO:Xst:2260 - The FF/Latch <blk00000191> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000526> 
+INFO:Xst:2260 - The FF/Latch <blk000001a8> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000527> 
+INFO:Xst:2260 - The FF/Latch <blk00000081> in Unit <blk00000003> is equivalent to the following FF/Latch : <blk00000524> 
 
 Final Macro Processing ...
 
 Processing Unit <BH_com> :
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_31>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_30>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_29>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_28>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_27>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_26>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_25>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_24>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_23>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_22>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_21>.
-	Found 2-bit shift register for signal <rand_1/curr_status.status_0_20>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_31>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_30>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_29>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_28>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_27>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_26>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_25>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_24>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_23>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_22>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_21>.
+	Found 3-bit shift register for signal <rand_1/curr_status.status_0_20>.
 	Found 2-bit shift register for signal <rand_1/curr_status.status_0_19>.
 	Found 2-bit shift register for signal <rand_1/curr_status.status_0_18>.
 	Found 2-bit shift register for signal <rand_1/curr_status.status_0_17>.
@@ -664,10 +718,11 @@ Unit <BH_com> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 549
- Flip-Flops                                            : 549
+# Registers                                            : 438
+ Flip-Flops                                            : 438
 # Shift Registers                                      : 32
- 2-bit shift register                                  : 32
+ 2-bit shift register                                  : 20
+ 3-bit shift register                                  : 12
 
 =========================================================================
 
@@ -696,41 +751,43 @@ Design Statistics
 # IOs                              : 49
 
 Cell Usage :
-# BELS                             : 6477
+# BELS                             : 4907
 #      GND                         : 4
-#      INV                         : 306
-#      LUT1                        : 154
-#      LUT2                        : 449
-#      LUT2_L                      : 1
-#      LUT3                        : 1317
-#      LUT3_D                      : 1
-#      LUT4                        : 1461
-#      LUT4_D                      : 5
-#      LUT4_L                      : 2
-#      MULT_AND                    : 17
-#      MUXCY                       : 1134
-#      MUXF5                       : 570
-#      MUXF6                       : 173
-#      MUXF7                       : 65
-#      MUXF8                       : 32
+#      INV                         : 222
+#      LUT1                        : 145
+#      LUT2                        : 306
+#      LUT2_L                      : 2
+#      LUT3                        : 1028
+#      LUT3_D                      : 5
+#      LUT3_L                      : 3
+#      LUT4                        : 1186
+#      LUT4_D                      : 6
+#      LUT4_L                      : 4
+#      MULT_AND                    : 21
+#      MUXCY                       : 747
+#      MUXF5                       : 487
+#      MUXF6                       : 115
+#      MUXF7                       : 42
+#      MUXF8                       : 20
 #      VCC                         : 4
-#      XORCY                       : 782
-# FlipFlops/Latches                : 1522
-#      FD                          : 996
-#      FDE                         : 307
-#      FDE_1                       : 8
-#      FDR                         : 35
+#      XORCY                       : 560
+# FlipFlops/Latches                : 1065
+#      FD                          : 368
+#      FD_1                        : 10
+#      FDE                         : 352
+#      FDE_1                       : 169
+#      FDR                         : 38
 #      FDRE                        : 32
-#      FDS                         : 80
-#      LDCP                        : 32
-#      LDCPE                       : 32
-# RAMS                             : 1283
-#      RAM16X1D                    : 1280
+#      FDS_1                       : 56
+#      LD                          : 40
+# RAMS                             : 803
+#      RAM16X1D                    : 800
 #      RAMB16_S18_S18              : 3
-# Shift Registers                  : 66
-#      SRL16                       : 66
-# Clock Buffers                    : 4
-#      BUFG                        : 3
+# Shift Registers                  : 36
+#      SRL16                       : 34
+#      SRLC16                      : 2
+# Clock Buffers                    : 3
+#      BUFG                        : 2
 #      BUFGP                       : 1
 # IO Buffers                       : 48
 #      IBUF                        : 1
@@ -745,17 +802,17 @@ Device utilization summary:
 
 Selected Device : 3s500evq100-4 
 
- Number of Slices:                     2294  out of   4656    49%  
- Number of Slice Flip Flops:           1522  out of   9312    16%  
- Number of 4 input LUTs:               6322  out of   9312    67%  
-    Number used as logic:              3696
-    Number used as Shift registers:      66
-    Number used as RAMs:               2560
+ Number of Slices:                     1738  out of   4656    37%  
+ Number of Slice Flip Flops:           1065  out of   9312    11%  
+ Number of 4 input LUTs:               4543  out of   9312    48%  
+    Number used as logic:              2907
+    Number used as Shift registers:      36
+    Number used as RAMs:               1600
  Number of IOs:                          49
  Number of bonded IOBs:                  49  out of     66    74%  
  Number of BRAMs:                         3  out of     20    15%  
  Number of MULT18X18SIOs:                 4  out of     20    20%  
- Number of GCLKs:                         4  out of     24    16%  
+ Number of GCLKs:                         3  out of     24    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -775,163 +832,31 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                               | Clock buffer(FF name)                                                                                                           | Load  |
------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
-clk                                                        | BUFGP                                                                                                                           | 1203  |
-stack_1/N1                                                 | NONE(stack_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram)| 2     |
-clkcnt_2                                                   | NONE(cnt_1_5)                                                                                                                   | 8     |
-clkcnt_31                                                  | BUFG                                                                                                                            | 1599  |
-cpu_stat_FSM_FFd31                                         | BUFG                                                                                                                            | 32    |
-cpu_rdata_cmp_ge00001(Mcompar_cpu_rdata_cmp_ge0000_cy<6>:O)| BUFG(*)(cpu_rdata_0)                                                                                                            | 32    |
------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)                                                                                                           | Load  |
+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                      | BUFGP                                                                                                                           | 1859  |
+stack_1/N1                               | NONE(stack_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram)| 2     |
+clkcnt_2                                 | NONE(cnt_1_5)                                                                                                                   | 8     |
+cpu_rdata_not00011(cpu_rdata_not000187:O)| BUFG(*)(cpu_rdata_0)                                                                                                            | 20    |
+cpu_addr_or00001(cpu_addr_or00001:O)     | BUFG(*)(cpu_addr_0)                                                                                                             | 20    |
+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------------------+------------------------+-------+
-Control Signal                                 | Buffer(FF name)        | Load  |
------------------------------------------------+------------------------+-------+
-cpu_addr_0__and0000(cpu_addr_0__and00001:O)    | NONE(cpu_addr_0)       | 1     |
-cpu_addr_0__and0001(cpu_addr_0__and00011:O)    | NONE(cpu_addr_0)       | 1     |
-cpu_addr_10__and0000(cpu_addr_10__and00001:O)  | NONE(cpu_addr_10)      | 1     |
-cpu_addr_10__and0001(cpu_addr_10__and00011:O)  | NONE(cpu_addr_10)      | 1     |
-cpu_addr_11__and0000(cpu_addr_11__and00001:O)  | NONE(cpu_addr_11)      | 1     |
-cpu_addr_11__and0001(cpu_addr_11__and00011:O)  | NONE(cpu_addr_11)      | 1     |
-cpu_addr_12__and0000(cpu_addr_12__and00001:O)  | NONE(cpu_addr_12)      | 1     |
-cpu_addr_12__and0001(cpu_addr_12__and00011:O)  | NONE(cpu_addr_12)      | 1     |
-cpu_addr_13__and0000(cpu_addr_13__and00001:O)  | NONE(cpu_addr_13)      | 1     |
-cpu_addr_13__and0001(cpu_addr_13__and00011:O)  | NONE(cpu_addr_13)      | 1     |
-cpu_addr_14__and0000(cpu_addr_14__and00001:O)  | NONE(cpu_addr_14)      | 1     |
-cpu_addr_14__and0001(cpu_addr_14__and00011:O)  | NONE(cpu_addr_14)      | 1     |
-cpu_addr_15__and0000(cpu_addr_15__and00001:O)  | NONE(cpu_addr_15)      | 1     |
-cpu_addr_15__and0001(cpu_addr_15__and00011:O)  | NONE(cpu_addr_15)      | 1     |
-cpu_addr_16__and0000(cpu_addr_16__and00001:O)  | NONE(cpu_addr_16)      | 1     |
-cpu_addr_16__and0001(cpu_addr_16__and00011:O)  | NONE(cpu_addr_16)      | 1     |
-cpu_addr_17__and0000(cpu_addr_17__and00001:O)  | NONE(cpu_addr_17)      | 1     |
-cpu_addr_17__and0001(cpu_addr_17__and00011:O)  | NONE(cpu_addr_17)      | 1     |
-cpu_addr_18__and0000(cpu_addr_18__and00001:O)  | NONE(cpu_addr_18)      | 1     |
-cpu_addr_18__and0001(cpu_addr_18__and00011:O)  | NONE(cpu_addr_18)      | 1     |
-cpu_addr_19__and0000(cpu_addr_19__and00001:O)  | NONE(cpu_addr_19)      | 1     |
-cpu_addr_19__and0001(cpu_addr_19__and00011:O)  | NONE(cpu_addr_19)      | 1     |
-cpu_addr_1__and0000(cpu_addr_1__and00001:O)    | NONE(cpu_addr_1)       | 1     |
-cpu_addr_1__and0001(cpu_addr_1__and00011:O)    | NONE(cpu_addr_1)       | 1     |
-cpu_addr_20__and0000(cpu_addr_20__and00001:O)  | NONE(cpu_addr_20)      | 1     |
-cpu_addr_20__and0001(cpu_addr_20__and00011:O)  | NONE(cpu_addr_20)      | 1     |
-cpu_addr_21__and0000(cpu_addr_21__and00001:O)  | NONE(cpu_addr_21)      | 1     |
-cpu_addr_21__and0001(cpu_addr_21__and00011:O)  | NONE(cpu_addr_21)      | 1     |
-cpu_addr_22__and0000(cpu_addr_22__and00001:O)  | NONE(cpu_addr_22)      | 1     |
-cpu_addr_22__and0001(cpu_addr_22__and00011:O)  | NONE(cpu_addr_22)      | 1     |
-cpu_addr_23__and0000(cpu_addr_23__and00001:O)  | NONE(cpu_addr_23)      | 1     |
-cpu_addr_23__and0001(cpu_addr_23__and00011:O)  | NONE(cpu_addr_23)      | 1     |
-cpu_addr_24__and0000(cpu_addr_24__and00001:O)  | NONE(cpu_addr_24)      | 1     |
-cpu_addr_24__and0001(cpu_addr_24__and00011:O)  | NONE(cpu_addr_24)      | 1     |
-cpu_addr_25__and0000(cpu_addr_25__and00001:O)  | NONE(cpu_addr_25)      | 1     |
-cpu_addr_25__and0001(cpu_addr_25__and00011:O)  | NONE(cpu_addr_25)      | 1     |
-cpu_addr_26__and0000(cpu_addr_26__and00001:O)  | NONE(cpu_addr_26)      | 1     |
-cpu_addr_26__and0001(cpu_addr_26__and00011:O)  | NONE(cpu_addr_26)      | 1     |
-cpu_addr_27__and0000(cpu_addr_27__and00001:O)  | NONE(cpu_addr_27)      | 1     |
-cpu_addr_27__and0001(cpu_addr_27__and00011:O)  | NONE(cpu_addr_27)      | 1     |
-cpu_addr_28__and0000(cpu_addr_28__and00001:O)  | NONE(cpu_addr_28)      | 1     |
-cpu_addr_28__and0001(cpu_addr_28__and00011:O)  | NONE(cpu_addr_28)      | 1     |
-cpu_addr_29__and0000(cpu_addr_29__and00001:O)  | NONE(cpu_addr_29)      | 1     |
-cpu_addr_29__and0001(cpu_addr_29__and00011:O)  | NONE(cpu_addr_29)      | 1     |
-cpu_addr_2__and0000(cpu_addr_2__and00001:O)    | NONE(cpu_addr_2)       | 1     |
-cpu_addr_2__and0001(cpu_addr_2__and00011:O)    | NONE(cpu_addr_2)       | 1     |
-cpu_addr_30__and0000(cpu_addr_30__and00001:O)  | NONE(cpu_addr_30)      | 1     |
-cpu_addr_30__and0001(cpu_addr_30__and00011:O)  | NONE(cpu_addr_30)      | 1     |
-cpu_addr_31__and0000(cpu_addr_31__and00001:O)  | NONE(cpu_addr_31)      | 1     |
-cpu_addr_31__and0001(cpu_addr_31__and00011:O)  | NONE(cpu_addr_31)      | 1     |
-cpu_addr_3__and0000(cpu_addr_3__and00001:O)    | NONE(cpu_addr_3)       | 1     |
-cpu_addr_3__and0001(cpu_addr_3__and00011:O)    | NONE(cpu_addr_3)       | 1     |
-cpu_addr_4__and0000(cpu_addr_4__and00001:O)    | NONE(cpu_addr_4)       | 1     |
-cpu_addr_4__and0001(cpu_addr_4__and00011:O)    | NONE(cpu_addr_4)       | 1     |
-cpu_addr_5__and0000(cpu_addr_5__and00001:O)    | NONE(cpu_addr_5)       | 1     |
-cpu_addr_5__and0001(cpu_addr_5__and00011:O)    | NONE(cpu_addr_5)       | 1     |
-cpu_addr_6__and0000(cpu_addr_6__and00001:O)    | NONE(cpu_addr_6)       | 1     |
-cpu_addr_6__and0001(cpu_addr_6__and00011:O)    | NONE(cpu_addr_6)       | 1     |
-cpu_addr_7__and0000(cpu_addr_7__and00001:O)    | NONE(cpu_addr_7)       | 1     |
-cpu_addr_7__and0001(cpu_addr_7__and00011:O)    | NONE(cpu_addr_7)       | 1     |
-cpu_addr_8__and0000(cpu_addr_8__and00001:O)    | NONE(cpu_addr_8)       | 1     |
-cpu_addr_8__and0001(cpu_addr_8__and00011:O)    | NONE(cpu_addr_8)       | 1     |
-cpu_addr_9__and0000(cpu_addr_9__and00001:O)    | NONE(cpu_addr_9)       | 1     |
-cpu_addr_9__and0001(cpu_addr_9__and00011:O)    | NONE(cpu_addr_9)       | 1     |
-cpu_rdata_0__and0000(cpu_rdata_0__and00001:O)  | NONE(cpu_rdata_0)      | 1     |
-cpu_rdata_0__or0000(cpu_rdata_0__or00001:O)    | NONE(cpu_rdata_0)      | 1     |
-cpu_rdata_10__and0000(cpu_rdata_10__and00001:O)| NONE(cpu_rdata_10)     | 1     |
-cpu_rdata_10__or0000(cpu_rdata_10__or00001:O)  | NONE(cpu_rdata_10)     | 1     |
-cpu_rdata_11__and0000(cpu_rdata_11__and00001:O)| NONE(cpu_rdata_11)     | 1     |
-cpu_rdata_11__or0000(cpu_rdata_11__or00001:O)  | NONE(cpu_rdata_11)     | 1     |
-cpu_rdata_12__and0000(cpu_rdata_12__and00001:O)| NONE(cpu_rdata_12)     | 1     |
-cpu_rdata_12__or0000(cpu_rdata_12__or00001:O)  | NONE(cpu_rdata_12)     | 1     |
-cpu_rdata_13__and0000(cpu_rdata_13__and00001:O)| NONE(cpu_rdata_13)     | 1     |
-cpu_rdata_13__or0000(cpu_rdata_13__or00001:O)  | NONE(cpu_rdata_13)     | 1     |
-cpu_rdata_14__and0000(cpu_rdata_14__and00001:O)| NONE(cpu_rdata_14)     | 1     |
-cpu_rdata_14__or0000(cpu_rdata_14__or00001:O)  | NONE(cpu_rdata_14)     | 1     |
-cpu_rdata_15__and0000(cpu_rdata_15__and00001:O)| NONE(cpu_rdata_15)     | 1     |
-cpu_rdata_15__or0000(cpu_rdata_15__or00001:O)  | NONE(cpu_rdata_15)     | 1     |
-cpu_rdata_16__and0000(cpu_rdata_16__and00001:O)| NONE(cpu_rdata_16)     | 1     |
-cpu_rdata_16__or0000(cpu_rdata_16__or00001:O)  | NONE(cpu_rdata_16)     | 1     |
-cpu_rdata_17__and0000(cpu_rdata_17__and00001:O)| NONE(cpu_rdata_17)     | 1     |
-cpu_rdata_17__or0000(cpu_rdata_17__or00001:O)  | NONE(cpu_rdata_17)     | 1     |
-cpu_rdata_18__and0000(cpu_rdata_18__and00001:O)| NONE(cpu_rdata_18)     | 1     |
-cpu_rdata_18__or0000(cpu_rdata_18__or00001:O)  | NONE(cpu_rdata_18)     | 1     |
-cpu_rdata_19__and0000(cpu_rdata_19__and00001:O)| NONE(cpu_rdata_19)     | 1     |
-cpu_rdata_19__or0000(cpu_rdata_19__or00001:O)  | NONE(cpu_rdata_19)     | 1     |
-cpu_rdata_1__and0000(cpu_rdata_1__and00001:O)  | NONE(cpu_rdata_1)      | 1     |
-cpu_rdata_1__or0000(cpu_rdata_1__or00001:O)    | NONE(cpu_rdata_1)      | 1     |
-cpu_rdata_20__and0000(cpu_rdata_20__and00001:O)| NONE(cpu_rdata_20)     | 1     |
-cpu_rdata_20__or0000(cpu_rdata_20__or00001:O)  | NONE(cpu_rdata_20)     | 1     |
-cpu_rdata_21__and0000(cpu_rdata_21__and00001:O)| NONE(cpu_rdata_21)     | 1     |
-cpu_rdata_21__or0000(cpu_rdata_21__or00001:O)  | NONE(cpu_rdata_21)     | 1     |
-cpu_rdata_22__and0000(cpu_rdata_22__and00001:O)| NONE(cpu_rdata_22)     | 1     |
-cpu_rdata_22__or0000(cpu_rdata_22__or00001:O)  | NONE(cpu_rdata_22)     | 1     |
-cpu_rdata_23__and0000(cpu_rdata_23__and00001:O)| NONE(cpu_rdata_23)     | 1     |
-cpu_rdata_23__or0000(cpu_rdata_23__or00001:O)  | NONE(cpu_rdata_23)     | 1     |
-cpu_rdata_24__and0000(cpu_rdata_24__and00001:O)| NONE(cpu_rdata_24)     | 1     |
-cpu_rdata_24__or0000(cpu_rdata_24__or00001:O)  | NONE(cpu_rdata_24)     | 1     |
-cpu_rdata_25__and0000(cpu_rdata_25__and00001:O)| NONE(cpu_rdata_25)     | 1     |
-cpu_rdata_25__or0000(cpu_rdata_25__or00001:O)  | NONE(cpu_rdata_25)     | 1     |
-cpu_rdata_26__and0000(cpu_rdata_26__and00001:O)| NONE(cpu_rdata_26)     | 1     |
-cpu_rdata_26__or0000(cpu_rdata_26__or00001:O)  | NONE(cpu_rdata_26)     | 1     |
-cpu_rdata_27__and0000(cpu_rdata_27__and00001:O)| NONE(cpu_rdata_27)     | 1     |
-cpu_rdata_27__or0000(cpu_rdata_27__or00001:O)  | NONE(cpu_rdata_27)     | 1     |
-cpu_rdata_28__and0000(cpu_rdata_28__and00001:O)| NONE(cpu_rdata_28)     | 1     |
-cpu_rdata_28__or0000(cpu_rdata_28__or00001:O)  | NONE(cpu_rdata_28)     | 1     |
-cpu_rdata_29__and0000(cpu_rdata_29__and00001:O)| NONE(cpu_rdata_29)     | 1     |
-cpu_rdata_29__or0000(cpu_rdata_29__or00001:O)  | NONE(cpu_rdata_29)     | 1     |
-cpu_rdata_2__and0000(cpu_rdata_2__and00001:O)  | NONE(cpu_rdata_2)      | 1     |
-cpu_rdata_2__or0000(cpu_rdata_2__or00001:O)    | NONE(cpu_rdata_2)      | 1     |
-cpu_rdata_30__and0000(cpu_rdata_30__and00001:O)| NONE(cpu_rdata_30)     | 1     |
-cpu_rdata_30__or0000(cpu_rdata_30__or00001:O)  | NONE(cpu_rdata_30)     | 1     |
-cpu_rdata_31__and0000(cpu_rdata_31__and00001:O)| NONE(cpu_rdata_31)     | 1     |
-cpu_rdata_31__or0000(cpu_rdata_31__or00001:O)  | NONE(cpu_rdata_31)     | 1     |
-cpu_rdata_3__and0000(cpu_rdata_3__and00001:O)  | NONE(cpu_rdata_3)      | 1     |
-cpu_rdata_3__or0000(cpu_rdata_3__or00001:O)    | NONE(cpu_rdata_3)      | 1     |
-cpu_rdata_4__and0000(cpu_rdata_4__and00001:O)  | NONE(cpu_rdata_4)      | 1     |
-cpu_rdata_4__or0000(cpu_rdata_4__or00001:O)    | NONE(cpu_rdata_4)      | 1     |
-cpu_rdata_5__and0000(cpu_rdata_5__and00001:O)  | NONE(cpu_rdata_5)      | 1     |
-cpu_rdata_5__or0000(cpu_rdata_5__or00001:O)    | NONE(cpu_rdata_5)      | 1     |
-cpu_rdata_6__and0000(cpu_rdata_6__and00001:O)  | NONE(cpu_rdata_6)      | 1     |
-cpu_rdata_6__or0000(cpu_rdata_6__or00001:O)    | NONE(cpu_rdata_6)      | 1     |
-cpu_rdata_7__and0000(cpu_rdata_7__and00001:O)  | NONE(cpu_rdata_7)      | 1     |
-cpu_rdata_7__or0000(cpu_rdata_7__or00001:O)    | NONE(cpu_rdata_7)      | 1     |
-cpu_rdata_8__and0000(cpu_rdata_8__and00001:O)  | NONE(cpu_rdata_8)      | 1     |
-cpu_rdata_8__or0000(cpu_rdata_8__or00001:O)    | NONE(cpu_rdata_8)      | 1     |
-cpu_rdata_9__and0000(cpu_rdata_9__and00001:O)  | NONE(cpu_rdata_9)      | 1     |
-cpu_rdata_9__or0000(cpu_rdata_9__or00001:O)    | NONE(cpu_rdata_9)      | 1     |
------------------------------------------------+------------------------+-------+
+No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
    Minimum period: 17.691ns (Maximum Frequency: 56.526MHz)
-   Minimum input arrival time before clock: 6.773ns
-   Maximum output required time after clock: 21.447ns
+   Minimum input arrival time before clock: 4.446ns
+   Maximum output required time after clock: 20.723ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -941,7 +866,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 17.691ns (frequency: 56.526MHz)
-  Total number of paths / destination ports: 2993007 / 1316
+  Total number of paths / destination ports: 3069870 / 6565
 -------------------------------------------------------------------------
 Delay:               17.691ns (Levels of Logic = 46)
   Source:            ppu_clkcnt_9 (FF)
@@ -987,7 +912,7 @@ Delay:               17.691ns (Levels of Logic = 46)
      MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_addsub0001_cy<30> (Madd_vram_1_addra_addsub0001_cy<30>)
      MUXCY:CI->O           0   0.059   0.000  Madd_vram_1_addra_addsub0001_cy<31> (Madd_vram_1_addra_addsub0001_cy<31>)
      XORCY:CI->O          20   0.804   1.106  Madd_vram_1_addra_addsub0001_xor<32> (vram_1_addra_addsub0001<32>)
-     LUT4:I3->O            1   0.704   0.455  vram_1_addra_mux0002<0>1_SW1 (N2514)
+     LUT4:I3->O            1   0.704   0.455  vram_1_addra_mux0002<0>1_SW0 (N3721)
      LUT4:I2->O            1   0.704   0.000  Madd_vram_1_addra_lut<0> (Madd_vram_1_addra_lut<0>)
      MUXCY:S->O            1   0.464   0.000  Madd_vram_1_addra_cy<0> (Madd_vram_1_addra_cy<0>)
      MUXCY:CI->O           1   0.059   0.000  Madd_vram_1_addra_cy<1> (Madd_vram_1_addra_cy<1>)
@@ -1004,36 +929,6 @@ Delay:               17.691ns (Levels of Logic = 46)
     ----------------------------------------
     Total                     17.691ns (12.561ns logic, 5.130ns route)
                                        (71.0% logic, 29.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clkcnt_31'
-  Clock period: 13.593ns (frequency: 73.567MHz)
-  Total number of paths / destination ports: 155319 / 8293
--------------------------------------------------------------------------
-Delay:               13.593ns (Levels of Logic = 9)
-  Source:            cpu_waddr_8 (FF)
-  Destination:       vram_1_addrb_8 (FF)
-  Source Clock:      clkcnt_31 rising
-  Destination Clock: clkcnt_31 rising
-
-  Data Path: cpu_waddr_8 to vram_1_addrb_8
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDE:C->Q             41   0.591   1.440  cpu_waddr_8 (cpu_waddr_8)
-     LUT2:I0->O            1   0.704   0.455  and0003_cmp_eq0000111 (N254)
-     LUT4:I2->O            1   0.704   0.000  and0003_cmp_eq00001_wg_lut<4> (and0003_cmp_eq00001_wg_lut<4>)
-     MUXCY:S->O            7   0.864   0.883  and0003_cmp_eq00001_wg_cy<4> (and0003_cmp_eq00001_wg_cy<4>)
-     LUT4:I0->O            1   0.704   0.424  stack1_addra_mux0000<0>1122 (stack1_addra_mux0000<0>1122)
-     LUT4:I3->O            1   0.704   0.000  stack1_addra_mux0000<0>11581 (stack1_addra_mux0000<0>1158)
-     MUXF5:I1->O          11   0.321   0.937  stack1_addra_mux0000<0>1158_f5 (N812)
-     LUT4:I3->O            1   0.704   0.424  vram_1_addrb_mux0002<0>1_SW1 (N609)
-     LUT4_D:I3->O          9   0.704   0.995  vram_1_addrb_mux0002<0>1 (N2)
-     LUT2:I0->O            1   0.704   0.420  vram_1_addrb_mux0002<8>0 (vram_1_addrb_mux0002<8>0)
-     FDS:S                     0.911          vram_1_addrb_8
-    ----------------------------------------
-    Total                     13.593ns (7.615ns logic, 5.978ns route)
-                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkcnt_2'
@@ -1055,27 +950,25 @@ Offset:              2.346ns (Levels of Logic = 1)
                                        (65.0% logic, 35.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'cpu_rdata_cmp_ge00001'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'cpu_rdata_not00011'
   Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              6.773ns (Levels of Logic = 5)
+Offset:              4.446ns (Levels of Logic = 3)
   Source:            C<15> (PAD)
   Destination:       cpu_rdata_15 (LATCH)
-  Destination Clock: cpu_rdata_cmp_ge00001 falling
+  Destination Clock: cpu_rdata_not00011 falling
 
   Data Path: C<15> to cpu_rdata_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O          10   1.218   0.886  C_15_IOBUF (N278)
-     LUT4:I3->O            1   0.704   0.595  cpu_rdata_mux0000<15>62_SW0 (N5471)
-     LUT4:I0->O            1   0.704   0.424  cpu_rdata_mux0000<15>62 (cpu_rdata_mux0000<15>62)
-     LUT4:I3->O            2   0.704   0.526  cpu_rdata_mux0000<15>85 (cpu_rdata_mux0000<15>85)
-     LUT2:I1->O            2   0.704   0.000  cpu_rdata_mux0000<15>96 (cpu_rdata_mux0000<15>)
-     LDCPE:D                   0.308          cpu_rdata_15
+     IOBUF:IO->O          10   1.218   0.917  C_15_IOBUF (N4001)
+     LUT4:I2->O            1   0.704   0.595  cpu_rdata_mux0000<15>12 (cpu_rdata_mux0000<15>12)
+     LUT4:I0->O            1   0.704   0.000  cpu_rdata_mux0000<15>44 (cpu_rdata_mux0000<15>)
+     LD:D                      0.308          cpu_rdata_15
     ----------------------------------------
-    Total                      6.773ns (4.342ns logic, 2.431ns route)
-                                       (64.1% logic, 35.9% route)
+    Total                      4.446ns (2.934ns logic, 1.512ns route)
+                                       (66.0% logic, 34.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -1090,8 +983,8 @@ Offset:              3.608ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O          10   1.218   1.057  C_15_IOBUF (N278)
-     LUT3:I0->O            1   0.704   0.000  i2c_1/ack_error_mux0000_F (N6991)
+     IOBUF:IO->O          10   1.218   1.057  C_15_IOBUF (N4001)
+     LUT3:I0->O            1   0.704   0.000  i2c_1/ack_error_mux0000_F (N8131)
      MUXF5:I0->O           1   0.321   0.000  i2c_1/ack_error_mux0000 (i2c_1/ack_error_mux0000)
      FDE:D                     0.308          i2c_1/ack_error
     ----------------------------------------
@@ -1100,9 +993,9 @@ Offset:              3.608ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 2803 / 6
+  Total number of paths / destination ports: 3066 / 6
 -------------------------------------------------------------------------
-Offset:              21.447ns (Levels of Logic = 16)
+Offset:              20.723ns (Levels of Logic = 15)
   Source:            vram_1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
   Destination:       A<1> (PAD)
   Source Clock:      clk rising
@@ -1111,38 +1004,38 @@ Offset:              21.447ns (Levels of Logic = 16)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB16_S18_S18:CLKA->DOA1  333   2.800   1.532  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (douta<1>)
+     RAMB16_S18_S18:CLKA->DOA0  348   2.800   1.537  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (douta<0>)
      end scope: 'vram_1'
-     LUT2:I0->O            8   0.704   0.792  vram_1_douta<5>3611 (N15)
-     LUT4:I2->O            3   0.704   0.706  vram_1_douta<5>2831 (N200)
-     LUT4:I0->O            1   0.704   0.455  vram_1_douta<6>710_SW0 (N591)
-     LUT4:I2->O            1   0.704   0.499  vram_1_douta<6>710 (vram_1_douta<6>710)
-     LUT4:I1->O            1   0.704   0.499  vram_1_douta<6>740 (vram_1_douta<6>8)
-     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_132 (crom_1/Mmux_dot_132)
-     MUXF5:I1->O           1   0.321   0.000  crom_1/Mmux_dot_12_f5_0 (crom_1/Mmux_dot_12_f51)
-     MUXF6:I1->O           1   0.521   0.499  crom_1/Mmux_dot_11_f6 (crom_1/Mmux_dot_11_f6)
-     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_8 (crom_1/Mmux_dot_8)
-     MUXF5:I0->O           1   0.321   0.499  crom_1/Mmux_dot_6_f5 (crom_1/Mmux_dot_6_f5)
-     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_3 (crom_1/Mmux_dot_3)
-     MUXF5:I1->O           1   0.321   0.424  crom_1/Mmux_dot_2_f5 (crom_1_dot1)
-     LUT4:I3->O            1   0.704   0.499  A_1_mux0000_SW1 (N5691)
+     LUT2:I0->O            4   0.704   0.666  vram_1_douta<5>2211 (N102)
+     LUT4:I1->O            1   0.704   0.424  vram_1_douta<6>2012 (vram_1_douta<6>2012)
+     LUT4:I3->O            1   0.704   0.499  vram_1_douta<6>2057 (vram_1_douta<6>2057)
+     LUT4:I1->O            1   0.704   0.499  vram_1_douta<6>20108 (vram_1_douta<6>21)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_175 (crom_1/Mmux_dot_175)
+     MUXF5:I1->O           1   0.321   0.000  crom_1/Mmux_dot_16_f5_2 (crom_1/Mmux_dot_16_f53)
+     MUXF6:I0->O           1   0.521   0.499  crom_1/Mmux_dot_14_f6 (crom_1/Mmux_dot_14_f6)
+     LUT2:I1->O            1   0.704   0.455  crom_1_col<0>1122 (crom_1_col<0>1122)
+     LUT4:I2->O            1   0.704   0.499  crom_1_col<0>1156 (crom_1_col<0>2)
+     LUT3:I1->O            1   0.704   0.000  crom_1/Mmux_dot_4 (crom_1/Mmux_dot_4)
+     MUXF5:I0->O           1   0.321   0.424  crom_1/Mmux_dot_2_f5 (crom_1_dot1)
+     LUT4:I3->O            1   0.704   0.499  A_1_mux0000_SW1 (N6771)
      LUT4:I1->O            2   0.704   0.447  A_1_mux0000 (A_1_OBUF)
      OBUF:I->O                 3.272          A_1_OBUF (A<1>)
     ----------------------------------------
-    Total                     21.447ns (14.596ns logic, 6.851ns route)
-                                       (68.1% logic, 31.9% route)
+    Total                     20.723ns (14.275ns logic, 6.448ns route)
+                                       (68.9% logic, 31.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 81.00 secs
-Total CPU time to Xst completion: 80.87 secs
+Total REAL time to Xst completion: 74.00 secs
+Total CPU time to Xst completion: 67.97 secs
  
 --> 
 
-Total memory usage is 302604 kilobytes
+
+Total memory usage is 234808 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  106 (  55 filtered)
-Number of infos    :   27 (   0 filtered)
+Number of warnings :  142 (  82 filtered)
+Number of infos    :   39 (   0 filtered)
 

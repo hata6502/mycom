@@ -5,6 +5,15 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="957" delta="unknown" >"/home/hato/mycom/i2c_master.vhd" Line 86: Case choice must be a locally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="957" delta="unknown" >"/home/hato/mycom/i2c_master.vhd" Line 89: Case choice must be a locally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="957" delta="unknown" >"/home/hato/mycom/i2c_master.vhd" Line 92: Case choice must be a locally static expression
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
 </msg>
 

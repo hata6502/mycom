@@ -13,6 +13,11 @@ entity BH_com is
 end BH_com;
 
 architecture Behavioral of BH_com is
+
+	subtype cpu_int is integer range 0 to 1048575;
+	constant CPU_BIT_WIDTH: integer := 20;
+	constant CPU_INST_OFFSET: integer := 65536;
+
 	function conv_integer(L: BOOLEAN) return integer is 
 		begin 
          if L then 
@@ -22,13 +27,13 @@ architecture Behavioral of BH_com is
          end if; 
 	end function; 
 	
-	function is_word(inst: integer) return integer is 
+	function is_word(inst: cpu_int) return cpu_int is 
 		begin 
-		return (inst*16777216);
+		return (inst*CPU_INST_OFFSET);
 	end function;
-	function is_word(inst: integer; operand: integer) return integer is 
+	function is_word(inst: cpu_int; operand: cpu_int) return cpu_int is 
 		begin 
-		return (inst*16777216 + operand);
+		return (inst*CPU_INST_OFFSET + operand);
 	end function; 
 
 	signal clkcnt: std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
@@ -37,69 +42,67 @@ architecture Behavioral of BH_com is
 	signal C_IN: std_logic_vector(15 downto 0);
 	
 	-- Memory map
-	constant ADDR_BOOT: integer := 256;
-	constant SIZE_BOOT: integer := 512;
+	constant ADDR_BOOT: cpu_int := 256;
+	constant SIZE_BOOT: cpu_int := 512;
 
-	constant ADDR_STACK: integer := 16776192;
-	constant SIZE_STACK: integer := 1024;
+	constant ADDR_STACK: cpu_int := 64512;
+	constant SIZE_STACK: cpu_int := 1024;
 
-	constant ADDR_RAND: integer := 3;
-	constant ADDR_A: integer := 4;
-	constant ADDR_B: integer := 5;
-	constant ADDR_C: integer := 6;
+	constant ADDR_RAND: cpu_int := 3;
+	constant ADDR_A: cpu_int := 4;
+	constant ADDR_B: cpu_int := 5;
+	constant ADDR_C: cpu_int := 6;
 
-	constant ADDR_CNT_1: integer := 7;
+	constant ADDR_CNT_1: cpu_int := 7;
 	
-	constant ADDR_I2C_ADDR: integer := 8;
-	constant ADDR_I2C_RDATA: integer := 9;
-	constant ADDR_I2C_WDATA: integer := 10;
-	constant ADDR_I2C_STAT: integer := 11;
+	constant ADDR_I2C_ADDR: cpu_int := 8;
+	constant ADDR_I2C_RDATA: cpu_int := 9;
+	constant ADDR_I2C_WDATA: cpu_int := 10;
+	constant ADDR_I2C_STAT: cpu_int := 11;
 
 	-- CPU
-	signal cpu_pc: integer := ADDR_BOOT;
-	signal cpu_stat: integer := 0;
-	signal cpu_inst: integer;
-	signal cpu_sp: integer := 16777216;
+	signal cpu_pc: cpu_int := ADDR_BOOT;
+	signal cpu_stat: cpu_int := 0;
+	signal cpu_inst: cpu_int;
+	signal cpu_sp: cpu_int := 2**CPU_BIT_WIDTH - 1;
 
-	signal cpu_addr: integer;
-	signal cpu_raddr: integer;
-	signal cpu_waddr: integer;
+	signal cpu_addr: cpu_int;
+	signal cpu_raddr: cpu_int;
+	signal cpu_waddr: cpu_int;
 	
-	signal cpu_rdata: integer;
-	signal cpu_wdata: integer;
-	signal cpu_opdata: integer;
+	signal cpu_rdata: cpu_int;
+	signal cpu_wdata: cpu_int;
+	signal cpu_opdata: cpu_int;
 
-	signal cpu_work: integer;
-	type greg is array (0 to 127) of integer;
+	signal cpu_work: cpu_int;
+	type greg is array (0 to 127) of cpu_int;
 	signal cpu_greg: greg;
 	
 	-- Instruction
-	constant IS_READ: integer := 0;
-	constant IS_WRITE: integer := 1;
+	constant IS_READ: cpu_int := 0;
+	constant IS_WRITE: cpu_int := 1;
 
-	constant IS_ADD: integer := 2;
-	constant IS_SUB: integer := 3;
-	constant IS_MUL: integer := 4;
-	constant IS_DIV: integer := 5;
-	constant IS_AND: integer := 6;
-	constant IS_OR: integer := 7;
-	constant IS_XOR: integer := 8;
+	constant IS_ADD: cpu_int := 2;
+	constant IS_SUB: cpu_int := 3;
+	constant IS_MUL: cpu_int := 4;
+	constant IS_DIV: cpu_int := 5;
+	constant IS_AND: cpu_int := 6;
+	constant IS_OR: cpu_int := 7;
+	constant IS_XOR: cpu_int := 8;
 
-	constant IS_BRANCH: integer := 9;
-	constant IS_EQ: integer := 10;	-- ==
-	constant IS_NEQ: integer := 11;	-- !=
-	constant IS_LT: integer := 12;	-- <
-	constant IS_LTE: integer := 13;	-- <=
-	constant IS_GT: integer := 14;	-- >
-	constant IS_GTE: integer := 15;	--	>=
+	constant IS_BRANCH: cpu_int := 9;
+	constant IS_EQ: cpu_int := 10;	-- ==
+	constant IS_NEQ: cpu_int := 11;	-- !=
+	constant IS_LT: cpu_int := 12;	-- <
+	constant IS_LTE: cpu_int := 13;	-- <=
+	constant IS_GT: cpu_int := 14;	-- >
+	constant IS_GTE: cpu_int := 15;	--	>=
 
 	-- Virtual instruction
-	--constant IS_NOP: integer := IS_ADD;
-
+	--constant IS_NOP: cpu_int := IS_ADD;
 	-- BOOT
-	type prom is array (0 to SIZE_BOOT - 1) of integer;
+	type prom is array (0 to SIZE_BOOT - 1) of cpu_int;
 	signal boot: prom := (
-
 is_word(IS_ADD, 3), 	-- 256
 is_word(IS_ADD, 3), 	-- 257
 is_word(IS_ADD, 3), 	-- 258
@@ -134,308 +137,308 @@ is_word(IS_ADD, 3), 	-- 286
 is_word(IS_ADD, 3), 	-- 287
 is_word(IS_READ, 767), 	-- 288
 is_word(IS_WRITE, 766), 	-- 289
-is_word(IS_READ, 66), 	-- 290
-is_word(IS_READ, 108), 	-- 291
-is_word(IS_READ, 117), 	-- 292
-is_word(IS_READ, 101), 	-- 293
-is_word(IS_READ, 72), 	-- 294
-is_word(IS_READ, 111), 	-- 295
-is_word(IS_READ, 111), 	-- 296
-is_word(IS_READ, 100), 	-- 297
-is_word(IS_READ, 32), 	-- 298
-is_word(IS_READ, 67), 	-- 299
-is_word(IS_READ, 111), 	-- 300
-is_word(IS_READ, 109), 	-- 301
-is_word(IS_READ, 112), 	-- 302
-is_word(IS_READ, 117), 	-- 303
-is_word(IS_READ, 116), 	-- 304
-is_word(IS_READ, 101), 	-- 305
-is_word(IS_READ, 114), 	-- 306
-is_word(IS_READ, 32), 	-- 307
-is_word(IS_READ, 32), 	-- 308
-is_word(IS_READ, 210), 	-- 309
-is_word(IS_READ, 178), 	-- 310
-is_word(IS_READ, 219), 	-- 311
-is_word(IS_READ, 32), 	-- 312
-is_word(IS_READ, 190), 	-- 313
-is_word(IS_READ, 178), 	-- 314
-is_word(IS_READ, 190), 	-- 315
-is_word(IS_READ, 178), 	-- 316
-is_word(IS_READ, 32), 	-- 317
-is_word(IS_READ, 204), 	-- 318
-is_word(IS_READ, 223), 	-- 319
-is_word(IS_READ, 219), 	-- 320
-is_word(IS_READ, 184), 	-- 321
-is_word(IS_READ, 222), 	-- 322
-is_word(IS_READ, 215), 	-- 323
-is_word(IS_READ, 209), 	-- 324
-is_word(IS_READ, 0), 	-- 325
-is_word(IS_READ, 206), 	-- 326
-is_word(IS_READ, 222), 	-- 327
-is_word(IS_READ, 192), 	-- 328
-is_word(IS_READ, 221), 	-- 329
-is_word(IS_READ, 166), 	-- 330
-is_word(IS_READ, 32), 	-- 331
-is_word(IS_READ, 181), 	-- 332
-is_word(IS_READ, 190), 	-- 333
-is_word(IS_READ, 33), 	-- 334
-is_word(IS_READ, 32), 	-- 335
-is_word(IS_READ, 0), 	-- 336
-is_word(IS_READ, 219), 	-- 337
-is_word(IS_READ, 0), 	-- 338
-is_word(IS_READ, 765), 	-- 339
-is_word(IS_WRITE, 2), 	-- 340
-is_word(IS_READ, 764), 	-- 341
-is_word(IS_WRITE, 2), 	-- 342
-is_word(IS_READ, 763), 	-- 343
-is_word(IS_WRITE, 2), 	-- 344
-is_word(IS_READ, 762), 	-- 345
-is_word(IS_WRITE, 761), 	-- 346
-is_word(IS_READ, 760), 	-- 347
-is_word(IS_WRITE, 2), 	-- 348
-is_word(IS_READ, 759), 	-- 349
-is_word(IS_WRITE, 2), 	-- 350
-is_word(IS_READ, 758), 	-- 351
-is_word(IS_WRITE, 2), 	-- 352
-is_word(IS_READ, 757), 	-- 353
-is_word(IS_WRITE, 756), 	-- 354
-is_word(IS_READ, 7), 	-- 355
-is_word(IS_EQ, 755), 	-- 356
-is_word(IS_BRANCH, 754), 	-- 357
-is_word(IS_READ, 753), 	-- 358
-is_word(IS_WRITE, 752), 	-- 359
-is_word(IS_READ, 196), 	-- 360
-is_word(IS_GTE, 751), 	-- 361
-is_word(IS_BRANCH, 750), 	-- 362
-is_word(IS_READ, 749), 	-- 363
-is_word(IS_WRITE, 748), 	-- 364
-is_word(IS_READ, 197), 	-- 365
-is_word(IS_GTE, 747), 	-- 366
-is_word(IS_BRANCH, 746), 	-- 367
-is_word(IS_READ, 196), 	-- 368
-is_word(IS_EQ, 745), 	-- 369
-is_word(IS_BRANCH, 744), 	-- 370
-is_word(IS_READ, 196), 	-- 371
-is_word(IS_EQ, 743), 	-- 372
-is_word(IS_BRANCH, 742), 	-- 373
-is_word(IS_READ, 197), 	-- 374
-is_word(IS_EQ, 741), 	-- 375
-is_word(IS_BRANCH, 740), 	-- 376
-is_word(IS_READ, 197), 	-- 377
-is_word(IS_EQ, 739), 	-- 378
-is_word(IS_BRANCH, 738), 	-- 379
-is_word(IS_READ, 196), 	-- 380
-is_word(IS_OR, 197), 	-- 381
-is_word(IS_AND, 737), 	-- 382
-is_word(IS_EQ, 736), 	-- 383
-is_word(IS_BRANCH, 735), 	-- 384
-is_word(IS_READ, 734), 	-- 385
-is_word(IS_WRITE, 733), 	-- 386
-is_word(IS_READ, 196), 	-- 387
-is_word(IS_MUL, 732), 	-- 388
-is_word(IS_ADD, 197), 	-- 389
-is_word(IS_ADD, 731), 	-- 390
-is_word(IS_WRITE, 730), 	-- 391
-is_word(IS_READ, 729), 	-- 392
-is_word(IS_WRITE, 2), 	-- 393
-is_word(IS_READ, 192), 	-- 394
-is_word(IS_WRITE, 2), 	-- 395
-is_word(IS_READ, 728), 	-- 396
-is_word(IS_WRITE, 2), 	-- 397
-is_word(IS_READ, 727), 	-- 398
-is_word(IS_WRITE, 726), 	-- 399
-is_word(IS_READ, 197), 	-- 400
-is_word(IS_ADD, 725), 	-- 401
-is_word(IS_WRITE, 724), 	-- 402
-is_word(IS_READ, 723), 	-- 403
-is_word(IS_WRITE, 722), 	-- 404
-is_word(IS_READ, 196), 	-- 405
-is_word(IS_ADD, 721), 	-- 406
-is_word(IS_WRITE, 720), 	-- 407
-is_word(IS_READ, 719), 	-- 408
-is_word(IS_WRITE, 718), 	-- 409
-is_word(IS_READ, 717), 	-- 410
-is_word(IS_WRITE, 716), 	-- 411
-is_word(IS_READ, 196), 	-- 412
-is_word(IS_GTE, 715), 	-- 413
-is_word(IS_BRANCH, 714), 	-- 414
-is_word(IS_READ, 3), 	-- 415
-is_word(IS_AND, 713), 	-- 416
-is_word(IS_WRITE, 712), 	-- 417
-is_word(IS_READ, 711), 	-- 418
-is_word(IS_WRITE, 2), 	-- 419
-is_word(IS_READ, 197), 	-- 420
-is_word(IS_WRITE, 2), 	-- 421
-is_word(IS_READ, 710), 	-- 422
-is_word(IS_WRITE, 2), 	-- 423
-is_word(IS_READ, 196), 	-- 424
-is_word(IS_WRITE, 2), 	-- 425
-is_word(IS_READ, 709), 	-- 426
-is_word(IS_WRITE, 708), 	-- 427
-is_word(IS_READ, 248), 	-- 428
-is_word(IS_BRANCH, 707), 	-- 429
-is_word(IS_READ, 196), 	-- 430
-is_word(IS_ADD, 706), 	-- 431
-is_word(IS_WRITE, 705), 	-- 432
-is_word(IS_READ, 704), 	-- 433
-is_word(IS_WRITE, 703), 	-- 434
-is_word(IS_READ, 702), 	-- 435
-is_word(IS_WRITE, 701), 	-- 436
-is_word(IS_READ, 196), 	-- 437
-is_word(IS_GTE, 700), 	-- 438
-is_word(IS_BRANCH, 699), 	-- 439
-is_word(IS_READ, 698), 	-- 440
-is_word(IS_WRITE, 697), 	-- 441
-is_word(IS_READ, 197), 	-- 442
-is_word(IS_GTE, 696), 	-- 443
-is_word(IS_BRANCH, 695), 	-- 444
-is_word(IS_READ, 3), 	-- 445
-is_word(IS_AND, 694), 	-- 446
-is_word(IS_WRITE, 693), 	-- 447
-is_word(IS_EQ, 692), 	-- 448
-is_word(IS_BRANCH, 691), 	-- 449
-is_word(IS_READ, 690), 	-- 450
-is_word(IS_WRITE, 2), 	-- 451
-is_word(IS_READ, 192), 	-- 452
-is_word(IS_WRITE, 2), 	-- 453
-is_word(IS_READ, 196), 	-- 454
-is_word(IS_WRITE, 2), 	-- 455
-is_word(IS_READ, 197), 	-- 456
-is_word(IS_WRITE, 2), 	-- 457
-is_word(IS_READ, 689), 	-- 458
-is_word(IS_WRITE, 688), 	-- 459
-is_word(IS_READ, 248), 	-- 460
-is_word(IS_BRANCH, 687), 	-- 461
-is_word(IS_READ, 197), 	-- 462
-is_word(IS_ADD, 686), 	-- 463
-is_word(IS_WRITE, 685), 	-- 464
-is_word(IS_READ, 684), 	-- 465
-is_word(IS_WRITE, 683), 	-- 466
-is_word(IS_READ, 196), 	-- 467
-is_word(IS_ADD, 682), 	-- 468
-is_word(IS_WRITE, 681), 	-- 469
-is_word(IS_READ, 680), 	-- 470
-is_word(IS_WRITE, 679), 	-- 471
-is_word(IS_READ, 7), 	-- 472
-is_word(IS_DIV, 678), 	-- 473
-is_word(IS_ADD, 677), 	-- 474
-is_word(IS_WRITE, 676), 	-- 475
-is_word(IS_READ, 7), 	-- 476
-is_word(IS_AND, 675), 	-- 477
-is_word(IS_ADD, 674), 	-- 478
-is_word(IS_WRITE, 673), 	-- 479
-is_word(IS_READ, 672), 	-- 480
-is_word(IS_WRITE, 671), 	-- 481
-is_word(IS_READ, 2), 	-- 482
-is_word(IS_WRITE, 670), 	-- 483
-is_word(IS_ADD, 3), 	-- 484
-is_word(IS_WRITE, 669), 	-- 485
-is_word(IS_READ, 2), 	-- 486
-is_word(IS_WRITE, 668), 	-- 487
-is_word(IS_ADD, 3), 	-- 488
-is_word(IS_WRITE, 667), 	-- 489
-is_word(IS_READ, 2), 	-- 490
-is_word(IS_WRITE, 666), 	-- 491
-is_word(IS_ADD, 3), 	-- 492
-is_word(IS_WRITE, 665), 	-- 493
-is_word(IS_READ, 251), 	-- 494
-is_word(IS_MUL, 664), 	-- 495
-is_word(IS_ADD, 250), 	-- 496
-is_word(IS_ADD, 663), 	-- 497
-is_word(IS_WRITE, 662), 	-- 498
-is_word(IS_READ, 252), 	-- 499
-is_word(IS_NEQ, 661), 	-- 500
-is_word(IS_BRANCH, 660), 	-- 501
-is_word(IS_READ, 249), 	-- 502
-is_word(IS_SUB, 659), 	-- 503
-is_word(IS_WRITE, 658), 	-- 504
-is_word(IS_READ, 657), 	-- 505
-is_word(IS_WRITE, 656), 	-- 506
-is_word(IS_READ, 252), 	-- 507
-is_word(IS_NEQ, 655), 	-- 508
-is_word(IS_BRANCH, 654), 	-- 509
-is_word(IS_READ, 249), 	-- 510
-is_word(IS_ADD, 653), 	-- 511
-is_word(IS_WRITE, 652), 	-- 512
-is_word(IS_READ, 651), 	-- 513
-is_word(IS_WRITE, 650), 	-- 514
-is_word(IS_READ, 252), 	-- 515
-is_word(IS_NEQ, 649), 	-- 516
-is_word(IS_BRANCH, 648), 	-- 517
-is_word(IS_READ, 249), 	-- 518
-is_word(IS_SUB, 647), 	-- 519
-is_word(IS_WRITE, 646), 	-- 520
-is_word(IS_READ, 645), 	-- 521
-is_word(IS_WRITE, 644), 	-- 522
-is_word(IS_READ, 252), 	-- 523
-is_word(IS_NEQ, 643), 	-- 524
-is_word(IS_BRANCH, 642), 	-- 525
-is_word(IS_READ, 249), 	-- 526
-is_word(IS_ADD, 641), 	-- 527
-is_word(IS_WRITE, 640), 	-- 528
-is_word(IS_READ, 639), 	-- 529
-is_word(IS_WRITE, 638), 	-- 530
-is_word(IS_READ, 249), 	-- 531
-is_word(IS_WRITE, 637), 	-- 532
-is_word(IS_ADD, 3), 	-- 533
-is_word(IS_WRITE, 636), 	-- 534
-is_word(IS_READ, 635), 	-- 535
-is_word(IS_WRITE, 2), 	-- 536
-is_word(IS_READ, 249), 	-- 537
-is_word(IS_WRITE, 2), 	-- 538
-is_word(IS_READ, 634), 	-- 539
-is_word(IS_WRITE, 2), 	-- 540
-is_word(IS_READ, 633), 	-- 541
-is_word(IS_WRITE, 632), 	-- 542
-is_word(IS_READ, 2), 	-- 543
-is_word(IS_WRITE, 631), 	-- 544
-is_word(IS_ADD, 3), 	-- 545
-is_word(IS_WRITE, 630), 	-- 546
-is_word(IS_READ, 2), 	-- 547
-is_word(IS_WRITE, 629), 	-- 548
-is_word(IS_ADD, 3), 	-- 549
-is_word(IS_WRITE, 628), 	-- 550
-is_word(IS_READ, 253), 	-- 551
-is_word(IS_EQ, 627), 	-- 552
-is_word(IS_BRANCH, 626), 	-- 553
-is_word(IS_READ, 253), 	-- 554
-is_word(IS_SUB, 625), 	-- 555
-is_word(IS_WRITE, 624), 	-- 556
-is_word(IS_READ, 623), 	-- 557
-is_word(IS_WRITE, 622), 	-- 558
-is_word(IS_READ, 2), 	-- 559
-is_word(IS_WRITE, 621), 	-- 560
-is_word(IS_ADD, 3), 	-- 561
-is_word(IS_WRITE, 620), 	-- 562
-is_word(IS_READ, 2), 	-- 563
-is_word(IS_WRITE, 619), 	-- 564
-is_word(IS_ADD, 3), 	-- 565
-is_word(IS_WRITE, 618), 	-- 566
-is_word(IS_READ, 2), 	-- 567
-is_word(IS_WRITE, 617), 	-- 568
-is_word(IS_ADD, 3), 	-- 569
-is_word(IS_WRITE, 616), 	-- 570
-is_word(IS_READ, 254), 	-- 571
-is_word(IS_WRITE, 615), 	-- 572
-is_word(IS_ADD, 3), 	-- 573
-is_word(IS_EQ, 614), 	-- 574
-is_word(IS_BRANCH, 613), 	-- 575
-is_word(IS_READ, 254), 	-- 576
-is_word(IS_WRITE, 612), 	-- 577
-is_word(IS_ADD, 3), 	-- 578
-is_word(IS_WRITE, 255), 	-- 579
-is_word(IS_READ, 254), 	-- 580
-is_word(IS_ADD, 611), 	-- 581
-is_word(IS_WRITE, 610), 	-- 582
-is_word(IS_READ, 255), 	-- 583
-is_word(IS_ADD, 609), 	-- 584
-is_word(IS_WRITE, 608), 	-- 585
-is_word(IS_READ, 607), 	-- 586
-is_word(IS_WRITE, 606), 	-- 587
-is_word(IS_READ, 2), 	-- 588
-is_word(IS_WRITE, 605), 	-- 589
-is_word(IS_ADD, 3), 	-- 590
-is_word(IS_WRITE, 604), 	-- 591
+is_word(IS_READ, 765), 	-- 290
+is_word(IS_WRITE, 764), 	-- 291
+is_word(IS_READ, 11), 	-- 292
+is_word(IS_AND, 763), 	-- 293
+is_word(IS_BRANCH, 762), 	-- 294
+is_word(IS_READ, 761), 	-- 295
+is_word(IS_WRITE, 760), 	-- 296
+is_word(IS_READ, 759), 	-- 297
+is_word(IS_WRITE, 758), 	-- 298
+is_word(IS_READ, 11), 	-- 299
+is_word(IS_AND, 757), 	-- 300
+is_word(IS_EQ, 756), 	-- 301
+is_word(IS_BRANCH, 755), 	-- 302
+is_word(IS_READ, 11), 	-- 303
+is_word(IS_AND, 754), 	-- 304
+is_word(IS_BRANCH, 753), 	-- 305
+is_word(IS_READ, 11), 	-- 306
+is_word(IS_AND, 752), 	-- 307
+is_word(IS_BRANCH, 751), 	-- 308
+is_word(IS_READ, 750), 	-- 309
+is_word(IS_WRITE, 749), 	-- 310
+is_word(IS_READ, 748), 	-- 311
+is_word(IS_WRITE, 747), 	-- 312
+is_word(IS_READ, 11), 	-- 313
+is_word(IS_AND, 746), 	-- 314
+is_word(IS_EQ, 745), 	-- 315
+is_word(IS_BRANCH, 744), 	-- 316
+is_word(IS_READ, 743), 	-- 317
+is_word(IS_WRITE, 742), 	-- 318
+is_word(IS_READ, 11), 	-- 319
+is_word(IS_AND, 741), 	-- 320
+is_word(IS_BRANCH, 740), 	-- 321
+is_word(IS_READ, 11), 	-- 322
+is_word(IS_AND, 739), 	-- 323
+is_word(IS_BRANCH, 738), 	-- 324
+is_word(IS_READ, 737), 	-- 325
+is_word(IS_WRITE, 736), 	-- 326
+is_word(IS_READ, 735), 	-- 327
+is_word(IS_WRITE, 734), 	-- 328
+is_word(IS_READ, 11), 	-- 329
+is_word(IS_AND, 733), 	-- 330
+is_word(IS_EQ, 732), 	-- 331
+is_word(IS_BRANCH, 731), 	-- 332
+is_word(IS_READ, 11), 	-- 333
+is_word(IS_AND, 730), 	-- 334
+is_word(IS_BRANCH, 729), 	-- 335
+is_word(IS_READ, 11), 	-- 336
+is_word(IS_AND, 728), 	-- 337
+is_word(IS_BRANCH, 727), 	-- 338
+is_word(IS_READ, 9), 	-- 339
+is_word(IS_WRITE, 128), 	-- 340
+is_word(IS_READ, 128), 	-- 341
+is_word(IS_ADD, 726), 	-- 342
+is_word(IS_WRITE, 725), 	-- 343
+is_word(IS_READ, 724), 	-- 344
+is_word(IS_WRITE, 723), 	-- 345
+0, 	-- 346
+0, 	-- 347
+0, 	-- 348
+0, 	-- 349
+0, 	-- 350
+0, 	-- 351
+0, 	-- 352
+0, 	-- 353
+0, 	-- 354
+0, 	-- 355
+0, 	-- 356
+0, 	-- 357
+0, 	-- 358
+0, 	-- 359
+0, 	-- 360
+0, 	-- 361
+0, 	-- 362
+0, 	-- 363
+0, 	-- 364
+0, 	-- 365
+0, 	-- 366
+0, 	-- 367
+0, 	-- 368
+0, 	-- 369
+0, 	-- 370
+0, 	-- 371
+0, 	-- 372
+0, 	-- 373
+0, 	-- 374
+0, 	-- 375
+0, 	-- 376
+0, 	-- 377
+0, 	-- 378
+0, 	-- 379
+0, 	-- 380
+0, 	-- 381
+0, 	-- 382
+0, 	-- 383
+0, 	-- 384
+0, 	-- 385
+0, 	-- 386
+0, 	-- 387
+0, 	-- 388
+0, 	-- 389
+0, 	-- 390
+0, 	-- 391
+0, 	-- 392
+0, 	-- 393
+0, 	-- 394
+0, 	-- 395
+0, 	-- 396
+0, 	-- 397
+0, 	-- 398
+0, 	-- 399
+0, 	-- 400
+0, 	-- 401
+0, 	-- 402
+0, 	-- 403
+0, 	-- 404
+0, 	-- 405
+0, 	-- 406
+0, 	-- 407
+0, 	-- 408
+0, 	-- 409
+0, 	-- 410
+0, 	-- 411
+0, 	-- 412
+0, 	-- 413
+0, 	-- 414
+0, 	-- 415
+0, 	-- 416
+0, 	-- 417
+0, 	-- 418
+0, 	-- 419
+0, 	-- 420
+0, 	-- 421
+0, 	-- 422
+0, 	-- 423
+0, 	-- 424
+0, 	-- 425
+0, 	-- 426
+0, 	-- 427
+0, 	-- 428
+0, 	-- 429
+0, 	-- 430
+0, 	-- 431
+0, 	-- 432
+0, 	-- 433
+0, 	-- 434
+0, 	-- 435
+0, 	-- 436
+0, 	-- 437
+0, 	-- 438
+0, 	-- 439
+0, 	-- 440
+0, 	-- 441
+0, 	-- 442
+0, 	-- 443
+0, 	-- 444
+0, 	-- 445
+0, 	-- 446
+0, 	-- 447
+0, 	-- 448
+0, 	-- 449
+0, 	-- 450
+0, 	-- 451
+0, 	-- 452
+0, 	-- 453
+0, 	-- 454
+0, 	-- 455
+0, 	-- 456
+0, 	-- 457
+0, 	-- 458
+0, 	-- 459
+0, 	-- 460
+0, 	-- 461
+0, 	-- 462
+0, 	-- 463
+0, 	-- 464
+0, 	-- 465
+0, 	-- 466
+0, 	-- 467
+0, 	-- 468
+0, 	-- 469
+0, 	-- 470
+0, 	-- 471
+0, 	-- 472
+0, 	-- 473
+0, 	-- 474
+0, 	-- 475
+0, 	-- 476
+0, 	-- 477
+0, 	-- 478
+0, 	-- 479
+0, 	-- 480
+0, 	-- 481
+0, 	-- 482
+0, 	-- 483
+0, 	-- 484
+0, 	-- 485
+0, 	-- 486
+0, 	-- 487
+0, 	-- 488
+0, 	-- 489
+0, 	-- 490
+0, 	-- 491
+0, 	-- 492
+0, 	-- 493
+0, 	-- 494
+0, 	-- 495
+0, 	-- 496
+0, 	-- 497
+0, 	-- 498
+0, 	-- 499
+0, 	-- 500
+0, 	-- 501
+0, 	-- 502
+0, 	-- 503
+0, 	-- 504
+0, 	-- 505
+0, 	-- 506
+0, 	-- 507
+0, 	-- 508
+0, 	-- 509
+0, 	-- 510
+0, 	-- 511
+0, 	-- 512
+0, 	-- 513
+0, 	-- 514
+0, 	-- 515
+0, 	-- 516
+0, 	-- 517
+0, 	-- 518
+0, 	-- 519
+0, 	-- 520
+0, 	-- 521
+0, 	-- 522
+0, 	-- 523
+0, 	-- 524
+0, 	-- 525
+0, 	-- 526
+0, 	-- 527
+0, 	-- 528
+0, 	-- 529
+0, 	-- 530
+0, 	-- 531
+0, 	-- 532
+0, 	-- 533
+0, 	-- 534
+0, 	-- 535
+0, 	-- 536
+0, 	-- 537
+0, 	-- 538
+0, 	-- 539
+0, 	-- 540
+0, 	-- 541
+0, 	-- 542
+0, 	-- 543
+0, 	-- 544
+0, 	-- 545
+0, 	-- 546
+0, 	-- 547
+0, 	-- 548
+0, 	-- 549
+0, 	-- 550
+0, 	-- 551
+0, 	-- 552
+0, 	-- 553
+0, 	-- 554
+0, 	-- 555
+0, 	-- 556
+0, 	-- 557
+0, 	-- 558
+0, 	-- 559
+0, 	-- 560
+0, 	-- 561
+0, 	-- 562
+0, 	-- 563
+0, 	-- 564
+0, 	-- 565
+0, 	-- 566
+0, 	-- 567
+0, 	-- 568
+0, 	-- 569
+0, 	-- 570
+0, 	-- 571
+0, 	-- 572
+0, 	-- 573
+0, 	-- 574
+0, 	-- 575
+0, 	-- 576
+0, 	-- 577
+0, 	-- 578
+0, 	-- 579
+0, 	-- 580
+0, 	-- 581
+0, 	-- 582
+0, 	-- 583
+0, 	-- 584
+0, 	-- 585
+0, 	-- 586
+0, 	-- 587
+0, 	-- 588
+0, 	-- 589
+0, 	-- 590
+0, 	-- 591
 0, 	-- 592
 0, 	-- 593
 0, 	-- 594
@@ -449,169 +452,170 @@ is_word(IS_WRITE, 604), 	-- 591
 0, 	-- 602
 0, 	-- 603
 0, 	-- 604
-590, 	-- 605
+0, 	-- 605
 0, 	-- 606
-571, 	-- 607
-255, 	-- 608
-1, 	-- 609
-254, 	-- 610
-1, 	-- 611
-578, 	-- 612
-588, 	-- 613
+0, 	-- 607
+0, 	-- 608
+0, 	-- 609
+0, 	-- 610
+0, 	-- 611
+0, 	-- 612
+0, 	-- 613
 0, 	-- 614
-573, 	-- 615
-255, 	-- 616
-569, 	-- 617
-254, 	-- 618
-565, 	-- 619
+0, 	-- 615
+0, 	-- 616
+0, 	-- 617
+0, 	-- 618
+0, 	-- 619
 0, 	-- 620
-561, 	-- 621
+0, 	-- 621
 0, 	-- 622
-551, 	-- 623
-253, 	-- 624
-1, 	-- 625
-559, 	-- 626
+0, 	-- 623
+0, 	-- 624
+0, 	-- 625
+0, 	-- 626
 0, 	-- 627
-253, 	-- 628
-549, 	-- 629
+0, 	-- 628
+0, 	-- 629
 0, 	-- 630
-545, 	-- 631
+0, 	-- 631
 0, 	-- 632
-563, 	-- 633
-337, 	-- 634
-543, 	-- 635
-248, 	-- 636
-533, 	-- 637
+0, 	-- 633
+0, 	-- 634
+0, 	-- 635
+0, 	-- 636
+0, 	-- 637
 0, 	-- 638
-531, 	-- 639
-249, 	-- 640
-1, 	-- 641
-531, 	-- 642
-3, 	-- 643
+0, 	-- 639
+0, 	-- 640
+0, 	-- 641
+0, 	-- 642
+0, 	-- 643
 0, 	-- 644
-531, 	-- 645
-249, 	-- 646
-1, 	-- 647
-523, 	-- 648
-2, 	-- 649
+0, 	-- 645
+0, 	-- 646
+0, 	-- 647
+0, 	-- 648
+0, 	-- 649
 0, 	-- 650
-531, 	-- 651
-249, 	-- 652
-40, 	-- 653
-515, 	-- 654
-1, 	-- 655
+0, 	-- 651
+0, 	-- 652
+0, 	-- 653
+0, 	-- 654
+0, 	-- 655
 0, 	-- 656
-531, 	-- 657
-249, 	-- 658
-40, 	-- 659
-507, 	-- 660
+0, 	-- 657
+0, 	-- 658
+0, 	-- 659
+0, 	-- 660
 0, 	-- 661
-249, 	-- 662
-1104, 	-- 663
-40, 	-- 664
-252, 	-- 665
-492, 	-- 666
-251, 	-- 667
-488, 	-- 668
-250, 	-- 669
-484, 	-- 670
+0, 	-- 662
+0, 	-- 663
+0, 	-- 664
+0, 	-- 665
+0, 	-- 666
+0, 	-- 667
+0, 	-- 668
+0, 	-- 669
+0, 	-- 670
 0, 	-- 671
-472, 	-- 672
-1025, 	-- 673
-48, 	-- 674
-15, 	-- 675
-1024, 	-- 676
-48, 	-- 677
-16, 	-- 678
+0, 	-- 672
+0, 	-- 673
+0, 	-- 674
+0, 	-- 675
+0, 	-- 676
+0, 	-- 677
+0, 	-- 678
 0, 	-- 679
-437, 	-- 680
-196, 	-- 681
-2, 	-- 682
+0, 	-- 680
+0, 	-- 681
+0, 	-- 682
 0, 	-- 683
-442, 	-- 684
-197, 	-- 685
-2, 	-- 686
-445, 	-- 687
+0, 	-- 684
+0, 	-- 685
+0, 	-- 686
+0, 	-- 687
 0, 	-- 688
-482, 	-- 689
-460, 	-- 690
-445, 	-- 691
+0, 	-- 689
+0, 	-- 690
+0, 	-- 691
 0, 	-- 692
-192, 	-- 693
-3, 	-- 694
-467, 	-- 695
-37, 	-- 696
-197, 	-- 697
-2, 	-- 698
-472, 	-- 699
-21, 	-- 700
-196, 	-- 701
-4, 	-- 702
+0, 	-- 693
+0, 	-- 694
+0, 	-- 695
+0, 	-- 696
+0, 	-- 697
+0, 	-- 698
+0, 	-- 699
+0, 	-- 700
+0, 	-- 701
+0, 	-- 702
 0, 	-- 703
-412, 	-- 704
-196, 	-- 705
-2, 	-- 706
-415, 	-- 707
+0, 	-- 704
+0, 	-- 705
+0, 	-- 706
+0, 	-- 707
 0, 	-- 708
-482, 	-- 709
-2, 	-- 710
-428, 	-- 711
-197, 	-- 712
-3, 	-- 713
-435, 	-- 714
-37, 	-- 715
-196, 	-- 716
-2, 	-- 717
+0, 	-- 709
+0, 	-- 710
+0, 	-- 711
+0, 	-- 712
+0, 	-- 713
+0, 	-- 714
+0, 	-- 715
+0, 	-- 716
+0, 	-- 717
 0, 	-- 718
-360, 	-- 719
-196, 	-- 720
-1, 	-- 721
+0, 	-- 719
+0, 	-- 720
+0, 	-- 721
 0, 	-- 722
-365, 	-- 723
-197, 	-- 724
-1, 	-- 725
-0, 	-- 726
-563, 	-- 727
-337, 	-- 728
-400, 	-- 729
-192, 	-- 730
-1104, 	-- 731
-40, 	-- 732
-0, 	-- 733
-400, 	-- 734
-387, 	-- 735
-0, 	-- 736
-1, 	-- 737
-387, 	-- 738
-38, 	-- 739
-387, 	-- 740
-0, 	-- 741
-387, 	-- 742
-22, 	-- 743
-387, 	-- 744
+0, 	-- 723
+327, 	-- 724
+128, 	-- 725
+1, 	-- 726
+327, 	-- 727
+8, 	-- 728
+333, 	-- 729
+4, 	-- 730
+329, 	-- 731
+0, 	-- 732
+4, 	-- 733
+11, 	-- 734
+3, 	-- 735
+128, 	-- 736
+1024, 	-- 737
+309, 	-- 738
+8, 	-- 739
+319, 	-- 740
+4, 	-- 741
+11, 	-- 742
+0, 	-- 743
+313, 	-- 744
 0, 	-- 745
-405, 	-- 746
-39, 	-- 747
-197, 	-- 748
-0, 	-- 749
-410, 	-- 750
-23, 	-- 751
-196, 	-- 752
-0, 	-- 753
-355, 	-- 754
-0, 	-- 755
+4, 	-- 746
+11, 	-- 747
+1, 	-- 748
+10, 	-- 749
+0, 	-- 750
+295, 	-- 751
+8, 	-- 752
+303, 	-- 753
+4, 	-- 754
+299, 	-- 755
 0, 	-- 756
-563, 	-- 757
-326, 	-- 758
-1104, 	-- 759
-355, 	-- 760
+4, 	-- 757
+11, 	-- 758
+1, 	-- 759
+10, 	-- 760
 0, 	-- 761
-563, 	-- 762
-290, 	-- 763
-1024, 	-- 764
-347, 	-- 765
+292, 	-- 762
+4, 	-- 763
+8, 	-- 764
+80, 	-- 765
 0, 	-- 766
-339	-- 767
+290	-- 767
+
 	);
 	
 	-- Stack
@@ -636,19 +640,18 @@ is_word(IS_WRITE, 604), 	-- 591
 		port (
 		clk: in std_logic;
 		rfd: out std_logic;
-		dividend: in std_logic_vector(15 downto 0);
-		divisor: in std_logic_vector(15 downto 0);
-		quotient: out std_logic_vector(15 downto 0);
-		fractional: out std_logic_vector(15 downto 0)
+		dividend: in std_logic_vector(19 downto 0);
+		divisor: in std_logic_vector(19 downto 0);
+		quotient: out std_logic_vector(19 downto 0);
+		fractional: out std_logic_vector(19 downto 0)
 		);
 	end component;
-	
 	signal div1_clk: std_logic;
 	signal div1_rfd: std_logic;
-	signal div1_dividend: std_logic_vector(15 downto 0);
-	signal div1_divisor: std_logic_vector(15 downto 0);
-	signal div1_quotient: std_logic_vector(15 downto 0);
-	signal div1_fractional: std_logic_vector(15 downto 0);
+	signal div1_dividend: std_logic_vector(19 downto 0);
+	signal div1_divisor: std_logic_vector(19 downto 0);
+	signal div1_quotient: std_logic_vector(19 downto 0);
+	signal div1_fractional: std_logic_vector(19 downto 0);
 			
 	-- VRAM
 	COMPONENT vram
@@ -750,7 +753,7 @@ is_word(IS_WRITE, 604), 	-- 591
 	signal i2c_1_ack_error : STD_LOGIC;                    --flag if improper acknowledge from slave
 	signal i2c_1_sda       : STD_LOGIC;                    --serial data output of i2c bus
 	signal i2c_1_scl       : STD_LOGIC;                   --serial clock output of i2c bus
-	signal i2c_1_stat      : std_logic_vector(3 downto 0);
+	signal i2c_1_stat      : std_logic_vector(3 downto 0) := "0000";
 	
 begin 
 
@@ -761,15 +764,15 @@ begin
 	end process;
 
 	-- CPU
-	process(clkcnt(3))
-	variable inst: integer;
-	variable operand: integer;
+	process(clk)
+	variable inst: cpu_int;
+	variable operand: cpu_int;
 	begin
-		if (rising_edge(clkcnt(3))) then
+		if (falling_edge(clk)) then
 			case cpu_stat is
 				when 0 =>	-- Read instruction
-					inst := cpu_rdata/16777216;
-					operand := cpu_rdata mod 16777216;
+					inst := cpu_rdata/CPU_INST_OFFSET;
+					operand := cpu_rdata mod CPU_INST_OFFSET;
 					
 					cpu_inst <= inst;
 					cpu_pc <= cpu_pc + 1;
@@ -831,13 +834,13 @@ begin
 							cpu_wdata <= conv_integer(div1_quotient);
 							cpu_waddr <= 1;
 						when IS_AND =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) and conv_std_logic_vector(cpu_opdata, 32));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) and conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 						when IS_OR =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) or conv_std_logic_vector(cpu_opdata, 32));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) or conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 						when IS_XOR =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, 32) xor conv_std_logic_vector(cpu_opdata, 32));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) xor conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 
 						when IS_BRANCH =>
@@ -898,7 +901,7 @@ begin
 								vram_1_web <= "1";
 							elsif (cpu_waddr>=ADDR_STACK and cpu_waddr<ADDR_STACK + SIZE_STACK) then
 								stack1_addra <= conv_std_logic_vector(cpu_waddr-ADDR_STACK, 10);
-								stack1_dina <= conv_std_logic_vector(cpu_wdata, 32);
+								stack1_dina <= conv_std_logic_vector(cpu_wdata, CPU_BIT_WIDTH);
 								stack1_wea <= "1";
 							end if;
 						--when others =>

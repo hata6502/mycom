@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\hato\mycom\BH_com.ncd
-OUTFILE=C:\Users\hato\mycom\BH_com.bit
+INFILE=/home/hato/mycom/BH_com.ncd
+OUTFILE=/home/hato/mycom/BH_com.bit
 FAMILY=Spartan3E
 PART=xc3s500e-4vq100
-WORKINGDIR=C:\Users\hato\mycom
+WORKINGDIR=/home/hato/mycom
 LICENSE=WebPack
 USER_INFO=211300270_0_0_714

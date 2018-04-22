@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="25" />
    <wvobject fp_name="/test/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -85,28 +85,40 @@
       <obj_property name="ElementShortName">cpu_sp</obj_property>
       <obj_property name="ObjectShortName">cpu_sp</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/rand_rnd_num" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rand_rnd_num[31:0]</obj_property>
-      <obj_property name="ObjectShortName">rand_rnd_num[31:0]</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_ena" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_ena</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_ena</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/div1_dividend" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">div1_dividend[15:0]</obj_property>
-      <obj_property name="ObjectShortName">div1_dividend[15:0]</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_addr[6:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/div1_divisor" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">div1_divisor[15:0]</obj_property>
-      <obj_property name="ObjectShortName">div1_divisor[15:0]</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_rw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_rw</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_rw</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/div1_quotient" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">div1_quotient[15:0]</obj_property>
-      <obj_property name="ObjectShortName">div1_quotient[15:0]</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_data_rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_data_rd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_data_rd[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/div1_fractional" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">div1_fractional[15:0]</obj_property>
-      <obj_property name="ObjectShortName">div1_fractional[15:0]</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_data_wr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_data_wr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_data_wr[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test/uut/div1_rfd" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">div1_rfd</obj_property>
-      <obj_property name="ObjectShortName">div1_rfd</obj_property>
+   <wvobject fp_name="/test/uut/i2c_1_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_busy</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/i2c_1_ack_error" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_ack_error</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_ack_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/i2c_1_scl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_scl</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/uut/i2c_1_sda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i2c_1_sda</obj_property>
+      <obj_property name="ObjectShortName">i2c_1_sda</obj_property>
    </wvobject>
 </wave_config>

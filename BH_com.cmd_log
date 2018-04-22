@@ -1458,3 +1458,197 @@ map -filter "C:/Users/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s5
 par -filter "C:/Users/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
 trce -filter C:/Users/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
 bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
+xst -intstyle ise -filter "/home/hato/mycom/iseconfig/filter.filter" -ifn "/home/hato/mycom/BH_com.xst" -ofn "/home/hato/mycom/BH_com.syr" 
+ngdbuild -filter "iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ipcore_dir -aul -nt timestamp -uc BPC3003-Papilio_One-general.ucf -p xc3s500e-vq100-4 BH_com.ngc BH_com.ngd  
+map -filter "/home/hato/mycom/iseconfig/filter.filter" -intstyle ise -p xc3s500e-vq100-4 -cm area -ir off -pr off -c 100 -o BH_com_map.ncd BH_com.ngd BH_com.pcf 
+par -filter "/home/hato/mycom/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1 BH_com_map.ncd BH_com.ncd BH_com.pcf 
+trce -filter /home/hato/mycom/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml BH_com.twx BH_com.ncd -o BH_com.twr BH_com.pcf -ucf BPC3003-Papilio_One-general.ucf 
+bitgen -filter "iseconfig/filter.filter" -intstyle ise -f BH_com.ut BH_com.ncd 
