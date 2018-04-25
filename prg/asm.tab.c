@@ -68,8 +68,8 @@
 #include <ctype.h>
 #include <string.h>
 
-#define PRG_ORG 256
-#define PRG_SIZE 512
+#define PRG_ORG 2048
+#define PRG_SIZE 1024
 
 extern int yylineno;
 
@@ -1328,97 +1328,97 @@ yyreduce:
 
   case 11:
 #line 69 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (0<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (0<<16) + (yyvsp[0].ival); }
 #line 1333 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 70 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (1<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (1<<16) + (yyvsp[0].ival); }
 #line 1339 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 72 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (2<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (2<<16) + (yyvsp[0].ival); }
 #line 1345 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
 #line 73 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (3<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (3<<16) + (yyvsp[0].ival); }
 #line 1351 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
 #line 74 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (4<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (4<<16) + (yyvsp[0].ival); }
 #line 1357 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
 #line 75 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (5<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (5<<16) + (yyvsp[0].ival); }
 #line 1363 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
 #line 76 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (6<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (6<<16) + (yyvsp[0].ival); }
 #line 1369 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
 #line 77 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (7<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (7<<16) + (yyvsp[0].ival); }
 #line 1375 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
 #line 78 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (8<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (8<<16) + (yyvsp[0].ival); }
 #line 1381 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 80 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (9<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (9<<16) + (yyvsp[0].ival); }
 #line 1387 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
 #line 81 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (10<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (10<<16) + (yyvsp[0].ival); }
 #line 1393 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
 #line 82 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (11<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (11<<16) + (yyvsp[0].ival); }
 #line 1399 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
 #line 83 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (12<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (12<<16) + (yyvsp[0].ival); }
 #line 1405 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
 #line 84 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (13<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (13<<16) + (yyvsp[0].ival); }
 #line 1411 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
 #line 85 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (14<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (14<<16) + (yyvsp[0].ival); }
 #line 1417 "asm.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 86 "asm.y" /* yacc.c:1646  */
-    {(yyval.ival) = (15<<24) + (yyvsp[0].ival); }
+    {(yyval.ival) = (15<<16) + (yyvsp[0].ival); }
 #line 1423 "asm.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1684,14 +1684,14 @@ int main(void)
 
 	for(int *code = prg; code != &prg[PRG_SIZE]; code++){
 		//printf("%08x", *code);
-		if (code < addr){
-			printf("is_word(%s, %d)", instruction[(*code)>>24], (*code)&((1<<24) - 1));
+		/*if (code < addr){
+			printf("is_word(%s, %d)", instruction[(*code)>>16], (*code)&((1<<16) - 1));
 		}else{
 			printf("%d", *code);
-		}
-		if (code != &prg[PRG_SIZE - 1]) printf(", ");
-		//if ((code - prg)%8 == 7) printf("\n");
-		printf("\t-- %d\n", code - prg + PRG_ORG);
+		}*/
+		fwrite(code, sizeof(int), 1, stdout);
+		//if (code != &prg[PRG_SIZE - 1]) printf(", ");
+		//printf("\t-- %d\n", code - prg + PRG_ORG);
 	}
 
 	/*printf("ラベル\n");

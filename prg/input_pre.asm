@@ -32,7 +32,6 @@
  add 0;
  read main; write 0;
 main:
- read return___LINE__; write *2; read 0; write *2; read sleep; write 0; return___LINE__:;
  read 80;
  write 8;
 i2c_wait_0:

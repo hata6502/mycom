@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <string.h>
 
-#define PRG_ORG 256
-#define PRG_SIZE 512
+#define PRG_ORG 2048
+#define PRG_SIZE 1024
 
 extern int yylineno;
 
@@ -66,24 +66,24 @@ inst_sentence	: instruction	{*(addr++) = $1; }
 	}
 	;
 
-instruction : is_read operand	{$$ = (0<<24) + $2; }
-	| is_write operand	{$$ = (1<<24) + $2; }
+instruction : is_read operand	{$$ = (0<<16) + $2; }
+	| is_write operand	{$$ = (1<<16) + $2; }
 
-	| is_add operand	{$$ = (2<<24) + $2; }
-	| is_sub operand	{$$ = (3<<24) + $2; }
-	| is_mul operand	{$$ = (4<<24) + $2; }
-	| is_div operand	{$$ = (5<<24) + $2; }
-	| is_and operand	{$$ = (6<<24) + $2; }
-	| is_or operand	{$$ = (7<<24) + $2; }
-	| is_xor operand	{$$ = (8<<24) + $2; }
+	| is_add operand	{$$ = (2<<16) + $2; }
+	| is_sub operand	{$$ = (3<<16) + $2; }
+	| is_mul operand	{$$ = (4<<16) + $2; }
+	| is_div operand	{$$ = (5<<16) + $2; }
+	| is_and operand	{$$ = (6<<16) + $2; }
+	| is_or operand	{$$ = (7<<16) + $2; }
+	| is_xor operand	{$$ = (8<<16) + $2; }
 
-	| is_branch operand	{$$ = (9<<24) + $2; }
-	| is_eq operand	{$$ = (10<<24) + $2; }
-	| is_neq operand	{$$ = (11<<24) + $2; }
-	| is_lt operand	{$$ = (12<<24) + $2; }
-	| is_lte operand	{$$ = (13<<24) + $2; }
-	| is_gt operand	{$$ = (14<<24) + $2; }
-	| is_gte operand	{$$ = (15<<24) + $2; }
+	| is_branch operand	{$$ = (9<<16) + $2; }
+	| is_eq operand	{$$ = (10<<16) + $2; }
+	| is_neq operand	{$$ = (11<<16) + $2; }
+	| is_lt operand	{$$ = (12<<16) + $2; }
+	| is_lte operand	{$$ = (13<<16) + $2; }
+	| is_gt operand	{$$ = (14<<16) + $2; }
+	| is_gte operand	{$$ = (15<<16) + $2; }
 	;
 
 operand	: ast val	{$$ = $2; ref_addr(addr - prg); }
@@ -102,14 +102,14 @@ int main(void)
 
 	for(int *code = prg; code != &prg[PRG_SIZE]; code++){
 		//printf("%08x", *code);
-		if (code < addr){
-			printf("is_word(%s, %d)", instruction[(*code)>>24], (*code)&((1<<24) - 1));
+		/*if (code < addr){
+			printf("is_word(%s, %d)", instruction[(*code)>>16], (*code)&((1<<16) - 1));
 		}else{
 			printf("%d", *code);
-		}
-		if (code != &prg[PRG_SIZE - 1]) printf(", ");
-		//if ((code - prg)%8 == 7) printf("\n");
-		printf("\t-- %d\n", code - prg + PRG_ORG);
+		}*/
+		fwrite(code, sizeof(int), 1, stdout);
+		//if (code != &prg[PRG_SIZE - 1]) printf(", ");
+		//printf("\t-- %d\n", code - prg + PRG_ORG);
 	}
 
 	/*printf("ラベル\n");

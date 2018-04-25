@@ -1,0 +1,5 @@
+#!/bin/sh
+
+iconv $1 -f utf8 -t sjis > temp.c
+gcc -E -P temp.c | ./asm
+rm temp.c
