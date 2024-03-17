@@ -9,10 +9,10 @@ SET_PREFERENCE verilogsim false
 SET_PREFERENCE vhdlsim true
 SET_PREFERENCE simulationfiles Behavioral
 SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
-SET_PREFERENCE outputdirectory /home/hato/mycom/ipcore_dir/
-SET_PREFERENCE workingdirectory /home/hato/mycom/ipcore_dir/tmp/
-SET_PREFERENCE subworkingdirectory /home/hato/mycom/ipcore_dir/tmp/_cg/
-SET_PREFERENCE transientdirectory /home/hato/mycom/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE outputdirectory /home/mugyuu/mycom/ipcore_dir/
+SET_PREFERENCE workingdirectory /home/mugyuu/mycom/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory /home/mugyuu/mycom/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory /home/mugyuu/mycom/ipcore_dir/tmp/_cg/_dbg/
 SET_PREFERENCE designentry VHDL
 SET_PREFERENCE flowvendor Other
 SET_PREFERENCE addpads false
@@ -23,7 +23,7 @@ SET_PREFERENCE implementationfiletype Ngc
 SET_PREFERENCE foundationsym false
 SET_PREFERENCE createndf false
 SET_PREFERENCE removerpms false
-SET_PARAMETER Component_Name ins_1k
+SET_PARAMETER Component_Name stack
 SET_PARAMETER Interface_Type Native
 SET_PARAMETER AXI_Type AXI4_Full
 SET_PARAMETER AXI_Slave_Type Memory_Slave
