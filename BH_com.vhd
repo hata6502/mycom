@@ -49,12 +49,9 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT ADDR_STACK : cpu_int := 64512;
 	CONSTANT SIZE_STACK : cpu_int := 1024;
 
-	CONSTANT ADDR_RAND : cpu_int := 3;
 	CONSTANT ADDR_A : cpu_int := 4;
 	CONSTANT ADDR_B : cpu_int := 5;
 	CONSTANT ADDR_C : cpu_int := 6;
-
-	CONSTANT ADDR_CNT_1 : cpu_int := 7;
 
 	CONSTANT ADDR_I2C_ADDR : cpu_int := 8;
 	CONSTANT ADDR_I2C_RDATA : cpu_int := 9;
@@ -102,270 +99,11 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT IS_GT : cpu_int := 14; -- >
 	CONSTANT IS_GTE : cpu_int := 15; --	>=
 
-	-- Virtual instruction
-	--constant IS_NOP: cpu_int := IS_ADD;
-	-- BOOT
-	TYPE prom IS ARRAY (0 TO SIZE_BOOT - 1) OF cpu_int;
-	SIGNAL boot : prom := (
-		is_word(IS_ADD, 511), -- 256
-		is_word(IS_ADD, 510), -- 257
-		is_word(IS_ADD, 509), -- 258
-		is_word(IS_ADD, 508), -- 259
-		is_word(IS_ADD, 507), -- 260
-		is_word(IS_ADD, 506), -- 261
-		is_word(IS_ADD, 505), -- 262
-		is_word(IS_ADD, 504), -- 263
-		is_word(IS_ADD, 503), -- 264
-		is_word(IS_ADD, 502), -- 265
-		is_word(IS_ADD, 501), -- 266
-		is_word(IS_ADD, 500), -- 267
-		is_word(IS_ADD, 499), -- 268
-		is_word(IS_ADD, 498), -- 269
-		is_word(IS_ADD, 497), -- 270
-		is_word(IS_ADD, 496), -- 271
-		is_word(IS_ADD, 495), -- 272
-		is_word(IS_ADD, 494), -- 273
-		is_word(IS_ADD, 493), -- 274
-		is_word(IS_ADD, 492), -- 275
-		is_word(IS_ADD, 491), -- 276
-		is_word(IS_ADD, 490), -- 277
-		is_word(IS_ADD, 489), -- 278
-		is_word(IS_ADD, 488), -- 279
-		is_word(IS_ADD, 487), -- 280
-		is_word(IS_ADD, 486), -- 281
-		is_word(IS_ADD, 485), -- 282
-		is_word(IS_ADD, 484), -- 283
-		is_word(IS_ADD, 483), -- 284
-		is_word(IS_ADD, 482), -- 285
-		is_word(IS_ADD, 481), -- 286
-		is_word(IS_ADD, 480), -- 287
-		is_word(IS_READ, 479), -- 288
-		is_word(IS_WRITE, 478), -- 289
-		is_word(IS_READ, 477), -- 290
-		is_word(IS_WRITE, 476), -- 291
-		is_word(IS_READ, 11), -- 292
-		is_word(IS_AND, 475), -- 293
-		is_word(IS_BRANCH, 474), -- 294
-		is_word(IS_READ, 473), -- 295
-		is_word(IS_WRITE, 472), -- 296
-		is_word(IS_READ, 471), -- 297
-		is_word(IS_WRITE, 470), -- 298
-		is_word(IS_READ, 11), -- 299
-		is_word(IS_AND, 469), -- 300
-		is_word(IS_EQ, 468), -- 301
-		is_word(IS_BRANCH, 467), -- 302
-		is_word(IS_READ, 11), -- 303
-		is_word(IS_AND, 466), -- 304
-		is_word(IS_BRANCH, 465), -- 305
-		is_word(IS_READ, 464), -- 306
-		is_word(IS_WRITE, 463), -- 307
-		is_word(IS_READ, 462), -- 308
-		is_word(IS_WRITE, 461), -- 309
-		is_word(IS_READ, 11), -- 310
-		is_word(IS_AND, 460), -- 311
-		is_word(IS_EQ, 459), -- 312
-		is_word(IS_BRANCH, 458), -- 313
-		is_word(IS_READ, 457), -- 314
-		is_word(IS_WRITE, 456), -- 315
-		is_word(IS_READ, 11), -- 316
-		is_word(IS_AND, 455), -- 317
-		is_word(IS_BRANCH, 454), -- 318
-		is_word(IS_READ, 453), -- 319
-		is_word(IS_WRITE, 452), -- 320
-		is_word(IS_READ, 451), -- 321
-		is_word(IS_WRITE, 450), -- 322
-		is_word(IS_READ, 255), -- 323
-		is_word(IS_EQ, 449), -- 324
-		is_word(IS_BRANCH, 448), -- 325
-		is_word(IS_READ, 447), -- 326
-		is_word(IS_WRITE, 446), -- 327
-		is_word(IS_READ, 11), -- 328
-		is_word(IS_AND, 445), -- 329
-		is_word(IS_EQ, 444), -- 330
-		is_word(IS_BRANCH, 443), -- 331
-		is_word(IS_READ, 11), -- 332
-		is_word(IS_AND, 442), -- 333
-		is_word(IS_BRANCH, 441), -- 334
-		is_word(IS_READ, 254), -- 335
-		is_word(IS_NEQ, 440), -- 336
-		is_word(IS_BRANCH, 439), -- 337
-		is_word(IS_READ, 9), -- 338
-		is_word(IS_WRITE, 438), -- 339
-		is_word(IS_READ, 437), -- 340
-		is_word(IS_WRITE, 436), -- 341
-		is_word(IS_READ, 435), -- 342
-		is_word(IS_WRITE, 434), -- 343
-		is_word(IS_READ, 254), -- 344
-		is_word(IS_NEQ, 433), -- 345
-		is_word(IS_BRANCH, 432), -- 346
-		is_word(IS_READ, 9), -- 347
-		is_word(IS_MUL, 431), -- 348
-		is_word(IS_ADD, 253), -- 349
-		is_word(IS_WRITE, 430), -- 350
-		is_word(IS_READ, 429), -- 351
-		is_word(IS_WRITE, 428), -- 352
-		is_word(IS_READ, 427), -- 353
-		is_word(IS_WRITE, 426), -- 354
-		is_word(IS_READ, 254), -- 355
-		is_word(IS_NEQ, 425), -- 356
-		is_word(IS_BRANCH, 424), -- 357
-		is_word(IS_READ, 9), -- 358
-		is_word(IS_MUL, 423), -- 359
-		is_word(IS_ADD, 253), -- 360
-		is_word(IS_WRITE, 422), -- 361
-		is_word(IS_READ, 253), -- 362
-		is_word(IS_WRITE, 255), -- 363
-		is_word(IS_READ, 255), -- 364
-		is_word(IS_ADD, 421), -- 365
-		is_word(IS_WRITE, 420), -- 366
-		is_word(IS_READ, 419), -- 367
-		is_word(IS_WRITE, 418), -- 368
-		is_word(IS_READ, 417), -- 369
-		is_word(IS_WRITE, 416), -- 370
-		is_word(IS_READ, 415), -- 371
-		is_word(IS_WRITE, 414), -- 372
-		is_word(IS_READ, 413), -- 373
-		is_word(IS_WRITE, 412), -- 374
-		0, -- 375
-		0, -- 376
-		0, -- 377
-		0, -- 378
-		0, -- 379
-		0, -- 380
-		0, -- 381
-		0, -- 382
-		0, -- 383
-		0, -- 384
-		0, -- 385
-		0, -- 386
-		0, -- 387
-		0, -- 388
-		0, -- 389
-		0, -- 390
-		0, -- 391
-		0, -- 392
-		0, -- 393
-		0, -- 394
-		0, -- 395
-		0, -- 396
-		0, -- 397
-		0, -- 398
-		0, -- 399
-		0, -- 400
-		0, -- 401
-		0, -- 402
-		0, -- 403
-		0, -- 404
-		0, -- 405
-		0, -- 406
-		0, -- 407
-		0, -- 408
-		0, -- 409
-		0, -- 410
-		0, -- 411
-		0, -- 412
-		2048, -- 413
-		0, -- 414
-		323, -- 415
-		0, -- 416
-		371, -- 417
-		254, -- 418
-		0, -- 419
-		255, -- 420
-		1, -- 421
-		253, -- 422
-		65536, -- 423
-		371, -- 424
-		2, -- 425
-		0, -- 426
-		371, -- 427
-		254, -- 428
-		2, -- 429
-		253, -- 430
-		256, -- 431
-		355, -- 432
-		1, -- 433
-		0, -- 434
-		371, -- 435
-		254, -- 436
-		1, -- 437
-		253, -- 438
-		344, -- 439
-		0, -- 440
-		332, -- 441
-		4, -- 442
-		328, -- 443
-		0, -- 444
-		4, -- 445
-		11, -- 446
-		3, -- 447
-		373, -- 448
-		3072, -- 449
-		255, -- 450
-		2048, -- 451
-		254, -- 452
-		0, -- 453
-		316, -- 454
-		4, -- 455
-		11, -- 456
-		0, -- 457
-		310, -- 458
-		0, -- 459
-		4, -- 460
-		11, -- 461
-		1, -- 462
-		10, -- 463
-		0, -- 464
-		303, -- 465
-		4, -- 466
-		299, -- 467
-		0, -- 468
-		4, -- 469
-		11, -- 470
-		1, -- 471
-		10, -- 472
-		0, -- 473
-		292, -- 474
-		4, -- 475
-		8, -- 476
-		80, -- 477
-		0, -- 478
-		290, -- 479
-		0, -- 480
-		0, -- 481
-		0, -- 482
-		0, -- 483
-		0, -- 484
-		0, -- 485
-		0, -- 486
-		0, -- 487
-		0, -- 488
-		0, -- 489
-		0, -- 490
-		0, -- 491
-		0, -- 492
-		0, -- 493
-		0, -- 494
-		0, -- 495
-		0, -- 496
-		0, -- 497
-		0, -- 498
-		0, -- 499
-		0, -- 500
-		0, -- 501
-		0, -- 502
-		0, -- 503
-		0, -- 504
-		0, -- 505
-		0, -- 506
-		0, -- 507
-		0, -- 508
-		0, -- 509
-		0, -- 510
-		0 -- 511
+	TYPE boot IS ARRAY (0 TO SIZE_BOOT - 1) OF cpu_int;
+	SIGNAL boot_program : boot := (
+		131583, 131582, 131581, 131580, 131579, 131578, 131577, 131576, 131575, 131574, 131573, 131572, 131571, 131570, 131569, 131568, 131567, 131566, 131565, 131564, 131563, 131562, 131561, 131560, 131559, 131558, 131557, 131556, 131555, 131554, 131553, 131552, 479, 66014, 477, 66012, 475, 66010, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 290, 1240, 66, 0, 290, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	);
 
-	-- Stack
 	COMPONENT stack
 		PORT (
 			clka : IN STD_LOGIC;
@@ -381,7 +119,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 	SIGNAL stack1_dina : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	SIGNAL stack1_douta : STD_LOGIC_VECTOR(19 DOWNTO 0);
 
-	-- Divider
 	COMPONENT divider
 		PORT (
 			clk : IN STD_LOGIC;
@@ -399,7 +136,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 	SIGNAL div1_quotient : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	SIGNAL div1_fractional : STD_LOGIC_VECTOR(19 DOWNTO 0);
 
-	-- INS RAM
 	COMPONENT ins_1k
 		PORT (
 			clka : IN STD_LOGIC;
@@ -415,7 +151,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 	SIGNAL ins_1_dina : STD_LOGIC_VECTOR(19 DOWNTO 0);
 	SIGNAL ins_1_douta : STD_LOGIC_VECTOR(19 DOWNTO 0);
 
-	-- VRAM
 	COMPONENT vram
 		PORT (
 			clka : IN STD_LOGIC;
@@ -430,7 +165,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 			doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
 	END COMPONENT;
-
 	SIGNAL vram_1_clka : STD_LOGIC;
 	SIGNAL vram_1_wea : STD_LOGIC_VECTOR(0 DOWNTO 0);
 	SIGNAL vram_1_addra : STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -442,7 +176,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 	SIGNAL vram_1_dinb : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL vram_1_doutb : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-	-- CROM
 	COMPONENT crom IS
 		PORT (
 			chr : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -465,30 +198,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 
 	SIGNAL lum : STD_LOGIC;
 
-	-- Rand
-	COMPONENT XSADD_GEN
-		PORT (
-			CLK : IN STD_LOGIC;
-			RST : IN STD_LOGIC;
-			INIT : IN STD_LOGIC;
-			INIT_PARAM : IN PSEUDO_RANDOM_NUMBER_GENERATOR_TYPE;
-			RND_RUN : IN STD_LOGIC;
-			RND_VAL : OUT STD_LOGIC;
-			RND_NUM : OUT RANDOM_NUMBER_TYPE
-		);
-	END COMPONENT;
-	SIGNAL rand_clk : STD_LOGIC;
-	SIGNAL rand_rst : STD_LOGIC;
-	SIGNAL rand_init : STD_LOGIC;
-	SIGNAL rand_init_param : PSEUDO_RANDOM_NUMBER_GENERATOR_TYPE;
-	SIGNAL rand_rnd_run : STD_LOGIC;
-	SIGNAL rand_rnd_val : STD_LOGIC;
-	SIGNAL rand_rnd_num : RANDOM_NUMBER_TYPE;
-
-	-- Controller
-	SIGNAL cnt_1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-
-	-- I2C
 	COMPONENT i2c_master
 		PORT (
 			clk : IN STD_LOGIC; --system clock
@@ -503,7 +212,6 @@ ARCHITECTURE Behavioral OF BH_com IS
 			sda : INOUT STD_LOGIC; --serial data output of i2c bus
 			scl : INOUT STD_LOGIC); --serial clock output of i2c bus
 	END COMPONENT;
-
 	SIGNAL i2c_1_clk : STD_LOGIC; --system clock
 	SIGNAL i2c_1_reset_n : STD_LOGIC; --active low reset
 	SIGNAL i2c_1_ena : STD_LOGIC; --latch in command
@@ -659,7 +367,7 @@ BEGIN
 					ELSIF (cpu_waddr >= 128 AND cpu_waddr <= 255) THEN
 						cpu_greg((cpu_waddr - 128)MOD 128) <= cpu_wdata;
 					ELSIF (cpu_waddr >= ADDR_BOOT AND cpu_waddr < ADDR_BOOT + SIZE_BOOT) THEN
-						boot((cpu_waddr - ADDR_BOOT)MOD SIZE_BOOT) <= cpu_wdata;
+						boot_program((cpu_waddr - ADDR_BOOT)MOD SIZE_BOOT) <= cpu_wdata;
 					ELSIF (cpu_waddr >= 1024 AND cpu_waddr <= 2047) THEN
 						vram_1_addrb <= CONV_std_logic_vector(((cpu_waddr - 1024)/32 MOD 32) * 32 + ((cpu_waddr - 1024)MOD 32), 10);
 						vram_1_dinb <= CONV_std_logic_vector(cpu_wdata, 8);
@@ -697,10 +405,6 @@ BEGIN
 		conv_integer(B_IN) WHEN cpu_addr = ADDR_B
 		ELSE
 		conv_integer(C_IN) WHEN cpu_addr = ADDR_C
-		ELSE
-		conv_integer(CNT_1) WHEN cpu_addr = ADDR_CNT_1
-		ELSE
-		to_integer(rand_rnd_num) WHEN cpu_addr = ADDR_RAND
 
 		ELSE
 		conv_integer(i2c_1_addr) WHEN cpu_addr = ADDR_I2C_ADDR
@@ -714,7 +418,7 @@ BEGIN
 		ELSE
 		cpu_greg((cpu_addr - 128) MOD 128) WHEN cpu_addr >= 128 AND cpu_addr <= 255
 		ELSE
-		boot((cpu_addr - ADDR_BOOT) MOD SIZE_BOOT) WHEN cpu_addr >= ADDR_BOOT AND cpu_addr < (ADDR_BOOT + SIZE_BOOT)
+		boot_program((cpu_addr - ADDR_BOOT) MOD SIZE_BOOT) WHEN cpu_addr >= ADDR_BOOT AND cpu_addr < (ADDR_BOOT + SIZE_BOOT)
 		ELSE
 		conv_integer(vram_1_doutb) WHEN cpu_addr >= 1024 AND cpu_addr <= 2047
 		ELSE
@@ -750,7 +454,6 @@ BEGIN
 
 	lum <= crom_1_dot;
 
-	-- VRAM
 	vram_1 : vram
 	PORT MAP(
 		clka => vram_1_clka,
@@ -769,7 +472,6 @@ BEGIN
 	vram_1_addra <= CONV_std_logic_vector(((ppu_linecnt - 32)/8) * 40 + ((ppu_clkcnt - 512 + 1)/4/8), 10);
 	vram_1_clkb <= clk;
 
-	-- INS RAM
 	ins_1 : ins_1k
 	PORT MAP(
 		clka => ins_1_clka,
@@ -780,7 +482,6 @@ BEGIN
 	);
 	ins_1_clka <= clk;
 
-	-- CROM
 	crom_1 : crom PORT MAP(
 		chr => crom_1_chr,
 		row => crom_1_row,
@@ -791,7 +492,6 @@ BEGIN
 	crom_1_row <= conv_std_logic_vector(ppu_linecnt, 3);
 	crom_1_col <= conv_std_logic_vector(ppu_clkcnt/4, 3);
 
-	-- Stack
 	stack_1 : stack
 	PORT MAP(
 		clka => stack1_clka,
@@ -802,22 +502,6 @@ BEGIN
 	);
 	stack1_clka <= clk;
 
-	-- Rand
-	rand_1 : XSADD_GEN PORT MAP(
-		CLK => rand_clk,
-		RST => rand_rst,
-		INIT => rand_init,
-		INIT_PARAM => rand_init_param,
-		RND_RUN => rand_rnd_run,
-		RND_VAL => rand_rnd_val,
-		RND_NUM => rand_rnd_num
-	);
-	rand_clk <= clk;
-	rand_rst <= '0';
-	rand_init <= '0';
-	rand_rnd_run <= '1';
-
-	-- Divider
 	div_1 : divider
 	PORT MAP(
 		clk => div1_clk,
@@ -828,14 +512,6 @@ BEGIN
 		fractional => div1_fractional);
 	div1_clk <= clk;
 
-	-- Controller IO
-	PROCESS (clkcnt(2)) BEGIN
-		IF (falling_edge(clkcnt(2))) THEN
-			cnt_1(conv_integer(clkcnt(5 DOWNTO 3))) <= C(2);
-		END IF;
-	END PROCESS;
-
-	-- I2C
 	i2c_1 : i2c_master
 	PORT MAP(
 		clk => i2c_1_clk, --system clock
@@ -856,24 +532,25 @@ BEGIN
 	i2c_1_stat(2) <= i2c_1_busy;
 	i2c_1_stat(3) <= i2c_1_ack_error;
 
-	-- Pin Outputs
-	A(0) <= '0' WHEN (stat_vsync = '0' AND stat_hsync = '1') OR (stat_vsync = '1' AND ppu_clkcnt >= 150) ELSE
-	'1';
-	A(1) <= lum WHEN stat_vsync = '0' AND stat_hsync = '0' AND ppu_clkcnt > 511 AND ppu_clkcnt < (1536 + 8 * 8 * 4) AND ppu_linecnt >= 32 AND ppu_linecnt < 232 ELSE
-	'0';
-	A(15 DOWNTO 2) <= "00000000000000";
-	B <= "0000000000000000";
-	C(0) <= clkcnt(2);
-	C(1) <= '1' WHEN clkcnt(5 DOWNTO 3) = "000" ELSE
-	'0';
-	C(2) <= 'Z'; -- input
-	c(14) <= i2c_1_scl;
-	c(15) <= i2c_1_sda;
-	C(13 DOWNTO 3) <= "00000000000";
-
-	-- Pin Inputs
+	-- ピン
 	A_IN <= A;
 	B_IN <= B;
 	C_IN <= C;
+
+	-- NTSC同期信号
+	A(0) <= '0' WHEN (stat_vsync = '0' AND stat_hsync = '1') OR (stat_vsync = '1' AND ppu_clkcnt >= 150) ELSE
+	'1';
+	-- NTSC輝度信号
+	A(1) <= lum WHEN stat_vsync = '0' AND stat_hsync = '0' AND ppu_clkcnt > 511 AND ppu_clkcnt < (1536 + 8 * 8 * 4) AND ppu_linecnt >= 32 AND ppu_linecnt < 232 ELSE
+	'0';
+	A(15 DOWNTO 2) <= "00000000000000";
+
+	B <= "0000000000000000";
+
+	C(1 DOWNTO 0) <= "00";
+	C(2) <= 'Z';
+	C(13 DOWNTO 3) <= "00000000000";
+	c(14) <= i2c_1_scl;
+	c(15) <= i2c_1_sda;
 
 END Behavioral;

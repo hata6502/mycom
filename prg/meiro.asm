@@ -31,9 +31,9 @@
  add *3;
  add *3;
  read main; write 0;
-title_str: "BlueHood Computer  Ò²Û ¾²¾² ÌßÛ¸Ş×Ñ";
-title_str2: "ÎŞÀİ¦ µ¾! ";
-wall_str: "Û";
+title_str: "BlueHood Computer  ï¾’ï½²ï¾› ï½¾ï½²ï½¾ï½² ï¾Œï¾Ÿï¾›ï½¸ï¾ï¾—ï¾‘";
+title_str2: "ï¾ï¾ï¾€ï¾ï½¦ ï½µï½¾! ";
+wall_str: "ï¾›";
 main:
  read return_1; write *2; read 1024; write *2; read title_str; write *2; read print; write 0; return_1:;
  read return_0; write *2; read 1104; write *2; read title_str2; write *2; read print; write 0; return_0:;

@@ -4,20 +4,15 @@
 %}
 
 white       [ \t\n]
-comment	\/\/.*\n
-comment2	\/\*.\*\/
-identifier      [a-zA-Z_][0-9a-zA-Z_]*
-integer	[0-9]+
-string \".*\"
+identifier  [a-zA-Z_][0-9a-zA-Z_]*
+integer	    [0-9]+
+string      \".*\"
 other       .
 
 %option yylineno
 %%
 {white}	{}
-{comment}	{}
-{comment2}	{}
 
-nop	{return(is_nop); }
 read	{return(is_read); }
 write	{return(is_write); }
 add	{return(is_add); }

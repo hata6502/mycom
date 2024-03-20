@@ -10,8 +10,7 @@ asm: asm.y asm.l
 	flex asm.l
 	cc -o asm lex.yy.c asm.tab.c -lfl -ly -lm -DYYERROR_VERBOSE
 
-input: input.asm
-	iconv input.asm -f utf8 -t sjis > input.c
-	gcc -E -P input.c > input_pre.asm
-	rm input.c
-	./asm < input_pre.asm
+input: init.m4 input.m4
+	m4 input.m4 > input.asm
+	iconv input.asm -f utf8 -t sjis > input_sjis.asm
+	./asm < input_sjis.asm

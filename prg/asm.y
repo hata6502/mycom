@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <string.h>
 
-#define PRG_ORG 2048
-#define PRG_SIZE 1024
+#define PRG_ORG 256
+#define PRG_SIZE 256
 
 extern int yylineno;
 
@@ -35,7 +35,7 @@ int is_ref = 0;
 	unsigned char sval[256];
 }
 
-%token semicolon is_nop is_read is_write is_add is_sub is_mul is_div is_branch is_eq is_neq is_lt is_lte is_gt is_gte sharp ast is_and is_or is_xor colon amp
+%token semicolon is_read is_write is_add is_sub is_mul is_div is_branch is_eq is_neq is_lt is_lte is_gt is_gte sharp ast is_and is_or is_xor colon amp
 %token <sval> identifier string
 %token <ival> integer
 
@@ -98,18 +98,24 @@ val	: integer	{$$ = $1; }
 
 int main(void)
 {
-    yyparse();
+  yyparse();
 
 	for(int *code = prg; code != &prg[PRG_SIZE]; code++){
-		//printf("%08x", *code);
+		// リスト出力
 		/*if (code < addr){
 			printf("is_word(%s, %d)", instruction[(*code)>>16], (*code)&((1<<16) - 1));
 		}else{
 			printf("%d", *code);
-		}*/
-		fwrite(code, sizeof(int), 1, stdout);
-		//if (code != &prg[PRG_SIZE - 1]) printf(", ");
-		//printf("\t-- %d\n", code - prg + PRG_ORG);
+		}
+		if (code != &prg[PRG_SIZE - 1]) printf(", ");
+		printf("\t-- %d\n", code - prg + PRG_ORG);*/
+
+		// テキスト出力
+		printf("%d", *code);
+		if (code != &prg[PRG_SIZE - 1]) printf(", ");
+
+		// バイナリ出力
+		//fwrite(code, sizeof(int), 1, stdout);
 	}
 
 	/*printf("ラベル\n");
