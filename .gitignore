@@ -65,3 +65,8 @@ xlnx_auto_0_xdb/
 xst/
 _ngo/
 _xmsgs/
+
+/prg/asm
+/prg/asm.tab.c
+/prg/asm.tab.h
+/prg/lex.yy.c
