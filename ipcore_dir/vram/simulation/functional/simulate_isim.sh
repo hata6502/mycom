@@ -1,15 +1,4 @@
- 
- 
- 
-
-
-
-
-#--------------------------------------------------------------------------------
-#--
-#-- BMG Generator v8.4 Core Demo Testbench 
-#--
-#--------------------------------------------------------------------------------
+#!/bin/sh
 # (c) Copyright 2009 - 2010 Xilinx, Inc. All rights reserved.
 # 
 # This file contains confidential and proprietary information
@@ -55,33 +44,26 @@
 # 
 # THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 # PART OF THIS FILE AT ALL TIMES.
-# Filename: vcs_session.tcl
-#
-# Description:
-#   This is the VCS wave form file.
-#
 #--------------------------------------------------------------------------------
 
-if { ![gui_is_db_opened -db {bmg_vcs.vpd}] } {
-	gui_open_db -design V1 -file bmg_vcs.vpd -nosource
-}
-gui_set_precision 1ps
-gui_set_time_units 1ps
 
-gui_open_window Wave
-gui_sg_create vram_Group
-gui_list_add_group -id Wave.1 {vram_Group}
 
-      gui_sg_addsignal -group vram_Group  /vram_tb/status
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/CLKA
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/ADDRA
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/DINA
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/WEA
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/DOUTA
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/CLKB
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/ADDRB
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/DINB
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/WEB
-      gui_sg_addsignal -group vram_Group  /vram_tb/vram_synth_inst/bmg_port/DOUTB
+echo "Compiling Core VHDL UNISIM/Behavioral model"
+vhpcomp  -work work ../../../vram.vhd 
+vhpcomp  -work work ../../example_design/vram_exdes.vhd
 
-gui_zoom -window Wave.1 -full
+echo "Compiling Test Bench Files"
+
+vhpcomp -work work    ../bmg_tb_pkg.vhd
+vhpcomp -work work    ../random.vhd
+vhpcomp -work work    ../data_gen.vhd
+vhpcomp -work work    ../addr_gen.vhd
+vhpcomp -work work    ../checker.vhd
+vhpcomp -work work    ../bmg_stim_gen.vhd
+vhpcomp -work work    ../vram_synth.vhd 
+vhpcomp -work work    ../vram_tb.vhd
+
+fuse work.vram_tb -L unisims -L xilinxcorelib -o vram_tb.exe
+
+
+./vram_tb.exe -gui -tclbatch simcmds.tcl
