@@ -1,4 +1,4 @@
-all: c asm input
+all: asm input
 
 c: c.y c.l
 	bison -d c.y
@@ -13,4 +13,4 @@ asm: asm.y asm.l
 input: init.m4 input.m4
 	m4 input.m4 > input.asm
 	iconv input.asm -f utf8 -t sjis > input_sjis.asm
-	./asm < input_sjis.asm
+	./asm < input_sjis.asm > boot.txt

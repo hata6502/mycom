@@ -37,17 +37,22 @@ ARCHITECTURE Behavioral OF BH_com IS
 		RETURN (inst * CPU_INST_OFFSET + operand);
 	END FUNCTION;
 
-	SIGNAL clkcnt : STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
+	SIGNAL clkcnt : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
 	SIGNAL A_IN : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL B_IN : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL C_IN : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 	-- Memory map
-	CONSTANT ADDR_BOOT : cpu_int := 256;
-	CONSTANT SIZE_BOOT : cpu_int := 256;
+	CONSTANT ADDR_PROGRAM : cpu_int := 256;
+	CONSTANT SIZE_PROGRAM : cpu_int := 256;
 
 	CONSTANT ADDR_STACK : cpu_int := 64512;
 	CONSTANT SIZE_STACK : cpu_int := 1024;
+
+	CONSTANT ADDR_PC : cpu_int := 0;
+	CONSTANT ADDR_WREG : cpu_int := 1;
+	CONSTANT ADDR_SP : cpu_int := 2;
+	CONSTANT ADDR_FRACTIONAL : cpu_int := 3;
 
 	CONSTANT ADDR_A : cpu_int := 4;
 	CONSTANT ADDR_B : cpu_int := 5;
@@ -62,10 +67,10 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT SIZE_INS_1 : cpu_int := 1024;
 
 	-- CPU
-	SIGNAL cpu_pc : cpu_int := ADDR_BOOT;
+	SIGNAL cpu_pc : cpu_int := ADDR_PROGRAM;
 	SIGNAL cpu_stat : cpu_int := 0;
 	SIGNAL cpu_inst : cpu_int;
-	SIGNAL cpu_sp : cpu_int := 2 ** CPU_BIT_WIDTH - 1;
+	SIGNAL cpu_sp : cpu_int := ADDR_STACK + SIZE_STACK;
 
 	SIGNAL cpu_addr : cpu_int;
 	SIGNAL cpu_raddr : cpu_int;
@@ -75,7 +80,7 @@ ARCHITECTURE Behavioral OF BH_com IS
 	SIGNAL cpu_wdata : cpu_int;
 	SIGNAL cpu_opdata : cpu_int;
 
-	SIGNAL cpu_work : cpu_int;
+	SIGNAL cpu_wreg : cpu_int;
 	TYPE greg IS ARRAY (0 TO 127) OF cpu_int;
 	SIGNAL cpu_greg : greg;
 
@@ -99,9 +104,9 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT IS_GT : cpu_int := 14; -- >
 	CONSTANT IS_GTE : cpu_int := 15; --	>=
 
-	TYPE boot IS ARRAY (0 TO SIZE_BOOT - 1) OF cpu_int;
-	SIGNAL boot_program : boot := (
-		131583, 131582, 131581, 131580, 131579, 131578, 131577, 131576, 131575, 131574, 131573, 131572, 131571, 131570, 131569, 131568, 131567, 131566, 131565, 131564, 131563, 131562, 131561, 131560, 131559, 131558, 131557, 131556, 131555, 131554, 131553, 131552, 479, 66014, 477, 66012, 475, 66010, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 290, 1240, 66, 0, 290, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	TYPE program_memory IS ARRAY (0 TO SIZE_PROGRAM - 1) OF cpu_int;
+	SIGNAL program : program_memory := (
+		131583, 131582, 131581, 131580, 131579, 131578, 131577, 131576, 131575, 131574, 131573, 131572, 131571, 131570, 131569, 131568, 131567, 131566, 131565, 131564, 131563, 131562, 131561, 131560, 131559, 131558, 131557, 131556, 131555, 131554, 131553, 131552, 479, 66014, 109, 117, 103, 121, 117, 117, 0, 130, 131549, 66012, 66011, 129, 328154, 328153, 3, 131544, 66007, 129, 328150, 328149, 3, 131540, 66003, 129, 328146, 328145, 3, 131536, 65999, 129, 328142, 328141, 3, 131532, 65995, 458, 65538, 457, 65538, 456, 65538, 455, 65990, 453, 65988, 65538, 65538, 2, 131523, 65986, 0, 65985, 2, 131520, 65983, 0, 65665, 2, 131518, 65981, 2, 131516, 65979, 0, 65978, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 353, 1048575, 2, 5, 345, 2, 129, 340, 3, 0, 297, 0, 335, 290, 1244, 333, 1233, 48, 10, 1, 1232, 48, 10, 10, 1231, 48, 10, 100, 1230, 48, 10, 1000, 129, 130, 1, 0, 297, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	);
 
 	COMPONENT stack
@@ -234,11 +239,12 @@ BEGIN
 	END PROCESS;
 
 	-- CPU
-	PROCESS (clk)
+	-- Dividerに合わせていったん分周する
+	PROCESS (clkcnt(4))
 		VARIABLE inst : cpu_int;
 		VARIABLE operand : cpu_int;
 	BEGIN
-		IF (falling_edge(clk)) THEN
+		IF (falling_edge(clkcnt(4))) THEN
 			CASE cpu_stat IS
 				WHEN 0 => -- Read instruction
 					inst := cpu_rdata/CPU_INST_OFFSET;
@@ -259,27 +265,15 @@ BEGIN
 						ins_1_wea <= "0";
 					END IF;
 
-					IF (operand = 2) THEN
-						CASE inst IS
-							WHEN IS_WRITE =>
-								cpu_sp <= cpu_sp - 1;
-							WHEN OTHERS =>
-						END CASE;
+					IF (operand = ADDR_SP AND inst = IS_WRITE) THEN
+						cpu_sp <= cpu_sp - 1;
 					END IF;
 
 					cpu_stat <= 1;
 				WHEN 1 => -- Read Memory
 					cpu_opdata <= cpu_rdata;
-					div1_dividend <= conv_std_logic_vector(cpu_work, 16);
-					div1_divisor <= conv_std_logic_vector(cpu_rdata, 16);
-
-					IF (cpu_raddr = 2) THEN
-						CASE cpu_inst IS
-							WHEN IS_WRITE =>
-							WHEN OTHERS =>
-								cpu_sp <= cpu_sp + 1;
-						END CASE;
-					END IF;
+					div1_dividend <= conv_std_logic_vector(cpu_wreg, CPU_BIT_WIDTH);
+					div1_divisor <= conv_std_logic_vector(cpu_rdata, CPU_BIT_WIDTH);
 
 					cpu_stat <= 2;
 				WHEN 2 => -- Operation
@@ -290,56 +284,55 @@ BEGIN
 							cpu_wdata <= cpu_opdata;
 							cpu_waddr <= 1;
 						WHEN IS_WRITE =>
-							cpu_wdata <= cpu_work;
+							cpu_wdata <= cpu_wreg;
 							cpu_waddr <= operand;
 
 						WHEN IS_ADD =>
-							cpu_wdata <= cpu_work + cpu_opdata;
+							cpu_wdata <= cpu_wreg + cpu_opdata;
 							cpu_waddr <= 1;
 						WHEN IS_SUB =>
-							cpu_wdata <= cpu_work - cpu_opdata;
+							cpu_wdata <= cpu_wreg - cpu_opdata;
 							cpu_waddr <= 1;
 						WHEN IS_MUL =>
-							cpu_wdata <= cpu_work * cpu_opdata;
+							cpu_wdata <= cpu_wreg * cpu_opdata;
 							cpu_waddr <= 1;
 						WHEN IS_DIV =>
-							--div1_fractional <= ;
 							cpu_wdata <= conv_integer(div1_quotient);
 							cpu_waddr <= 1;
 						WHEN IS_AND =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) AND conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_wreg, CPU_BIT_WIDTH) AND conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 						WHEN IS_OR =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) OR conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_wreg, CPU_BIT_WIDTH) OR conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 						WHEN IS_XOR =>
-							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_work, CPU_BIT_WIDTH) XOR conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
+							cpu_wdata <= conv_integer(conv_std_logic_vector(cpu_wreg, CPU_BIT_WIDTH) XOR conv_std_logic_vector(cpu_opdata, CPU_BIT_WIDTH));
 							cpu_waddr <= 1;
 
 						WHEN IS_BRANCH =>
-							IF (cpu_work /= 0) THEN
+							IF (cpu_wreg /= 0) THEN
 								cpu_wdata <= operand;
 							ELSE
 								cpu_wdata <= cpu_pc;
 							END IF;
 							cpu_waddr <= 0;
 						WHEN IS_EQ =>
-							cpu_wdata <= conv_integer(cpu_work = cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg = cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN IS_NEQ =>
-							cpu_wdata <= conv_integer(cpu_work /= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg /= cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN IS_LT =>
-							cpu_wdata <= conv_integer(cpu_work < cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg < cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN IS_LTE =>
-							cpu_wdata <= conv_integer(cpu_work <= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg <= cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN IS_GT =>
-							cpu_wdata <= conv_integer(cpu_work > cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg > cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN IS_GTE =>
-							cpu_wdata <= conv_integer(cpu_work >= cpu_opdata);
+							cpu_wdata <= conv_integer(cpu_wreg >= cpu_opdata);
 							cpu_waddr <= 1;
 						WHEN OTHERS =>
 					END CASE;
@@ -348,11 +341,11 @@ BEGIN
 				WHEN 3 => -- Write memory
 					--case cpu_inst is
 					--when IS_READ|IS_WRITE|IS_ADD|IS_SUB|IS_MUL|IS_DIV|IS_AND|IS_OR|IS_XOR| =>
-					IF (cpu_waddr = 0) THEN
+					IF (cpu_waddr = ADDR_PC) THEN
 						cpu_pc <= cpu_wdata;
-					ELSIF (cpu_waddr = 1) THEN
-						cpu_work <= cpu_wdata;
-					ELSIF (cpu_waddr = 2) THEN
+					ELSIF (cpu_waddr = ADDR_WREG) THEN
+						cpu_wreg <= cpu_wdata;
+					ELSIF (cpu_waddr = ADDR_SP) THEN
 						cpu_sp <= cpu_wdata;
 
 					ELSIF (cpu_waddr = ADDR_I2C_ADDR) THEN
@@ -366,8 +359,8 @@ BEGIN
 
 					ELSIF (cpu_waddr >= 128 AND cpu_waddr <= 255) THEN
 						cpu_greg((cpu_waddr - 128)MOD 128) <= cpu_wdata;
-					ELSIF (cpu_waddr >= ADDR_BOOT AND cpu_waddr < ADDR_BOOT + SIZE_BOOT) THEN
-						boot_program((cpu_waddr - ADDR_BOOT)MOD SIZE_BOOT) <= cpu_wdata;
+					ELSIF (cpu_waddr >= ADDR_PROGRAM AND cpu_waddr < ADDR_PROGRAM + SIZE_PROGRAM) THEN
+						program((cpu_waddr - ADDR_PROGRAM) MOD SIZE_PROGRAM) <= cpu_wdata;
 					ELSIF (cpu_waddr >= 1024 AND cpu_waddr <= 2047) THEN
 						vram_1_addrb <= CONV_std_logic_vector(((cpu_waddr - 1024)/32 MOD 32) * 32 + ((cpu_waddr - 1024)MOD 32), 10);
 						vram_1_dinb <= CONV_std_logic_vector(cpu_wdata, 8);
@@ -390,15 +383,16 @@ BEGIN
 		END IF;
 	END PROCESS;
 
-	cpu_addr <= cpu_pc WHEN cpu_stat = 0
-		ELSE
-		cpu_raddr WHEN cpu_stat = 1;
+	cpu_addr <= cpu_pc WHEN cpu_stat = 0 ELSE
+		cpu_raddr;
 
-	cpu_rdata <= cpu_pc WHEN cpu_addr = 0
+	cpu_rdata <=
+		cpu_wreg WHEN cpu_addr = ADDR_WREG
 		ELSE
-		cpu_work WHEN cpu_addr = 1
+		cpu_sp WHEN cpu_addr = ADDR_SP
 		ELSE
-		cpu_sp WHEN cpu_addr = 2
+		conv_integer(div1_fractional) WHEN cpu_addr = ADDR_FRACTIONAL
+
 		ELSE
 		conv_integer(A_IN) WHEN cpu_addr = ADDR_A
 		ELSE
@@ -418,13 +412,15 @@ BEGIN
 		ELSE
 		cpu_greg((cpu_addr - 128) MOD 128) WHEN cpu_addr >= 128 AND cpu_addr <= 255
 		ELSE
-		boot_program((cpu_addr - ADDR_BOOT) MOD SIZE_BOOT) WHEN cpu_addr >= ADDR_BOOT AND cpu_addr < (ADDR_BOOT + SIZE_BOOT)
+		program((cpu_addr - ADDR_PROGRAM) MOD SIZE_PROGRAM) WHEN cpu_addr >= ADDR_PROGRAM AND cpu_addr < (ADDR_PROGRAM + SIZE_PROGRAM)
 		ELSE
 		conv_integer(vram_1_doutb) WHEN cpu_addr >= 1024 AND cpu_addr <= 2047
 		ELSE
 		conv_integer(stack1_douta) WHEN cpu_addr >= ADDR_STACK AND cpu_addr < (ADDR_STACK + SIZE_STACK)
 		ELSE
 		conv_integer(ins_1_douta) WHEN cpu_addr >= ADDR_INS_1 AND cpu_addr < (ADDR_INS_1 + SIZE_INS_1)
+		ELSE
+		cpu_pc
 		;
 
 	-- PPU

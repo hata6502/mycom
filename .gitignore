@@ -66,7 +66,11 @@ xst/
 _ngo/
 _xmsgs/
 
+/ipcore_dir/tmp
 /program/asm
 /program/asm.tab.c
 /program/asm.tab.h
+/program/boot.txt
+/program/input.asm
+/program/input_sjis.asm
 /program/lex.yy.c
