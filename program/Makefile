@@ -1,4 +1,4 @@
-all: asm input
+all: asm main
 
 c: c.y c.l
 	bison -d c.y
@@ -10,7 +10,7 @@ asm: asm.y asm.l
 	flex asm.l
 	cc -o asm lex.yy.c asm.tab.c -lfl -ly -lm -DYYERROR_VERBOSE
 
-input: init.m4 input.m4
-	m4 input.m4 > input.asm
-	iconv input.asm -f utf8 -t sjis > input_sjis.asm
-	./asm < input_sjis.asm > boot.txt
+main: init.m4 main.m4
+	m4 main.m4 > main.asm
+	iconv main.asm -f utf8 -t sjis > main_sjis.asm
+	./asm < main_sjis.asm > boot.txt

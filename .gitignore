@@ -71,6 +71,6 @@ _xmsgs/
 /program/asm.tab.c
 /program/asm.tab.h
 /program/boot.txt
-/program/input.asm
-/program/input_sjis.asm
+/program/main.asm
+/program/main_sjis.asm
 /program/lex.yy.c

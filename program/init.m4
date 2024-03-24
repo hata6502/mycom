@@ -5,9 +5,11 @@ dnl メモリマップ
   define(`pc', 0)
   define(`wreg', 1)
   define(`sp', 2)
-  define(`fractional', 3)
+  define(`autosp', 3)
+  define(`fractional', 4)
 
-  define(`fp', 128)
+  define(`inwrite_data', 128)
+  define(`inwrite_addr', 129)
 
 dnl 拡張命令
   define(`goto', `read $1; write pc')
@@ -25,13 +27,23 @@ dnl 拡張命令
   ')
   dnl スタックからの相対読み込み
   define(`sread', `read *sp; add $1; inread')
+  dnl 間接書き込み
+  define(`inwrite', `
+    write inwrite_data;
+    $1
+    write inwrite_addr;
+    read *inwrite_data;
+    write *inwrite_addr
+  ')
+  dnl スタックからの相対書き込み
+  define(`swrite', `inwrite(read *sp; add $1; )')
 
   define(`return_label_count', 0)
   define(`push_arguments', `
     ifelse(
       $#, 0, ,
-      $#, 1, `read $1; write *sp',
-      `push_arguments(shift($@)); read $1; write *sp'
+      $#, 1, `read $1; write *autosp',
+      `push_arguments(shift($@)); read $1; write *autosp'
     )
   ')
   define(`call', `
@@ -43,7 +55,7 @@ dnl 拡張命令
   ')
 
   define(`define_locals', `
-    write *sp;
+    write *autosp;
 
     ifelse(
       $#, 0, ,

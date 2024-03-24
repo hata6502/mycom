@@ -52,7 +52,8 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT ADDR_PC : cpu_int := 0;
 	CONSTANT ADDR_WREG : cpu_int := 1;
 	CONSTANT ADDR_SP : cpu_int := 2;
-	CONSTANT ADDR_FRACTIONAL : cpu_int := 3;
+	CONSTANT ADDR_AUTOSP : cpu_int := 3;
+	CONSTANT ADDR_FRACTIONAL : cpu_int := 4;
 
 	CONSTANT ADDR_A : cpu_int := 4;
 	CONSTANT ADDR_B : cpu_int := 5;
@@ -102,11 +103,11 @@ ARCHITECTURE Behavioral OF BH_com IS
 	CONSTANT IS_LT : cpu_int := 12; -- <
 	CONSTANT IS_LTE : cpu_int := 13; -- <=
 	CONSTANT IS_GT : cpu_int := 14; -- >
-	CONSTANT IS_GTE : cpu_int := 15; --	>=
+	CONSTANT IS_GTE : cpu_int := 15; --  >=
 
 	TYPE program_memory IS ARRAY (0 TO SIZE_PROGRAM - 1) OF cpu_int;
 	SIGNAL program : program_memory := (
-		131583, 131582, 131581, 131580, 131579, 131578, 131577, 131576, 131575, 131574, 131573, 131572, 131571, 131570, 131569, 131568, 131567, 131566, 131565, 131564, 131563, 131562, 131561, 131560, 131559, 131558, 131557, 131556, 131555, 131554, 131553, 131552, 479, 66014, 109, 117, 103, 121, 117, 117, 0, 130, 131549, 66012, 66011, 129, 328154, 328153, 3, 131544, 66007, 129, 328150, 328149, 3, 131540, 66003, 129, 328146, 328145, 3, 131536, 65999, 129, 328142, 328141, 3, 131532, 65995, 458, 65538, 457, 65538, 456, 65538, 455, 65990, 453, 65988, 65538, 65538, 2, 131523, 65986, 0, 65985, 2, 131520, 65983, 0, 65665, 2, 131518, 65981, 2, 131516, 65979, 0, 65978, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 353, 1048575, 2, 5, 345, 2, 129, 340, 3, 0, 297, 0, 335, 290, 1244, 333, 1233, 48, 10, 1, 1232, 48, 10, 10, 1231, 48, 10, 100, 1230, 48, 10, 1000, 129, 130, 1, 0, 297, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+		131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 131583, 510, 66047, 109, 117, 103, 121, 117, 117, 0, 509, 65539, 508, 65539, 507, 65539, 506, 66047, 510, 66047, 65539, 65539, 2, 131577, 66040, 0, 66039, 2, 131583, 66038, 128, 65665, 2, 131573, 66036, 0, 66039, 2, 131571, 66038, 128, 65665, 2, 131571, 66034, 0, 66033, 0, 65539, 655871, 590320, 3, 66031, 0, 66039, 2, 131583, 66030, 0, 66038, 128, 65665, 2, 131571, 66029, 0, 131571, 66039, 2, 131571, 66038, 128, 65665, 2, 131583, 66028, 0, 131571, 66039, 2, 131583, 66038, 128, 65665, 491, 66047, 3, 2, 131562, 66041, 2, 131561, 66024, 0, 66047, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 380, 1048575, 5, 329, 363, 352, 345, 340, 373, 334, 332, 1, 322, 3, 129, 128, 312, 2, 307, 1244, 290, 305, 297, 0
 	);
 
 	COMPONENT stack
@@ -265,7 +266,7 @@ BEGIN
 						ins_1_wea <= "0";
 					END IF;
 
-					IF (operand = ADDR_SP AND inst = IS_WRITE) THEN
+					IF (operand = ADDR_AUTOSP AND inst = IS_WRITE) THEN
 						cpu_sp <= cpu_sp - 1;
 					END IF;
 
@@ -274,6 +275,10 @@ BEGIN
 					cpu_opdata <= cpu_rdata;
 					div1_dividend <= conv_std_logic_vector(cpu_wreg, CPU_BIT_WIDTH);
 					div1_divisor <= conv_std_logic_vector(cpu_rdata, CPU_BIT_WIDTH);
+
+					IF (cpu_raddr = ADDR_AUTOSP AND cpu_inst = IS_READ) THEN
+						cpu_sp <= cpu_sp + 1;
+					END IF;
 
 					cpu_stat <= 2;
 				WHEN 2 => -- Operation
@@ -345,7 +350,7 @@ BEGIN
 						cpu_pc <= cpu_wdata;
 					ELSIF (cpu_waddr = ADDR_WREG) THEN
 						cpu_wreg <= cpu_wdata;
-					ELSIF (cpu_waddr = ADDR_SP) THEN
+					ELSIF (cpu_waddr = ADDR_SP OR cpu_waddr = ADDR_AUTOSP) THEN
 						cpu_sp <= cpu_wdata;
 
 					ELSIF (cpu_waddr = ADDR_I2C_ADDR) THEN
@@ -353,7 +358,7 @@ BEGIN
 					ELSIF (cpu_waddr = ADDR_I2C_WDATA) THEN
 						i2c_1_data_wr <= conv_std_logic_vector(cpu_wdata, 8);
 						--elsif (cpu_waddr=ADDR_I2C_RDATA) then
-						--	i2c_1_data_rd <= conv_std_logic_vector(cpu_wdata, 8);
+						--  i2c_1_data_rd <= conv_std_logic_vector(cpu_wdata, 8);
 					ELSIF (cpu_waddr = ADDR_I2C_STAT) THEN
 						i2c_1_stat(1 DOWNTO 0) <= conv_std_logic_vector(cpu_wdata, 2);
 
@@ -389,7 +394,7 @@ BEGIN
 	cpu_rdata <=
 		cpu_wreg WHEN cpu_addr = ADDR_WREG
 		ELSE
-		cpu_sp WHEN cpu_addr = ADDR_SP
+		cpu_sp WHEN cpu_addr = ADDR_SP OR cpu_addr = ADDR_AUTOSP
 		ELSE
 		conv_integer(div1_fractional) WHEN cpu_addr = ADDR_FRACTIONAL
 
