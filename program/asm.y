@@ -1,5 +1,6 @@
 %{
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
@@ -7,6 +8,12 @@
 #define PRG_SIZE 256
 
 extern int yylineno;
+
+void yyerror(const char *str);
+int yylex();
+void add_label(char *name, int addr);
+void ref_addr(int addr);
+int ref_label(char *name);
 
 int prg[PRG_SIZE] = {};
 int *addr = prg;
@@ -16,9 +23,9 @@ typedef struct{
 	char name[32];
 	int addr;
 } Label;
-Label label_list[256] = {};
+Label label_list[PRG_SIZE] = {};
 Label *label = label_list;
-Label ref_list[256] = {};
+Label ref_list[PRG_SIZE] = {};
 Label *ref = ref_list;
 
 const char *instruction[] = {
@@ -54,8 +61,8 @@ line_sentence	: inst_sentence semicolon
 	| semicolon
 	;
 
-inst_sentence	: instruction	{*(addr++) = $1; }
-	| val	{*(addr++) = $1; }
+inst_sentence	: instruction	{ *(addr++) = $1; }
+	| val {*(addr++) = $1; }
 	| string	{
 		unsigned char *str = $1;
 		while(*str){
@@ -87,12 +94,36 @@ instruction : is_read operand	{$$ = (0<<16) + $2; }
 	;
 
 operand	: ast val	{$$ = $2; ref_addr(addr - prg); }
-	| val	{*(--imm_addr) = $1; $$ = PRG_ORG + imm_addr - prg; ref_addr(imm_addr - prg); }
+	| val	{
+		int *existing_imm_addr = &prg[PRG_SIZE];
+
+		if (!is_ref){
+			for (
+				existing_imm_addr = imm_addr;
+				existing_imm_addr != &prg[PRG_SIZE];
+				existing_imm_addr++
+			) {
+				if (*existing_imm_addr != $1) {
+					continue;
+				}
+
+				$$ = PRG_ORG + existing_imm_addr - prg;
+				break;
+			}
+		}
+
+		if (existing_imm_addr == &prg[PRG_SIZE]) {
+			--imm_addr;
+			*imm_addr = $1;
+			$$ = PRG_ORG + imm_addr - prg;
+			ref_addr(imm_addr - prg);
+		}
+	}
 	;
 
-val	: integer	{$$ = $1; }
+val	: integer	{ $$ = $1; }
 	| instruction
-	| identifier	{$$ = ref_label($1, 128); }
+	| identifier	{ $$ = ref_label($1); }
 	;
 %%
 
@@ -102,13 +133,13 @@ int main(void)
 
 	for(int *code = prg; code != &prg[PRG_SIZE]; code++){
 		// リスト出力
-		/*if (code < addr){
-			printf("is_word(%s, %d)", instruction[(*code)>>16], (*code)&((1<<16) - 1));
+		if (code < addr){
+			fprintf(stderr, "is_word(%s, %d)", instruction[(*code)>>16], (*code)&((1<<16) - 1));
 		}else{
-			printf("%d", *code);
+			fprintf(stderr, "%d", *code);
 		}
-		if (code != &prg[PRG_SIZE - 1]) printf(", ");
-		printf("\t-- %d\n", code - prg + PRG_ORG);*/
+		if (code != &prg[PRG_SIZE - 1]) fprintf(stderr, ", ");
+		fprintf(stderr, "\t-- %ld\n", code - prg + PRG_ORG);
 
 		// テキスト出力
 		printf("%d", *code);
@@ -151,7 +182,7 @@ void add_label(char *name, int addr){
 
 	for(Label *i = ref_list; i != ref; i++){
 		if (strcmp(name, i->name) == 0){
-			prg[i->addr] += addr;
+			prg[i->addr] = addr;
 			i->addr = -1;
 		}
 	}
@@ -176,5 +207,5 @@ int ref_label(char *name){
 	strcpy(ref->name, name);
 	is_ref = 1;
 
-	return 0;
+	return 1048576;
 }
